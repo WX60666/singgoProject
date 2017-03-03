@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<title>手机号解绑</title>
+		<link rel="stylesheet" href="css/weui.min.css" />
+		<style type="text/css">
+			.page_alert {
+				height: 0.6rem;
+			}
+			
+			.alert {
+				font-size: 0.1rem;
+				height: 0.6rem;
+				line-height: 0.6rem;
+				color: white;
+				text-align: center;
+				background-color: red;
+				animation: 1s linear fadeIn;
+				display: none;
+			}
+			
+			.page {
+				height: 100%;
+				font-family: "微软雅黑";
+			}
+			
+			.page_form {
+				margin: 0;
+			}
+			
+			.page_verification {
+				padding-top: 0.1rem;
+			}
+			
+			.get_v_code {
+				font-family: "微软雅黑";
+				display: inline-block;
+				height: 44px;
+				margin-left: 5px;
+				padding: 0 0.6em 0 0.7em;
+				border: none;
+				border-left: 1px solid #E5E5E5;
+				line-height: 44px;
+				vertical-align: middle;
+				font-size: 17px;
+				color: #3CC51F;
+				background: transparent;
+				outline: 0;
+				font-size: 14px;
+			}
+			.check_v_code{
+				font-size: 15px;
+			}
+			
+			@keyframes fadeIn {
+				0% {
+					opacity: 0;
+					transform: translateY(-20px);
+				}
+				100% {
+					opacity: 1;
+					transform: translateY(0px);
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="page">
+			<div class="page_alert">
+				<div class="alert">请输入正确的手机号</div>
+			</div>
+			<div class="weui-cells weui-cells_form page_form">
+				<div class="weui-cell weui-cell_vcode">
+					<div class="weui-cell__hd">
+						<label class="weui-label">手机号</label>
+					</div>
+					<div class="weui-cell__bd">
+						<span class="phone check_v_code">18665897841</span>
+					</div>
+					<div class="weui-cell__ft">
+						<input type="button" class="weui-vcode-btn get_v_code" value="获取验证码" ontouchend="getVcode(60)">
+						<!--<a href="javascript:;"  ontouchstart="getVcode(this)" class="weui-vcode-btn weui-btn_plain-disabled">获取验证码</a>-->
+					</div>
+				</div>
+			</div>
+
+			<div class="weui-cells weui-cells_form ">
+				<div class="weui-cell weui-cell_vcode">
+					<div class="weui-cell__hd"><label class="weui-label">验证码</label></div>
+					<div class="weui-cell__bd">
+						<input class="weui-input check_v_code" type="number" id="qr-code" placeholder="请输入验证码" />
+					</div>
+					<div class="weui-cell__ft">
+						<a href="javascript:;" ontouchstart="checkOutQrCode()" class="weui-vcode-btn check_v_code">&nbsp;&nbsp;&nbsp;确&nbsp;&nbsp;认&nbsp;&nbsp;&nbsp;&nbsp;</a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<script src="js/rem.js"></script>
+
+		<script type="text/javascript">
+			function getVcode(t) {
+				
+				var btn = document.getElementsByClassName('get_v_code')[0];
+				if (btn.disabled){
+		            return false;
+		        }
+				btn.disabled = true;
+				for(i = 0; i <= t; i++) {
+					window.setTimeout("update_p(" + i + "," + t + ")", i * 1000);
+				}
+			}
+
+			function update_p(num, t) {
+				var btn = document.getElementsByClassName('get_v_code')[0];
+				btn.disabled = true;
+				if(num == t) {
+					btn.value = " 重新发送 ";
+					btn.disabled = false;
+				} else {
+					printnr = t - num;
+					btn.value = " (" + printnr + ")秒后重新发送";
+				}
+			}
+
+			function checkOutQrCode() {
+				var qrCode = document.getElementById('qr-code').value;
+				if(qrCode == '') {
+					var alert = document.getElementsByClassName('alert')[0];
+					alert.innerHTML = "请输入正确的验证码";
+					alert.style.display = 'block';
+					return false;
+				} else {
+					//清空验证码
+					document.getElementById('qr-code').value = "";
+					window.location.href = 'msgpage.html';
+				}
+			}
+		</script>
+	</body>
+
+</html>

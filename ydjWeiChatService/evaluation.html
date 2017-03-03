@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<title>订单评价</title>
+		<link rel="stylesheet" href="css/weui.min.css" />
+		<style type="text/css">
+			.page {
+				font-family: "微软雅黑";
+			}
+			
+			.star_cell {
+				width: 100%;
+				height: 3rem;
+				line-height: 3rem;
+				text-align: center;
+			}
+			
+			.star_cell img {
+				vertical-align: middle;
+			}
+			
+			.attitude {
+				margin-top: 0.2rem;
+				text-align: center;
+				font-size: 18px;
+			}
+			
+			.single_tag {
+				padding: 5px;
+			}
+			
+			.tag_group a {
+				margin-left: 15px;
+				padding-left: 8px;
+				padding-right: 8px;
+			}
+			
+			.comments_suggests {
+				font-size: 14px;
+				margin: 0;
+				margin-bottom: 1.5rem;
+			}
+			
+			.c_s_aera {
+				font-family: "微软雅黑";
+			}
+			
+			.submit_btn {
+				margin-bottom: 1.5rem;
+				width: 90%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="page">
+			<div class="weui-cells__title">给订单做个评价吧</div>
+			<div class="weui-cells weui-cells_form">
+				<div class="weui-cell">
+					<div class="weui-cell__hd"><label class="weui-label">总评分</label></div>
+					<div class="weui-cell__bd">
+						<input class="weui-input grading" type="number" onkeyup="monitorGrade(this)" placeholder="0-5分之间" />
+					</div>
+				</div>
+			</div>
+			<div class="star_cell">
+				<img src="img/star1.png" class="single_star" id="1" alt="" ontouchend="touchStar(0,this)" />
+				<img src="img/star1.png" class="single_star" id="1" alt="" ontouchend="touchStar(1,this)" />
+				<img src="img/star1.png" class="single_star" id="1" alt="" ontouchend="touchStar(2,this)" />
+				<img src="img/star1.png" class="single_star" id="1" alt="" ontouchend="touchStar(3,this)" />
+				<img src="img/star1.png" class="single_star" id="1" alt="" ontouchend="touchStar(4,this)" />
+			</div>
+			<div class="attitude">
+				非 常 满 意
+			</div>
+			<div class="weui-cells">
+				<div class="weui-cell">
+					<div class="weui-cell__bd">
+						<p>好 评</p>
+					</div>
+					<!--<div class="weui-cell__ft">说明文字</div>-->
+				</div>
+			</div>
+			<div class="tag_group">
+				<a href="javascript:;" ontouchend="tagClick(1,this)" id="0" class="weui-btn weui-btn_mini weui-btn_default">产品品质好</a>
+				<a href="javascript:;" ontouchend="tagClick(1,this)" id="0" class="weui-btn weui-btn_mini weui-btn_default">上门准时</a>
+				<a href="javascript:;" ontouchend="tagClick(1,this)" id="0" class="weui-btn weui-btn_mini weui-btn_default">举止文明</a>
+				<a href="javascript:;" ontouchend="tagClick(1,this)" id="0" class="weui-btn weui-btn_mini weui-btn_default">安装技术好</a>
+				<a href="javascript:;" ontouchend="tagClick(1,this)" id="0" class="weui-btn weui-btn_mini weui-btn_default">流程规范</a>
+			</div>
+			<div class="weui-cells">
+				<div class="weui-cell">
+					<div class="weui-cell__bd">
+						<p>差 评</p>
+					</div>
+					<!--<div class="weui-cell__ft">说明文字</div>-->
+				</div>
+			</div>
+			<div class="tag_group">
+				<a href="javascript:;" ontouchend="tagClick(0,this)" id="0" class="weui-btn weui-btn_mini weui-btn_default">产品品质差</a>
+				<a href="javascript:;" ontouchend="tagClick(0,this)" id="0" class="weui-btn weui-btn_mini weui-btn_default">不准时</a>
+				<a href="javascript:;" ontouchend="tagClick(0,this)" id="0" class="weui-btn weui-btn_mini weui-btn_default">举止不文明</a>
+				<a href="javascript:;" ontouchend="tagClick(0,this)" id="0" class="weui-btn weui-btn_mini weui-btn_default">安装技术差</a>
+				<a href="javascript:;" ontouchend="tagClick(0,this)" id="0" class="weui-btn weui-btn_mini weui-btn_default">流程不规范</a>
+			</div>
+			<div class="weui-cells">
+				<div class="weui-cell">
+					<div class="weui-cell__bd">
+						<p>其他意见或者建议</p>
+					</div>
+					<!--<div class="weui-cell__ft">说明文字</div>-->
+				</div>
+			</div>
+			<div class="weui-cells weui-cells_form comments_suggests">
+				<div class="weui-cell">
+					<div class="weui-cell__bd">
+						<textarea class="weui-textarea c_s_aera" onkeyup="countContent(this)" placeholder="请输入您的宝贵意见,字数150以内" rows="3"></textarea>
+						<div class="weui-textarea-counter "><span id="current_count">0</span>/150</div>
+					</div>
+				</div>
+			</div>
+
+			<a href="javascript:;" class="weui-btn weui-btn_primary weui-btn_disabled submit_btn" ontouchend="submitSuggest()">提 交</a>
+
+		</div>
+		<script src="js/class.js"></script>
+		<script type="text/javascript">
+			function monitorGrade(obj) {
+				var grade = obj.value;
+				if(grade > 5 || grade < 0) {
+					document.getElementsByClassName('grading')[0].value = "";
+				}
+			}
+
+			function tagClick(index, obj) {
+				if(index == 1) {
+					if(obj.id == 1) {
+						obj.id = 0;
+						removeClass(obj, 'weui-btn_primary');
+						addClass(obj, 'weui-btn_default');
+					} else {
+						obj.id = 1;
+						removeClass(obj, 'weui-btn_default');
+						addClass(obj, 'weui-btn_primary');
+					}
+				} else {
+					if(obj.id == 1) {
+						obj.id = 0;
+						removeClass(obj, 'weui-btn_warn');
+						addClass(obj, 'weui-btn_default');
+					} else {
+						obj.id = 1;
+						removeClass(obj, 'weui-btn_default');
+						addClass(obj, 'weui-btn_warn');
+					}
+				}
+
+			}
+
+			function touchStar(index, obj) {
+				if(obj.id == 1) {
+					for(var i = index; i < 4; i++) {
+						document.getElementsByClassName('single_star')[i + 1].src = '/ydjWeiChatService/img/star0.png';
+						document.getElementsByClassName('single_star')[i + 1].id = 0;
+					}
+				} else {
+					for(var i = 0; i <= index; i++) {
+						document.getElementsByClassName('single_star')[i].src = "/ydjWeiChatService/img/star1.png";
+						document.getElementsByClassName('single_star')[i].id = 1;
+					}
+				}
+
+			}
+
+			var finalContent = "";
+			var submit_btn = document.getElementsByClassName('submit_btn')[0];
+
+			function countContent(obj) {
+				if(obj.value.length <= 150) {
+					finalContent = obj.value;
+					document.getElementById('current_count').innerText = finalContent.length;
+				} else if(obj.value.length > 150) {
+					document.getElementsByClassName('c_s_aera')[0].value = finalContent;
+				}
+				if(finalContent != "") {
+					if(hasClass(submit_btn, 'weui-btn_disabled')) {
+						removeClass(submit_btn, "weui-btn_disabled");
+					}
+				} else {
+					if(!hasClass(submit_btn, 'weui-btn_disabled')) {
+						addClass(submit_btn, "weui-btn_disabled");
+					}
+				}
+
+			}
+
+			function submitSuggest() {
+				//清空表单
+				document.getElementsByClassName('c_s_aera')[0].value = "";
+				window.location.href = 'msgpage.html';
+			}
+		</script>
+	</body>
+
+</html>

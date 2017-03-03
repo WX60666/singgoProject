@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<title>意见反馈</title>
+		<link rel="stylesheet" href="css/weui.min.css" />
+		<style type="text/css">
+			body {
+				background-color: #E5E5E5;
+				font-family: "微软雅黑";
+			}
+			
+			.page {
+				background: red;
+				border-radius: 2px;
+				margin: 0.2rem;
+				background-color: white;
+				height: 6rem;
+			}
+			
+			.feed_issue {
+				padding-top: 0.2rem;
+				padding-bottom: 0.2rem;
+				color: #000000;
+			}
+			
+			.feed_textarea {
+				font-size: 14px;
+				font-family: "微软雅黑";
+				height: 3rem;
+			}
+			
+			.feed_submit {
+				margin-top: 0.5rem;
+				width: 90%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="page">
+
+			<div class="weui-cells__title feed_issue">问题和意见</div>
+			<div class="weui-cells weui-cells_form">
+				<div class="weui-cell">
+					<div class="weui-cell__bd">
+						<textarea class="weui-textarea feed_textarea proposal" onkeyup="verify(this)" placeholder="请简要说明你的问题和意见" rows="3"></textarea>
+						<!--<div class="weui-textarea-counter"><span>0</span>/200</div>-->
+					</div>
+				</div>
+			</div>
+			<!--提交按钮-->
+			<a href="javascript:;" ontouchend="submitProposal(this)" class="weui-btn weui-btn_warn weui-btn_disabled feed_submit">提&nbsp;&nbsp;交 </a>
+
+		</div>
+
+		<script src="js/rem.js"></script>
+		<script src="js/class.js"></script>
+		<script type="text/javascript">
+			
+			var btn = document.getElementsByClassName('feed_submit')[0];
+			function verify(obj) {
+				var proposal = obj.value;
+				if(proposal != "") {
+					if(hasClass(btn, 'weui-btn_disabled')) {
+						removeClass(btn, "weui-btn_disabled");
+					}
+				} else {
+					if(!hasClass(btn, 'weui-btn_disabled')) {
+						addClass(btn, "weui-btn_disabled");
+					}
+				}
+			}
+
+			function submitProposal(obj) {
+				if(hasClass(obj, "weui-btn_disabled")) {
+					return false;
+				}else{
+					//清空表单
+					document.getElementsByClassName('proposal')[0].value="";
+					window.location.href = 'msgpage.html';
+				}
+
+			}
+		</script>
+	</body>
+
+</html>
