@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JieNor.Framework.UsrMgr.Service</name>
+    </assembly>
+    <members>
+        <member name="M:PerfmonUtil.StartMonitor">
+            <summary>
+            开始监控
+            </summary>
+        </member>
+        <member name="M:PerfmonUtil.EndMonitor">
+            <summary>
+            结束监控
+            </summary>
+        </member>
+    </members>
+</doc>

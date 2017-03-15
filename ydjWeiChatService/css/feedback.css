@@ -1,0 +1,29 @@
+body {
+	background-color: #E5E5E5;
+	font-family: "微软雅黑";
+}
+
+.page {
+	background: red;
+	border-radius: 2px;
+	margin: 0.2rem;
+	background-color: white;
+	height: 6rem;
+}
+
+.feed_issue {
+	padding-top: 0.2rem;
+	padding-bottom: 0.2rem;
+	color: #000000;
+}
+
+.feed_textarea {
+	font-size: 14px;
+	font-family: "微软雅黑";
+	height: 3rem;
+}
+
+.feed_submit {
+	margin-top: 0.5rem;
+	width: 90%;
+}

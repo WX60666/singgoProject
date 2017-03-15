@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body id="ydj_purchaseorder" basemodel="bd_basetmpl" el="1" cn="采购订单">
+    <div id="FBillHead" el="51" pk="fid" tn="T_Ydj_Purchaseorder" pn="FBillHead" cn="采购订单"> 
+    	
+    	<!--基本信息-->
+        <input type="Text" id="fpurchasenumber" el="108" ek="FBillHead" fn="fpurchasenumber" ts="" visible="-1" cn="采购单号" />
+        <input type="datetime" id="fpurchasedate" el="113" ek="FBillHead" fn="fpurchasedate" ts="" cn="采购日期" visible="-1" />
+        <input type="text" id="fprovider" el="106" ek="FBillHead" fn="fprovider" ts="" visible="-1" cn="供应商" refid="ydj_supplier" />
+        <input type="number" id="fpayableamount" el="102" ek="FBillHead" fn="fpayableamount" ts="" cn="应付金额" visible="-1" />
+        <input type="number" id="fpayablepaid" el="102" ek="FBillHead" fn="fpayablepaid" ts="" cn="已付金额" visible="-1" />
+        <input type="text" id="frecord" el="100" ek="FBillHead" fn="frecord" ts="" cn="记录" visible="-1" />
+    </div>
+	
+	
+	<!--采购订单（明细）-->
+    <table id="fpurchaseorderentry" el="52" pk="fentryid" tn="t_ydj_purchaseorderItem" pn="fpurchaseorderentry" cn="采购订单">
+        <tr>
+            <th type="text" id="fbillno" el="108" ek="fpurchaseorderentry" fn="fbillno" ts="" cn="订单编号" visible="-1"></th>
+            <th id="forderdate" el="113" ek="fpurchaseorderentry" fn="forderdate" ts="" cn="订单日期" visible="-1"></th>
+            <th type="text" id="fsuitid" el="108" ek="fpurchaseorderentry" fn="fsuitid" ts="" cn="套件编码" visible="-1" refid="ydj_suit"></th>
+            <th id="fimage" el="111" ek="fpurchaseorderentry" fn="fimage" ts="" cn="商品图片" visible="-1"></th>
+            <th type="text" id="fnumber" el="108" ek="fpurchaseorderentry" fn="fnumber" ts="" cn="商品编码" visible="-1"></th>
+            <th id="fproductid" el="100" ek="fpurchaseorderentry" fn="fproductid" ts="" cn="商品名称" visible="-1" refid="ydj_product" ></th>
+            <th id="fnorms" el="117" ek="fpurchaseorderentry" fn="fnorms" ts="" cn="规格"  cg="规格" visible="-1" refid="ydj_norms"></th>
+            <th id="fmaterial" el="117" ek="fpurchaseorderentry" fn="fmaterial" ts="" cn="规格"  cg="材质" visible="-1" refid="ydj_material"></th>
+            <th id="fcolor" el="117" ek="fpurchaseorderentry" fn="fcolor" ts="" cn="颜色"  cg="颜色" visible="-1" refid="ydj_color"></th>
+            <th id="ffreegifts" el="116" ek="fpurchaseorderentry" fn="ffreegifts" ts="" cn="赠品" visible="-1"></th>
+            <th id="fsaleprice" el="105" ek="fpurchaseorderentry" fn="fsaleprice" ts="" cn="销售价" visible="-1"></th>
+            <th id="fqty" el="103" ek="fpurchaseorderentry" fn="fqty" ts="" cn="数量" visible="-1"></th>
+            <th id="fgoutqty" el="103" ek="fpurchaseorderentry" fn="fgoutqty" ts="" cn="已出库数量" visible="-1"></th>
+            <th id="fstoredqty" el="103" ek="fpurchaseorderentry" fn="fstoredqty" ts="" cn="库存数量" visible="-1"></th>
+            <th id="fdeliverydate" el="112" ek="fpurchaseorderentry" fn="fdeliverydate" ts="" cn="客户交期" visible="-1"></th>
+        </tr>
+    </table>
+</body>
+</html>
+

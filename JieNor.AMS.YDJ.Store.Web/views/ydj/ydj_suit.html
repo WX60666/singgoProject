@@ -1,0 +1,126 @@
+﻿<!--页面菜单列表-->
+<div class="page-menu-list">
+</div>
+<!--页面内容面板-->
+<form action="###" class="form-horizontal">
+    <div class="alert alert-danger display-hide">
+        <button class="close" data-close="alert"></button>
+        页面中有一些带红色星号 * 的信息是必填项，请检查是否都有正确录入！
+    </div>
+    <div class="portlet box yellow-casablanca">
+        <div class="portlet-title">
+            <div class="caption"><i class="fa fa-user"></i>基本信息</div>
+            <div class="tools"><a href="###" class="collapse"></a></div>
+        </div>
+        <div class="portlet-body form">
+            <div class="form-body">
+                <div class="form-group">
+                    <label class="col-md-4 control-label">商品编码 <span class="required">*</span></label>
+                    <div class="col-md-7">
+                        <div class="input-icon right input-group">
+                            <i class="fa"></i>
+                            <input type="lookup" class="form-control" autocomplete="off"
+                                   name="fnumber" placeholder="基础资料编码规则" required="required" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">套件名称<span class="required">*</span></label>
+                    <div class="col-md-4">
+                        <div class="input-icon right">
+                            <i class="fa"></i>
+                            <input type="text" class="form-control" autocomplete="off" required
+                                   name="fname" placeholder="套件名称" maxlength="50" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">商品图片 </label>
+                    <div class="col-md-4">
+                        <div class="uploader-style">
+                            <div class="queueList">
+                                <div class="placeholder">
+                                    <div id="simagePicker" class="uploader-file" name="fimage">上传图片</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">套件分类</label>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" autocomplete="off"
+                               name="fcategory" placeholder="套件分类" maxlength="50" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">单位</label>
+                    <div class="col-md-4">
+                        <select class="form-control select2me dynamic" name="funitid">
+                            <option value="">单位</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">空间</label>
+                    <div class="col-md-4">
+                        <select class="form-control select2me dynamic" name="fspace">
+                            <option value="">空间</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">风格</label>
+                    <div class="col-md-4">
+                        <select class="form-control select2me dynamic" name="fstyle">
+                            <option value="">风格</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">品牌</label>
+                    <div class="col-md-4">
+                        <select class="form-control select2me dynamic" name="fbrand">
+                            <option value="">品牌</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">不可拆卖</label>
+                    <div class="col-md-4">
+                        <div class="checkbox-list">
+                            <label class="checkbox-inline">
+                                <input type="checkbox" name="fissplit">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">状态</label>
+                    <div class="col-md-4">
+                        <div class="input-icon">
+                            <select class="form-control select2me dynamic" name="fstatus" disabled>
+                                <option value="">启用</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<div class="row">
+    <div class="col-md-12">
+        <div class="portlet box yellow-casablanca">
+            <div class="portlet-title">
+                <div class="caption"><i class="fa fa-user"></i>商品明细</div>
+                <div class="tools"><a href="###" class="collapse"></a></div>
+            </div>
+            <div class="portlet-body form">
+                <div class="form-body">
+                    <table entryid="fsuitentry" data-options="allowAdd:true,allowDel:true,allowEdit:true"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

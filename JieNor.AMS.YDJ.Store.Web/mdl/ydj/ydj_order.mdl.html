@@ -1,0 +1,140 @@
+﻿<!doctype html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body id="ydj_order" basemodel="bill_basetmpl" el="1" cn="订货单">
+    <div id="fbillhead" el="51" pk="fid" tn="t_ydj_order" pn="fbillhead" cn="订货单">
+
+        <!--基本信息-->
+        <input el="106" ek="fbillhead" visible="-1" id="fcustomerid" fn="fcustomerid" pn="fcustomerid" cn="客户" refid="ydj_customer"
+               dfld="fphone,fprovince,fcity,fregion,faddress,fbrandid,fdeptid,fdutyid,fassistid" />
+        <select el="122" ek="fbillhead" visible="-1" id="ftype" fn="ftype" pn="ftype" cn="业务类型" cg="业务类型" refid="bd_enum" dfld="fenumitem" defval="'order_type_01'"></select>
+        <input el="113" ek="fbillhead" visible="-1" id="forderdate" fn="forderdate" pn="forderdate" cn="下单日期" defval="@currentshortdate" />
+        <input el="113" ek="fbillhead" visible="-1" id="fdeliverydate" fn="fdeliverydate" pn="fdeliverydate" cn="交货日期" defval="@currentshortdate" />
+        <input el="100" ek="fbillhead" visible="-1" id="foldorderno" fn="foldorderno" pn="foldorderno" cn="源订单号" />
+
+        <!--客户信息-->
+        <input el="100" ek="fbillhead" visible="-1" id="fconsignee" fn="fconsignee" pn="fconsignee" cn="收货人" />
+        <input el="100" ek="fbillhead" visible="-1" id="fphone" fn="fphone" pn="fphone" cn="联系电话" />
+        <input el="100" ek="fbillhead" visible="-1" id="faddress" fn="faddress" pn="faddress" cn="收货地址" />
+        <select el="122" ek="fbillhead" visible="-1" id="fprovince" fn="fprovince" pn="fprovince" cn="省" cg="省" refid="bd_enum" dfld="fenumitem"></select>
+        <select el="122" ek="fbillhead" visible="-1" id="fcity" fn="fcity" pn="fcity" cn="市" cg="市" refid="bd_enum" dfld="fenumitem"></select>
+        <select el="122" ek="fbillhead" visible="-1" id="fregion" fn="fregion" pn="fregion" cn="区" cg="区" refid="bd_enum" dfld="fenumitem"></select>
+        <input el="106" ek="fbillhead" visible="-1" id="fbrandid" fn="fbrandid" pn="fbrandid" cn="品牌" cg="品牌" refid="ydj_brand" />
+
+        <!--财务信息-->
+        <input el="105" ek="fbillhead" visible="-1" id="ffaceamount" fn="ffaceamount" pn="ffaceamount" cn="面价金额" />
+        <input el="102" ek="fbillhead" visible="-1" id="fdistrate_h" fn="fdistrate" pn="fdistrate" cn="折扣率" />
+        <input el="105" ek="fbillhead" visible="-1" id="fdistamount_h" fn="fdistamount" pn="fdistamount" cn="折扣额" />
+        <input el="105" ek="fbillhead" visible="-1" id="fdealamount_h" fn="fdealamount" pn="fdealamount" cn="折后金额" />
+        <input el="105" ek="fbillhead" visible="-1" id="freceivable" fn="freceivable" pn="freceivable" cn="已收金额" />
+        <input el="105" ek="fbillhead" visible="-1" id="funreceived" fn="funreceived" pn="funreceived" cn="未收金额" />
+        <input el="105" ek="fbillhead" visible="-1" id="frefund" fn="frefund" pn="frefund" cn="退款金额" />
+
+        <!--费用信息-->
+        <input el="100" ek="fbillhead" visible="-1" id="fpartner" fn="fpartner" pn="fpartner" cn="外部带单人" />
+        <input el="105" ek="fbillhead" visible="-1" id="frebate" fn="frebate" pn="frebate" cn="带单返利" />
+        <input el="105" ek="fbillhead" visible="-1" id="fexpense" fn="fexpense" pn="fexpense" cn="费用合计" />
+        <input el="105" ek="fbillhead" visible="-1" id="frecexpense" fn="frecexpense" pn="frecexpense" cn="已收费用" />
+        <input el="105" ek="fbillhead" visible="-1" id="funrecexpense" fn="funrecexpense" pn="funrecexpense" cn="未收费用" />
+        
+        <!--优惠信息-->
+        <input el="116" ek="fbillhead" visible="-1" id="fiswholedisc" fn="fiswholedisc" pn="fiswholedisc" cn="整单折扣" />
+        <input el="102" ek="fbillhead" visible="-1" id="fdiscscale" fn="fdiscscale" pn="fdiscscale" cn="折扣比例" />
+        <select el="122" ek="fbillhead" visible="-1" id="ffavoritem" fn="ffavoritem" pn="ffavoritem" cn="优惠项目" cg="优惠项目" refid="bd_enum" dfld="fenumitem"></select>
+        <input el="105" ek="fbillhead" visible="-1" id="ffavoramount_h" fn="ffavoramount" pn="ffavoramount" cn="优惠金额" />
+
+        <!--增补信息-->
+        <select el="122" ek="fbillhead" visible="-1" id="fsubjoincause" fn="fsubjoincause" pn="fsubjoincause" cn="增补原因" cg="增补原因" refid="bd_enum" dfld="fenumitem"></select>
+        <select el="122" ek="fbillhead" visible="-1" id="fduty" fn="fduty" pn="fduty" cn="责任方" cg="责任方" refid="bd_enum" dfld="fenumitem"></select>
+
+        <!--其他信息-->
+        <input el="100" ek="fbillhead" visible="-1" id="foldquoteno" fn="foldquoteno" pn="foldquoteno" cn="源报价单号" />
+    </div>
+
+    <!--增补信息（明细）-->
+    <table id="fsubjoinentry" el="52" pk="fentryid" tn="t_ydj_ordersubjoin" pn="fsubjoinentry" cn="增补信息">
+        <tr>
+            <th el="106" ek="fsubjoinentry" id="fdutyid_ezb" fn="fdutyid" pn="fdutyid" cn="负责人" refid="ydj_expenseitem"></th>
+            <th el="106" ek="fsubjoinentry" id="fpostid_ezb" fn="fpostid" pn="fpostid" cn="岗位" refid="ydj_expenseitem"></th>
+            <th el="106" ek="fsubjoinentry" id="fdeptid_ezb" fn="fdeptid" pn="fdeptid" cn="所属门店" refid="ydj_expenseitem"></th>
+            <th el="102" ek="fsubjoinentry" id="fratio_ezb" fn="fratio" pn="fratio" cn="比例"></th>
+            <th el="105" ek="fsubjoinentry" id="famount_ezb" fn="famount" pn="famount" cn="金额"></th>
+            <th el="100" ek="fsubjoinentry" id="fdescription_ezb" fn="fdescription" pn="fdescription" cn="备注"></th>
+        </tr>
+    </table>
+
+    <!--负责人信息（明细）-->
+    <table id="fdutyentry" el="52" pk="fentryid" tn="t_ydj_orderduty" pn="fdutyentry" cn="负责人信息">
+        <tr>
+            <th el="116" ek="fdutyentry" id="fismain" fn="fismain" pn="fismain" cn="主要负责"></th>
+            <th el="106" ek="fdutyentry" id="fdutyid" fn="fdutyid" pn="fdutyid" cn="负责人" refid="ydj_expenseitem"></th>
+            <th el="106" ek="fdutyentry" id="fdeptid" fn="fdeptid" pn="fdeptid" cn="所属门店" refid="ydj_expenseitem"></th>
+            <th el="102" ek="fdutyentry" id="fratio" fn="fratio" pn="fratio" cn="比例"></th>
+            <th el="105" ek="fdutyentry" id="famount_ed" fn="famount" pn="famount" cn="金额"></th>
+            <th el="100" ek="fdutyentry" id="fdescription_ed" fn="fdescription" pn="fdescription" cn="备注"></th>
+        </tr>
+    </table>
+
+    <!--费用信息（明细）-->
+    <table id="fexpenseentry" el="52" pk="fentryid" tn="t_ydj_orderexpense" pn="fexpenseentry" cn="其他费用">
+        <tr>
+            <th el="106" ek="fexpenseentry" id="fexpenseitemid" fn="fexpenseitemid" pn="fexpenseitemid" cn="费用项目" refid="ydj_expenseitem"></th>
+            <th el="105" ek="fexpenseentry" id="famount_ee" fn="famount" pn="famount" cn="金额"></th>
+            <th el="100" ek="fexpenseentry" id="fdescription_ee" fn="fdescription" pn="fdescription" cn="备注"></th>
+        </tr>
+    </table>
+
+    <!--套件下单（明细）-->
+    <table id="fsuitentry" el="52" pk="fentryid" tn="t_ydj_ordersuit" pn="fsuitentry" cn="套件下单">
+        <tr>
+            <th el="106" ek="fsuitentry" id="fsuitid_es" fn="fsuitid" pn="fsuitid" cn="套件名称" refid="ydj_suit"></th>
+            <th el="109" ek="fsuitentry" id="funitid_es" fn="funitid" pn="funitid" cn="单位" refid="ydj_unit"></th>
+            <th el="103" ek="fsuitentry" id="fqty_es" fn="fqty" pn="fqty" cn="数量"></th>
+        </tr>
+    </table>
+
+    <!--商品明细（明细）-->
+    <table id="fproductentry" el="52" pk="fentryid" tn="t_ydj_orderproduct" pn="fproductentry" cn="商品明细">
+        <tr>
+            <th el="106" ek="fproductentry" id="fsuitid" fn="fsuitid" pn="fsuitid" cn="归属套件" refid="ydj_suit"></th>
+            <th el="106" ek="fproductentry" id="fproductid" fn="fproductid" pn="fproductid" cn="商品名称" refid="ydj_product"></th>
+            <th el="109" ek="fproductentry" id="funitid" fn="funitid" pn="funitid" cn="单位" refid="ydj_unit"></th>
+            <th el="106" ek="fproductentry" id="fnormsid" fn="fnormsid" pn="fnormsid" cn="规格" refid="ydj_norms"></th>
+            <th el="106" ek="fproductentry" id="fmaterialid" fn="fmaterialid" pn="fmaterialid" cn="材质" refid="ydj_material"></th>
+            <th el="106" ek="fproductentry" id="fcolorid" fn="fcolorid" pn="fcolorid" cn="颜色" refid="ydj_color"></th>
+            <th el="100" ek="fproductentry" id="fcustomattr" fn="fcustomattr" pn="fcustomattr" cn="定制属性"></th>
+            <th el="102" ek="fproductentry" id="flength" fn="flength" pn="flength" cn="长"></th>
+            <th el="102" ek="fproductentry" id="fwidth" fn="fwidth" pn="fwidth" cn="宽"></th>
+            <th el="102" ek="fproductentry" id="fthick" fn="fthick" pn="fthick" cn="厚"></th>
+            <th el="102" ek="fproductentry" id="fnsc" fn="fnsc" pn="fnsc" cn="非标系数"></th>
+            <th el="122" ek="fproductentry" id="fareaunit" fn="fareaunit" pn="fareaunit" cn="面积单位" cg="面积单位" refid="bd_enum" dfld="fenumitem"></th>
+            <th el="102" ek="fproductentry" id="farea" fn="farea" pn="farea" cn="面积m2"></th>
+            <th el="116" ek="fproductentry" id="fisgift" fn="fisgift" pn="fisgift" cn="赠品"></th>
+            <th el="103" ek="fproductentry" id="fqty" fn="fqty" pn="fqty" cn="数量"></th>
+            <th el="104" ek="fproductentry" id="fprice" fn="fprice" pn="fprice" cn="单价"></th>
+            <th el="105" ek="fproductentry" id="famount" fn="famount" pn="famount" cn="金额"></th>
+            <th el="102" ek="fproductentry" id="fdistrate_e" fn="fdistrate" pn="fdistrate" cn="折扣率"></th>
+            <th el="105" ek="fproductentry" id="fdistamount_e" fn="fdistamount" pn="fdistamount" cn="折扣额"></th>
+            <th el="105" ek="fproductentry" id="ffavoramount_e" fn="ffavoramount" pn="ffavoramount" cn="优惠金额"></th>
+            <th el="104" ek="fproductentry" id="fdealprice" fn="fdealprice" pn="fdealprice" cn="折后单价"></th>
+            <th el="105" ek="fproductentry" id="fdealamount_e" fn="fdealamount" pn="fdealamount" cn="折后金额"></th>
+            <th el="100" ek="fproductentry" id="fdescription_e" fn="fdescription" pn="fdescription" cn="备注"></th>
+            <th el="100" ek="fproductentry" id="fparentid" fn="fparentid" pn="fparentid" cn="父明细ID"></th>
+        </tr>
+    </table>
+
+    <!--商品明细.关联表（lk明细）-->
+    <table id="fproductentrylk" el="52" pk="fentryid" tn="t_ydj_orderproduct_lk" pn="fproductentrylk" cn="商品明细关联表">
+        <tr>
+            <th el="116" ek="fproductentrylk" id="fispur" fn="fispur" pn="fispur" cn="采购决策"></th>
+            <th el="103" ek="fproductentrylk" id="fpurqty" fn="fpurqty" pn="fpurqty" cn="采购数量"></th>
+            <th el="103" ek="fproductentrylk" id="foutqty" fn="foutqty" pn="foutqty" cn="出货数量"></th>
+            <th el="103" ek="fproductentrylk" id="finstallqty" fn="finstallqty" pn="finstallqty" cn="安装数量"></th>
+            <th el="103" ek="fproductentrylk" id="freturnqty" fn="freturnqty" pn="freturnqty" cn="退货数量"></th>
+        </tr>
+    </table>
+</body>
+</html>

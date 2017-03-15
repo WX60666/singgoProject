@@ -1,0 +1,11 @@
+﻿{
+  "base": "/mdl/bill.menu.json",
+  "common": [
+    {
+      "id": "tbNew",
+      "visible": "false"
+    }
+  ],
+  "listmenu": [],
+  "billmenu": []
+}

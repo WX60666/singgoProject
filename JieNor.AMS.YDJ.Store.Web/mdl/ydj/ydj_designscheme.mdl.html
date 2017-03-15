@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body id="ydj_designscheme" basemodel="bd_basetmpl" el="1" cn="设计方案">
+    <div id="FBillHead" el="51" pk="fid" tn="t_ydj_designscheme" pn="FBillHead" cn="设计方案"> 
+    	<!--基本信息-->
+        <input type="Text" id="fnumber" el="108" ek="FBillHead" fn="fnumber" ts="" visible="-1" cn="单据号" />
+        <input type="text" id="fcustomerid" el="124" ek="FBillHead" fn="fcustomerid" cn="客户"  ts="" visible="-1"  refid="ydj_customer"/>
+        <input type="text" id="fphone" el="100" ek="FBillHead" fn="fphone" ts="" cn="联系电话" visible="-1" />
+        <select id="fdesignstage" el="117" ek="FBillHead" fn="fdesignstage" ts="" refid="" cg="设计阶段" visible="-1" cn="设计阶段">
+            <option value=""></option>
+        </select>
+        <input type="date" id="fstartdate" el="112" ek="FBillHead" fn="fstartdate" ts="" cn="开始日期" visible="-1"  defval="@currentshortdate" />
+        <input type="date" id="fenddate" el="112" ek="FBillHead" fn="fenddate" ts="" cn="截止日期" visible="-1"  defval="@currentshortdate"/>
+        <input type="date" id="ffinishdate" el="112" ek="FBillHead" fn="ffinishdate" ts="" cn="完成日期" visible="-1" defval="@currentshortdate" />
+        <input type="text" id="fnote" el="100" ek="FBillHead" fn="fnote" ts="" cn="方案简介" visible="-1" />
+    	
+    	<!--设计信息-->
+        <input type="text" id="fdesigninfo" el="100" ek="FBillHead" fn="fdesigninfo" ts="" cn="设计信息" visible="-1" />
+    </div>
+</body>
+</html>

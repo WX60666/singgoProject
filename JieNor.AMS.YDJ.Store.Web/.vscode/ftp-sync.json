@@ -1,0 +1,19 @@
+{
+    "remotePath": "./YDJWebSite/JieNor.Framework.Web",
+    "host": "www.jienor.com",
+    "username": "ydjftpuser",
+    "password": "yidaohome.com",
+    "port": 21,
+    "secure": false,
+    "protocol": "ftp",
+    "uploadOnSave": false,
+    "passive": false,
+    "debug": false,
+    "privateKeyPath": null,
+    "passphrase": null,
+    "ignore": [
+        "\\.vscode",
+        "\\.git",
+        "\\.DS_Store"
+    ]
+}

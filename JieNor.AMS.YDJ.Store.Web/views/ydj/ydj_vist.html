@@ -1,0 +1,147 @@
+﻿<!--页面菜单列表-->
+<div class="page-menu-list">
+</div>
+<!--页面内容面板-->
+<div class="row">
+	<div class="col-md-6">
+		<form action="javascript:;" class="form-horizontal">
+			<div class="portlet box yellow-casablanca">
+		        <div class="portlet-title">
+		            <div class="caption">
+		                <i class="fa fa-user"></i>基本信息
+		            </div>
+		            <div class="tools">
+		                <a href="javascript:;" class="collapse"></a>
+		            </div>
+		        </div>
+		        <div class="portlet-body form">
+				    <div class="form-body">
+				    	<!--验证提示信息-->
+				        <div class="alert alert-danger display-hide">
+				            <button class="close" data-close="alert"></button>
+				            页面中有一些带红色星号 * 的信息是必填项，请检查是否都有正确录入！
+				        </div>
+		                <div class="form-group">
+                            <label class="col-md-4 control-label">回访日期<span required="required">*</span></label>
+                            <div class="col-md-7">
+                                <div class="input-group date date-picker">
+                                    <input type="text" class="form-control" name="fvistdate" placeholder="回访日期" required="required" />
+                                    <span class="input-group-addon">
+                                        <i class="fa fa-calendar"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+	            		<div class="form-group">
+		                    <label class="col-md-4 control-label">回访单号 <span class="required">*</span></label>
+		                    <div class="col-md-7 cols">
+		                        <div class="input-icon right">
+		                            <input type="text" class="form-control" name="fvistnum" required="required"  placeholder="回访单号">
+		                        </div>
+		                    </div>
+		                </div>
+	            		<div class="form-group">
+		                    <label class="col-md-4 control-label">回访类型<span class="required">*</span></label>
+		                    <div class="col-md-7">
+		                        <div class="input-icon">
+		                            <select class="form-control select2me dynamic" name="fvisttype" required>
+		                                <option value="">售后回访</option>
+		                                <option value="">售前回访</option>
+		                                <option value="">定期回访</option>
+		                            </select>
+		                        </div>
+		                    </div>
+		                </div>
+		                <div class="form-group">
+		                    <label class="col-md-4 control-label">回访渠道<span class="required">*</span></label>
+		                    <div class="col-md-7">
+		                        <div class="input-icon">
+		                            <select class="form-control select2me dynamic" name="fvistcanal" required>
+		                                <option value="">电话</option>
+		                                <option value="">微信</option>
+		                                <option value="">QQ</option>
+		                                <option value="">上门</option>
+		                                <option value="">短信</option>
+		                                <option value="">邮件</option>
+		                            </select>
+		                        </div>
+		                    </div>
+		                </div>
+						<div class="form-group">
+                            <label class="col-md-4 control-label">客户<span class="required">*</span></label>
+                            <div class="col-md-7">
+                                <div class="input-icon right input-group">
+                                    <i class="fa"></i>
+                                    <input type="lookup" class="form-control" autocomplete="off" required
+                                           name="fcustomerid" placeholder="客户" maxlength="50" />
+                                </div>
+                            </div>
+                        </div>
+		                <div class="form-group">
+		                    <label class="col-md-4 control-label">联系人<span class="required">*</span></label>
+		                    <div class="col-md-7 cols">
+		                        <div class="input-icon right">
+		                            <input type="text" class="form-control" name="fcontacts" required="required"  placeholder="联系人" >
+		                        </div>
+		                    </div>
+		                </div>
+						<div class="form-group">
+		                    <label class="col-md-4 control-label">联系电话</label>
+		                    <div class="col-md-7 cols">
+		                        <div class="input-icon right">
+		                            <input type="text" class="form-control" name="fphone" placeholder="联系电话" >
+		                        </div>
+		                    </div>
+		                </div>              
+	            		<div class="form-group">
+		                    <label class="col-md-4 control-label">备注</label>
+		                    <div class="col-md-7 cols">
+		                        <div class="input-icon right">
+		                            <textarea cols="40" rows="2" name="description"
+											class="form-control" style="overflow:visible" placeholder="备注..."></textarea>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		    <div class="portlet box yellow-casablanca">
+		        <div class="portlet-title">
+		            <div class="caption">
+		                <i class="fa fa-user"></i>客户意见及评价
+		            </div>
+		            <div class="tools">
+		                <a href="javascript:;" class="collapse"></a>
+		            </div>
+		        </div>
+		        <div class="portlet-body form">
+				    <div class="form-body">
+		                <div class="form-group">
+		                    <label class="col-md-4 control-label">客户意见</label>
+		                    <div class="col-md-7 cols">
+		                        <div class="input-icon right">
+		                            <textarea cols="40" rows="2" name="dcustomeropinion"
+											class="form-control" style="overflow:visible" ></textarea>
+		                        </div>
+		                    </div>
+		                </div>
+		                <div class="form-group">
+		                    <label class="col-md-4 control-label">客户评分</label>
+		                    <div class="col-md-7">
+		                        <div class="input-icon">
+		                            <select class="form-control select2me dynamic" name="fcustomerscore" >
+		                                <option value="">1</option>
+		                                <option value="">2</option>
+		                                <option value="">3</option>
+		                                <option value="">4</option>
+		                                <option value="">5</option>
+		                            </select>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</form>
+	</div>
+</div>

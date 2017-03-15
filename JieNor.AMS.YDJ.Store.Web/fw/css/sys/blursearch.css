@@ -1,0 +1,127 @@
+ul li,li{
+	list-style: none;
+}
+.middle-wrap{
+	position: absolute;
+	border: 1px solid #C0BBB5;
+	box-sizing: border-box;
+	left: 10%;
+	top: 50%;
+}
+
+/*④ 给父元素加前置内容生成,使第一个子元素的margintop生效*/
+.middle:before{
+    content:" ";
+    display:table;
+}
+
+#input-container {
+	background: #fff;
+	height: 44px;
+	position: relative;
+	width: 531px;
+	z-index: 9;
+}
+
+#suggest-align {
+	background: #fff;
+	height: 44px;
+	
+	position: relative;
+	vertical-align: top;
+}
+.search-input {
+	border: 1px solid #ccc;
+	position: relative;
+}
+/*下拉列表的样式*/
+.search-input #news-list{
+    display: block;
+    position: absolute;
+    top: 43px;
+    left: -1px;
+   /* width: 594px;*/
+    border: 1px solid silver;
+	border-top: none;
+	height: 10rem;
+	overflow:hidden;
+}
+
+/*放大镜功能*/
+#search-function{
+	display: none;
+	cursor: pointer;
+	width: 2rem;
+	height: 2rem;
+	text-align: center;
+	line-height: 20px;
+	position: absolute;
+	right: 0;
+	top: .5rem;
+}
+
+.search-input #news-list li{
+    cursor: pointer;
+    line-height: 20px;
+    padding-left: 14px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+.search-input #news-list li:hover{
+    background-color: #eee;
+}
+
+
+#input {
+	background: #fff;
+	border: none;
+	text-indent: 0.8rem;
+	padding-top: .5rem;
+	color: #333;
+	float: left;
+	font-size: 16px;
+	height: 30px;
+	line-height: 30px\9;
+	margin-top: 3px;
+	/*让获得焦点时无默认边框 outline描边*/
+	outline: none;
+	width: 506px;
+}
+#search-btn {
+	cursor: pointer;
+	font-family: "Microsoft YaHei";
+	font-size: 18px;
+	height: 44px;
+	left: 530px;
+	outline: none;
+	position: absolute;
+	top: 0;
+	vertical-align: top;
+	width: 110px;
+	background: #19b955;
+	color: #fff;
+}
+#search-btn:hover{
+    background: #19cd55;
+}
+
+
+
+.blursearch-container table{
+	width: 100%;
+	text-align: center;
+}
+.blursearch-container .search-container-header table th{
+	background-color: #CCCCCC;
+	text-align: center;
+}
+.blursearch-container table th,table td{
+	border: 1px solid #333333;
+	
+}
+
+.search-container-content table tr.active{
+	background-color: deepskyblue;
+}
+
+/*第二种情况*/

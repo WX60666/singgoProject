@@ -1,0 +1,217 @@
+﻿//标准单据通用菜单模板定义
+{
+  "base": "",
+  "common": [
+    {
+      "id": "tbNew",
+      "caption": "新增",
+      "visible": "true",
+      "disabled": "false",
+      "style": "menugroup",
+      "order": 10,
+      "parent": "",
+      "opcode": "new",
+      "param": ""
+    },
+    {
+      "id": "tbCopy",
+      "caption": "复制",
+      "visible": "true",
+      "disabled": "false",
+      "style": "menu",
+      "order": 15,
+      "parent": "tbNew",
+      "opcode": "copy",
+      "param": ""
+    },
+    {
+      "id": "tbSplit2",
+      "caption": "",
+      "visible": "true",
+      "disabled": "true",
+      "style": "split",
+      "order": 25,
+      "parent": "",
+      "param": ""
+    },
+    {
+      "id": "tbSubmit",
+      "caption": "提交",
+      "visible": "true",
+      "disabled": "false",
+      "style": "menugroup",
+      "order": 30,
+      "parent": "",
+      "opcode": "submit",
+      "param": ""
+    },
+    {
+      "id": "tbUnsubmit",
+      "caption": "撤销",
+      "visible": "true",
+      "disabled": "false",
+      "style": "menu",
+      "order": 35,
+      "parent": "tbSubmit",
+      "opcode": "unsubmit",
+      "param": ""
+    },
+    {
+      "id": "tbAudit",
+      "caption": "审核",
+      "visible": "true",
+      "disabled": "false",
+      "style": "menugroup",
+      "order": 40,
+      "parent": "",
+      "opcode": "audit",
+      "param": ""
+    },
+    {
+      "id": "tbUnaudit",
+      "caption": "反审核",
+      "visible": "true",
+      "disabled": "false",
+      "style": "menu",
+      "order": 45,
+      "parent": "tbAudit",
+      "opcode": "unaudit",
+      "param": ""
+    },
+    {
+      "id": "tbSplit3",
+      "caption": "",
+      "visible": "true",
+      "disabled": "true",
+      "style": "split",
+      "order": 50,
+      "parent": "",
+      "param": ""
+    },
+    {
+      "id": "tbPrint",
+      "caption": "打印",
+      "visible": "true",
+      "disabled": "false",
+      "style": "menugroup",
+      "order": 60,
+      "parent": "",
+      "opcode": "print",
+      "param": ""
+    },
+    {
+      "id": "tbPrintPreview",
+      "caption": "预览",
+      "visible": "true",
+      "disabled": "false",
+      "style": "menu",
+      "order": 65,
+      "parent": "tbPrint",
+      "opcode": "preview",
+      "param": ""
+    },
+    {
+      "id": "tbOption",
+      "caption": "选项",
+      "visible": "true",
+      "disabled": "false",
+      "style": "menu",
+      "order": 70,
+      "parent": "",
+      "opcode": "option",
+      "param": ""
+    },
+    {
+      "id": "tbClose",
+      "caption": "关闭",
+      "visible": "true",
+      "disabled": "false",
+      "style": "menu",
+      "order": 80,
+      "parent": "",
+      "opcode": "close",
+      "param": ""
+    }
+  ],
+
+  "listmenu": [
+    {
+      "id": "tbFilter",
+      "caption": "过滤",
+      "visible": "true",
+      "disabled": "false",
+      "style": "button",
+      "order": 1,
+      "parent": "",
+      "opcode": "filter",
+      "param": ""
+    },
+    {
+      "id": "tbRefresh",
+      "caption": "刷新",
+      "visible": "true",
+      "disabled": "false",
+      "style": "button",
+      "order": 2,
+      "parent": "",
+      "opcode": "refresh",
+      "param": ""
+    },
+    {
+      "id": "tbSplit1",
+      "caption": "",
+      "visible": "true",
+      "disabled": "true",
+      "style": "split",
+      "order": 8,
+      "parent": "",
+      "param": ""
+    },
+    {
+      "id": "tbModify",
+      "caption": "修改",
+      "visible": "true",
+      "disabled": "false",
+      "style": "menu",
+      "order": 20,
+      "parent": "",
+      "opcode": "modify",
+      "param": ""
+    },
+    {
+      "id": "tbDelete",
+      "caption": "删除",
+      "visible": "true",
+      "disabled": "false",
+      "style": "menu",
+      "order": 22,
+      "parent": "",
+      "opcode": "delete",
+      "param": ""
+    }
+  ],
+  "billmenu": [
+    {
+      "id": "tbDraft",
+      "caption": "暂存",
+      "visible": "true",
+      "disabled": "false",
+      "style": "button",
+      "order": 16,
+      "parent": "",
+      "opcode": "draft",
+      "param": ""
+    },
+    {
+      "id": "tbSave",
+      "caption": "保存",
+      "visible": "true",
+      "disabled": "false",
+      "style": "button",
+      "order": 17,
+      "parent": "",
+      "opcode": "save",
+      "param": ""
+    }
+  ]
+}

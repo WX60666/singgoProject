@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body id="bas_task" basemodel="bd_basetmpl" el="1" cn="计划任务">
+    <div id="FBillHead" el="51" pk="FId" tn="t_bas_task" pn="FBillHead" cn="计划任务基本信息"> 
+        <input type="text" id="FCategory"  el="106" ek="FBillHead" fn="FCategory" pn="FCategory" cn="分类名称"  desc="如 订单同步、到期提醒" />
+        <input type="datetime" id="FModifyDate" el="121" ek="FBillHead" fn="FModifyDate" pn="FModifyDate" cn="修改日期" />
+        <input type="datetime" id="FLastRunDate" el="121" ek="FBillHead" fn="FLastRunDate" pn="FLastRunDate" cn="上一次执行时间" />
+        <input type="datetime" id="FLastEndDate" el="121" ek="FBillHead" fn="FLastEndDate" pn="FLastEndDate" cn="上一次结束执行时间" />
+        <input type="datetime" id="FLastErrDate" el="121" ek="FBillHead" fn="FLastErrDate" pn="FLastErrDate" cn="上一次执行出错时间" />
+
+        <input type="text" id="FErrorCount" el="101" ek="FBillHead" fn="FErrorCount" pn="FErrorCount" cn="出错次数" />     
+         
+        <input type="text" id="FSuccessCount" el="101" ek="FBillHead" fn="FSuccessCount" pn="FSuccessCount" cn="成功运行次数" />
+
+        <select id="factive" el="122" refId="bd_enum" dfld="fenumitem" cg="任务的启用状态" ek="fbillhead" fn="factive" pn="factive" cn="启用状态" visible="-1">
+
+        <select id="FRunStatus" el="122" refId="bd_enum" dfld="fenumitem" cg="任务的启用状态" ek="fbillhead" fn="FRunStatus" pn="FRunStatus" cn="当前执行状态" visible="-1">
+ 
+        <input type="text" id="FExePlan" el="106" ek="FBillHead" fn="FExePlan" pn="FExePlan" cn="执行频率cron表达式" desc="执行频率cron表达式" />
+
+        <input type="text" id="FClassNamespace" el="106" ek="FBillHead" fn="FClassNamespace" pn="FClassNamespace" cn="入口执行函数" desc="入口执行函数" />
+ 
+        <table id="FEntity" el="52" pk="FEntryId" tn="t_bas_taskparam" pn="FEntity" cn="参数信息">
+            <tr>
+                <th ek="FEntity" el="100" id="FKey" fn="FKey" pn="FKey" cn="描述">参数项</th>
+
+                <th ek="FEntity" el="100" id="FValue" fn="FValue" pn="FValue" len="500" cn="条件">参数值</th>
+                         
+            </tr>
+        </table>
+
+
+</div>
+
+
+</body>
+</html>

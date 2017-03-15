@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body id="ydj_otherstockout" basemodel="bd_basetmpl" el="1" cn="其它出库单">
+    <div id="FBillHead" el="51" pk="fid" tn="T_Ydj_Otherstockout" pn="FBillHead" cn="其它出库单"> 
+        <!--基本信息-->
+        <input type="Text" id="fstockoutnumber" el="108" ek="FBillHead" fn="fstockoutnumber" ts="" visible="-1" cn="出库单号" />
+        <input type="datetime" id="fstockoutdate" el="113" ek="FBillHead" fn="fstockoutdate" ts="" cn="出库日期" visible="-1" />
+        <input type="text" id="fdescription" el="100" ek="FBillHead" fn="fdescription" ts="" cn="备注" visible="-1" />
+
+        <!--记录-->
+        <input type="text" id="frecord" el="100" ek="FBillHead" fn="frecord" ts="" cn="备注" visible="-1" />
+
+        <!--出库单-->
+        <table id="fstockoutentry" el="52" pk="fentryid" tn="t_ydj_stockout" pn="fstockoutentry" cn="入库单">
+            <tr>
+                <th id="fmaterial_img" el="111" ek="fstockoutentry" fn="fmaterial_img" ts="" cn="商品图片" visible="-1"></th>
+                <th type="Text" id="fmaterial_number" el="108" ek="fstockoutentry" fn="fmaterial_number" ts="" cn="商品编码" visible="-1"></th>
+                <th id="fproductid" el="100" ek="fstockoutentry" fn="fproductid" ts="" cn="商品名称" visible="-1"  refid="ydj_product"></th>
+                <th id="fnorms" el="117" ek="fstockoutentry" fn="fnorms" ts="" cn="规格" refid="" cg="规格" visible="-1" refid="ydj_norms"></th>
+                <th id="fmaterial" el="117" ek="fstockoutentry" fn="fmaterial" ts="" cn="规格" refid="" cg="材质" visible="-1" refid="ydj_material"></th>
+                <th id="fcolor" el="117" ek="fstockoutentry" fn="fcolor" ts="" cn="颜色" refid="" cg="颜色" visible="-1" refid="ydj_color"></th>
+                <th id="foutstore" el="100" ek="fstockoutentry" fn="foutstore" ts="" cn="调出仓库" visible="-1"></th>
+                <th id="fstoredamount" el="103" ek="fstockoutentry" fn="fstoredamount" ts="" cn="库存数量" visible="-1"></th>
+                <th id="fstockoutamount" el="103" ek="fstockoutentry" fn="fstockoutamount" ts="" cn="出库数量" visible="-1"></th>
+                <th id="fdescription" el="100" ek="fstockoutentry" fn="fdescription" ts="" cn="备注" visible="-1"></th>
+            </tr>
+        </table>
+    </div>
+	
+</body>
+</html>

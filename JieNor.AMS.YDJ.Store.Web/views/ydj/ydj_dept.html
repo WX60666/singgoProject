@@ -1,0 +1,51 @@
+﻿<!--页面菜单列表-->
+<div class="page-menu-list">
+</div>
+<form action="javascript:;" class="form-horizontal">
+    <div class="portlet box yellow-casablanca">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-user"></i>部门
+            </div>
+            <div class="tools">
+                <a href="javascript:;" class="collapse"></a>
+            </div>
+        </div>
+        <div class="portlet-body form">
+            <div class="form-body">
+                <!--验证提示信息-->
+                <div class="alert alert-danger display-hide">
+                    <button class="close" data-close="alert"></button>
+                    页面中有一些带红色星号 * 的信息是必填项，请检查是否都有正确录入！
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">编码<span class="required">*</span></label>
+                    <div class="col-md-3 cols">
+                        <div class="input-icon right">
+                            <input type="text" class="form-control" name="fnumber"
+                                   placeholder="编码" required="required">
+                        </div>
+                    </div>
+                    <label class="col-md-2 control-label">名称<span class="required">*</span></label>
+                    <div class="col-md-3 cols">
+                        <div class="input-icon right">
+                            <input type="text" class="form-control" name="fname"
+                                   placeholder="名称" required="required">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">是否门店</label>
+                    <div class="col-md-7">
+                        <div class="checkbox-list">
+                            <label class="checkbox-inline">
+                                <input type="checkbox" name="fistore"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</form>

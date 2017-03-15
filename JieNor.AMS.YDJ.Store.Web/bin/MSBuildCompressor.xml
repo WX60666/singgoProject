@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Project xmlns="http://schemas.microsoft.com/developer/MsBuild/2003">
+  <UsingTask TaskName="CompressorTask" AssemblyFile="Yahoo.Yui.Compressor.dll" />
+  <PropertyGroup>
+    <CssOutputFile Condition=" '$(CssOutputFile)'=='' ">
+      css/jquery.yi.min.css
+    </CssOutputFile>
+    <JavaScriptOutputFile Condition=" '$(JavaScriptOutputFile)'=='' ">
+      js/jquery.yi.min.js
+    </JavaScriptOutputFile>
+  </PropertyGroup>
+  <Target Name="MyTaskTarget">
+    <ItemGroup>
+      <!-- 页面全局样式 -->
+      <CssFiles Include="../fw/include/family/css/family.css"/>
+      <CssFiles Include="../fw/include/font-awesome/css/font-awesome.css"/>
+      <CssFiles Include="../fw/include/simple-line-icons/css/simple-line-icons.css"/>
+      <CssFiles Include="../fw/include/bootstrap/css/bootstrap.css"/>
+      <CssFiles Include="../fw/include/uniform/css/uniform.default.css"/>
+      <!-- 插件样式 -->
+      <CssFiles Include="../fw/include/bootstrap-datepicker/css/bootstrap-datepicker3.css"/>
+      <CssFiles Include="../fw/include/select2/css/select2.css"/>
+      <CssFiles Include="../fw/include/bootstrap-tabdrop/css/tabdrop.css"/>
+      <!-- 主题样式 -->
+      <CssFiles Include="../fw/include/global/css/components.css"/>
+      <CssFiles Include="../fw/include/global/css/plugins.css"/>
+      <!--<CssFiles Include="../fw/include/admin/layout3/css/layout.css"/>
+      <CssFiles Include="../fw/include/admin/layout3/css/themes/yellow-orange.css"/>
+      <CssFiles Include="../fw/include/admin/layout3/css/custom.css"/>-->
+      
+      <!--必须按照顺序来-->
+      <!--1.JQuery-->
+      <JavaScriptFiles Include="../fw/include/jquery/jquery-1.11.3.min.js"/>
+      <!--2.监控元素大小的插件-->
+      <JavaScriptFiles Include="../fw/include/other/jquery.resize.js"/>
+      <!--2.公用代码-->
+      <JavaScriptFiles Include="../fw/js/yi/jquery.yi.common.js"/>
+      <!--2.处理前端url参数-->
+      <JavaScriptFiles Include="../fw/include/other/jquery.query.js"/>
+ 
+      <!--自定义的js，也需要按照顺序来-->
+      <JavaScriptFiles Include="../fw/include/other/jquery-migrate.min.js"/>
+      <JavaScriptFiles Include="../fw/include/other/jquery.cookie.js"/>
+      <JavaScriptFiles Include="../fw/include/other/jquery.json-2.3.min.js"/>
+      <!--JQuery-UI-->
+      <JavaScriptFiles Include="../fw/include/jquery-ui/jquery-ui.min.js"/>
+      <!--Bootstrap-->
+      <JavaScriptFiles Include="../fw/include/bootstrap/js/bootstrap.js"/>
+      <JavaScriptFiles Include="../fw/include/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"/>
+      <!--滚动插件-->
+      <JavaScriptFiles Include="../fw/include/jquery-slimscroll/jquery.slimscroll.min.js"/>
+      <!---->
+      <JavaScriptFiles Include="../fw/include/other/jquery.blockui.min.js"/>
+      <!---->
+      <JavaScriptFiles Include="../fw/include/uniform/jquery.uniform.min.js"/>
+      <!---->
+      <JavaScriptFiles Include="../fw/include/other/jquery.sparkline.min.js"/>
+      <!--日期插件-->
+      <JavaScriptFiles Include="../fw/include/bootstrap-datepicker/js/bootstrap-datepicker.min.js"/>
+      <JavaScriptFiles Include="../fw/include/bootstrap-datepicker/locale/bootstrap-datepicker.zh-CN.min.js"/>
+      <!--表单验证插件-->
+      <JavaScriptFiles Include="../fw/include/jquery-validation/jquery.validate.min.js"/>
+      <JavaScriptFiles Include="../fw/include/jquery-validation/locale/messages_zh.min.js"/>
+      <!--下拉框插件-->
+      <JavaScriptFiles Include="../fw/include/select2/js/select2.min.js"/>
+      <JavaScriptFiles Include="../fw/include/select2/locale/select2_locale_zh-CN.js"/>
+      <!--Tab下拉菜单插件-->
+      <JavaScriptFiles Include="../fw/include/bootstrap-tabdrop/js/bootstrap-tabdrop.js"/>
+      <!--BootBox对话框插件-->
+      <JavaScriptFiles Include="../fw/include/global/scripts/bootbox.min.js"/>
+      <!--Metronic-->
+      <JavaScriptFiles Include="../fw/include/global/scripts/metronic.js"/>
+      <!--页面布局-->
+      <JavaScriptFiles Include="../fw/include/admin/layout3/scripts/layout.js"/>
+      <!--易家居扩展-->
+      <JavaScriptFiles Include="../fw/js/yi/jquery.yi.cachescript.js"/>
+      <JavaScriptFiles Include="../fw/js/yi/jquery.yi.ajax.js"/>
+      <JavaScriptFiles Include="../fw/js/yi/jquery.yi.dialog.js"/>
+      <JavaScriptFiles Include="../fw/js/yi/jquery.yi.extend.js"/>
+      <JavaScriptFiles Include="../fw/js/yi/jquery.yi.math.js"/>
+    </ItemGroup>
+    <CompressorTask
+      CssFiles="@(CssFiles)"
+      DeleteCssFiles="false"
+      CssOutputFile="$(CssOutputFile)"      
+      CssCompressionType="YuiStockCompression"
+      JavaScriptFiles="@(JavaScriptFiles)"
+      ObfuscateJavaScript="True"
+      PreserveAllSemicolons="False"
+      DisableOptimizations="Nope"
+      EncodingType="utf-8"
+      DeleteJavaScriptFiles="false"
+      LineBreakPosition="-1"
+      JavaScriptOutputFile="$(JavaScriptOutputFile)"
+      LoggingType="ALittleBit"
+      ThreadCulture="en-au"
+      IsEvalIgnored="false" />
+  </Target>
+</Project>

@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body id="ydj_purchasereturn" basemodel="bd_basetmpl" el="1" cn="采购退货单">
+    <div id="FBillHead" el="51" pk="fid" tn="T_Ydj_Purchasereturn" pn="FBillHead" cn="采购退货单">   
+    	<!--基本信息-->
+        <input type="Text" id="freturnnum" el="108" ek="FBillHead" fn="freturnnum" ts="" visible="-1" cn="退货单号" />
+        <input type="datetime" id="freturndate" el="113" ek="FBillHead" fn="freturndate" ts="" cn="退货日期" visible="-1" defval="@currentshortdate"/>
+        <input type="text" id="fsupplier" el="106" ek="FBillHead" fn="fsupplier"  ts="" visible="-1" cn="供应商" refid="ydj_supplier"/>
+        <input type="text" id="fdescription" el="100" ek="FBillHead" fn="fdescription" ts="" cn="备注" visible="-1" />
+		
+		<!--记录-->
+        <input type="text" id="frecord" el="100" ek="FBillHead" fn="frecord" ts="" cn="记录" visible="-1" />
+		
+		<!--财务信息-->
+        <input type="text" id="fdueamount" el="105" ek="FBillHead" fn="fdueamount" ts="" visible="-1" cn="应退金额" />
+        <input type="text" id="frefamount" el="105" ek="FBillHead" fn="frefamount" ts="" visible="-1" cn="实退金额" />
+		
+        
+    </div>
+    <!--退货单（明细）-->
+    <table id="fpurchasereturnentry" el="52" pk="fentryid" tn="t_ydj_purchasereturnItem" pn="fpurchasereturnentry" cn="退货单">
+        <tr>
+            <th type="text" id="fbillno" el="108" ek="fpurchasereturnentry" fn="fbillno" ts="" cn="订单编号" visible="-1"></th>
+            <th id="forderdate" el="113" ek="fpurchasereturnentry" fn="forderdate" ts="" cn="订单日期" visible="-1"></th>
+            <th type="text" id="fsuitid" el="108" ek="fpurchasereturnentry" fn="fsuitid" ts="" cn="套件编码" visible="-1" refid="ydj_suit"></th>
+            <th id="fimage" el="111" ek="fpurchasereturnentry" fn="fimage" ts="" cn="商品图片" visible="-1"></th>
+            <th type="text" id="fnumber" el="108" ek="fpurchasereturnentry" fn="fnumber" ts="" cn="商品编码" visible="-1"></th>
+            <th id="fproductid" el="100" ek="fpurchasereturnentry" fn="fproductid" ts="" cn="商品名称" visible="-1" refid="ydj_product"></th>
+            <th id="fnorms" el="117" ek="fpurchasereturnentry" fn="fnorms" ts="" cn="规格"  cg="规格" visible="-1" refid="ydj_norms"></th>
+            <th id="fmaterial" el="117" ek="fpurchasereturnentry" fn="fmaterial" ts="" cn="规格"cg="材质" visible="-1" refid="ydj_material"></th>
+            <th id="fcolor" el="117" ek="fpurchasereturnentry" fn="fcolor" ts="" cn="颜色" cg="颜色" visible="-1" refid="ydj_color"></th>
+            <th id="ffreegifts" el="116" ek="fpurchasereturnentry" fn="ffreegifts" ts="" cn="赠品" visible="-1"></th>
+            <th id="fpurchaseprice" el="105" ek="fpurchasereturnentry" fn="fpurchaseprice" ts="" cn="采购单价" visible="-1"></th>
+            <th id="freturnableqty" el="103" ek="fpurchasereturnentry" fn="freturnableqty" ts="" cn="可退数量" visible="-1"></th>
+            <th id="freturnqty" el="103" ek="fpurchasereturnentry" fn="freturnqty" ts="" cn="退货数量" visible="-1"></th>
+            <th id="fstoredqty" el="103" ek="fpurchasereturnentry" fn="fstoredqty" ts="" cn="库存数量" visible="-1"></th>
+            <th id="freturnamount" el="105" ek="fpurchasereturnentry" fn="freturnamount" ts="" cn="退货金额" visible="-1"></th>
+            <th id="fdeliverydate" el="112" ek="fpurchasereturnentry" fn="fdeliverydate" ts="" cn="客户交期" visible="-1"></th>
+            <th id="farrivaldate" el="112" ek="fpurchasereturnentry" fn="farrivaldate" ts="" cn="到货日期" visible="-1"></th>
+            <th id="fdescription" el="100" ek="fpurchasereturnentry" fn="fdescription" ts="" cn="备注" visible="-1"></th>
+        </tr>
+    </table>
+</body>
+</html>
+

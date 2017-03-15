@@ -1,0 +1,257 @@
+{
+  //表示当前模型是用户列表模型
+  "formId": "sec_user",
+  //定义列表上的字段模型
+  "listModel": [
+    {
+      "id": "fnumber",
+      "caption": "用户代码",
+      "visible": true,
+      "listTabIndex": 1,
+      "allowFilter": true,
+      "allowGroup": false,
+      "allowSort": true,
+      //聚合方式：0--无，1--合计，2--最大，3--最小，4--平均
+      "aggregateStyle": 0,
+      "operators": [
+        {
+          "symbol": "=",
+          "caption": "等于",
+          "isCustom": false //表示此条件符号是否是自定义
+        },
+        {
+          "symbol": ">",
+          "caption": "大于",
+          "isCustom": false //表示此条件符号是否是自定义
+        },
+        {
+          "symbol": ">=",
+          "caption": "大于等于",
+          "isCustom": false //表示此条件符号是否是自定义
+        },
+        {
+          "symbol": "<",
+          "caption": "小于",
+          "isCustom": false //表示此条件符号是否是自定义
+        },
+        {
+          "symbol": "<=",
+          "caption": "小于等于",
+          "isCustom": false //表示此条件符号是否是自定义
+        }
+      ]
+    },
+    {
+      "id": "fname",
+      "caption": "用户名称",
+      "visible": true,
+      "listTabIndex": 2,
+      "allowFilter": true,
+      "allowGroup": false,
+      "allowSort": true,
+      //聚合方式：0--无，1--合计，2--最大，3--最小，4--平均
+      "aggregateStyle": 0,
+      "operators": [
+        {
+          "symbol": "=",
+          "caption": "等于",
+          "isCustom": false //表示此条件符号是否是自定义
+        },
+        {
+          "symbol": ">",
+          "caption": "大于",
+          "isCustom": false //表示此条件符号是否是自定义
+        },
+        {
+          "symbol": ">=",
+          "caption": "大于等于",
+          "isCustom": false //表示此条件符号是否是自定义
+        },
+        {
+          "symbol": "<",
+          "caption": "小于",
+          "isCustom": false //表示此条件符号是否是自定义
+        },
+        {
+          "symbol": "<=",
+          "caption": "小于等于",
+          "isCustom": false //表示此条件符号是否是自定义
+        }
+      ]
+    },
+    {
+      "id": "fdeptId.fname",
+      "caption": "部门",
+      "visible": true,
+      "listTabIndex": 3,
+      "allowFilter": true,
+      "allowGroup": false,
+      "allowSort": true,
+      //聚合方式：0--无，1--合计，2--最大，3--最小，4--平均
+      "aggregateStyle": 0,
+      "operators": [
+        {
+          "symbol": "like",
+          "caption": "包含",
+          "isCustom": false //表示此条件符号是否是自定义
+        },
+        {
+          "symbol": "l-like",
+          "caption": "左包含",
+          "isCustom": false //表示此条件符号是否是自定义
+        },
+        {
+          "symbol": "r-like",
+          "caption": "右包含",
+          "isCustom": false //表示此条件符号是否是自定义
+        },
+        {
+          "symbol": "mydept",
+          "caption": "我的部门",
+          "isCustom": true //表示是自定义函数
+        }
+      ]
+    }
+  ],
+  "listMenu": [
+    {
+      "id": "tbNew",
+      "caption": "新增",
+      "visible": "true",
+      "disabled": "false",
+      "style": "menugroup",
+      "order": 10,
+      "parent": ""
+    },
+    {
+      "id": "tbCopy",
+      "caption": "复制",
+      "visible": "true",
+      "disabled": "false",
+      "style": "menu",
+      "order": 15,
+      "parent": "tbNew"
+    },
+    {
+      "id": "tbSplit2",
+      "caption": "",
+      "visible": "true",
+      "disabled": "true",
+      "style": "split",
+      "order": 25,
+      "parent": ""
+    },
+    {
+      "id": "tbSubmit",
+      "caption": "提交",
+      "visible": "true",
+      "disabled": "false",
+      "style": "menugroup",
+      "order": 30,
+      "parent": ""
+    },
+    {
+      "id": "tbUnsubmit",
+      "caption": "撤销",
+      "visible": "true",
+      "disabled": "false",
+      "style": "menu",
+      "order": 35,
+      "parent": "tbSubmit"
+    },
+    {
+      "id": "tbAudit",
+      "caption": "审核",
+      "visible": "true",
+      "disabled": "false",
+      "style": "menugroup",
+      "order": 40,
+      "parent": ""
+    },
+    {
+      "id": "tbUnaudit",
+      "caption": "反审核",
+      "visible": "true",
+      "disabled": "false",
+      "style": "menu",
+      "order": 45,
+      "parent": "tbAudit"
+    },
+    {
+      "id": "tbSplit3",
+      "caption": "",
+      "visible": "true",
+      "disabled": "true",
+      "style": "split",
+      "order": 50,
+      "parent": ""
+    },
+    {
+      "id": "tbBizOperList",
+      "caption": "业务操作",
+      "visible": "true",
+      "disabled": "false",
+      "style": "menugroup",
+      "order": 55,
+      "parent": "tbAudit"
+    },
+    {
+      "id": "tbPrint",
+      "caption": "打印",
+      "visible": "true",
+      "disabled": "false",
+      "style": "menugroup",
+      "order": 60,
+      "parent": ""
+    },
+    {
+      "id": "tbPrintPreview",
+      "caption": "预览",
+      "visible": "true",
+      "disabled": "false",
+      "style": "menu",
+      "order": 65,
+      "parent": "tbPrint"
+    },
+    {
+      "id": "tbOption",
+      "caption": "选项",
+      "visible": "true",
+      "disabled": "false",
+      "style": "menu",
+      "order": 70,
+      "parent": ""
+    },
+    {
+      "id": "tbClose",
+      "caption": "关闭",
+      "visible": "true",
+      "disabled": "false",
+      "style": "menu",
+      "order": 80,
+      "parent": ""
+    }
+  ],
+  "userProfile": {
+    "aggregateOption": [
+      {
+        "id": "fnumber",
+        "style": 1
+      }
+    ],
+    "layout": [
+      {
+        "id": "fnumber",
+        "lti": "1"
+      },
+      {
+        "id": "fname",
+        "lti": "0"
+      },
+      {
+        "id": "fdeptid",
+        "lti": "2"
+      }
+    ]
+  }
+}

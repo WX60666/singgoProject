@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body id="ydj_vist" basemodel="bd_basetmpl" el="1" cn="回访单">
+    <div id="FBillHead" el="51" pk="fid" tn="t_Ydj_Vist" pn="FBillHead" cn="回访单">
+        <!--基本信息-->
+        <input type="datetime" id="fvistdate" el="113" ek="FBillHead" fn="fvistdate" ts="" cn="回访日期" visible="-1" />
+        <input type="text" id="fvistnum" el="108" ek="FBillHead" fn="fvistnum" ts="" visible="-1" cn="回访单号" />
+        <select id="fvisttype" el="117" ek="FBillHead" fn="fvisttype" ts="" refid="" cg="回访类型" visible="-1" cn="回访类型">
+            <option value="0">售后回访</option>
+            <option value="1">售前回访</option>
+            <option value="2">定期回访</option>
+        </select>
+        <select id="fvistcanal" el="117" ek="FBillHead" fn="fvistcanal" ts="" refid="" cg="回访渠道" visible="-1" cn="回访渠道">
+            <option value="0">电话</option>
+            <option value="1">微信</option>
+            <option value="2">QQ</option>
+            <option value="3">上门</option>
+            <option value="4">短信</option>
+            <option value="5">邮件</option>
+        </select>
+        <input type="text" id="fcustomerid" el="106" ek="FBillHead" fn="fcustomerid" ts="" visible="-1" cn="客户"  refid="ydj_customer"/>
+        <input type="text" id="fcontacts" el="100" ek="FBillHead" fn="fcontacts" ts="" cn="联系人" visible="-1" />
+        <input type="text" id="fphone" el="101" ek="FBillHead" fn="fphone" ts="" cn="联系电话" visible="-1" />
+        <input type="text" id="fdescription" el="100" ek="FBillHead" fn="fdescription" ts="" cn="备注" visible="-1" />
+
+        <!--客户意见及评价-->
+        <input type="text" id="dcustomeropinion" el="100" ek="FBillHead" fn="dcustomeropinion" ts="" cn="客户意见" visible="-1" />
+        <select id="fcustomerscore" el="117" ek="FBillHead" fn="fcustomerscore" ts="" refid="" cg="客户评分"visible="-1" cn="客户评分">
+            <option value=""></option>
+        </select>
+
+    </div>
+
+	
+</body>
+</html>
+

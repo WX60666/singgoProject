@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<title>订单评价</title>
+		<link rel="stylesheet" href="../../../fw/css/ydj/weixin/weui.min.css" />
+		<link rel="stylesheet" href="../../../fw/css/ydj/weixin/evaluation.css"/>
+	</head>
+
+	<body>
+		<div class="page">
+			<div class="weui-cells__title">给订单做个评价吧</div>
+			<div class="weui-cells weui-cells_form">
+				<div class="weui-cell">
+					<div class="weui-cell__hd"><label class="weui-label">总评分</label></div>
+					<div class="weui-cell__bd">
+						<input class="weui-input grading" type="number" placeholder="0-5分之间" />
+					</div>
+				</div>
+			</div>
+			<div class="star_cell">
+				<img src="../../../fw/images/weixin/star1.png" class="single_star"  alt="赞"  />
+				<img src="../../../fw/images/weixin/star1.png" class="single_star"  alt="赞"  />
+				<img src="../../../fw/images/weixin/star1.png" class="single_star"  alt="赞"  />
+				<img src="../../../fw/images/weixin/star1.png" class="single_star"  alt="赞"  />
+				<img src="../../../fw/images/weixin/star1.png" class="single_star"  alt="赞"  />
+			</div>
+			<div class="attitude">
+				非 常 满 意
+			</div>
+			<div class="weui-cells">
+				<div class="weui-cell">
+					<div class="weui-cell__bd">
+						<p>好 评</p>
+					</div>
+					<!--<div class="weui-cell__ft">说明文字</div>-->
+				</div>
+			</div>
+			<div class="tag_group">
+				<a href="javascript:;"  class="weui-btn weui-btn_mini weui-btn_default positive ">产品品质好</a>
+				<a href="javascript:;"  class="weui-btn weui-btn_mini weui-btn_default positive ">上门准时</a>
+				<a href="javascript:;"  class="weui-btn weui-btn_mini weui-btn_default positive ">举止文明</a>
+				<a href="javascript:;"  class="weui-btn weui-btn_mini weui-btn_default positive ">安装技术好</a>
+				<a href="javascript:;"  class="weui-btn weui-btn_mini weui-btn_default positive ">流程规范</a>
+			</div>
+			<div class="weui-cells">
+				<div class="weui-cell">
+					<div class="weui-cell__bd">
+						<p>差 评</p>
+					</div>
+					<!--<div class="weui-cell__ft">说明文字</div>-->
+				</div>
+			</div>
+			<div class="tag_group">
+				<a href="javascript:;"  class="weui-btn weui-btn_mini weui-btn_default negative ">产品品质差</a>
+				<a href="javascript:;"  class="weui-btn weui-btn_mini weui-btn_default negative ">不准时</a>
+				<a href="javascript:;"  class="weui-btn weui-btn_mini weui-btn_default negative ">举止不文明</a>
+				<a href="javascript:;"  class="weui-btn weui-btn_mini weui-btn_default negative ">安装技术差</a>
+				<a href="javascript:;"  class="weui-btn weui-btn_mini weui-btn_default negative ">流程不规范</a>
+			</div>
+			<div class="weui-cells">
+				<div class="weui-cell">
+					<div class="weui-cell__bd">
+						<p>其他意见或者建议</p>
+					</div>
+					<!--<div class="weui-cell__ft">说明文字</div>-->
+				</div>
+			</div>
+			<div class="weui-cells weui-cells_form comments_suggests">
+				<div class="weui-cell">
+					<div class="weui-cell__bd">
+						<textarea class="weui-textarea c_s_aera"  placeholder="请输入您的宝贵意见,字数150以内" rows="3"></textarea>
+						<div class="weui-textarea-counter "><span id="current_count">0</span>/150</div>
+					</div>
+				</div>
+			</div>
+
+			<a href="javascript:;" class="weui-btn weui-btn_primary weui-btn_disabled submit_btn" >提 交</a>
+
+		</div>
+		<script src="../../../fw/js/ydj/weixin/class.js"></script>
+		<script src="../../../fw/js/ydj/weixin/evaluation.js"></script>
+	</body>
+
+</html>

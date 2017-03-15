@@ -1,0 +1,30 @@
+.page {
+	font-family: "微软雅黑";
+}
+
+.order_fields {
+	font-size: 15px;
+	color: #999999;
+}
+
+.order_cell {
+	margin-top: 0;
+}
+
+.detail_cell {
+	margin-top: 0;
+	background-color: rgba(235, 235, 235, 1);
+	border-radius: 2px;
+}
+
+.single_property {
+	padding: 15px;
+	padding-top: 0;
+}
+
+.call_icon {
+	width: 20px;
+	height: 20px;
+	vertical-align: middle;
+	margin-left: 15px;
+}

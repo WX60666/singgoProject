@@ -1,0 +1,706 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JieNor.Framework.IM</name>
+    </assembly>
+    <members>
+        <member name="T:JieNor.Framework.IM.IMServer">
+            <summary>
+            用户的相关操作
+            </summary>
+            <summary>
+            聊天群组的相关操作
+            </summary>
+            <summary>
+            消息发送、接收
+            </summary>
+            <summary>
+            即时通信服务接口
+            1、第一次创建即时通信页面时，自动从redis获取系统用户信息和群组信息，当前用户连接成功后，把当前用户加入系统广播组
+            2、客户端调用 LoginIMServer 接口初始化客户端的当前即时通信页面的用户信息：
+               A、调用 GetIMUserlist 获取系统所有用户信息（监听 onGetIMUserlist 接口获取返回的信息）
+               B、调用 GetIMGrouplist用户所拥有的群组列表（监听 onGetIMGrouplist 接口获取返回的信息）
+               C、调用 GetUnReadMessage 获取用户的未读信息列表（监听 onGetUnReadMessage 接口获取返回的信息）
+            3、客户端发送消息：客户端应调用 SendMessage 接口
+               此时系统会自动检查消息，查看是否有会话群组，没有则自动建会话群组，
+               然后再发送消息（以这种方式统一群聊与单聊，减少客户端相应判断），同时消息会被缓存到redis服务器 。
+            4、客户端调用 GetUnReadMessage 接口，监听 onGetUnReadMessage 接口获取未读消息
+               （注：初始化的时候系统会自动调用这个接口并发回客户端）
+               客户端调用 GetAllMessage 接口，监听 onGetAllMessage 接口获取所有消息
+               客户端接收消息：监听 onGetAllMessage 接口  以接收服务端推送的消息
+            5、退出群聊：      客户端调用服务端的 QuitFromGroup 接口，客户端监听 onQuitFromGroup 接口以获取服务端发送的退出群组消息
+               将某人移出群聊：客户端调用服务端的 RemoveFromGroup 接口，客户端监听 onRemoveFromGroup 接口以获取服务端发送的移出群组消息
+               （系统会自动设置该成员在群组里面的状态）
+            6、加入群聊： 客户端调用服务端 AddToIMGroup 接口 
+                         客户端监听 onAddToIMGroup 接口以获取服务端发送的加入群聊消息
+            7、客户端创建聊天群组，调用server.creatIMGroup，客户端监听接口 onCreatIMGroup 获取新创建的群组
+            8、上线离线：在客户端调用 LoginIMServer 接口初始化客户端的时候，系统自动调用 SetOnlineStatus 接口通知客户端用户已经上线
+               客户端可以通过监听 onSetOnlineStatus 接口，获取服务端的在线状态更新
+            9、消息状态（指已读、未读状态）：客户端调用服务端 SetMessageStatus 接口 设置消息的状态，
+                 客户端可以通过监听 onSetMessageStatus 接口，获取消息的更新状态 
+            10、解散（删除、禁用等）群组： 客户端调用服务端 DissolveIMGroup 接口 设置群组的状态，
+                 客户端可以通过监听 onDissolveIMGroup 接口，获取群组的状态 
+            11、用户禁用（用户被删除或禁用）：客户端调用服务端 IMUserForbit 接口 设置用户的禁用状态
+                通过监听 onIMUserForbit 接口，获取用户的禁用状态
+            12、获取在线用户信息接口：GetOnlineIMUserlist 对应的客户端监听接口 onGetOnlineIMUserlist
+            12、TODO 好友分组、添加好友、消息屏蔽、免打扰等等功能，待实现
+            </summary>
+            <summary>
+            相关Redis操作
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.IM.IMServer.CreatIMUser(System.String,System.String)">
+             <summary>
+             创建聊天用户
+             </summary>
+             <param name="userKey">用户标识，可不传</param>
+            <param name="userName"></param>
+        </member>
+        <member name="M:JieNor.Framework.IM.IMServer.CreatIMAdmin">
+            <summary>
+            创建聊天用户
+            </summary> 
+        </member>
+        <member name="M:JieNor.Framework.IM.IMServer.IMUserForbit(System.String,System.String)">
+            <summary>
+            用户被禁用：正常还是禁用
+            </summary>
+            <param name="userKey"></param>
+            <param name="isActive">true ：正常；false ：禁用</param>
+            <param name="reason"></param>
+        </member>
+        <member name="M:JieNor.Framework.IM.IMServer.GetIMUserlist">
+            <summary>
+             获取所有系统用户信息并推送到客户端
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.IM.IMServer.GetOnlineIMUserlist">
+            <summary>
+             获取在线用户信息并推送到客户端
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.IM.IMServer.SetOnlineStatus(System.Boolean)">
+            <summary>
+            设置在线状态，并通知客户端
+            </summary>
+            <param name="isOnline">true：在线 ；false ：离线</param>
+        </member>
+        <member name="P:JieNor.Framework.IM.IMServer.CurrentUser">
+            <summary>
+            当前用户
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.IM.IMServer.CreatIMGroup(System.String,System.String)">
+            <summary>
+            创建聊天群组
+            </summary>
+            <param name="groupName">群名称</param>
+            <param name="grpUsers">群成员标识（多个用逗号或分号分开）</param>
+        </member>
+        <member name="M:JieNor.Framework.IM.IMServer.CreateSignGroup(System.String,System.String)">
+            <summary>
+            创建单聊会话群（如果群已经存在，则不再创建，直接返回现有的群）
+            </summary>
+            <param name="senderKey"></param>
+            <param name="recUserKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.IM.IMServer.AddToIMGroup(System.String,System.String)">
+            <summary>
+            将某人加入聊天群组
+            </summary>
+            <param name="userKey">用户标识</param>
+            <param name="grpKey">群组标识</param>
+        </member>
+        <member name="M:JieNor.Framework.IM.IMServer.RemoveFromGroup(System.String,System.String)">
+            <summary>
+            将某人移出聊天群组(别人操作)
+            </summary>
+            <param name="beRemoveUserKey">即将被移除的用户key</param>
+            <param name="groupKey">聊天群组Key</param>
+        </member>
+        <member name="M:JieNor.Framework.IM.IMServer.QuitFromGroup(System.String)">
+            <summary>
+            退出聊天群组(自己操作)
+            </summary>
+            <param name="grpKey"></param>
+        </member>
+        <member name="M:JieNor.Framework.IM.IMServer.DissolveIMGroup(System.String,System.String)">
+            <summary>
+            解散聊天群组
+            </summary>
+            <param name="grpKey">群组标识</param>
+            <param name="reason">解散缘由</param>
+        </member>
+        <member name="M:JieNor.Framework.IM.IMServer.GetIMGroupList">
+            <summary>
+             获取当前用户的聊天群组信息并推送到客户端
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.IM.IMServer.SendMessage(System.String)">
+            <summary>
+            发送消息（发送方调用）：依据消息的RecGroupKey 和 RecUserKes 判断
+            1、是否系统广播，如果是则发送系统广播消息
+            2、是否单聊，如果是则创建聊天组，点对点发送消息
+            3、群聊，则直接发送消息 
+            </summary> 
+            <param name="jsonMsgs">消息集合</param>        
+        </member>
+        <member name="M:JieNor.Framework.IM.IMServer.SetMessageId(System.Collections.Generic.IEnumerable{JieNor.Framework.IM.IMMessage})">
+            <summary>
+            生成消息内码
+            </summary>
+            <param name="msgs"></param>
+        </member>
+        <member name="M:JieNor.Framework.IM.IMServer.SetMessageStatus(System.String,System.Boolean)">
+            <summary>
+            设置消息已读状态
+            </summary>
+            <param name="msgId">消息id</param>
+            <param name="read">true ：已读 ，false ：未读</param>
+        </member>
+        <member name="M:JieNor.Framework.IM.IMServer.GetUnReadMessage">
+            <summary>
+            获取当前用户的未读信息，并推送给客户端
+            </summary> 
+        </member>
+        <member name="M:JieNor.Framework.IM.IMServer.GetAllMessage">
+            <summary>
+            获取当前用户的所有信息，并推送给客户端
+            </summary> 
+        </member>
+        <member name="M:JieNor.Framework.IM.IMServer.GetSysBaroadCastMsg">
+            <summary>
+            获取当前用户的系统广播消息
+            </summary> 
+        </member>
+        <member name="M:JieNor.Framework.IM.IMServer.OnConnected">
+            <summary>
+            重写Hub连接事件
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.IM.IMServer.OnDisconnected(System.Boolean)">
+            <summary>
+            重写Hub连接断开的事件
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.IM.IMServer.LoginIMServer(System.String)">
+            <summary>
+            初始化相关的参数
+            </summary>
+            <param name="userKey">当前进行消息接收发送的用户标识</param>
+        </member>
+        <member name="M:JieNor.Framework.IM.IMServer.GetSystemUser">
+            <summary>
+            从redis获取所有系统用户
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.IM.IMServer.GetAllIMGroup">
+            <summary>
+            从redis获取所有聊天群组信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.IM.IMServer.SaveIMGroup(JieNor.Framework.IM.IMGroup)">
+            <summary>
+            保存聊天群组信息
+            </summary>
+            <param name="group"></param>
+        </member>
+        <member name="M:JieNor.Framework.IM.IMServer.GetCurrentUserIMGroup">
+            <summary>
+            获取当前用户的聊天群组信息
+            </summary>
+            <param name="group"></param>
+        </member>
+        <member name="M:JieNor.Framework.IM.IMServer.SaveIMUser(JieNor.Framework.IM.IMUser)">
+            <summary>
+            保存用户信息
+            </summary>
+            <param name="user"></param>
+        </member>
+        <member name="M:JieNor.Framework.IM.IMServer.SaveMessage(System.Collections.Generic.List{JieNor.Framework.IM.IMMessage})">
+            <summary>
+            客户端发送的消息，缓存到服务器
+            </summary>
+            <param name="messages"></param>
+        </member>
+        <member name="M:JieNor.Framework.IM.IMServer.GetUserUnReadMessage(System.String)">
+            <summary>
+            获取当前用户的所有未读消息
+            </summary> 
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.IM.IMServer.GetUserAllMessage(System.String,System.Collections.Generic.List{System.String}@)">
+            <summary>
+            获取当前用户的所有未读消息
+            </summary> 
+            <returns> </returns>
+        </member>
+        <member name="M:JieNor.Framework.IM.IMServer.GetBroadcastMessage">
+            <summary>
+            获取当前用户的系统广播消息
+            </summary> 
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.IM.IMServer.SetRedisMessageStatus(System.String,System.Boolean)">
+            <summary>
+            设置redis中缓存的消息的读取状态
+            </summary> 
+            <param name="msgId"></param>
+            <param name="read"></param>
+        </member>
+        <member name="T:JieNor.Framework.IM.IMContext">
+            <summary>
+            即时通信上下文信息，存储系统用户、聊天群组信息
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.IM.IMContext._redisClientsManager">
+            <summary>
+            redis缓存管理器
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.IM.IMContext.RedisCacheManager">
+            <summary>
+            静态构造函数
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.IM.IMContext.RedisClientEx(System.Int64)">
+            <summary>
+            客户端缓存操作对象
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.IM.IMContext.RedisClient">
+            <summary>
+            redis服务
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.IM.IMContext.SequenceSvc">
+            <summary>
+            获取系列号的服务
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.IM.IMContext.BroadcastGroups">
+            <summary>
+            系统广播群组
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.IM.IMContext.Users">
+            <summary>
+            系统用户集合
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.IM.IMContext.IMGroups">
+            <summary>
+            聊天群组集合
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.IM.IMContext.CurrentUserMaps">
+            <summary>
+            消息发送的用户和connectionid的映射关系
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.IM.IMGroup">
+            <summary>
+            聊天群组信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.IM.IMGroup.CreateDate">
+            <summary>
+            聊天群组创建日期
+            </summary>  
+        </member>
+        <member name="P:JieNor.Framework.IM.IMGroup.OwnerKey">
+            <summary>
+            聊天群组创建人Id（群主）
+            </summary>  
+        </member>
+        <member name="P:JieNor.Framework.IM.IMGroup.GroupKey">
+            <summary>
+            聊天群组标识（全局唯一）
+            </summary>  
+        </member>
+        <member name="P:JieNor.Framework.IM.IMGroup.GroupName">
+            <summary>
+            聊天群组名称
+            </summary>  
+        </member>
+        <member name="P:JieNor.Framework.IM.IMGroup.Users">
+            <summary>
+            群组人员信息（有重复，如退群后又重新加入群，则有3条记录）
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.IM.IMGroup.InGrpUsers">
+            <summary>
+            未被移除出群组的人员信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.IM.IMGroup.RealGrpUsers">
+            <summary>
+            群组的人员信息（包括已被移除出群的成员）
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.IM.IMGroup.IsDissolve">
+            <summary>
+            是否已解散、禁言 ？
+            </summary>  
+        </member>
+        <member name="P:JieNor.Framework.IM.IMGroup.DissolveReason">
+            <summary>
+            解散、禁言缘由
+            </summary>  
+        </member>
+        <member name="T:JieNor.Framework.IM.IMGrpUser">
+            <summary>
+            聊天群组里的用户信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.IM.IMGrpUser.UserKey">
+            <summary>
+            用户Id
+            </summary>  
+        </member>
+        <member name="P:JieNor.Framework.IM.IMGrpUser.JoinTime">
+            <summary>
+            用户加入的时间
+            </summary>  
+        </member>
+        <member name="P:JieNor.Framework.IM.IMGrpUser.IviteUserKey">
+            <summary>
+            邀请人Id
+            </summary>  
+        </member>
+        <member name="P:JieNor.Framework.IM.IMGrpUser.OutTime">
+            <summary>
+            用户退出时间
+            </summary>  
+        </member>
+        <member name="P:JieNor.Framework.IM.IMGrpUser.OutUserKey">
+            <summary>
+            退出操作人Id
+            </summary>  
+        </member>
+        <member name="P:JieNor.Framework.IM.IMGrpUser.IsOnLine">
+            <summary>
+            用户是否在线
+            </summary>  
+        </member>
+        <member name="P:JieNor.Framework.IM.IMGrpUser.IsInGroup">
+            <summary>
+            用户是否还在聊天群组中
+            </summary>  
+        </member>
+        <member name="P:JieNor.Framework.IM.IMGrpUser.Remarks">
+            <summary>
+            操作备注
+            </summary>  
+        </member>
+        <member name="T:JieNor.Framework.IM.IMMessage">
+            <summary>
+            聊天信息
+            </summary>    
+        </member>
+        <member name="P:JieNor.Framework.IM.IMMessage.MsgId">
+            <summary>
+            消息标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.IM.IMMessage.SenderKey">
+            <summary>
+            谁发送的消息
+            </summary>  
+        </member>
+        <member name="P:JieNor.Framework.IM.IMMessage.SendTime">
+            <summary>
+            啥时候发生的消息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.IM.IMMessage.RecGroupKey">
+            <summary>
+            聊天群组标识，方便后续按群组查看聊天纪录
+            如果这个值为空，且 RecUserKes 不为空，则认为给特定的某个人发消息
+            如果这个值为空，且 RecUserKes 为空，则认为系统群发消息（如系统广播），系统自动设置 RecGroupKey 为 SystemBroadcast
+            如果这个值不为空，且 RecUserKes 为空，则认为给群里所有人发消息（客户端不需处理RecUserKes，服务端会自动填充）
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.IM.IMMessage.RecUserKeys">
+            <summary>
+            接收者标识列表
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.IM.IMMessage.AddRecUser(System.String)">
+            <summary>
+            添加接收者标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.IM.IMMessage.SessionType">
+            <summary>
+            会话方式，依据消息的RecGroupKey 和 RecUserKes 判断：
+            RecGroupKey为空，且 RecUserKes 为一个人，则认为给特定的某个人发消息，返回 1 ；
+            RecGroupKey为空，且 RecUserKes 为空，则认为系统群发消息，返回 0 ；
+            RecGroupKey不为空，且 RecUserKes 为空，则认为给群里所有人发消息 ，返回 2 
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.IM.IMMessage.MsgType">
+            <summary>
+            消息类型
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.IM.IMMessage.MsgLevel">
+            <summary>
+            消息级别
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.IM.IMMessage.NeedReply">
+            <summary>
+            消息是否需要应答（如好友申请消息，邀请加入群消息的应用场景）
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.IM.IMMessage.Agreed">
+            <summary>
+            是否已经同意（如好友申请消息，邀请加入群消息的应用场景）
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.IM.IMMessage.AddMessage(JieNor.Framework.IM.IMMessageDetail)">
+            <summary>
+            添加消息体
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.IM.IMMessage.HavRead">
+            <summary>
+            消息是否已读，针对特定用户有效 。
+            注意 ：客户端不要设置这个信息
+                   客户端应该通过接口设置消息的状态  IMServer.SetMessageStatus
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.IM.IMMessageBodyType">
+            <summary>
+            消息体类型
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.IM.IMMessageBodyType.String">
+            <summary>
+            文本类型
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.IM.IMMessageBodyType.Image">
+            <summary>
+            图片类型
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.IM.IMMessageBodyType.Video">
+            <summary>
+            视频文件
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.IM.IMMessageBodyType.Voice">
+            <summary>
+            音频文件
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.IM.IMMessageBodyType.File">
+            <summary>
+            其他类型文件（附件）
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.IM.IMTextMessage">
+            <summary>
+            文本消息
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.IM.IMImageMessage">
+            <summary>
+            音频消息
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.IM.IMFileMessage">
+            <summary>
+            文件（附件）消息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.IM.IMFileMessage.FileName">
+            <summary>
+            文件名
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.IM.IMFileMessage.FileSuffix">
+            <summary>
+            文件后缀
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.IM.IMFileMessage.Url">
+            <summary>
+            文件存放路径
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.IM.IMFileMessage.Size">
+            <summary>
+            文件大小
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.IM.IMVideoMessage">
+            <summary>
+            视频消息
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.IM.IMVoiceMessage">
+            <summary>
+            音频消息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.IM.IMMessageDetail.MsgDetailId">
+            <summary>
+            消息标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.IM.IMMessageDetail.MsgType">
+            <summary>
+            消息类型：文本、图片、文件（附件）
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.IM.IMMessageDetail.Content">
+            <summary>
+            消息内容（TODO 未来要支持图片、视频、文件等等）
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.IM.IMMessageDetail.SetMessageBody(System.Object)">
+            <summary>
+            设置具体的消息内容
+            </summary>
+            <param name="content"></param>
+        </member>
+        <member name="T:JieNor.Framework.IM.IMMessageLevel">
+            <summary>
+            消息级别
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.IM.IMMessageLevel.Normal">
+            <summary>
+            普通级别
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.IM.IMMessageLevel.Emergent">
+            <summary>
+            紧急
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.IM.IMMessageLevel.Important">
+            <summary>
+            重要消息
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.IM.IMMessageLevel.UrgentAndImportance">
+            <summary>
+            紧急且重要的消息
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.IM.IMMessageType">
+            <summary>
+            消息类别
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.IM.IMMessageType.Normal">
+            <summary>
+            普通的聊天消息
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.IM.IMMessageType.Broadcast">
+            <summary>
+            系统广播消息（如系统要重启啦）
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.IM.IMMessageType.WorkFlow">
+            <summary>
+            工作流消息
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.IM.IMMessageType.SysMonitor">
+            <summary>
+            系统监控消息（比如监控系统发送的消息）
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.IM.IMMessageType.Adviert">
+            <summary>
+            系统广告
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.IM.IMUser">
+            <summary>
+            用户信息（参与聊天的人员的信息）
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.IM.IMUser.UserKey">
+            <summary>
+            用户标识（全局唯一）
+            </summary>  
+        </member>
+        <member name="P:JieNor.Framework.IM.IMUser.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.IM.IMUser.NickName">
+            <summary>
+            昵称
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.IM.IMUser.FaceIcoUrl">
+            <summary>
+            头像Url
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.IM.IMUser.CreateDate">
+            <summary>
+            用户创建日期
+            </summary>  
+        </member>
+        <member name="P:JieNor.Framework.IM.IMUser.CreateUserKey">
+            <summary>
+            用户创建人Id 
+            </summary>  
+        </member>
+        <member name="P:JieNor.Framework.IM.IMUser.IsOnline">
+            <summary>
+            是否在线（是否在线，指用户是否打开即时通信页面）
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.IM.IMUser.IsInUseSystem">
+            <summary>
+            是否正在使用系统（预留，应该在用户登录系统时更新）
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.IM.IMUser.Tag">
+            <summary>
+            其他属性
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.IM.IMStartup">
+             <summary>
+             下面列表显示了SignalR选择传输协议的过程：
+            1.如果浏览器是IE8或者更老的版本，使用长轮询；
+            2.如果配置了JSONP（当连接开始的时候设置jsonp参数为true），使用长轮询；
+            3.如果正在创建跨域的连接（如果SignalR终结点不和页面上的地址相同),如果以下条件符合将使用WebSocket：
+            •客户端支持CORS（了解详细情况，请点击这里）
+            •客户端支持WebSocket
+            •服务器端支持WebSocket
+            4。如果JSONP没有被配置并且连接不是跨域的，如果客户端和服务器端都支持WebSocket，将使用WebSocket；
+            5.假如客户端和服务器端都不支持WebSocket，尽量使用事件源；
+            6.如果服务器端不支持事件源，使用持久型框架；
+            7.如果持久型框架也失败，使用长轮询。
+             </summary>
+        </member>
+        <member name="M:JieNor.Framework.IM.IMStartup.ConfigSignalR(Owin.IAppBuilder,Microsoft.AspNet.SignalR.IDependencyResolver)">
+            <summary>
+            配置signalR初始参数
+            </summary>
+            <param name="app"></param>
+            <param name="resolver"></param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,53 @@
+﻿<!--页面菜单列表-->
+<div class="page-menu-list">
+</div>
+<!--页面搜索面板-->
+<div class="page-search-pane">
+    <div class="tab-more">
+        <span class="label label-success">快速过滤</span>
+        <span class="label label-info">方案：</span>
+    </div>
+    <div class="row">
+        <div class="top-form col-md-8">
+            <form role="form" class="clearfix">
+                <div class="col-md-3">
+                    <div class="input-group">
+                        <input type="text" class="form-control input-sm" placeholder="" />
+                        <div class="input-group-btn btn-group-sm">
+                            <button type="button" class="btn yellow dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                <i class="fa fa-angle-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="input-group ">
+                        <input type="text" class="form-control input-sm" />
+                        <div class="input-group-btn btn-group-sm">
+                            <button type="button" class="btn yellow dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                <i class="fa fa-angle-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="input-group ">
+                        <input type="text" class="form-control input-sm" placeholder="请输入搜索内容" />
+                    </div>
+                </div>
+            </form>
+            <a id="moreDrop"><i style="font-size: 18px;" class="fa fa-plus-square"></i></a>
+        </div>
+        <div class="col-md-4 top-func-right">
+            <div class="btn-group pull-right btn-group-sm top-btn-func">
+                <button type="button" id="top-search" class="btn btn-success">搜索</button>
+                <button type="button" id="top-save" class="btn btn-success">保存</button>
+                <button type="button" id="top-reset" class="btn btn-success">重置</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--数据表格-->
+<table id="{0}_list"></table>
+<!--数据表格分页-->
+<div id="{0}_pager"></div>

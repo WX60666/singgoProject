@@ -1,0 +1,634 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JieNor.Framework.DataEntity</name>
+    </assembly>
+    <members>
+        <member name="M:PerfmonUtil.StartMonitor">
+            <summary>
+            开始监控
+            </summary>
+        </member>
+        <member name="M:PerfmonUtil.EndMonitor">
+            <summary>
+            结束监控
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataEntity.MainFw.BizModuleItem">
+            <summary>
+            业务模块对象定义
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.MainFw.BizModuleItem.Id">
+            <summary>
+            标识码
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.MainFw.BizModuleItem.Name">
+            <summary>
+            分组名称
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.MainFw.BizModuleItem.Icon">
+            <summary>
+            图标样式
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.MainFw.BizModuleItem.MenuGroups">
+            <summary>
+            菜单分组
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.MainFw.BizModuleItem.Order">
+            <summary>
+            模块显示顺序
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.DataEntity.MainFw.BizModuleItem.op_Implicit(JieNor.Framework.SuperOrm.DataEntity.DynamicObject)~JieNor.Framework.DataEntity.MainFw.BizModuleItem">
+            <summary>
+            将实体转换成当前对象
+            </summary>
+            <param name="dataEntity"></param>
+        </member>
+        <member name="T:JieNor.Framework.DataEntity.MainFw.MenuEntryItem">
+            <summary>
+            菜单项条目信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.MainFw.MenuEntryItem.Id">
+            <summary>
+            标识码
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.MainFw.MenuEntryItem.Name">
+            <summary>
+            分组名称
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.MainFw.MenuEntryItem.Icon">
+            <summary>
+            图标样式
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.MainFw.MenuEntryItem.Url">
+            <summary>
+            菜单连接
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.MainFw.MenuEntryItem.HelpCode">
+            <summary>
+            助记码
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.MainFw.MenuEntryItem.MenuGroupId">
+            <summary>
+            对应的菜单分组
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.MainFw.MenuEntryItem.Order">
+            <summary>
+            菜单显示顺序
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.MainFw.MenuEntryItem.BillFormId">
+            <summary>
+            表单标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.MainFw.MenuEntryItem.BillCaption">
+            <summary>
+            表单名称
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.MainFw.MenuEntryItem.EnableRAC">
+            <summary>
+            启用权限控制
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.MainFw.MenuEntryItem.DomainType">
+            <summary>
+            领域类别：表示菜单对象是哪个类型（列表，单据，报表，过滤界面，动态表单）？
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.DataEntity.MainFw.MenuEntryItem.op_Implicit(JieNor.Framework.SuperOrm.DataEntity.DynamicObject)~JieNor.Framework.DataEntity.MainFw.MenuEntryItem">
+            <summary>
+            将实体转换成当前对象
+            </summary>
+            <param name="dataEntity"></param>
+        </member>
+        <member name="T:JieNor.Framework.DataEntity.MainFw.MenuGroupItem">
+            <summary>
+            菜单分组信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.MainFw.MenuGroupItem.Id">
+            <summary>
+            标识码
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.MainFw.MenuGroupItem.Name">
+            <summary>
+            分组名称
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.MainFw.MenuGroupItem.Icon">
+            <summary>
+            图标样式
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.MainFw.MenuGroupItem.ModuleId">
+            <summary>
+            对应的业务模块
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.MainFw.MenuGroupItem.Order">
+            <summary>
+            菜单分组显示顺序
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.MainFw.MenuGroupItem.MenuItems">
+            <summary>
+            菜单集合明细
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.DataEntity.MainFw.MenuGroupItem.op_Implicit(JieNor.Framework.SuperOrm.DataEntity.DynamicObject)~JieNor.Framework.DataEntity.MainFw.MenuGroupItem">
+            <summary>
+            将实体转换成当前对象
+            </summary>
+            <param name="dataEntity"></param>
+        </member>
+        <member name="T:JieNor.Framework.DataEntity.MainFw.SysConsoleData">
+            <summary>
+            系统框架数据结构
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.MainFw.SysConsoleData.WorkflowMessages">
+            <summary>
+            流程消息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.MainFw.SysConsoleData.InstantMessages">
+            <summary>
+            即时消息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.MainFw.SysConsoleData.Organizations">
+            <summary>
+            用户关联的所有组织
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.MainFw.SysConsoleData.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.MainFw.SysConsoleData.DisplayName">
+            <summary>
+            用户真名
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.MainFw.SysConsoleData.UserIcon">
+            <summary>
+            用户头像
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataEntity.MSD.ServiceCacheEntry">
+            <summary>
+            菜单项条目信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.MSD.ServiceCacheEntry.Id">
+            <summary>
+            服务标识码
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.MSD.ServiceCacheEntry.Name">
+            <summary>
+            服务名称
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.MSD.ServiceCacheEntry.Desc">
+            <summary>
+            服务描述
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.MSD.ServiceCacheEntry.Url">
+            <summary>
+            服务地址
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.MSD.ServiceCacheEntry.VendorId">
+            <summary>
+            提供商标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.MSD.ServiceCacheEntry.ProductId">
+            <summary>
+            产品标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.MSD.ServiceCacheEntry.AuthCode">
+            <summary>
+            验证码
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.DataEntity.MSD.ServiceCacheEntry.op_Implicit(JieNor.Framework.SuperOrm.DataEntity.DynamicObject)~JieNor.Framework.DataEntity.MSD.ServiceCacheEntry">
+            <summary>
+            将实体转换成当前对象
+            </summary>
+            <param name="dataEntity"></param>
+        </member>
+        <member name="T:JieNor.Framework.DataEntity.NetworkCtrl.NetWorkCtrlMonitorInfo">
+            <summary>
+            操作冲突监控结果信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetWorkCtrlMonitorInfo.Id">
+            <summary>
+            唯一标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetWorkCtrlMonitorInfo.Token">
+            <summary>
+            唯一标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetWorkCtrlMonitorInfo.Number">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetWorkCtrlMonitorInfo.NetCtrlId">
+             <summary>
+            操作冲突对象ID
+             </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetWorkCtrlMonitorInfo.InterID">
+            <summary>
+            业务对象内码
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetWorkCtrlMonitorInfo.ComputerName">
+            <summary>
+            计算机名称
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetWorkCtrlMonitorInfo.IP">
+            <summary>
+            IP
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetWorkCtrlMonitorInfo.OperationDesc">
+            <summary>
+            业务操作
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetWorkCtrlMonitorInfo.StartMenID">
+            <summary>
+            启动人
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetWorkCtrlMonitorInfo.OrgID">
+             <summary>
+            执行组织ID
+             </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetWorkCtrlMonitorInfo.NetCtrlType">
+             <summary>
+            操作冲突类型ID
+             </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetWorkCtrlMonitorInfo.Year">
+             <summary>
+            年度
+             </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetWorkCtrlMonitorInfo.Period">
+            <summary>
+            期间
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetWorkCtrlMonitorInfo.FuncDeatilId">
+             <summary>
+            功能明细ID
+             </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetWorkCtrlMonitorInfo.StartTime">
+             <summary>
+            启动时间
+             </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetWorkCtrlMonitorInfo.CacheId">
+            <summary>
+            缓存id : string.Format ("{0}.{1}",this.NetCtrlId,this.Id)
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataEntity.NetworkCtrl.NetworkCtrlMutexObject">
+            <summary>
+            互斥类监控对象类
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetworkCtrlMutexObject.Id">
+            <summary>
+            唯一标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetworkCtrlMutexObject.NetCtrlId">
+            <summary>
+            操作冲突对象
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetworkCtrlMutexObject.MutexObjId">
+            <summary>
+            互斥对象
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataEntity.NetworkCtrl.NetworkCtrlObject">
+            <summary>
+            监控对象
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetworkCtrlObject.Id">
+            <summary>
+            唯一标识
+            </summary>
+            
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetworkCtrlObject.StartInternal">
+            <summary>
+            启用
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetworkCtrlObject.NetCtrlNumber">
+            <summary>
+            操作冲突代码:如Edit、Submit、Print
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetworkCtrlObject.NetCtrlName">
+            <summary>
+            操作冲突名称
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetworkCtrlObject.LangInfos">
+             <summary>
+            多语言信息
+             </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetworkCtrlObject.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetworkCtrlObject.MetaObjectId">
+            <summary>
+            源对象标识:业务对象,系统标识,模块标识等
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetworkCtrlObject.OperationId">
+            <summary>
+            操作冲突操作ID
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetworkCtrlObject.Type">
+            <summary>
+            操作冲突类型
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetworkCtrlObject.IsDefaultInternal">
+            <summary>
+            系统默认
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataEntity.NetworkCtrl.NetworkCtrlObject_L">
+            <summary>
+            监控对象--多语言
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetworkCtrlObject_L.PKId">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetworkCtrlObject_L.Name">
+            <summary>
+            操作冲突名称
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetworkCtrlObject_L.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataEntity.NetworkCtrl.NetWorkCtrlOrg">
+            <summary>
+            操作的组织信息
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.DataEntity.NetworkCtrl.NetWorkCtrlOrg.op_Implicit(JieNor.Framework.SuperOrm.DataEntity.DynamicObject)~JieNor.Framework.DataEntity.NetworkCtrl.NetWorkCtrlOrg">
+            <summary>支持从DynamicObject隐式转化到NetworkCtrlObject类型</summary>
+            <param name="obj">要隐式转换的动态实体</param>
+            <returns>新构建的NetworkCtrlObject对象</returns>
+        </member>
+        <member name="M:JieNor.Framework.DataEntity.NetworkCtrl.NetWorkCtrlOrg.#ctor(JieNor.Framework.SuperOrm.DataEntity.DynamicObject)">
+            <summary>创建 NetworkCtrlObject 实例</summary>
+            <param name="obj">视图访问类实际操作的动态实体，不能为null</param>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetWorkCtrlOrg.OrgInfo">
+             <summary>
+            组织动态对象
+             </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetWorkCtrlOrg.OrgID">
+            <summary>
+            组织ID
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataEntity.NetworkCtrl.NetworkCtrlResult">
+            <summary>
+            操作冲突监控结果信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetworkCtrlResult.NetCtrlID">
+            <summary>
+            操作冲突GUID
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetworkCtrlResult.TaskID">
+            <summary>
+            操作冲突任务ID
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetworkCtrlResult.StartSuccess">
+            <summary>
+            启动成功标志
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetworkCtrlResult.Message">
+            <summary>
+            提示信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetworkCtrlResult.ConflictUserName">
+            <summary>
+            冲突用户
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetworkCtrlResult.DoRecord">
+            <summary>
+            是否监控记录
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetworkCtrlResult.InterID">
+            <summary>
+            返回业务对象实例ID,用于批量操作信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetworkCtrlResult.NetCtrlName">
+            <summary>
+            操作冲突对象名称
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetworkCtrlResult.ObjectName">
+            <summary>
+            业务对象名称
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetworkCtrlResult.OperationName">
+            <summary>
+            业务操作名称
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetworkCtrlResult.ConflictMonitorInfos">
+            <summary>
+            冲突记录
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataEntity.NetworkCtrl.NetworkCtrlType">
+            <summary>
+            操作冲突类型
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataEntity.NetworkCtrl.NetworkCtrlType.DataCenterMonopolize">
+            <summary>
+            数据中心操作
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataEntity.NetworkCtrl.NetworkCtrlType.TopSystemMonopolize">
+            <summary>
+            领域操作
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataEntity.NetworkCtrl.NetworkCtrlType.SubSystemMonopolize">
+            <summary>
+            子系统操作
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataEntity.NetworkCtrl.NetworkCtrlType.SubSystemMutex">
+            <summary>
+            子系统操作
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataEntity.NetworkCtrl.NetworkCtrlType.DetailsFunMutex">
+            <summary>
+            功能明细操作
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataEntity.NetworkCtrl.NetworkCtrlType.BusinessObjOperateMutex">
+            <summary>
+            具体业务对象操作
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataEntity.NetworkCtrl.NetWorkRunTimeParam">
+            <summary>
+            运行时参数
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetWorkRunTimeParam.OperationDesc">
+            <summary>
+            操作描述
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetWorkRunTimeParam.InterID">
+            <summary>
+            单据内码
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetWorkRunTimeParam.DateCenterName">
+            <summary>
+            数据中心名称
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetWorkRunTimeParam.TopSystemName">
+            <summary>
+            系统名称
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetWorkRunTimeParam.SubSystemName">
+            <summary>
+            子系统名称
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetWorkRunTimeParam.FuncDeatilName">
+            <summary>
+            功能列表名称
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetWorkRunTimeParam.FuncDeatilID">
+            <summary>
+            功能ID
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetWorkRunTimeParam.BillName">
+            <summary>
+            单据名称
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.NetworkCtrl.NetWorkRunTimeParam.OperationName">
+            <summary>
+            操作名称
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataEntity.Office.OfficeContext">
+            <summary>
+            office 文档操作的上下文信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.Office.OfficeContext.BizDatas">
+            <summary>
+            业务数据
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.Office.OfficeContext.Context">
+            <summary>
+            登录的上下文信息
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.DataEntity.Office.OfficeContext.AddBizData(JieNor.Framework.DataEntity.Office.PrintDataGroupInfor)">
+            <summary>
+            业务数据 
+            </summary>
+            <param name="bizData">业务数据：key--formid，value--业务数据 </param> 
+            <returns> 转换上下文信息 </returns>
+        </member>
+        <member name="T:JieNor.Framework.DataEntity.Office.PrintDataInfor">
+            <summary>
+            要打印的业务数据信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.Office.PrintDataInfor.FormId">
+            <summary>
+            模型formid
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataEntity.Office.PrintDataInfor.BizData">
+            <summary>
+            业务数据
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataEntity.Office.PrintDataGroupInfor">
+            <summary>
+            要打印的业务数据包信息：一个 office 模版里面，可能包含多个模型的数据
+            </summary>
+        </member>
+    </members>
+</doc>

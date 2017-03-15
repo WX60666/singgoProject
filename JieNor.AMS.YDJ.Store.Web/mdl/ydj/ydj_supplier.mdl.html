@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body id="ydj_supplier" basemodel="bd_basetmpl" el="1" cn="供应商">
+    <div id="FBillHead" el="51" pk="fid" tn="t_ydj_supplier" pn="FBillHead" cn="供应商信息"> 
+        <select id="Ftype" el="122" ek="fbillhead" fn="Ftype" pn="Ftype" cn="供应商类别" visible="-1">
+        <input type="text" id="Fincharge" el="100" ek="FBillHead" fn="Fincharge" pn="Fincharge" cn="负责人名称" visible="-1" />
+        <input type="text" id="Fcellphone" el="100" ek="FBillHead" fn="Fcellphone" pn="Fcellphone" cn="电话" visible="-1" />
+        
+        <!--省市区三级的模型-->
+        <select el="122" ek="fbillhead" visible="-1" id="fprovince" fn="fprovince" pn="fprovince" cn="省" cg="省" refid="bd_enum" dfld="fenumitem"></select>
+        <select el="122" ek="fbillhead" visible="-1" id="fcity" fn="fcity" pn="fcity" cn="市" cg="市" refid="bd_enum" dfld="fenumitem"></select>
+        <select el="122" ek="fbillhead" visible="-1" id="fregion" fn="fregion" pn="fregion" cn="区" cg="区" refid="bd_enum" dfld="fenumitem"></select>
+        <input type="text" id="Faddress" el="100" ek="FBillHead" fn="Faddress" pn="Faddress" cn="详细地址" visible="-1" />
+        
+    </div>
+
+	
+</body>
+</html>
+

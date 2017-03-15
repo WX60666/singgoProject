@@ -1,0 +1,68 @@
+﻿<!doctype html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body id="ydj_installservice" basemodel="bill_basetmpl" el="1" cn="安装服务单">
+    <div id="fbillhead" el="51" pk="fid" tn="t_ydj_installservice" pn="fbillhead" cn="安装服务单">
+
+        <!--基本信息-->
+        <input type="Text" id="finstallnum" el="108" ek="FBillHead" fn="finstallnum" ts="" visible="-1" cn="安装单号" />
+        <input type="text" id="fcustomerid" el="106" ek="FBillHead" fn="fcustomerid"  ts="" visible="-1" cn="客户"  refid="ydj_customer"/>
+        <input type="text" id="fdescription" el="100" ek="FBillHead" fn="fdescription" ts="" cn="备注" visible="-1" />
+
+        
+		<!--安装方信息-->
+        <select id="finstallitem" el="117" ek="FBillHead" fn="finstallitem" ts="" refid="" cg="安装项目" visible="-1" cn="安装项目">
+            <option value="0">家具类</option>
+            <option value="1">软装类</option>
+            <option value="2">灯具类</option>
+            <option value="3">卫浴类</option>
+        </select>
+        <select id="freleasemode" el="117" ek="FBillHead" fn="freleasemode" ts="" refid="" cg="发布方式" visible="-1" cn="发布方式">
+            <option value="0">手工执行</option>
+            <option value="1">任务执行</option>
+            <option value="2">平台</option>
+            <option value="3">微信公众号</option>
+        </select>
+        <div id="finstallers" el="114" ek="FBillHead" fn="finstallers" ts="" cn="安装方" visible="-1"> </div>
+        <input type="text" id="fmaster" el="106" ek="FBillHead" fn="fmaster" refid="" ts="" visible="-1" cn="师傅" />
+        <input type="text" id="fserviceprovider" el="106" ek="FBillHead" fn="fserviceprovider" refid="" ts="" visible="-1" cn="服务商" />
+		<select id="finstallstatus" el="117" ek="fBillHead" fn="finstallstatus" pn="finstallstatus" ts="" visible="-1" cn="安装状态">
+            <option value="0">未发布</option>
+            <option value="1">进行中</option>
+            <option value="2">完成</option>
+        </select>
+		
+        <!--客户信息-->
+        <input type="text" id="fconsignee" el="100" ek="FBillHead" fn="fconsignee" ts="" cn="收货人" visible="-1" />
+        <input type="text" id="fphone" el="100" ek="FBillHead" fn="fphone" ts="" cn="联系电话" visible="-1" />
+        <input type="text" id="faddress" el="100" ek="FBillHead" fn="faddress" ts="" cn="收货地址" visible="-1" />
+        <select el="122" ek="fbillhead" visible="-1" id="fprovince" fn="fprovince" pn="fprovince" cn="省" cg="省" refid="bd_enum" dfld="fenumitem"></select>
+        <select el="122" ek="fbillhead" visible="-1" id="fcity" fn="fcity" pn="fcity" cn="市" cg="市" refid="bd_enum" dfld="fenumitem"></select>
+        <select el="122" ek="fbillhead" visible="-1" id="fregion" fn="fregion" pn="fregion" cn="区" cg="区" refid="bd_enum" dfld="fenumitem"></select>
+    </div>
+
+    
+
+    <!--安装-->
+    <table id="finstallentry" el="52" pk="fentryid" tn="t_ydj_install" pn="finstallentry" cn="安装">
+        <tr>
+            <th type="Text" id="fordernumber" el="108" ek="finstallentry" fn="fordernumber" ts="" cn="订货单号" visible="-1"></th>
+            <th id="forderdate" el="113" ek="finstallentry" fn="forderdate" ts="" cn="订货日期" visible="-1"></th>
+            <th id="fsuitnumber" el="100" ek="finstallentry" fn="fsuitnumber" ts="" cn="套件编码" visible="-1" refid="ydj_suit"></th>
+            <th id="fmaterialimage" el="111" ek="finstallentry" fn="fmaterialimage" ts="" cn="商品图片" visible="-1"></th>
+            <th type="Text" id="fmaterialnum" el="108" ek="finstallentry" fn="fmaterialnum" ts="" cn="商品编码" visible="-1"></th>
+            <th id="fproductid" el="100" ek="finstallentry" fn="fproductid" ts="" cn="商品名称" visible="-1" refid="ydj_product"></th>
+            <th id="fnorms" el="117" ek="finstallentry" fn="fnorms" ts="" cn="规格" refid="" cg="规格" visible="-1"  refid="ydj_norms"></th>
+            <th id="fmaterial" el="117" ek="finstallentry" fn="fmaterial" ts="" cn="规格" refid="" cg="材质" visible="-1"  refid="ydj_material"></th>
+            <th id="fcolor" el="117" ek="finstallentry" fn="fcolor" ts="" cn="颜色" refid="" cg="颜色" visible="-1" refid="ydj_color"></th>
+            <th id="fcaninstallqty" el="103" ek="finstallentry" fn="fcaninstallqty" ts="" cn="可安装数量" visible="-1"></th>
+            <th id="finstallqty" el="103" ek="finstallentry" fn="finstallqty" ts="" cn="安装数量" visible="-1"></th>
+            <th id="fdeliverydate" el="112" ek="finstallentry" fn="fdeliverydate" ts="" cn="客户交期" visible="-1"></th>
+            <th id="fdescription" el="100" ek="finstallentry" fn="fdescription" ts="" cn="备注" visible="-1"></th>
+        </tr>
+    </table>
+</body>
+</html>

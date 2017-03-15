@@ -1,0 +1,37 @@
+﻿<div class="portlet box yellow-casablanca contentBox">
+    <div class="portlet-title col-md-4">
+        <div class="caption">
+            <i class="fa fa-user"></i>菜单模块
+        </div>
+        <div class="caption enum add">
+            <i class="fa fa-plus"></i>
+        </div>
+        <div class="caption hide_show">
+            	添加一个模块
+        </div>
+    </div>
+    <div class="portlet-title col-md-8">
+        <div class="caption">
+            <i class="fa fa-gift"></i>资料编辑区域
+        </div>
+    </div>
+    <!--下面主体内容-->
+    <div id="contentBox">
+        <div class="portlet-body col-md-4">
+        	<!--加载树形菜单-->
+            <div id="enumZtree" class="ztree enumeditor">
+            	
+			</div>
+        </div>
+        <div class="portlet-body form col-md-8" id="table">
+           <div class="form-body">
+           		<!--显示表格数据-->
+                <table entryid="fenumentry" data-options="allowAdd:true,allowDel:true,allowEdit:true,retainLastRow:false"></table>
+           </div>
+           <div class="form-actions right">
+		        <button type="button" class="btn yellow-casablanca" id="enumForbid">禁用</button>
+		        <button type="submit" class="btn yellow-casablanca" id="enumSubmit">保存</button>
+		    </div>
+        </div>
+    </div>
+</div>

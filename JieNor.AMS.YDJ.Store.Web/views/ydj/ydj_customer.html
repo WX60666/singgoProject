@@ -1,0 +1,554 @@
+﻿<!--页面菜单列表-->
+<div class="page-menu-list">
+</div>
+<!--页面内容面板-->
+<form action="###" class="form-horizontal">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="portlet box yellow-casablanca">
+                <div class="portlet-title">
+                    <div class="caption">基本信息</div>
+                    <div class="tools"><a href="###" class="collapse"></a></div>
+                </div>
+                <div class="portlet-body form">
+                    <div class="form-body">
+                    	<div class="row">
+	                    	<div class="col-md-4">
+		                        <div class="form-group">
+		                            <label class="col-md-3 control-label">编码<span class="required">*</span></label>
+		                            <div class="col-md-8">
+		                                <div class="input-icon right">
+		                                    <input type="text" class="form-control" name="fnumber" required="required" value="编码">
+		                                </div>
+		                            </div>
+		                        </div>
+		                        <div class="form-group">
+		                            <label class="col-md-3 control-label">电话<span class="required">*</span></label>
+		                            <div class="col-md-6">
+		                                <div class="input-icon right">
+		                                    <input type="text" class="form-control" autocomplete="off" required="required"
+		                                           name="fphone" placeholder="自动生成" />
+		                                </div>
+		                            </div>
+		                            <div class="col-md-2">
+		                            	<a href="javascript:;" id="send-message">发短信</a>
+		                            </div>
+		                        </div>
+		                        <div class="form-group">
+		                            <label class="col-md-3 control-label">所属门店<span class="required">*</span></label>
+		                            <div class="col-md-8">
+		                                <div class="input-icon right input-group">
+		                                    <i class="fa"></i>
+		                                    <input type="lookup" class="form-control" autocomplete="off" required
+		                                           name="fdeptid" placeholder="所属门店" />
+		                                </div>
+		                            </div>
+		                        </div>
+		                        <div class="form-group">
+		                            <label class="col-md-3 control-label">负责人<span class="required">*</span></label>
+		                            <div class="col-md-8">
+		                                <div class="input-icon right input-group">
+		                                    <i class="fa"></i>
+		                                    <input type="lookup" class="form-control" autocomplete="off" required
+		                                           name="fdutyid" placeholder="负责人" />
+		                                </div>
+		                            </div>
+		                        </div>
+	                        </div>
+	                        <div class="col-md-4">
+	                        	<div class="form-group">
+		                            <label class="col-md-3 control-label">省，市，区</label>
+		                            <div class="col-md-8">
+		                                <div class="row">
+		                                    <div class="col-md-12">
+		                                        <select class="form-control select2me dynamic mb5" name="fprovince">
+		                                            <option value="">省</option>
+		                                        </select>
+		                                    </div>
+		                                    <div class="col-md-12">
+		                                        <select class="form-control select2me mb5" name="fcity">
+		                                            <option value="">市</option>
+		                                        </select>
+	                                        </div>
+	                                    	<div class="col-md-12">
+		                                        <select class="form-control select2me" name="fregion">
+		                                            <option value="">区</option>
+		                                        </select>
+		                                    </div>
+		                                </div>
+		                            </div>
+		                        </div>
+		                        <div class="form-group">
+		                            <label class="col-md-3 control-label">详细地址</label>
+		                            <div class="col-md-8">
+		                                <textarea class="form-control" autocomplete="off"
+		                                          name="faddress" placeholder="请填写详细的地址" rows="2"></textarea>
+		                            </div>
+		                        </div>
+		                        
+		                        <!--<div class="form-group">
+		                            <label class="col-md-4 control-label">名称<span class="required">*</span></label>
+		                            <div class="col-md-7">
+		                                <div class="input-icon right">
+		                                    <input type="text" class="form-control" name="fname" required="required" placeholder="名称">
+		                                </div>
+		                            </div>
+		                        </div>-->
+	                        </div>
+	                        <div class="col-md-4">
+	                        	<div class="form-group">
+		                            <label class="col-md-3 control-label">客户来源</label>
+		                            <div class="col-md-8">
+		                                <select class="form-control select2me" name="fsource">
+		                                    <option value="">客户来源</option>
+		                                </select>
+		                            </div>
+		                        </div>
+		                        <div class="form-group">
+		                            <label class="col-md-3 control-label">业务状态</label>
+		                            <div class="col-md-8">
+		                            	<select class="form-control select2me dynamic" name="fbstate">
+		                            		<option value="">已报备</option>
+		                            	</select>
+		                                
+		                            </div>
+		                        </div>
+		                        <div class="form-group">
+		                            <label class="col-md-3 control-label">辅助带单人</label>
+		                            <div class="col-md-8">
+		                                <div class="input-icon right input-group">
+		                                    <i class="fa"></i>
+		                                    <input type="lookup" class="form-control" autocomplete="off"
+		                                           name="fassistid" placeholder="辅助带单人" />
+		                                </div>
+		                            </div>
+		                        </div>
+		                        <div class="form-group">
+		                            <label class="col-md-3 control-label">设计师</label>
+		                            <div class="col-md-6">
+		                                <div class="input-icon right input-group">
+		                                    <i class="fa"></i>
+		                                    <input type="lookup" class="form-control" autocomplete="off"
+		                                           name="fstylistid" placeholder="员工基础资料" />
+		                                </div>
+		                            </div>
+		                            <div class="col-md-2">
+		                            	<a href="javascript:;" id="appoint">指定</a>
+		                            </div>
+		                        </div>
+	                        </div>
+	                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="portlet box yellow-casablanca">
+                <div class="portlet-title">
+                    <div class="caption">意向信息</div>
+                    <div class="tools"><a href="###" class="collapse"></a></div>
+                </div>
+                <div class="portlet-body form">
+                    <div class="form-body">
+                    	<div class="row">
+	                    	<div class="col-md-4">
+		                        <div class="form-group">
+		                            <label class="col-md-3 control-label">户型</label>
+		                            <div class="col-md-8">
+		                                <select class="form-control select2me dynamic" name="fhousetype">
+		                                    <option value="">户型</option>
+		                                </select>
+		                            </div>
+		                        </div>
+		                        <div class="form-group">
+		                            <label class="col-md-3 control-label">空间</label>
+		                            <div class="col-md-8">
+		                                <select class="form-control select2me dynamic" name="fspace">
+		                                    <option value="">空间</option>
+		                                </select>
+		                            </div>
+		                        </div>
+		                        <div class="form-group">
+		                            <label class="col-md-3 control-label">材质</label>
+		                            <div class="col-md-8">
+		                                <div class="input-icon right input-group">
+		                                    <i class="fa"></i>
+		                                    <input type="lookup" class="form-control" autocomplete="off"
+		                                           name="fmaterialid" placeholder="材质" />
+		                                </div>
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <div class="col-md-4">
+		                    	<div class="form-group">
+		                            <label class="col-md-3 control-label">风格偏好</label>
+		                            <div class="col-md-8">
+		                                <select class="form-control select2me dynamic" name="fstyle">
+		                                    <option value="">风格偏好辅助资料</option>
+		                                </select>
+		                            </div>
+		                        </div>
+		                        <div class="form-group">
+		                            <label class="col-md-3 control-label">品类</label>
+		                            <div class="col-md-8">
+		                            	<select class="form-control select2me dynamic" name="fcategory">
+		                            		<option value="">品类辅助资料</option>
+		                            	</select>
+		                            </div>
+		                        </div>
+		                        <div class="form-group">
+		                            <label class="col-md-3 control-label">备注</label>
+		                            <div class="col-md-8">
+		                                <div class="input-icon right">
+		                                    <textarea class="form-control" autocomplete="off"
+		                                              name="fpremark" placeholder="备注" rows="2"></textarea>
+		                                </div>
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <div class="col-md-4">
+		                        <div class="form-group">
+		                            <label class="col-md-3 control-label">品牌</label>
+		                            <div class="col-md-8">
+		                                <div class="input-icon right input-group">
+		                                    <i class="fa"></i>
+		                                    <input type="lookup" class="form-control" autocomplete="off"
+		                                           name="fbrandid" placeholder="品牌" maxlength="50" />
+		                                </div>
+		                            </div>
+		                        </div>
+		                        <div class="form-group">
+		                            <label class="col-md-3 control-label">颜色</label>
+		                            <div class="col-md-8">
+		                                <div class="input-icon right input-group">
+		                                    <i class="fa"></i>
+		                                    <input type="lookup" class="form-control" autocomplete="off"
+		                                           name="fcolorid" placeholder="颜色" />
+		                                </div>
+		                            </div>
+		                        </div>
+		                    </div>
+		                </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--<div class="portlet box yellow-casablanca">
+                <div class="portlet-title">
+                    <div class="caption"><i class="fa fa-user"></i>其他信息</div>
+                    <div class="tools"><a href="###" class="collapse"></a></div>
+                </div>
+                <div class="portlet-body form">
+                    <div class="form-body">
+                        
+                        
+                        
+                        
+                    </div>
+                </div>
+            </div>-->
+
+            <div class="portlet box yellow-casablanca">
+                <div class="portlet-title">
+                    <div class="caption">客户详情</div>
+                    <div class="tools"><a href="###" class="collapse"></a></div>
+                </div>
+                <div class="portlet-body form">
+                    <div class="form-body">
+                    	<div class="row">
+                    		<div class="col-md-4">
+		                        <div class="form-group">
+		                            <label class="control-label col-md-3">头像</span>
+									</label>
+									<div class="col-md-8">
+										<div class="uploader-style">
+							                <div class="queueList">
+							                    <div class="placeholder">
+							                        <div id="invitate-bid" class="uploader-file" name="fimage">上传附件</div>
+							                    </div>
+							                </div>
+							            </div>
+									</div>
+		                        </div>
+		                        <div class="form-group">
+		                            <label class="col-md-3 control-label">微信</label>
+		                            <div class="col-md-8">
+		                                <div class="input-icon right">
+		                                    <input type="text" class="form-control" name="fwechat" placeholder="微信">
+		                                </div>
+		                            </div>
+		                        </div>
+		                        <div class="form-group">
+		                            <label class="col-md-3 control-label">电子邮箱</label>
+		                            <div class="col-md-8">
+		                                <div class="input-icon right">
+		                                    <input type="text" class="form-control" name="femail" placeholder="电子邮箱">
+		                                </div>
+		                            </div>
+		                        </div>
+		                    </div>
+		                <div class="col-md-4">
+	                        <div class="form-group">
+	                            <label class="col-md-3 control-label">职业</label>
+	                            <div class="col-md-8">
+	                                <select class="form-control select2me dynamic" name="fjob">
+	                                    <option value="">职业</option>
+	                                </select>
+	                            </div>
+	                        </div>
+	                        <div class="form-group">
+	                            <label class="col-md-3 control-label">生日</label>
+	                            <div class="col-md-8">
+	                                <div class="input-group date date-picker">
+	                                    <input type="text" class="form-control" name="fbirthday" placeholder="生日" />
+	                                    <span class="input-group-addon">
+	                                        <i class="fa fa-calendar"></i>
+	                                    </span>
+	                                </div>
+	                            </div>
+	                        </div>
+	                        <div class="form-group">
+	                            <label class="col-md-3 control-label">经销商</label>
+	                            <div class="col-md-8">
+	                                <div class="checkbox-list">
+	                                    <label class="checkbox-inline">
+	                                        <input type="checkbox" name="fisdealer" id="fdealer"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	                                    </label>
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                    <div class="col-md-4">
+	                        <div class="form-group">
+	                            <label class="col-md-3 control-label">会员等级 </label>
+	                            <div class="col-md-5">
+	                                <div class="input-icon right">
+	                                    <input type="text" class="form-control" name="fmemberlevel"
+	                                           placeholder="会员等级" readonly="readonly" />
+	                                </div>
+	                            </div>
+	                            <div class="col-md-3">
+	                            	<a id="adjustTab" href="javascript:;">调整</a>
+	                            </div>	
+	                        </div>
+	                        <div class="form-group">
+	                            <label class="col-md-3 control-label">标签</label>
+	                            <div class="col-md-8">
+	                                <div class="input-icon right">
+	                                    <textarea class="form-control" autocomplete="off"
+	                                              name="flabel" placeholder="标签" rows="2"></textarea>
+	                                </div>
+	                            </div>
+	                        </div>
+	                        <div class="form-group" id="fdealerlevel" style="display: none;">
+	                            <label class="col-md-3 control-label">经销商级别</label>
+	                            <div class="col-md-8">
+	                                <select class="form-control select2me dynamic" name="fdealerlevel">
+	                                    <option value="">经销商级别</option>
+	                                </select>
+	                            </div>
+	                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<div class="col-md-6">
+            <div class="portlet box yellow-casablanca">
+                <div class="portlet-title">
+                    <div class="caption"><i class="fa fa-user"></i>相关记录</div>
+                    <div class="tools"><a href="###" class="collapse"></a></div>
+                </div>
+                <div class="portlet-body form">
+                    <div class="form-body">
+                    	
+                        <h3 class="form-section">量尺</h3>
+                        <table entryid="fscaleentry" data-options="allowAdd:true,allowDel:true,allowEdit:true"></table>
+                        
+                        <h3 class="form-section">设计</h3>
+                        <table entryid="fdesignentry" data-options="allowAdd:true,allowDel:true,allowEdit:true"></table>
+                        
+                        <h3 class="form-section">合同</h3>
+                        <table border="1" cellspacing="0" cellpadding="0" style="margin: 0 auto;">
+                            <tr align="center">
+                                <td height="30px">签单日期</td>
+                                <td>合同金额</td>
+                                <td>汇款金额</td>
+                                <td>导购员</td>
+                                <td>合同状态</td>
+                            </tr>
+                            <tr align="center">
+                                <td height="30px">2016/11/16</td>
+                                <td>13000</td>
+                                <td>3000</td>
+                                <td>李红</td>
+                                <td>执行中</td>
+                            </tr>
+                            <tr align="center">
+                                <td height="30px"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                        <h3 class="form-section">售后</h3>
+                        <table border="1" cellspacing="0" cellpadding="0" style="margin: 0 auto;">
+                            <tr align="center">
+                                <td height="30px">回访日期</td>
+                                <td>回访类型</td>
+                                <td>回访结论</td>
+                                <td>经手人</td>
+                            </tr>
+                            <tr align="center">
+                                <td height="30px">2016/11/16</td>
+                                <td>售后回访</td>
+                                <td>关闭/满意/转售后</td>
+                                <td>李红</td>
+                            </tr>
+                            <tr align="center">
+                                <td height="30px"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                        <h3 class="form-section">回款</h3>
+                        <table border="1" cellspacing="0" cellpadding="0" style="margin: 0 auto;">
+                            <tr align="center">
+                                <td height="30px">回访日期</td>
+                                <td>回访类型</td>
+                                <td>回访结论</td>
+                                <td>经手人</td>
+                            </tr>
+                            <tr align="center">
+                                <td height="30px">2016/11/16</td>
+                                <td>售后回访</td>
+                                <td>关闭/满意/转售后</td>
+                                <td>李红</td>
+                            </tr>
+                            <tr align="center">
+                                <td height="30px"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+			
+			<!--该板块是客户资料保存后才进行显示-->
+            <div class="portlet box yellow-casablanca" style="">
+                <div class="portlet-title">
+                    <div class="caption">会员信息</div>
+                    <div class="tools"><a href="###" class="collapse"></a></div>
+                </div>
+                <div class="portlet-body form">
+                    <div class="form-body">
+                        <!--<div class="form-group">
+	                        <label class="col-md-4 control-label">会员状态</label>
+	                        <div class="col-md-7">
+	                            <div class="checkbox-list">
+	                                <label class="checkbox-inline">
+	                                    <input type="checkbox" name="fvipstate"> 
+	                                </label>
+	                            </div>
+	                        </div>
+	                    </div>-->
+	                	<div class="row">
+	                		<div class="col-md-4">
+			                    <div class="form-group">
+			                        <label class="col-md-3 control-label">会员等级</label>
+			                        <div class="col-md-8">
+			                            <div class="input-icon right input-group">
+			                                <i class="fa"></i>
+			                                <input type="lookup" class="form-control" autocomplete="off"
+			                                       name="fviplevel" placeholder="会员等级基础资料" />
+			                            </div>
+			                        </div>
+			                    </div>
+			                    <div class="form-group">
+			                        <label class="col-md-3 control-label">开通日期</label>
+			                        <div class="col-md-8">
+			                            <div class="input-group date date-picker">
+			                                <input type="text" class="form-control" name="fopentime" placeholder="可输入也可选择" />
+			                                <span class="input-group-addon">
+			                                    <i class="fa fa-calendar"></i>
+			                                </span>
+			                            </div>
+			                        </div>
+			                    </div>
+		                    </div>
+		                    <div class="col-md-4">
+			                    <div class="form-group">
+			                        <label class="col-md-3 control-label">累计积分<span class="required">*</span></label>
+			                        <div class="col-md-5">
+			                            <div class="input-icon right">
+			                                <input type="text" class="form-control" autocomplete="off" required="required"
+			                                       name="ftotalintegral" placeholder="自动生成" />
+			                            </div>
+			                        </div>
+			                        <div class="col-md-3">
+		                            	<a href="javascript:;">积分流水查询</a>
+		                            </div>	
+			                    </div>
+			                    <div class="form-group">
+			                        <label class="col-md-3 control-label">可用积分<span class="required">*</span></label>
+			                        <div class="col-md-5">
+			                            <div class="input-icon right">
+			                                <input type="text" class="form-control" autocomplete="off" required="required"
+			                                       name="fsurpluslintegral" placeholder="自动生成" />
+			                            </div>
+			                        </div>
+			                        <div class="col-md-3">
+		                            	<a href="javascript:;">积分调整</a>
+		                            </div>	
+			                    </div>
+			                </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+            
+			<!--<div class="portlet box yellow-casablanca">
+                <div class="portlet-title">
+                    <div class="caption"><i class="fa fa-user"></i>短信记录</div>
+                    <div class="tools"><a href="###" class="collapse"></a></div>
+                </div>
+                <div class="portlet-body form">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">共发送短信</label>
+                            <div class="col-md-7">
+                                <div class="input-icon right">
+                                    <input type="text" class="form-control" id="availbalance"
+                                           name="" placeholder="n 条" readonly="readonly" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			
+            <div class="portlet box yellow-casablanca">
+                <div class="portlet-title">
+                    <div class="caption"><i class="fa fa-user"></i>定金记录</div>
+                    <div class="tools"><a href="###" class="collapse"></a></div>
+                </div>
+                <div class="portlet-body form">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">可用余额</label>
+                            <div class="col-md-7">
+                                <div class="input-icon right">
+                                    <input type="text" class="form-control" id="availbalance"
+                                           name="" placeholder="可用余额" readonly="readonly" />
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+        </div>
+    </div>
+</form>

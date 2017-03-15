@@ -1,0 +1,17 @@
+﻿{
+  "base": "/mdl/bill.menu.json",
+  "common": [],
+  "listmenu": [],
+  "billmenu": [
+    {
+      "id": "tbGenerateCustomer",
+      "caption": "生成客户",
+      "visible": "true",
+      "disabled": "false",
+      "style": "menu",
+      "order": 100,
+      "parent": "",
+      "opcode": "generateCustomer"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body id="ydj_otherstockin" basemodel="bd_basetmpl" el="1" cn="其它入库单">
+    <div id="FBillHead" el="51" pk="fid" tn="T_Ydj_Otherstockin" pn="FBillHead" cn="其它入库单"> 
+        <!--基本信息-->
+        <input type="Text" id="fstockinnumber" el="108" ek="FBillHead" fn="fstockinnumber" ts="" visible="-1" cn="入库单号" />
+        <input type="datetime" id="fstockindate" el="113" ek="FBillHead" fn="fstockindate" ts="" cn="入库日期" visible="-1" />
+        <input type="text" id="fdescription" el="100" ek="FBillHead" fn="fdescription" ts="" cn="备注" visible="-1" />
+
+        <!--记录-->
+        <input type="text" id="frecord" el="100" ek="FBillHead" fn="frecord" ts="" cn="备注" visible="-1" />
+
+        <!--入库单-->
+        <table id="fstockinentry" el="52" pk="fentryid" tn="t_ydj_stockin" pn="fstockinentry" cn="入库单">
+            <tr>
+                <th id="fmaterial_img" el="111" ek="fstockinentry" fn="fmaterial_img" ts="" cn="商品图片" visible="-1"></th>
+                <th type="Text" id="fmaterial_number" el="108" ek="fstockinentry" fn="fmaterial_number" ts="" cn="商品编码" visible="-1"></th>
+                <th id="fproductid" el="100" ek="fstockinentry" fn="fproductid" ts="" cn="商品名称" visible="-1" refid="ydj_product"></th>
+                <th id="fnorms" el="117" ek="fstockinentry" fn="fnorms" ts="" cn="规格" refid="" cg="规格" visible="-1" refid="ydj_norms"></th>
+                <th id="fmaterial" el="117" ek="fstockinentry" fn="fmaterial" ts="" cn="规格" refid="" cg="材质" visible="-1" refid="ydj_material"></th>
+                <th id="fcolor" el="117" ek="fstockinentry" fn="fcolor" ts="" cn="颜色" refid="" cg="颜色" visible="-1" refid="ydj_color"></th>
+                <th id="foutstore" el="100" ek="fstockinentry" fn="foutstore" ts="" cn="调出仓库" visible="-1"></th>
+                <th id="fstockinamount" el="105" ek="fstockinentry" fn="fstockinamount" ts="" cn="入库数量" visible="-1"></th>
+                <th id="fdescription" el="100" ek="fstockinentry" fn="fdescription" ts="" cn="备注" visible="-1"></th>
+            </tr>
+        </table>
+    </div>
+	
+</body>
+</html>

@@ -1,0 +1,329 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*页面底部文字居中样式*/
+.page-footer .container {
+    text-align: center;
+}
+/** 修改密码样式 **/
+.form-group .i-red{ /*验证错误时图标的颜色*/
+	color:#F3565D;
+}
+.input-icon > i.npwd,.input-icon > i.rnpwd{ /*图标的位置*/
+	position: absolute;
+	left:0px !important;
+	padding-top:2px;
+}
+.form-group .input-red{ /*验证错误时input的边框颜色*/
+	border:1px solid #F3565D;
+}
+.form-group .oldpwd,.form-group .newpwd,.form-group .newrepwd{ /*提示框的字体颜色*/
+	color:#F3565D;
+	padding-left:15px !important;
+}
+/**  资料新建与编辑的样式 **/
+.nav.navbar-nav > li > a{ /*列表项菜单栏字体颜色*/
+	color:#fff;
+	padding:11px 5px;
+}
+.nav.navbar-nav > li > a:hover{ /*列表项菜单栏鼠标经过时的背景颜色*/
+	background-color:rgba(255, 0, 0,0.3);
+}
+.portlet.box.yellow-casablanca>.portlet-title { /*列表项菜单栏背景颜色*/
+	background-color: #f2784b;
+}
+.form-group > .col-md-2.control-label{
+	padding-right:0 ;
+	padding-left: 5px;
+}
+.form-group > .col-md-2.control-label:nth-child(1){
+	padding-left: 0px;
+}
+.form-group > .col-md-3.control-label{
+	padding:7px 5px 0 5px;
+}
+.form-group > span.col-md-3{
+	padding:0 5px;
+}
+.form .form-body .form-group label span{ /*带*号与左边标签的距离*/
+	color:#f00;
+	padding-left:5px;
+}
+.page-content{
+	min-height:60px !important;
+}
+.reg-source{  /*注册来源字体颜色*/
+	color: #C0C6C2;
+}
+/*按钮样式*/
+#enableRAC{
+	width: 50px;
+	height: 20px;
+}
+.portlet.box.yellow-casablanca.contentBox{
+	background-color: #fff;
+	height:auto;
+	overflow: hidden;
+}
+#contentBox{
+	clear: both;
+	height:auto;
+}
+/*树形菜单新增按钮样式*/
+.ztree li span.button.add {
+	margin-left:2px; 
+	margin-right: -1px; 
+	background-position:-144px 0; 
+	vertical-align:top; 
+	*vertical-align:middle;
+}
+/*树形菜单新增按钮样式*/
+#menuZtree li a.level2 span.button.add{
+	display: none;
+}
+/*将重命名图标隐藏*/
+#menuZtree.menueditor li a span.button.edit{
+	display: none;
+}
+/*添加模块按钮*/
+.portlet .portlet-title .caption.editor.add,.portlet .portlet-title .caption.enum.add{
+	float: right;
+	font-size:12px ;
+	margin:0 20px 0 5px; 
+	cursor: pointer;
+}
+/*添加模块文字*/
+.portlet .portlet-title .hide_show{
+	float: right;
+	display: none;
+}
+/*辅助资料编辑的树结点删除按钮样式*/
+#enumZtree span[title='remove']{
+	display: none;
+}
+/*此处为云链的图标样式*/
+a[formid="sys_joincloudchain"]{
+	padding:11px 0 0 !important;
+}
+a[formid="sys_joincloudchain"]:hover{
+	background-color: #fff !important;
+}
+a[formid="sys_joincloudchain"]:visited{
+	background-color: #fff !important;
+}
+a[formid="sys_joincloudchain"] img{
+	height: 25px; 
+	width: 25px;
+	display: inline-block; 
+}
+#cloud a{
+	position: relative;
+}
+/*感叹号的样式*/
+i.fa.fa-exclamation,i.fa.fa-check{
+	display: inline !important;
+	font-size: 10px !important;
+	position: absolute;
+    right: 2px;
+}
+#joincloudIcon+span{
+	width: 19px;
+	height: 18px;
+	position: absolute;
+	left: -10px;
+}
+/*云链令牌等文字的样式*/
+span.control-span{
+	font-size: 14px;
+	padding-top: 7px;
+}
+/*云链页面字段整体下移一段距离*/
+#cloudChainForm{
+	padding-top: 30px !important;
+}
+/*下面是为了模糊查询的表格而改变的样式，为了在数据过多的时候生成滚动条，并且让表头和表体对齐*/
+/*设置下拉表格的高度*/ 
+/*.table-scrollable.bd-select-table table tbody {
+	position: relative;
+    display:block;
+    height:171px;
+    
+}
+.table-scrollable.bd-select-table table thead {
+    width: calc( 100% - 1em )
+}
+.table-scrollable.bd-select-table table thead,.table-scrollable.bd-select-table tbody tr {
+    display:table;
+    width:100%;
+    table-layout:fixed;
+} 
+.table-scrollable.bd-select-table table thead tr th:nth-child(1),.table-scrollable.bd-select-table tbody tr td:nth-child(1){
+	width: 15rem;
+}
+.table-scrollable.bd-select-table tbody td{
+	border: none;
+}
+.table-scrollable.bd-select-table tbody tr td:nth-child(1){
+	border-right:1px solid #ddd;
+}
+.table-scrollable.bd-select-table table tr,.table-scrollable.bd-select-table table tr:last-child{
+    border-bottom:1px solid #ddd;
+}*/
+/*为了算上滚动条的宽度而缩小表头的thead宽度*/
+/*.table-scrollable.bd-select-table table thead{
+	width:100%;
+}
+.table-scrollable.bd-select-table.numList table thead{
+	width:97%;
+}
+.table-scrollable.bd-select-table.numList table tbody {
+	overflow-y:scroll;
+}*/
+/*在没有搜索数据的时候，出现的状态*/
+/*.table-scrollable.bd-select-table span{
+	position: absolute;
+	color: #999;
+    font-size: 15px;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+}*/
+.bd-select-table .clearfix{
+    background:#e5e5e5 none repeat scroll 0 0;
+    height:30px;
+    line-height:30px;
+}
+.bd-select-table .clearfix .form-control{
+    height:30px;
+    padding:3px 5px;
+}
+/*收银单支付方式样式*/
+#cash{
+	background: url(../images/cash.png) no-repeat;
+}
+#bank{
+	background: url(../images/bank.png) no-repeat;
+}
+#alipay{
+	background: url(../images/alipay.png) no-repeat;
+}
+#wechat{
+	background: url(../images/wechat.png) no-repeat;
+}
+#cash,#bank,#alipay,#wechat{
+	height: 70px;
+	border-radius: 5px !important;
+	-moz-border-radius: 5px !important;
+	-moz-border-radius: 5px !important;
+	-webkit-border-radius: 5px !important;
+	background-size: 70px 70px !important;
+}
+.pay-method div span{
+	position: absolute;
+	top: 50px;
+}
+#Fstored,#Fintegration{
+	padding-right: 0px !important;
+}
+#sum{
+	color: red;
+}
+/*左右滑动按钮样式*/
+.switch-type1{
+	width: 48px;
+	height: 24px;
+	background: #E5E5E5;
+	border-radius: 10px !important;
+	border: 1px #fff solid;
+	overflow: hidden;
+	display: inline-block;
+	margin:0 0 -8px 10px;
+}
+.switch-type1 span{
+	width: 24px;
+	height: 24px;
+	display: inline-block !important;
+	background: url(../images/product_switch_1.png) no-repeat;
+	cursor: pointer;
+}
+/*为了不与原来的zTree冲突,把outlook风格的名字改变*/
+#userTree.ztree * {font-size: 10pt;font-family:"Microsoft Yahei",Verdana,Simsun,"Segoe UI Web Light","Segoe UI Light","Segoe UI Web Regular","Segoe UI","Segoe UI Symbol","Helvetica Neue",Arial}
+#userTree.ztree li{list-style: none;}
+#userTree.ztree li ul{ margin:0; padding:0}
+#userTree.ztree li {line-height:30px;}
+#userTree.ztree li a {width:200px;height:30px;padding-top: 0px;}
+#userTree.ztree li a:hover {text-decoration:none; background-color: #E7E7E7;}
+#userTree.ztree li a span.button.switch {visibility:hidden}
+#userTree.ztree.showIcon li a span.button.switch {visibility:visible}
+#userTree.ztree li a.curSelectedNode {background-color:#D4D4D4;border:0;height:30px;}
+#userTree.ztree li a.curSelectedNode span{color:greenyellow;}
+#userTree.ztree li span {line-height:30px;color: #ccc;}
+#userTree.ztree li span.button {margin-top: -7px;}
+#userTree.ztree li span.button.switch {width: 16px;height: 16px;}
+
+#userTree.ztree li a.level0 span {font-size: 150%;font-weight: bold;color: #ccc;}
+#userTree.ztree li span.button {background-image:url("../images/left_menuForOutLook.png"); *background-image:url("./left_menuForOutLook.gif")}
+#userTree.ztree li span.button.switch.level0 {width: 20px; height:20px}
+#userTree.ztree li span.button.switch.level1 {width: 20px; height:20px}
+#userTree.ztree li span.button.noline_open {background-position: 0 0;}
+#userTree.ztree li span.button.noline_close {background-position: -18px 0;color: #ddd;}
+#userTree.ztree li span.button.noline_open.level0 {background-position: 0 -18px;}
+#userTree.ztree li span.button.noline_close.level0 {background-position: -18px -18px;}
+
+/*右边弹出框，因为全局样式把padding设置为10px，导致元素被挤压，所以单独把侧边栏的padding变成0*/
+.page-quick-sidebar-wrapper .tab-content .tab-pane{
+	padding:0;
+}
+/*用户展示元素的样式*/
+#quick_sidebar_tab_1 .page-quick-sidebar-zTree-lists{
+	padding: 10px;
+}
+.page-quick-sidebar-zTree-lists #userTree{
+	
+}
+/*侧边栏导航高度固定,因为在打开页签的时候，导航栏高度会增加20px*/
+.nav.nav-tabs.nav-justified{
+	height: 77px;
+}
+.page-quick-sidebar-chat-user-form .input-group-btn{
+	background-color: #DDDDDD;
+}
+/*添加隐藏后端字段*/
+#storeid {  
+    display:none; 
+}
+
+
+/*调整日期的位置*/
+.datepicker.datepicker-dropdown.dropdown-menu.datepicker-orient-left.datepicker-orient-top{
+	z-index:900 !important;
+}
+
+/*维护应标单和维护竞标信息*/
+#maintainform,#maintainbidinf{
+	width:100px;
+	height:30px;
+	color:#fff;
+	line-height:30px;
+	display:inline-block;
+	border:1px solid #ccc;
+	-moz-border-radius: 8px !important;/* Firefox */
+	-o-border-radius:8px !important;
+	-webkit-border-radiu: 8px !important; /* Safari 和 Chrome */
+	border-radius: 8px !important; /* Opera 10.5+, 以及使用了IE-CSS3的IE浏览器 */
+	text-align:center;
+	margin-bottom:10px;
+	background: #00b7ee;
+	cursor:pointer;
+}
+
+/*添加去定价样式*/
+.sizepricing{
+	height:30px; 
+	width:60px;
+	text-align:center;
+	line-height:30px;
+	background: #00b7ee;
+	cursor:pointer;
+	float:right;
+}

@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <title>易家居 - 用户注册</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/fw/min/css/jquery.yi.min.css">
+    <link rel="stylesheet" href="/fw/min/css/jquery.yi.layout.min.css">
+    <link rel="stylesheet" href="/fw/css/login_register.css" />
+</head>
+<body class="login">
+    <!-- logo -->
+    <div class="logo">
+        <a href="###">易家居</a>
+    </div>
+    <!-- 步骤进度 -->
+    <div class="steps">
+        <ul>
+            <li class="li-active"><i class="i-active">1</i><span>设置用户名</span></li>
+            <li><i>2</i><span>填写账号信息</span></li>
+            <li><i>3</i><span>注册成功</span></li>
+        </ul>
+    </div>
+    <!-- 主体部分 -->
+    <div class="content">
+        <!-- 注册表单——设置电子邮件 -->
+        <form action="javascript:void(0);" class="register-form register-userName" method="post">
+            <h3 class="form-title">设置电子邮件</h3>
+            <div class="alert alert-danger display-hide">
+                <button class="close" data-close="alert"></button>
+                <span></span>
+            </div>
+            <div class="form-group">
+                <!-- ie8 ie9 不支持 html5 占位符，所以我们只显示字段标题 -->
+                <label class="control-label visible-ie8 visible-ie9">电子邮件</label>
+                <div class="input-icon">
+                    <i class="fa fa-envelope"></i>
+                    <input class="form-control placeholder-no-fix" type="text"
+                           autocomplete="off" placeholder="电子邮件" id="txtEm1" name="email" />
+                </div>
+                <div id="emError" class="error-msg"></div>
+            </div>
+            <div class="form-group">
+                <label class="control-label visible-ie8 visible-ie9">密码</label>
+                <div class="input-icon">
+                    <i class="fa fa-lock"></i>
+                    <input class="form-control placeholder-no-fix" type="password"
+                           autocomplete="off" placeholder="密码" id="txtPassword" name="password" />
+                </div>
+                <div id="pwError" class="error-msg"></div>
+            </div>
+            <div class="form-group">
+                <label class="control-label visible-ie8 visible-ie9">确认密码</label>
+                <div class="input-icon">
+                    <i class="fa fa-check"></i>
+                    <input class="form-control placeholder-no-fix" type="password"
+                           autocomplete="off" placeholder="确认密码" id="txtRePassword" name="rePassword" />
+                </div>
+                <div id="repwError" class="error-msg"></div>
+            </div>
+            <div class="form-group">
+                <label class="control-label visible-ie8 visible-ie9">验证码</label>
+                <div class="input-icon code txtCode">
+                    <i class="fa fa-key"></i>
+                    <input class="form-control placeholder-no-fix" type="text" 
+                           autocomplete="off" placeholder="验证码" id="txtCode" name="code" />
+                </div>
+                <span id="code">5946</span><a class="change">换一个</a>
+                <div id="recError" class="error-msg"></div>
+            </div>
+            <div class="form-actions">
+                <label class="checkbox">
+                </label>
+                <button type="submit" class="btn yellow-casablanca pull-right to-email">
+                    下一步 <i class="m-icon-swapright m-icon-white"></i>
+                </button>
+            </div>
+        </form>
+        <!-- 注册表单——电子邮箱验证 -->
+        <form action="javascript:void(0);" class="register-form register-email" method="post">
+            <h3 class="form-title">用户电子邮箱验证</h3>
+            <div class="alert alert-danger display-hide">
+                <button class="close" data-close="alert"></button>
+                <span></span>
+            </div>
+            <div class="form-group">
+                <!-- ie8 ie9 不支持 html5 占位符，所以我们只显示字段标题 -->
+                <div>
+                    电子邮箱已发送<span id="email-number"></span>
+                </div>
+                <div>
+                    请登录邮箱，点击激活链接完成注册，激活链接在24小时内有效。
+                </div>
+            </div>
+        </form>
+        <!-- 注册表单——填写用户信息 -->
+        <form action="javascript:void(0);" class="register-form register-message" method="post">
+            <h3 class="form-title">填写用户信息</h3>
+            <div class="alert alert-danger display-hide">
+                <button class="close" data-close="alert"></button>
+                <span></span>
+            </div>
+            <div class="form-group">
+                <!-- ie8 ie9 不支持 html5 占位符，所以我们只显示字段标题 -->
+                <label class="control-label visible-ie8 visible-ie9">用户名</label>
+                <div class="input-icon">
+                    <i class="fa fa-user"></i>
+                    <input class="form-control placeholder-no-fix" type="text"
+                           autocomplete="off" placeholder="用户名" id="txtUserName" name="userName" />
+                </div>
+                <div id="unError" class="error-msg"></div>
+            </div>
+            <div class="form-group">
+                <!-- ie8 ie9 不支持 html5 占位符，所以我们只显示字段标题 -->
+                <label class="control-label visible-ie8 visible-ie9">联系方式</label>
+                <div class="input-icon">
+                    <i class="fa fa-phone"></i>
+                    <input class="form-control placeholder-no-fix" type="text"
+                           autocomplete="off" placeholder="联系方式" id="txtPhone" name="phone" />
+                </div>
+                <div id="telError" class="error-msg"></div>
+            </div>
+            <div class="form-actions">
+                <label class="checkbox">
+                </label>
+                <button type="submit" class="btn yellow-casablanca pull-right to-login">
+                    下一步 <i class="m-icon-swapright m-icon-white"></i>
+                </button>
+            </div>
+        </form>
+    </div>
+    <!-- 版权信息 -->
+    <div class="copyright">
+        Copyright &copy; 2010 - 2016 东莞市杰诺软件科技有限公司
+    </div>
+    <!-- JavaScript（将 JavaScript 放在页面底部，可以降低页面加载时间）-->
+    <!-- 核心插件 -->
+    <!--[if lt IE 9]>
+    <script src="/fw/include/other/respond.min.js"></script>
+    <script src="/fw/include/other/excanvas.min.js"></script>
+    <![endif]-->
+    <script src="/fw/min/js/jquery.yi.min.js"></script>
+    <script src="/fw/include/other/jquery.query.js" ></script>   
+    <script src="/fw/js/yi/jquery.yi.extend.js"></script>
+    <script src="/fw/js/account/register.js"></script>
+</body>
+</html>

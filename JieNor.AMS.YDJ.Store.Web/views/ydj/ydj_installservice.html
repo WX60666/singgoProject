@@ -1,0 +1,298 @@
+﻿<!--页面菜单列表-->
+<div class="page-menu-list">
+</div>
+<!--页面内容面板-->
+<div class="row">
+	<div class="col-md-6">
+		<form action="javascript:;" class="form-horizontal">
+			<div class="portlet box yellow-casablanca">
+		        <div class="portlet-title">
+		            <div class="caption">
+		                <i class="fa fa-user"></i>基本信息
+		            </div>
+		            <div class="tools">
+		                <a href="javascript:;" class="collapse"></a>
+		            </div>
+		        </div>
+		        <div class="portlet-body form">
+				    <div class="form-body">
+				    	<!--验证提示信息-->
+				        <div class="alert alert-danger display-hide">
+				            <button class="close" data-close="alert"></button>
+				            页面中有一些带红色星号 * 的信息是必填项，请检查是否都有正确录入！
+				        </div>
+		                <div class="form-group">
+		                    <label class="col-md-4 control-label">安装单号<span class="required">*</span></label>
+		                    <div class="col-md-7 cols">
+		                        <div class="input-icon right">
+		                            <input type="text" class="form-control" name="finstallnum" required="required">
+		                        </div>
+		                    </div>
+		                </div>
+	            		<div class="form-group">
+                            <label class="col-md-4 control-label">客户<span class="required">*</span></label>
+                            <div class="col-md-7">
+                                <div class="input-icon right input-group">
+                                    <i class="fa"></i>
+                                    <input type="lookup" class="form-control" autocomplete="off" required
+                                           name="fcustomerid" placeholder="客户" maxlength="50" />
+                                </div>
+                            </div>
+                        </div>
+	            		<div class="form-group">
+		                    <label class="col-md-4 control-label">备注<span class="required">*</span></label>
+		                    <div class="col-md-7 cols">
+		                        <div class="input-icon right">
+		                            <textarea cols="40" rows="2" name="fdescription"
+											class="form-control" style="overflow:visible" placeholder="备注" required></textarea>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		    <div class="portlet box yellow-casablanca">
+		        <div class="portlet-title">
+		            <div class="caption">
+		                <i class="fa fa-user"></i>安装方信息
+		            </div>
+		            <div class="tools">
+		                <a href="javascript:;" class="collapse"></a>
+		            </div>
+		        </div>
+		        <div class="portlet-body form">
+				    <div class="form-body">
+		                <div class="form-group">
+		                    <label class="col-md-4 control-label">安装项目</label>
+		                    <div class="col-md-7">
+		                        <div class="input-icon">
+		                            <select class="form-control select2me dynamic" name="finstallitem" >
+		                                <option value="">家具类</option>
+		                                <option value="">软装类</option>
+		                                <option value="">灯具类</option>
+		                                <option value="">卫浴类</option>
+		                            </select>
+		                        </div>
+		                    </div>
+		                </div>
+	            		<div class="form-group">
+		                    <label class="col-md-4 control-label">发布方式</label>
+		                    <div class="col-md-7">
+		                        <div class="input-icon">
+		                            <select class="form-control select2me dynamic" name="freleasemode" >
+		                                <option value="">手工执行</option>
+		                                <option value="">任务执行</option>
+		                                <option value="">平台</option>
+		                                <option value="">微信公众号</option>
+		                            </select>
+		                        </div>
+		                    </div>
+		                </div>
+		                <div class="form-group">
+		                    <label class="col-md-4 control-label">安装方</label>
+		                    <div class="col-md-4">
+		                        <div class="radio-list">
+		                            <label class="radio-inline">
+		                                <input type="radio" name="finstallers" value="内部" checked="checked">
+		                               	内部
+		                            </label>
+		                            <label class="radio-inline">
+		                                <input type="radio" name="finstallers" value="外部">
+		                               	 外部
+		                            </label>
+		                        </div>
+		                    </div>
+		                </div>
+		                <div class="form-group">
+		                    <label class="col-md-4 control-label">师傅</label>
+		                    <div class="col-md-7 cols">
+		                        <div class="input-icon right">
+		                            <input type="text" class="form-control" name="fmaster"  placeholder="员工基础资料id">
+		                        </div>
+		                    </div>
+		                </div>
+		                <div class="form-group">
+		                    <label class="col-md-4 control-label">服务商</label>
+		                    <div class="col-md-7 cols">
+		                        <div class="input-icon right">
+		                            <input type="text" class="form-control" name="fserviceprovider"  placeholder="供应商基础资料id">
+		                        </div>
+		                    </div>
+		                </div>
+		                <div class="form-group">
+		                    <label class="col-md-4 control-label">安装状态</label>
+		                    <div class="col-md-7 cols">
+		                        <div class="input-icon right">
+		                            <select class="form-control" name="finstallstatus" disabled="disabled">
+		                                <option value="">未发布</option>
+		                                <option value="">进行中</option>
+		                                <option value="">完成</option>
+		                            </select>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		            <div class="form-actions right">
+                        <button type="button" class="btn yellow-casablanca release">发布/取消发布</button>
+                        <button type="button" class="btn yellow-casablanca complete">完成</button>
+                    </div>
+		        </div>
+		    </div>
+		</form>
+	</div>
+	<div class="col-md-6">
+		<form action="javascript:;" class="form-horizontal">
+			<div class="portlet box yellow-casablanca">
+                <div class="portlet-title">
+                    <div class="caption"><i class="fa fa-user"></i>客户信息</div>
+                    <div class="tools"><a href="###" class="collapse"></a></div>
+                </div>
+                <div class="portlet-body form">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">收货人</label>
+                            <div class="col-md-7">
+                                <input type="text" class="form-control" autocomplete="off"
+                                       name="fconsignee" placeholder="收货人" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">省，市，区</label>
+                            <div class="col-md-7">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <select class="form-control select2me dynamic mb5" name="fprovince">
+                                            <option value="">省</option>
+                                        </select>
+                                        <select class="form-control select2me mb5" name="fcity">
+                                            <option value="">市</option>
+                                        </select>
+                                        <select class="form-control select2me" name="fregion">
+                                            <option value="">区</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">收货地址</label>
+                            <div class="col-md-7">
+                                <textarea class="form-control" autocomplete="off"
+                                          name="faddress" placeholder="请填写详细的收货地址" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">联系电话<span class="required">*</span></label>
+                            <div class="col-md-7">
+                                <div class="input-icon right">
+                                    <i class="fa"></i>
+                                    <input type="text" class="form-control" autocomplete="off"
+                                           name="fphone" required="required" placeholder="联系电话" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="portlet box yellow-casablanca">
+		        <div class="portlet-title">
+		            <div class="caption">
+		                <i class="fa fa-user"></i>其他信息
+		            </div>
+		            <div class="tools">
+		                <a href="javascript:;" class="collapse"></a>
+		            </div>
+		        </div>
+		        <div class="portlet-body form">
+				    <div class="form-body">
+		            	<div class="form-group">
+		                    <label class="col-md-4 control-label">创建人</label>
+		                    <div class="col-md-7 cols">
+		                        <div class="input-icon right">
+		                            <input type="text" class="form-control" name="ffounder" readonly="readonly" placeholder="员工基础，自动获取" />
+		                        </div>
+		                    </div>
+		                </div>
+		                <div class="form-group">
+		                    <label class="col-md-4 control-label">创建日期</label>
+		                    <div class="col-md-7 cols">
+		                        <div class="input-icon right">
+		                            <input type="text" class="form-control" name="fcreatedate" readonly="readonly" placeholder="日期字段，自动获取" />
+		                        </div>
+		                    </div>
+		                </div>
+		                <div class="form-group">
+		                    <label class="col-md-4 control-label">作废人</label>
+		                    <div class="col-md-7 cols">
+		                        <div class="input-icon right">
+		                            <input type="text" class="form-control" name="fcancel" readonly="readonly" placeholder="员工基础，自动获取" />
+		                        </div>
+		                    </div>
+		                </div>
+		                <div class="form-group">
+		                    <label class="col-md-4 control-label">作废日期</label>
+		                    <div class="col-md-7 cols">
+		                        <div class="input-icon right">
+		                            <input type="text" class="form-control" name="fcanceldate" readonly="readonly" placeholder="日期字段，自动获取" />
+		                        </div>
+		                    </div>
+		                </div>
+		                <div class="form-group">
+		                    <label class="col-md-4 control-label">数据状态</label>
+		                    <div class="col-md-7 cols">
+		                        <div class="input-icon right">
+		                            <select class="form-control" name="fstatus" disabled="disabled">
+		                                <option value="">创建</option>
+		                                <option value="">已审核</option>
+		                                <option value="">作废</option>
+		                            </select>
+		                        </div>
+		                    </div>
+		                </div>
+		                <div class="form-group">
+                            <label class="col-md-4 control-label">源单类型</label>
+                            <div class="col-md-7">
+                                <input type="text" class="form-control" autocomplete="off"
+                                       name="fsourcetype" placeholder="销售出库单/销售合同" readonly="readonly"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">源单号</label>
+                            <div class="col-md-7">
+                                <input type="text" class="form-control" autocomplete="off"
+                                       name="fsourcetype" placeholder="源单销售出库单号/销售合同号类型" readonly="readonly"/>
+                            </div>
+                        </div>
+		            </div>
+		        </div>
+		    </div>
+		    <div class="portlet box yellow-casablanca">
+                <div class="portlet-title">
+                    <div class="caption"><i class="fa fa-user"></i>安装结算</div>
+                    <div class="tools"><a href="###" class="collapse"></a></div>
+                </div>
+                <div class="portlet-body form">
+                    <div class="form-body">
+                        <table entryid="finstallsettlemententry" data-options="allowAdd:true,allowDel:true,allowEdit:true"></table>
+                    </div>
+                </div>
+            </div>
+		</form>
+	</div>
+	<div class="row">
+	    <div class="col-md-12">
+	    	<form action="javascript:;" class="form-horizontal">
+		        <div class="portlet box yellow-casablanca">
+		            <div class="portlet-title">
+		                <div class="caption"><i class="fa fa-user"></i>安装</div>
+		                <div class="tools"><a href="###" class="collapse"></a></div>
+		            </div>
+		            <div class="portlet-body form">
+		                <div class="form-body">
+		                    <table entryid="finstallentry" data-options="allowAdd:true,allowDel:true,allowEdit:true"></table>
+		                </div>
+		            </div>
+		        </div>
+	       </form>
+	    </div>
+	</div>

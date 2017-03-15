@@ -1,0 +1,11 @@
+﻿[
+  {
+    "id": "auth-service",
+    "name": "登录、注册及验权服务",
+    "desc": "登录、注册及验权服务",
+    "url": "http://localhost:3999",
+    "companyid": "",
+    "productid": "",
+    "tokenid": ""
+  }
+]

@@ -1,0 +1,142 @@
+﻿<!--页面菜单列表-->
+<div class="page-menu-list">
+</div>
+<!--页面内容面板-->
+<form action="###" class="form-horizontal">
+    <div class="alert alert-danger display-hide">
+        <button class="close" data-close="alert"></button>
+        页面中有一些带红色星号 * 的信息是必填项，请检查是否都有正确录入！
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="portlet box yellow-casablanca">
+                <div class="portlet-title">
+                    <div class="caption"><i class="fa fa-user"></i>基本信息</div>
+                    <div class="tools"><a href="###" class="collapse"></a></div>
+                </div>
+                <div class="portlet-body form">
+                    <div class="form-body">
+                        <div class="form-group">
+		                    <label class="col-md-4 control-label">所属银行<span class="required">*</span></label>
+		                    <div class="col-md-7">
+		                        <div class="input-icon">
+		                            <select class="form-control select2me dynamic" required="required" name="fbank" >
+		                                <option value=""></option>
+		                            </select>
+		                        </div>
+		                    </div>
+		                </div>
+		                <div class="form-group">
+		                    <label class="col-md-4 control-label">账户名称<span class="required">*</span></label>
+		                    <div class="col-md-7">
+		                        <div class="input-icon right">
+		                            <input type="text" class="form-control" name="faccountname"  required="required"  placeholder="账户名称" />
+		                        </div>
+		                    </div>
+		                </div>
+		                <div class="form-group">
+		                    <label class="col-md-4 control-label">账号</label>
+		                    <div class="col-md-7">
+		                        <div class="input-icon right">
+		                            <input type="text" class="form-control" name="faccountnum" placeholder="账号" />
+		                        </div>
+		                    </div>
+		                </div>
+		                <div class="form-group">
+		                    <label class="col-md-4 control-label">账户余额</label>
+		                    <div class="col-md-7">
+		                        <div class="input-icon right">
+		                            <input type="number" class="form-control" name="faccountbalance" placeholder="账户余额" />
+		                        </div>
+		                    </div>
+		                </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		<div class="col-md-6">
+			<form action="javascript:;" class="form-horizontal">
+				<div class="portlet box yellow-casablanca">
+			        <div class="portlet-title">
+			            <div class="caption">
+			                <i class="fa fa-user"></i>其他信息
+			            </div>
+			            <div class="tools">
+			                <a href="javascript:;" class="collapse"></a>
+			            </div>
+			        </div>
+			        
+			        <div class="portlet-body form">
+					    <div class="form-body">
+			                <div class="row">
+			                	<div class="col-md-6">
+				                	<div class="form-group">
+					                    <label class="col-md-4 control-label">创建人</label>
+					                    <div class="col-md-7 cols">
+					                        <div class="input-icon right">
+					                            <input type="text" class="form-control" name="ffounder" readonly="readonly" placeholder="员工基础，自动获取" />
+					                        </div>
+					                    </div>
+					                </div>
+					                <div class="form-group">
+					                    <label class="col-md-4 control-label">创建日期</label>
+					                    <div class="col-md-7 cols">
+					                        <div class="input-icon right">
+					                            <input type="text" class="form-control" name="fcreatedate" readonly="readonly" placeholder="日期字段，自动获取" />
+					                        </div>
+					                    </div>
+					                </div>
+					                <div class="form-group">
+					                    <label class="col-md-4 control-label">修改人</label>
+					                    <div class="col-md-7 cols">
+					                        <div class="input-icon right">
+					                            <input type="text" class="form-control" name="fmodify" readonly="readonly" placeholder="员工基础，自动获取" />
+					                        </div>
+					                    </div>
+					                </div>
+					                <div class="form-group">
+					                    <label class="col-md-4 control-label">修改日期</label>
+					                    <div class="col-md-7 cols">
+					                        <div class="input-icon right">
+					                            <input type="text" class="form-control" name="fmodifydate" readonly="readonly" placeholder="日期字段，自动获取" />
+					                        </div>
+					                    </div>
+					                </div>
+				                </div>
+				                <div class="col-md-6">
+				                	<div class="form-group">
+					                    <label class="col-md-4 control-label">禁用人</label>
+					                    <div class="col-md-7 cols">
+					                        <div class="input-icon right">
+					                            <input type="text" class="form-control" name="fdisable" readonly="readonly" placeholder="员工基础，自动获取" />
+					                        </div>
+					                    </div>
+					                </div>
+					                <div class="form-group">
+					                    <label class="col-md-4 control-label">禁用日期</label>
+					                    <div class="col-md-7 cols">
+					                        <div class="input-icon right">
+					                            <input type="text" class="form-control" name="fdisabledate" readonly="readonly" placeholder="日期字段，自动获取" />
+					                        </div>
+					                    </div>
+					                </div>
+					                <div class="form-group">
+					                    <label class="col-md-4 control-label">数据状态</label>
+					                    <div class="col-md-7 cols">
+					                        <div class="input-icon right">
+					                            <select class="form-control" name="fstatus" disabled="disabled">
+					                                <option value="创建">创建</option>
+					                                <option value="禁用">禁用</option>
+					                            </select>
+					                        </div>
+					                    </div>
+					                </div>
+				                </div>
+			                </div>
+			            </div>
+			        </div>
+			    </div>
+			</form>
+		</div>
+    </div>
+</form>

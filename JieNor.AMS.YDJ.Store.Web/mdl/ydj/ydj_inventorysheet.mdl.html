@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body id="ydj_inventorysheet" basemodel="bd_basetmpl" el="1" cn="盘点单">
+    <div id="FBillHead" el="51" pk="fid" tn="T_Ydj_Inventoryshee" pn="FBillHead" cn="盘点单">
+    	<!--基本信息-->
+		<input el="113" ek="fbillhead" visible="-1" id="finventorysheenumber" fn="finventorysheenumber" pn="finventorysheenumber" cn="盘点单号" />
+		<input el="113" ek="fbillhead" visible="-1" id="finventorysheedate" fn="finventorysheedate" pn="finventorysheedate" cn="流水号" />
+		<input el="113" ek="fbillhead" visible="-1" id="fdescription" fn="fdescription" pn="fdescription" cn="备注" />
+		
+
+		<!--基本信息-->
+        <input type="Text" id="finventorysheenumber" el="108" ek="FBillHead" fn="finventorysheenumber" ts="" visible="-1" cn="盘点单号" />
+        <input type="datetime" id="finventorysheedate" el="113" ek="FBillHead" fn="finventorysheedate" ts="" cn="盘点日期" visible="-1" />
+        <input type="text" id="fdescription" el="100" ek="FBillHead" fn="fdescription" ts="" cn="备注" visible="-1" />
+
+        <!--记录信息-->
+        <input type="text" id="frecord" el="100" ek="FBillHead" fn="frecord" ts="" cn="记录" visible="-1" />
+
+        
+        
+		<!--录入-->
+		<input el="113" ek="fbillhead" visible="-1" id="fmaterial" fn="fmaterial" pn="fmaterial" cn="流水号" />
+    </div>
+	<!--盘点-->
+    <table id="finventoryentry" el="52" pk="fentryid" tn="t_ydj_inventory" pn="finventoryentry" cn="盘点">
+        <tr>
+            <th id="fmaterial_img" el="111" ek="finventoryentry" fn="fmaterial_img" ts="" cn="商品图片" visible="-1"></th>
+            <th id="forderdate" el="113" ek="finventoryentry" fn="forderdate" ts="" cn="订单日期" visible="-1"></th>
+            <th id="fmaterialimage" el="111" ek="finventoryentry" fn="fmaterialimage" ts="" cn="商品图片" visible="-1"></th>
+            <th type="Text" id="fmaterialnum" el="108" ek="finventoryentry" fn="fmaterialnum" ts="" cn="商品编码" visible="-1"></th>
+            <th id="fproductid" el="106" ek="finventoryentry" fn="fproductid" refid="" ts="" cn="商品名称" visible="-1"  refid="ydj_product"></th>
+            <th id="fnorms" el="117" ek="finventoryentry" fn="fnorms" ts="" cn="规格" refid="" cg="规格" visible="-1" refid="ydj_norms"></th>
+            <th id="fmaterial" el="117" ek="finventoryentry" fn="fmaterial" ts="" cn="规格" refid="" cg="材质" visible="-1" refid="ydj_material"></th>
+            <th id="fcolor" el="117" ek="finventoryentry" fn="fcolor" ts="" cn="颜色" refid="" cg="颜色" visible="-1" refid="ydj_color"></th>
+            <th id="fsaleprice" el="105" ek="finventoryentry" fn="fsaleprice" ts="" cn="销售价" visible="-1"></th>
+            <th id="fqty" el="103" ek="finventoryentry" fn="fqty" ts="" cn="数量" visible="-1"></th>
+            <th id="fproblemqty" el="103" ek="finventoryentry" fn="fproblemqty" ts="" cn="问题数量" visible="-1"></th>
+            <th id="fdescription" el="100" ek="finventoryentry" fn="fdescription" ts="" cn="问题描述" visible="-1"></th>
+            <th id="fduty" el="117" ek="finventoryentry" fn="fduty" ts="" cn="责任方" refid="" cg="责任方" visible="-1"></th>
+            <th id="fhandle" el="100" ek="finventoryentry" fn="fhandle" ts="" cn="处理方案" visible="-1"></th>
+        </tr>
+    </table>
+</body>
+</html>
+

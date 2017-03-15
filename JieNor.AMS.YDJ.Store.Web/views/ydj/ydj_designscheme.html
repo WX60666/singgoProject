@@ -1,0 +1,200 @@
+﻿<!--页面菜单列表-->
+<div class="page-menu-list">
+</div>
+<!--页面内容面板-->
+<form action="javascript:;" class="form-horizontal">
+	<div class="portlet box yellow-casablanca">
+        <div class="portlet-title">
+            <div class="caption">基本信息</div>
+            <div class="tools">
+                <a href="javascript:;" class="collapse"></a>
+            </div>
+        </div>
+        <div class="portlet-body form">
+		    <div class="form-body">
+		    	<!--验证提示信息-->
+		        <div class="alert alert-danger display-hide">
+		            <button class="close" data-close="alert"></button>
+		            页面中有一些带红色星号 * 的信息是必填项，请检查是否都有正确录入！
+		        </div>
+		        <div class="row">
+		        	<div class="col-md-6">
+				        <div class="form-group">
+		                    <label class="col-md-4 control-label">设计阶段<span class="required">*</span></label>
+		                    <div class="col-md-7">
+		                        <div class="input-icon">
+		                            <select class="form-control select2me dynamic" required="required" name="fdesignstage" >
+		                                <option value=""></option>
+		                                <option value="">草图</option>
+		                                <option value="">平面图</option>
+		                                <option value="">立体图</option>
+		                                <option value="">CAD图</option>
+		                            </select>
+		                        </div>
+		                    </div>
+		                </div>
+	                    <div class="form-group">
+	                        <label class="col-md-4 control-label">开始日期<span class="required">*</span></label>
+	                        <div class="col-md-7">
+	                            <div class="input-group date date-picker">
+	                                <input type="text" class="form-control" autocomplete="off" 
+	                                       name="fstartdate" placeholder="开始日期" maxlength="10" required="required"/>
+	                                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+	                            </div>
+	                        </div>
+	                    </div>
+	                    <div class="form-group">
+	                        <label class="col-md-4 control-label">截止日期<span class="required">*</span></label>
+	                        <div class="col-md-7">
+	                            <div class="input-group date date-picker">
+	                                <input type="text" class="form-control" autocomplete="off" 
+	                                       name="fenddate" placeholder="截止日期" maxlength="10" required="required"/>
+	                                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="col-md-6">
+	                	<div class="form-group">
+		                    <label class="col-md-4 control-label">客户<span class="required">*</span></label>
+		                    <div class="col-md-7">
+		                        <div class="input-icon right input-group">
+		                            <i class="fa"></i>
+		                            <input type="lookup" class="form-control" autocomplete="off" required="required"
+		                                   name="fcustomerid" placeholder="客户" maxlength="50" />
+		                        </div>
+		                    </div>
+		                </div>
+		                <div class="form-group">
+		                    <label class="col-md-4 control-label">联系电话<span class="required">*</span></label>
+		                    <div class="col-md-7">
+		                        <div class="input-icon right">
+		                            <i class="fa"></i>
+		                            <input type="text" class="form-control" autocomplete="off" required="required" 
+		                                   name="fphone" placeholder="联系电话" maxlength="50" />
+		                        </div>
+		                    </div>
+		                </div>
+		                <div class="form-group">
+		                    <label class="col-md-4 control-label">方案简介</label>
+				            <div class="col-md-7 cols">
+				                <div class="input-icon right">
+				                    <textarea cols="40" rows="6" name="fnote" class="form-control" 
+				                    	style="overflow:visible" placeholder="方案简介"></textarea>
+				                </div>
+				            </div>
+		              	</div>
+	                	<!--<div class="form-group">
+		                    <label class="col-md-4 control-label">流水号<span class="required">*</span></label>
+		                    <div class="col-md-7 cols">
+		                        <div class="input-icon right">
+		                            <input type="text" class="form-control" name="fnumber" required="required" value="流水号">
+		                        </div>
+		                    </div>
+		            	</div>
+		                <div class="form-group">
+		                    <label class="col-md-4 control-label">完成日期</label>
+		                    <div class="col-md-7">
+		                        <div class="input-group date date-picker">
+		                            <input type="text" class="form-control" autocomplete="off" 
+		                                   name="ffinishdate" placeholder="完成日期" maxlength="10" disabled="disabled"/>
+		                            <span class="input-group-addon" disabled="disabled"><i class="fa fa-calendar"></i></span>
+		                        </div>
+		                    </div>
+		                </div>-->
+		            </div>
+               </div>
+            </div>
+        </div>
+    </div>
+    <div class="portlet box yellow-casablanca">
+        <div class="portlet-title">
+            <div class="caption">图片信息</div>
+            <div class="tools"><a href="###" class="collapse"></a></div>
+        </div>
+        <div class="portlet-body form">
+            <div class="form-body">
+            	<div class="row">
+	                <div class="form-group">
+	                    <label class="col-md-3 control-label">
+	                    	<div class="uploader-style">
+				                <div class="queueList">
+				                    <div class="placeholder">
+				                        <div id="invitate-bid" class="uploader-file" name="fimage">上传附件</div>
+				                    </div>
+				                </div>
+				            </div>
+	                    </label>
+	                </div>
+	           </div>
+            </div>
+        </div>
+    </div>
+</form>
+	
+<!--<form action="javascript:;" class="form-horizontal">
+	<div class="portlet box yellow-casablanca">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-user"></i>其他信息
+            </div>
+            <div class="tools">
+                <a href="javascript:;" class="collapse"></a>
+            </div>
+        </div>
+        
+        <div class="portlet-body form">
+		    <div class="form-body">
+                <div class="row">
+                	<div class="form-group">
+	                    <label class="col-md-4 control-label">创建人</label>
+	                    <div class="col-md-7 cols">
+	                        <div class="input-icon right">
+	                            <input type="text" class="form-control" name="ffounder" readonly="readonly" placeholder="员工基础，自动获取" />
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="form-group">
+	                    <label class="col-md-4 control-label">创建日期</label>
+	                    <div class="col-md-7 cols">
+	                        <div class="input-icon right">
+	                            <input type="text" class="form-control" name="fcreatedate" readonly="readonly" placeholder="日期字段，自动获取" />
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="form-group">
+	                    <label class="col-md-4 control-label">完成人</label>
+	                    <div class="col-md-7 cols">
+	                        <div class="input-icon right">
+	                            <input type="text" class="form-control" name="ffinish" readonly="readonly" placeholder="员工基础，自动获取" />
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="form-group">
+	                    <label class="col-md-4 control-label">完成日期</label>
+	                    <div class="col-md-7 cols">
+	                        <div class="input-icon right">
+	                            <input type="text" class="form-control" name="ffinishdate" readonly="readonly" placeholder="日期字段，自动获取" />
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="form-group">
+	                    <label class="col-md-4 control-label">业务状态</label>
+	                    <div class="col-md-7 cols">
+	                        <div class="input-icon right">
+	                            <select class="form-control" name="fstatus" disabled="disabled">
+	                                <option value="创建">创建</option>
+	                                <option value="已完成">已完成</option>
+	                                <option value="已验收">已验收</option>
+	                                <option value="作废">作废</option>
+	                            </select>
+	                        </div>
+	                    </div>
+	                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</form>-->
+	</div>

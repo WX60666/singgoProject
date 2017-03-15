@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JieNor.Framework.WebController</name>
+    </assembly>
+    <members>
+        <member name="T:JieNor.Framework.WebController.HttpFilter.RequireDynamicScopeAttribute">
+            <summary>
+            服务动态验权机制
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.WebController.UserAuthTicket">
+            <summary>
+            用户认证凭据
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.WebController.AbstractDynamicFormController`2.Logger">
+            <summary>
+            日志记录
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.WebController.AbstractDynamicFormController`2.Container">
+            <summary>
+            服务容器
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.WebController.AbstractDynamicFormController`2.Any(`0)">
+            <summary>
+            所有网络请求入口点
+            </summary>
+            <param name="dtoReq"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.WebController.AbstractDynamicFormController`2.InitializeOperationContext(`0,JieNor.Framework.MetaCore.FormOp.OperationContext)">
+            <summary>
+            初始化操作上下文信息
+            </summary>
+            <param name="dtoReq"></param>
+            <param name="operCtx"></param>
+        </member>
+        <member name="M:JieNor.Framework.WebController.AbstractDynamicFormController`2.ExecuteOperation(`0,`1)">
+            <summary>
+            执行本次操作请求
+            </summary>
+            <param name="dtoReq"></param>
+            <param name="dtoRes"></param>
+        </member>
+        <member name="M:JieNor.Framework.WebController.AbstractDynamicFormController`2.CreateDynamicResponse(`0)">
+            <summary>
+            创建不同的http响应对象
+            </summary>
+            <param name="dtoReq"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.WebController.AbstractDynamicFormController`2.InitializeLogger">
+            <summary>
+            初始化日志记录器
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.WebController.AbstractDynamicFormController`2.InitializePlugInProxy(`0)">
+            <summary>
+            初始化插件代理对象
+            </summary>
+            <param name="dtoReq"></param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,13 @@
+时间:2017-01-16 21:19:27,299
+级别:ERROR
+内容:OnLogError
+详细:15426/JieNor.Framework.WebController.WebAppHost.OnLogError(:0)/f/err
+
+System.IO.InvalidDataException: 表单模型文件不存在：ydj_customer
+   在 JieNor.Framework.MetaCore.FormMeta.HtmlParser.GetHtmlFileInfor(String formId)
+   在 JieNor.Framework.MetaCore.FormMeta.HtmlParser.LoadFormMeta(String formId)
+   在 JieNor.Framework.MetaCore.FormMeta.HtmlParser.LoadFormMetaFromCache(String formId)
+   在 JieNor.Framework.WebController.AbstractDynamicFormController`3.InitHtmlForm(TRequest dtoReq)
+   在 JieNor.Framework.WebController.AbstractDynamicFormController`3.Any(TRequest dtoReq)
+   在 lambda_method(Closure , Object , Object )
+   在 ServiceStack.Host.ServiceRunner`1.Execute(IRequest request, Object instance, TRequest requestDto)

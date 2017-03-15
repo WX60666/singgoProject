@@ -1,0 +1,27 @@
+﻿<!--本模板是根据服务端需求提炼而成，客户端页面只需要遵循下述节点的一些属性描述规范即可，
+    至于节点布局，样式等没有要求（也就是xpath没要求），可由客户端页面实际需求自由发挥，
+    但需要服务端保存的节点需遵守下述规范：基本就是增加几个自定义属性（id,fn,tn）
+    -->
+<html lang="en">
+<head>
+</head>
+<body id="sec_user" el=1 basemodel="bd_basetmpl" mulaudit="true" cn="用户">
+    <div id="fbillhead" el="51" pk="fid" tn="t_sec_user" pn="fbillhead" cn="用户信息">
+        <input type="text" id="fphone" el="100" ek="FBillHead" fn="fphone" pn="fphone" cn="手机" visible="-1" />
+        <input type="text" id="fshortphone" el="100" ek="FBillHead" fn="fshortphone" pn="fshortphone" cn="短号" visible="-1" />
+        <input type="text" id="ftelphone" el="100" ek="FBillHead" fn="ftelphone" pn="ftelphone" cn="办公电话" visible="-1" />
+        <input type="text" id="ftelbranch" el="100" ek="FBillHead" fn="ftelbranch" pn="ftelbranch" cn="分机号" visible="-1" />
+        <input type="text" id="fpopserver" el="100" ek="FBillHead" fn="fpopserver" pn="fpopserver" cn="pop服务器" visible="-1" />
+        <input type="text" id="fsmtpserver" el="100" ek="FBillHead" fn="fsmtpserver" pn="fsmtpserver" cn="smtp服务器" visible="-1" />
+        <input type="datetime" id="flastactivetime" el="113" ek="FBillHead" fn="flastactivetime" pn="flastactivetime" cn="最后登录日期" visible="-1" />
+        <input type="text" id="flastactivehost" el="100" ek="FBillHead" fn="flastactivehost" pn="flastactivehost" cn="最后登录地址" visible="-1" />
+        <input type="text" id="flastactivecompany" el="100" ek="FBillHead" fn="flastactivecompany" pn="flastactivecompany" cn="最后登录企业" visible="0" />
+        <input type="text" id="factivecode" el="100" ek="FBillHead" fn="factivecode" pn="factivecode" cn="激活码信息" visible="0" />
+        <input type="datetime" id="fcodeexpiry" el="113" ek="FBillHead" fn="fcodeexpiry" pn="fcodeexpiry" cn="激活码失效时间" visible="0" />
+        <input type="datetime" id="flockdate" el="113" ek="FBillHead" fn="flockdate" pn="flockdate" cn="锁定日期" visible="-1" />
+        <input type="text" id="finvalidlogin" el="101" ek="FBillHead" fn="finvalidlogin" pn="finvalidlogin" cn="非法登录次数" visible="-1" />
+        <select id="fstatus" el="122" refId="bd_enum" dfld="fenumitem" cg="用户状态" ek="fbillhead" fn="fstatus" pn="fstatus" cn="用户状态" visible="-1"></select>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <!--<script src="/fw/include/vue/vue.min.js"></script>-->
+    <script src="/fw/include/jquery/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!--<panel id="fheadpanel">
+            <textbox id="fnumber" caption="用户编码"></textbox>
+            <textbox id="fname" caption="用户名称"></textbox>
+            <textbox id="ftelphone" caption="手机号"></textbox>
+            <basedatafield id="fdeptid" caption="部门"></basedatafield>
+            <datetime id="fcreatedate" caption="创建日期"></datetime>
+            <userfield id="fcreatorid" caption="创建人"></userfield>
+        </panel>-->
+        <button onclick="baseClick()">base</button>
+        <button onclick="childClick()">child</button>
+    </div>    
+
+    <!--此处js只负责把这些组件（上述自定义的标签）引入进来，组件本身的样式全部在组件定义处进行定义，DOM的渲染及数据绑定交给框架-->
+    <script type="text/javascript">
+        function basepage() { };
+        basepage.prototype = 
+            {
+                pageFile:"i am a base file",
+                onMenuClick:function(){alert("baseclick");},
+
+            }
+
+        function childPage(){};
+        childPage.prototype=new basepage();
+        childPage.prototype.pageFile="i am a child file";
+        childPage.prototype.onMenuClick=function(){alert("childclick");};
+        
+
+        function baseClick()
+        {
+            var base = new basepage();
+            base.onMenuClick();
+            alert(base.pageFile);
+        }
+
+        function childClick()
+        {
+            var child = new childPage();
+            child.onMenuClick();
+            alert(child.pageFile);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+﻿.loadmask
+{
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -moz-opacity: 0.5;
+    opacity: .50;
+    filter: alpha(opacity=50);
+    background-color: #CCC;
+    width: 100%;
+    height: 100%;
+    zoom: 1;
+    -moz-user-select: none; /*屏蔽遮罩层双击事件*/
+}
+.loadmask-msg
+{
+    z-index: 20001;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 0px solid #F2784B;
+    background: #FFFFFF;
+    padding: 0px;
+}
+.loadmask-msg div {
+    background: url("images/m-loading3.gif") no-repeat scroll 5px 5px #fff;
+    border: 1px solid #F2784B !important;
+    color: #222;
+    cursor: wait;
+    font: 12px/2px tahoma,arial,helvetica,sans-serif;
+    /*padding: 29px 2px 29px 56px;*/
+    padding:5px 10px 40px 48px;
+    min-height:0px;
+}
+.masked
+{
+    overflow: hidden !important;
+}
+.masked-relative
+{
+    position: relative !important;
+}
+.masked-hidden
+{
+    visibility: hidden !important;
+}

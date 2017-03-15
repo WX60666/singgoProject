@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body id="ydj_product" basemodel="bd_basetmpl" el="1" cn="商品">
+    <div id="FBillHead" el="51" pk="fid" tn="t_ydj_product" pn="FBillHead" cn="商品">
+
+        <!--基本信息-->
+        <input type="text" id="fnumber" el="106" ek="FBillHead" fn="fnumber" ts="" visible="-1" cn="商品编码" />
+        <input type="text" id="fname" el="100" ek="FBillHead" fn="fname" ts="" cn="商品名称" visible="-1" />
+        <select id="funit" el="117" ek="FBillHead" fn="funit" ts="" cg="单位" visible="-1" cn="单位">
+            <option value=""></option>
+        </select>
+        <select id="ftype" el="117" ek="FBillHead" fn="ftype" ts=""  cg="产品类别" visible="-1" cn="产品类别">
+            <option value=""></option>
+        </select>
+        <input type="text" id="fparts" el="106" ek="FBillHead" fn="fparts"  ts="" visible="-1" cn="部件" />
+        <input type="text" id="description" el="100" ek="FBillHead" fn="description" ts="" cn="商品描述" visible="-1" />
+        <div id="fmaterialtype" el="114" ek="FBillHead" fn="fmaterialtype" ts="" cn="商品属性类别" visible="-1"> </div>
+        <input type="text" id="fretail" el="105" ek="FBillHead" fn="fretail" ts="" visible="-1" cn="零售价" />
+        <input type="text" id="fpurcharse" el="105" ek="FBillHead" fn="fpurcharse" ts="" visible="-1" cn="采购价" />
+        <input type="text" id="fsale" el="105" ek="FBillHead" fn="fsale" ts="" visible="-1" cn="销售价" />
+        
+        <!--尺寸属性-->
+        <input type="text" id="farearetail" el="105" ek="FBillHead" fn="farearetail" ts="" visible="-1" cn="零售价(面积)" />
+        <input type="text" id="fareapurcharse" el="105" ek="FBillHead" fn="fareapurcharse" ts="" visible="-1" cn="采购价(面积)" />
+        <input type="text" id="fareasale" el="105" ek="FBillHead" fn="fareasale" ts="" visible="-1" cn="销售价(面积)" />
+        
+
+        <!--款式信息-->
+        <select id="space" el="117" ek="FBillHead" fn="space" ts="" cg="空间" visible="-1" cn="空间">
+            <option value=""></option>
+        </select>
+        <select id="fstyle" el="117" ek="FBillHead" fn="fstyle" ts="" cg="风格" visible="-1" cn="风格">
+            <option value=""></option>
+        </select>
+        
+        <input type="text" id="fbrand" el="106" ek="FBillHead" fn="fbrand"  ts="" visible="-1" cn="品牌" refid="ydj_brand"/>
+        <input type="text" id="fseries" el="106" ek="FBillHead" fn="fseries"  ts="" visible="-1" cn="系列"  refid="ydj_series"/>
+        <input type="text" id="fsupplierid" el="106" ek="FBillHead" fn="fsupplierid"  ts="" visible="-1" cn="供应商"  refid="ydj_supplier"/>
+        <input type="text" id="fprovidernumber" el="100" ek="FBillHead" fn="fprovidernumber" ts="" cn="供应商货号" visible="-1" />
+
+
+    </div>
+</body>
+</html>

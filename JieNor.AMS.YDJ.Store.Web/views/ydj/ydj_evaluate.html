@@ -1,0 +1,160 @@
+﻿<!--页面菜单列表-->
+<div class="page-menu-list">
+</div>
+<!--页面内容面板-->
+<div class="row">
+	<div class="col-md-6">
+		<form action="javascript:;" class="form-horizontal">
+			<div class="portlet box yellow-casablanca">
+		        <div class="portlet-title">
+		            <div class="caption">
+		                <i class="fa fa-user"></i>基本信息
+		            </div>
+		            <div class="tools">
+		                <a href="javascript:;" class="collapse"></a>
+		            </div>
+		        </div>
+		        <div class="portlet-body form">
+				    <div class="form-body">
+				    	<!--验证提示信息-->
+				        <div class="alert alert-danger display-hide">
+				            <button class="close" data-close="alert"></button>
+				            页面中有一些带红色星号 * 的信息是必填项，请检查是否都有正确录入！
+				        </div>
+		                <div class="form-group">
+		                    <label class="col-md-4 control-label">编码<span class="required">*</span></label>
+		                    <div class="col-md-7 cols">
+		                        <div class="input-icon right">
+		                            <input type="text" class="form-control" name="fevaluateid" placeholder="默认编码规则，允许手工录入" required="required"/>
+		                        </div>
+		                    </div>
+		                </div>
+		                <div class="form-group">
+		                    <label class="col-md-4 control-label">名称<span class="required">*</span></label>
+		                    <div class="col-md-7 cols">
+		                        <div class="input-icon right">
+		                            <input type="text" class="form-control" name="fevaluatename"  placeholder="手工录入" required="required"/>
+		                        </div>
+		                    </div>
+		                </div>
+	                	<div class="form-group">
+		                    <label class="col-md-4 control-label">评价对象<span class="required">*</span></label>
+		                    <div class="col-md-7 cols">
+		                        <div class="input-icon right">
+		                            <select class="form-control" name="fevaluateobj">
+		                                <option value="产品">产品</option>
+		                                <option value="服务">服务</option>
+		                            </select>
+		                        </div>
+		                    </div>
+	                	</div>
+		                <div class="form-group">
+		                    <label class="col-md-4 control-label">评价类型<span class="required">*</span></label>
+		                    <div class="col-md-7 cols">
+		                        <div class="input-icon right">
+		                            <select class="form-control" name="fevaluatetype">
+		                                <option value="好评">好评</option>
+		                                <option value="差评">差评</option>
+		                            </select>
+		                        </div>
+		                    </div>
+	                	</div>
+	                	<div class="form-group">
+                            <label class="col-md-4 control-label">描述</label>
+                            <div class="col-md-7">
+                                <textarea class="form-control" autocomplete="off"
+                                          name="fdescription" placeholder="" rows="3"></textarea>
+                            </div>
+                        </div>
+		            </div>
+		        </div>
+		    </div>
+		</form>
+	</div>
+	<div class="col-md-6">
+		<form action="javascript:;" class="form-horizontal">
+			<div class="portlet box yellow-casablanca">
+		        <div class="portlet-title">
+		            <div class="caption">
+		                <i class="fa fa-user"></i>客户信息
+		            </div>
+		            <div class="tools">
+		                <a href="javascript:;" class="collapse"></a>
+		            </div>
+		        </div>
+		        <div class="portlet-body form">
+				    <div class="form-body">
+				    	<div class="row">
+					        <div class="col-md-6">
+				                <div class="form-group">
+				                    <label class="col-md-4 control-label">状态</label>
+				                    <div class="col-md-7 cols">
+				                        <div class="input-icon right">
+				                            <select class="form-control" name="fstatus" disabled="disabled">
+				                                <option value="创建">创建</option>
+				                                <option value="禁用">禁用</option>
+				                            </select>
+				                        </div>
+				                    </div>
+			                	</div>
+			                	<div class="form-group">
+				                    <label class="col-md-4 control-label">创建人</label>
+				                    <div class="col-md-7 cols">
+				                        <div class="input-icon right">
+				                            <input type="text" class="form-control" name="ffounder" readonly="readonly" placeholder="员工基础，自动获取" />
+				                        </div>
+				                    </div>
+				                </div>
+				                <div class="form-group">
+				                    <label class="col-md-4 control-label">创建日期</label>
+				                    <div class="col-md-7 cols">
+				                        <div class="input-icon right">
+				                            <input type="text" class="form-control" name="fcreatedate" readonly="readonly" placeholder="日期字段，自动获取" />
+				                        </div>
+				                    </div>
+				                </div>
+				                <div class="form-group">
+				                    <label class="col-md-4 control-label">修改人</label>
+				                    <div class="col-md-7 cols">
+				                        <div class="input-icon right">
+				                            <input type="text" class="form-control" name="fmodifier" readonly="readonly" placeholder="员工基础，自动获取" />
+				                        </div>
+				                    </div>
+				                </div>
+				                <div class="form-group">
+				                    <label class="col-md-4 control-label">修改日期</label>
+				                    <div class="col-md-7 cols">
+				                        <div class="input-icon right">
+				                            <input type="text" class="form-control" name="fmodifydate" readonly="readonly" placeholder="日期字段，自动获取" />
+				                        </div>
+				                    </div>
+				                </div>
+			                </div>
+			                <div class="col-md-6">
+			                	<div class="form-group">
+				                    <label class="col-md-4 control-label">禁用人</label>
+				                    <div class="col-md-7 cols">
+				                        <div class="input-icon right">
+				                            <input type="text" class="form-control" name="fdisable" readonly="readonly" placeholder="员工基础，自动获取" />
+				                        </div>
+				                    </div>
+				                </div>
+				                <div class="form-group">
+				                    <label class="col-md-4 control-label">禁用日期</label>
+				                    <div class="col-md-7 cols">
+				                        <div class="input-icon right">
+				                            <input type="text" class="form-control" name="fdisabledate" readonly="readonly" placeholder="日期字段，自动获取" />
+				                        </div>
+				                    </div>
+				                </div>
+				            </div>
+			       		</div>
+		           </div>
+		        </div>
+		    </div>
+		</form>
+	</div>
+</div>
+
+
+						

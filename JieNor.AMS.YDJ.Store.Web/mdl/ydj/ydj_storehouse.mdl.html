@@ -1,0 +1,22 @@
+﻿<!--本模板是根据服务端需求提炼而成，客户端页面只需要遵循下述节点的一些属性描述规范即可，
+    至于节点布局，样式等没有要求（也就是xpath没要求），可由客户端页面实际需求自由发挥，
+    但需要服务端保存的节点需遵守下述规范：基本就是增加几个自定义属性（id,fn,tn）
+    -->
+<html lang="en">
+<head>
+</head>
+<body id="ydj_storehouse" basemodel="bd_basetmpl" el=1 cn="仓库">
+    <div id="fbillhead" el="51" pk="fid" tn="T_Ydj_Storehouse" pn="fbillhead" cn="仓库">
+        <input type="text" id="fenablePosition" el="108" ek="fbillhead" fn="fenablePosition" pn="fenablePosition" cn="启用仓位" desc="启用仓位" /> 
+		
+		<table id="Fstorehouseentity" el="52" pk="FEntryId" tn="T_Ydj_StorehouseItem" pn="Fcolorentity" cn="仓库基本信息">
+            <tr>
+                <th id="fselect" el="106" ek="Fstorehouseentity" fn="fselect" pn="fselect" cn="选择">选择</th>
+                <th id="fname" el="107" ek="Fstorehouseentity" fn="fname" pn="fname" cn="名称">名称</th>
+            </tr>
+        </table>
+        
+    </div>
+
+</body>
+</html>

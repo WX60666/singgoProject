@@ -1,0 +1,21 @@
+﻿<!--本模板是根据服务端需求提炼而成，客户端页面只需要遵循下述节点的一些属性描述规范即可，
+    至于节点布局，样式等没有要求（也就是xpath没要求），可由客户端页面实际需求自由发挥，
+    但需要服务端保存的节点需遵守下述规范：基本就是增加几个自定义属性（id,fn,tn）
+    -->
+<html lang="en">
+<head>
+</head>
+<body id="ydj_tasktype" basemodel="bd_basetmpl" el=1 cn="任务类型">
+    <div id="fbillhead" el="51" pk="fid" tn="T_Ydj_TaskType" pn="fbillhead" cn="任务类型">
+    	<!--基本信息-->
+        <input type="text" id="ftasktype" el="100" ek="FBillHead" fn="ftasktype" ts="" cn="任务类型" visible="-1" />
+        <input type="text" id="fdocobj" el="108" ek="FBillHead" fn="fdocobj" ts="" visible="-1" cn="对应单据" />
+        <input type="text" id="fgrouping" el="100" ek="FBillHead" fn="fgrouping" ts="" cn="分组" visible="-1" />
+        <input type="text" id="fdescription" el="100" ek="FBillHead" fn="fdescription" ts="" cn="任务描述" visible="-1" />
+        <input type="checkbox" id="fpreset" el="116" ek="FBillHead" fn="fpreset" ts="" visible="-1" cn="预置" />
+        <input type="text" id="fbusiness" el="108" ek="FBillHead" fn="fbusiness" ts="" visible="-1" cn="移动端业务" />
+        
+    </div>
+
+</body>
+</html>

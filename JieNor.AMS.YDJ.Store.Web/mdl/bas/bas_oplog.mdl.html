@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body id="bas_oplog" el="1" cn="业务操作日志">
+    <div id="FBillHead" el="51" pk="fid" tn="t_bas_oplog" pn="FBillHead" cn="操作日志">
+        <input type="text" id="fbillformid" el="106"  refId="sys_businessobject" dfld="FName"  ek="FBillHead" fn="fbillformid" pn="fbillformid" cn="表单标识" visible="-1" />
+        <input type="text" id="fbillno" el="100" ek="FBillHead" fn="fbillno" pn="fbillno" cn="单据编号" visible="-1"  />
+        <input type="text" id="foptype" el="100" ek="FBillHead" fn="foptype" pn="foptype" cn="操作类别" desc="比如 登录、打印、审核等等" visible="-1" />
+        <input type="text" id="fuserid" el="100" ek="FBillHead" fn="fuserid" pn="fuserid" cn="操作用户名" visible="-1" />        
+        <input type="datetime" id="fopdate" el="119" ek="fbillhead" fn="fopdate" pn="fopdate" cn="操作日期" visible="-1" />
+        
+        <input type="text" id="fsystemname" el="100" ek="FBillHead" fn="fsystemname" pn="fsystemname" cn="系统名称" visible="-1" />
+        <input type="text" id="fcomputername" el="100" ek="FBillHead" fn="fcomputername" pn="fcomputername" cn="机器名" visible="-1" />
+        <input type="text" id="fipaddress" el="100" ek="FBillHead" fn="fipaddress" pn="fipaddress" cn="ip地址" visible="-1" />
+
+        <input type="text" id="fopcontent" el="100" ek="FBillHead" len="2000" fn="fopcontent" pn="fopcontent" cn="详细操作信息" />
+         
+   
+     </div>
+
+
+</body>
+</html>

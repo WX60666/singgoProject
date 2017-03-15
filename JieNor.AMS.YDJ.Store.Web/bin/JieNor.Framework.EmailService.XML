@@ -1,0 +1,752 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JieNor.Framework.EmailService</name>
+    </assembly>
+    <members>
+        <member name="M:PerfmonUtil.StartMonitor">
+            <summary>
+            开始监控
+            </summary>
+        </member>
+        <member name="M:PerfmonUtil.EndMonitor">
+            <summary>
+            结束监控
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.MailerCenter.BatchSend(System.String,JieNor.Framework.EmailService.EmailTemplate,JieNor.Framework.SuperOrm.DataEntity.DynamicObject)">
+            <summary>
+            批量发送邮件
+            </summary> 
+            <param name="emailTemplate">邮件模版id</param>
+            <param name="bizData">业务数据，为空表示不需要用业务数据替换模板里面的关键字</param>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.MailerCenter.BatchSend(System.String,JieNor.Framework.EmailService.EmailTemplate,System.Collections.Generic.IEnumerable{JieNor.Framework.SuperOrm.DataEntity.DynamicObject})">
+            <summary>
+            批量发送邮件
+            </summary> 
+            <param name="emailTemplate">邮件模版id</param>
+            <param name="bizDatas">业务数据，为空表示不需要用业务数据替换模板里面的关键字</param>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.MailerCenter.BatchSend(System.String,System.Collections.Generic.Dictionary{JieNor.Framework.EmailService.EmailTemplate,System.Collections.Generic.IEnumerable{JieNor.Framework.SuperOrm.DataEntity.DynamicObject}})">
+            <summary>
+            批量发送邮件
+            </summary>  
+            <param name="maps">邮件模版:业务数据 </param>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.MailerCenter.Stop">
+            <summary>
+            停止发送
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.MailerCenter.Abort">
+            <summary>
+            停止
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.EmailService.EmailAddInfor">
+            <summary>
+            邮件地址信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.EmailService.EmailAddInfor.EmailAddress">
+            <summary>
+            Email地址
+            </summary> 
+        </member>
+        <member name="P:JieNor.Framework.EmailService.EmailAddInfor.NickName">
+            <summary>
+            昵称
+            </summary> 
+        </member>
+        <member name="P:JieNor.Framework.EmailService.EmailAddInfor.LastSendStatus">
+            <summary>
+            最后一次状态 0等待发送 1发送成功 2发送失败
+            </summary> 
+        </member>
+        <member name="P:JieNor.Framework.EmailService.EmailAddInfor.LastSendError">
+            <summary>
+            最后一次出错日志
+            </summary> 
+        </member>
+        <member name="P:JieNor.Framework.EmailService.EmailAddInfor.LastSendTime">
+            <summary>
+            最后一次发送时间
+            </summary> 
+        </member>
+        <member name="P:JieNor.Framework.EmailService.EmailAddInfor.LastSendSmtp">
+            <summary>
+            最后一次使用哪个SMTP进行发送
+            </summary> 
+        </member>
+        <member name="P:JieNor.Framework.EmailService.EmailAddInfor.SendCount">
+            <summary>
+            累计发送次数
+            </summary> 
+        </member>
+        <member name="P:JieNor.Framework.EmailService.EmailAddInfor.CreateTime">
+            <summary>
+            创建时间
+            </summary> 
+        </member>
+        <member name="T:JieNor.Framework.EmailService.SendStatistics">
+            <summary>
+            发送、接受服务器的统计信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.EmailService.SendStatistics.Smtp">
+            <summary>
+            邮件服务器信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.EmailService.SendStatistics.LastSendTime">
+            <summary>
+            最近一次发送时间
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.EmailService.SendStatistics.SendSuccessTotal">
+            <summary>
+            累计成功发送的邮件数
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.EmailService.SendStatistics.SendFailTotal">
+            <summary>
+            累计成功发送的邮件数
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.EmailService.SendStatistics.LastReciveTime">
+            <summary>
+            最近一次接收时间
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.EmailService.SendStatistics.ReciveSuccessTotal">
+            <summary>
+            累计成功接收的邮件数
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.EmailService.SendStatistics.ReciveFailTotal">
+            <summary>
+            累计接收失败的邮件数
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.EmailService.TemplateParse">
+            <summary>
+            邮件模版解析
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.TemplateParse.From(JieNor.Framework.EmailService.EmailTemplate,System.Action{System.String})">
+            <summary>
+            邮件模板解析：获取发件人地址信息
+            </summary>
+            <param name="tmpl"></param>
+            <param name="bizData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.TemplateParse.To(System.String,System.Collections.Generic.List{JieNor.Framework.EmailService.EmailAddInfor},System.Action{System.String})">
+            <summary>
+            邮件模板解析：获取收件人地址信息
+            </summary>
+            <param name="emailAddress"></param>
+            <param name="emailLst"></param>
+            <param name="onMessage"></param> 
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.TemplateParse.Parse(JieNor.Framework.EmailService.EmailTemplate,JieNor.Framework.SuperOrm.DataEntity.DynamicObject)">
+            <summary>
+            邮件模板解析：用业务数据替换模板里面的关键字
+            </summary>
+            <param name="tmpl"></param>
+            <param name="bizData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.TemplateParse.BizDataParse(System.String,JieNor.Framework.SuperOrm.DataEntity.DynamicObject)">
+            <summary>
+            邮件模板解析：用业务数据替换模板里面的关键字
+            </summary>
+            <param name="tmpl"></param>
+            <param name="bizData"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.EmailService.EmailTemplate">
+            <summary>
+            邮件模版
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.EmailService.EmailTemplate.TemplateID">
+            <summary>
+            邮件模版Id
+            </summary> 
+        </member>
+        <member name="P:JieNor.Framework.EmailService.EmailTemplate.TemplateName">
+            <summary>
+            邮件模版名称
+            </summary> 
+        </member>
+        <member name="P:JieNor.Framework.EmailService.EmailTemplate.TemplateDesc">
+            <summary>
+            邮件模版描述
+            </summary> 
+        </member>
+        <member name="P:JieNor.Framework.EmailService.EmailTemplate.ShowName">
+            <summary>
+            显示的发件人名称
+            </summary> 
+        </member>
+        <member name="P:JieNor.Framework.EmailService.EmailTemplate.FromEmailAddress">
+            <summary>
+            发件人的邮箱（为空的话找系统的默认设置的发件人）
+            </summary> 
+        </member>
+        <member name="P:JieNor.Framework.EmailService.EmailTemplate.ToEmailAddress">
+            <summary>
+            收件人的邮箱
+            </summary> 
+        </member>
+        <member name="P:JieNor.Framework.EmailService.EmailTemplate.CCEmailAddress">
+            <summary>
+            抄送人的邮箱
+            </summary> 
+        </member>
+        <member name="P:JieNor.Framework.EmailService.EmailTemplate.BCCEmailAddress">
+            <summary>
+            密送人的邮箱
+            </summary> 
+        </member>
+        <member name="P:JieNor.Framework.EmailService.EmailTemplate.Subject">
+            <summary>
+            邮件主题
+            </summary> 
+        </member>
+        <member name="P:JieNor.Framework.EmailService.EmailTemplate.Body">
+            <summary>
+            邮件内容
+            </summary> 
+        </member>
+        <member name="P:JieNor.Framework.EmailService.EmailTemplate.IsHTML">
+            <summary>
+            是否使用HTML发送
+            </summary> 
+        </member>
+        <member name="P:JieNor.Framework.EmailService.EmailTemplate.Status">
+            <summary>
+            状态 0可用 1不可用
+            </summary> 
+        </member>
+        <member name="P:JieNor.Framework.EmailService.EmailTemplate.CreateTime">
+            <summary>
+            创建时间
+            </summary> 
+        </member>
+        <member name="P:JieNor.Framework.EmailService.EmailTemplate.CreatorName">
+            <summary>
+            创建人
+            </summary> 
+        </member>
+        <member name="T:JieNor.Framework.EmailService.BatchMailer">
+            <summary>
+            邮件发送器
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.EmailService.BatchMailer.SmtpServerList">
+            <summary>
+            发送邮件服务器smtp列表
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.EmailService.BatchMailer.SendSmtpCount">
+            <summary>
+            发送服务器的统计信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.EmailService.BatchMailer.ReciveSmtpCount">
+            <summary>
+            接收服务器的统计信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.EmailService.BatchMailer.EmailAddList">
+            <summary>
+            邮件地址列表
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.EmailService.BatchMailer.SendSetting">
+            <summary>
+            邮件发送设置
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.EmailService.BatchMailer.onProcessMsg">
+            <summary>
+            发送进度通知
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.EmailService.BatchMailer.onFinish">
+            <summary>
+            完成时执行
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.BatchMailer.Stop">
+            <summary>
+            停止发送邮件（正在发送的继续发送，未发送的不再发送）
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.BatchMailer.Abort">
+            <summary>
+            终止发送邮件（立即停止）
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.BatchMailer.BatchSend(System.String,JieNor.Framework.EmailService.EmailTemplate,JieNor.Framework.SuperOrm.DataEntity.DynamicObject)">
+            <summary>
+            批量发送邮件
+            </summary> 
+            <param name="emailTemplate">邮件模版id</param>
+            <param name="bizData">业务数据，为空表示不需要用业务数据替换模板里面的关键字</param>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.BatchMailer.BatchSend(System.String,JieNor.Framework.EmailService.EmailTemplate,System.Collections.Generic.IEnumerable{JieNor.Framework.SuperOrm.DataEntity.DynamicObject})">
+            <summary>
+            批量发送邮件
+            </summary> 
+            <param name="emailTemplate">邮件模版id</param>
+            <param name="bizDatas">业务数据，为空表示不需要用业务数据替换模板里面的关键字</param>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.BatchMailer.BatchSend(System.String,System.Collections.Generic.Dictionary{JieNor.Framework.EmailService.EmailTemplate,System.Collections.Generic.IEnumerable{JieNor.Framework.SuperOrm.DataEntity.DynamicObject}})">
+            <summary>
+            批量发送邮件
+            </summary>  
+            <param name="maps">邮件模版:业务数据 </param>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.BatchMailer.SendEmails(JieNor.Framework.EmailService.EmailTemplate,System.Collections.Generic.IEnumerable{JieNor.Framework.SuperOrm.DataEntity.DynamicObject})">
+            <summary>
+            开始批量发送邮件
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.BatchMailer.SetSendSmtpServer(JieNor.Framework.Interface.ISmtpService,System.Int32@)">
+            <summary>
+            设置发送邮件服务器信息（隔段时间更换一个发送服务器）
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.BatchMailer.StatisticsSendInfo(JieNor.Framework.EmailService.SmtpServer,JieNor.Framework.EmailService.EmailTemplate,System.Boolean)">
+            <summary>
+            更新相关邮件服务器的统计信息
+            </summary>
+            <param name="smtp"></param>
+            <param name="success"></param>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.BatchMailer.Sleep(JieNor.Framework.EmailService.SmtpServer,JieNor.Framework.EmailService.EmailTemplate)">
+            <summary>
+            控制发送频度
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.BatchMailer.ChangeIP">
+            <summary>
+            切换发送人的IP地址
+            </summary>  
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.BatchMailer.ShowProccessMessage(System.String)">
+            <summary>
+            输出消息
+            </summary>
+            <param name="msg"></param>
+        </member>
+        <member name="T:JieNor.Framework.EmailService.SendEmail">
+            <summary>
+            邮件发送
+            示例：
+            <example>
+            <code>
+            var email = new SendEmail()
+                .Host("smtp.163.com").Port(25)
+                .From("wedison", "wedison@jienor.com")
+                .Body("测试邮件发送程序是否正常")
+                .Subject("测试")
+                .IsBodyHtml(true)
+                .Credentials("wedison@jienor.com", "？？？？？？？")
+                .To(to => to.Add("wedison@jie-nor.com"))
+                .Cc(cc => cc.Add("wedison@jie-nor.com"))
+                .Send();
+            </code>
+            </example>
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.SendEmail.#ctor(System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="host">SMTP 事务的主机的名称或 IP 地址</param>
+            <param name="port">host 上使用的端口</param>
+        </member>
+        <member name="P:JieNor.Framework.EmailService.SendEmail.ErrorMessage">
+            <summary>
+            出错消息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.EmailService.SendEmail.Message">
+            <summary>
+            邮件内容
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.SendEmail.From(System.String)">
+            <summary>
+             发件人
+            </summary>
+            <param name="fromMail">发件人地址</param>
+            <returns>Email(this)</returns>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.SendEmail.From(System.Net.Mail.MailAddress)">
+            <summary>
+             发件人
+            </summary>
+            <param name="mailAddress">发件人地址</param>
+            <returns>Email(this)</returns>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.SendEmail.From(System.String,System.String)">
+            <summary>
+             发件人名称和地址
+            </summary>
+            <param name="fromDisplayName">发件人名称</param>
+            <param name="fromMail">发件人地址</param>
+            <returns>Email(this)</returns>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.SendEmail.To(System.Func{JieNor.Framework.EmailService.EmailAddresses,JieNor.Framework.EmailService.EmailAddresses})">
+            <summary>
+             添加收件人地址
+            </summary>
+            <param name="mailAddresses">邮件地址</param>
+            <returns>Email(this)</returns>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.SendEmail.To(System.Collections.Generic.List{System.Net.Mail.MailAddress})">
+            <summary>
+             添加收件人地址
+            </summary>
+            <param name="mailAddresses">邮件地址</param>
+            <returns>Email(this)</returns>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.SendEmail.ClearTo">
+            <summary>
+            移除所有收件人地址
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.SendEmail.AddAttachment(System.String)">
+            <summary>
+            添加附件
+            </summary>
+            <param name="filePath">附件路径</param>
+            <returns>Email(this)</returns>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.SendEmail.Cc(System.Func{JieNor.Framework.EmailService.EmailAddresses,JieNor.Framework.EmailService.EmailAddresses})">
+            <summary>
+             添加抄送人地址
+            </summary>
+            <param name="mailAddresses">邮件地址</param>
+            <returns>Email(this)</returns>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.SendEmail.Cc(System.Collections.Generic.List{System.Net.Mail.MailAddress})">
+            <summary>
+             添加抄送人地址
+            </summary>
+            <param name="mailAddresses">邮件地址</param>
+            <returns>Email(this)</returns>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.SendEmail.ClearCc">
+            <summary>
+            移除所有抄送人地址
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.SendEmail.Bcc(System.Func{JieNor.Framework.EmailService.EmailAddresses,JieNor.Framework.EmailService.EmailAddresses})">
+            <summary>
+             添加密码抄送人地址
+            </summary>
+            <param name="mailAddresses">邮件地址</param>
+            <returns>Email(this)</returns>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.SendEmail.Bcc(System.Collections.Generic.List{System.Net.Mail.MailAddress})">
+            <summary>
+             添加密码抄送人地址
+            </summary>
+            <param name="mailAddresses">邮件地址</param>
+            <returns>Email(this)</returns>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.SendEmail.ClearBcc">
+            <summary>
+            移除所有密码抄送人地址
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.SendEmail.AddLinkedResource(System.String,System.String,System.String)">
+            <summary>
+            添加资源文件
+            </summary>
+            <param name="fileName"></param>
+            <param name="contentType"></param>
+            <param name="cid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.SendEmail.AddImageResource(System.String,System.String)">
+            <summary>
+            添加图片资源文件
+            </summary>
+            <param name="fileName"></param>
+            <param name="cid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.SendEmail.ClearAddress">
+            <summary>
+            移除所有To/Cc/Bcc的EMAIL地址
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.SendEmail.Subject(System.String)">
+            <summary>
+             邮件标题
+            </summary>
+            <param name="subject">标题</param>
+            <returns>Email(this)</returns>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.SendEmail.Body(System.String)">
+            <summary>
+             邮件内容
+            </summary>
+            <param name="body">内容</param>
+            <returns>Email(this)</returns>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.SendEmail.SubjectEncoding(System.Text.Encoding)">
+            <summary>
+             发送标题编码
+            </summary>
+            <param name="subjectEncoding">标题编码</param>
+            <returns>Email(this)</returns>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.SendEmail.BodyEncoding(System.Text.Encoding)">
+            <summary>
+             邮件内容编码
+            </summary>
+            <param name="bodyEncoding">内容编码</param>
+            <returns>Email(this)</returns>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.SendEmail.Priority(System.Net.Mail.MailPriority)">
+            <summary>
+            设置优先级
+            </summary>
+            <param name="mailPriority"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.SendEmail.IsBodyHtml(System.Boolean)">
+            <summary>
+             邮件内容是否以HTML形式发送
+            </summary>
+            <param name="isBodyHtml">是否以HTML形式发送 true/false</param>
+            <returns>Email(this)</returns>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.SendEmail.UseDefaultCredentials(System.Boolean)">
+            <summary>
+             如果使用默认凭据，则为 true；否则为 false。默认值为 false。
+            </summary>
+            <param name="useDefaultCredentials">如果使用默认凭据，则为 true；否则为 false。默认值为 true。</param>
+            <returns>Email(this)</returns>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.SendEmail.Host(System.String)">
+            <summary>
+             邮件服务器主机
+            </summary>
+            <param name="host">邮件服务器主机</param>
+            <returns>Email(this)</returns>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.SendEmail.Server(System.String,System.Int32)">
+            <summary>
+             邮件服务器
+            </summary>
+            <param name="host">邮件服务器主机</param>
+            <param name="port">指定的端口</param>
+            <returns>Email(this)</returns>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.SendEmail.Port(System.Int32)">
+            <summary>
+             指定的端口
+            </summary>
+            <param name="port">指定的端口</param>
+            <returns>Email(this)</returns>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.SendEmail.Ssl(System.Boolean)">
+            <summary>
+             是否启用SSL
+            </summary>
+            <param name="enableSsl">是否启用SSL</param>
+            <returns>Email(this)</returns>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.SendEmail.Timeout(System.Int32)">
+            <summary>
+             设置超时时间
+            </summary>
+            <param name="timeout">超时时间</param>
+            <returns>Email(this)</returns>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.SendEmail.Credentials(System.String,System.String)">
+            <summary>
+             登录邮件服务器的凭证（NetworkCredentials）
+            </summary>
+            <param name="username">用户名</param>
+            <param name="password">密码</param>
+            <returns>Email(this)</returns>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.SendEmail.Credentials(System.String,System.String,System.String)">
+            <summary>
+             登录邮件服务器的凭证（NetworkCredentials）
+            </summary>
+            <param name="username">用户名</param>
+            <param name="password">密码</param>
+            <param name="domain">域</param>
+            <returns>Email(this)</returns>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.SendEmail.Send">
+            <summary>
+             发送邮件
+            </summary>
+            <example>
+             <code>
+                 var Email = new SendEmail("smtp.gmail.com", 587);
+                 Email.Port(25).Ssl(true)
+                     .From("wedison", "wedison@jienor.com")
+                     .To(to => to.Add("张三", "张三@jienor.com"))
+                     .Bcc(bcc => bcc.Add("李四", "李四@jienor.com"))
+                     .Cc(cc => cc.Add("王五", "王五@jienor.com"))
+                     .Body("这是一封测试邮件，测试邮件是否发送成功: &lt;p style='font-weight:bold;color:blue;font-size:32px;'>html&lt;/p>")
+                     .Subject("邮件发送测试")
+                     .IsBodyHtml(true)
+                     .Credentials("wedison@jienor.com", "？？？？？？") 
+                     .Send();
+             </code>
+            </example>
+            <returns>true/false</returns>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.EmailAddresses.#ctor">
+            <summary>
+            构造器
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.EmailAddresses.Add(System.String)">
+            <summary>
+             添加一个新的邮件地址
+            </summary>
+            <param name="mail">邮件地址</param>
+            <returns>MailAddresses(this)</returns>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.EmailAddresses.Add(System.String,System.String)">
+            <summary>
+             添加一个新的邮件地址
+            </summary>
+            <param name="displayName">显示名称</param>
+            <param name="mail">邮件地址</param>
+            <returns>MailAddresses(this)</returns>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.EmailAddresses.Add(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+             添加邮件地址
+            </summary>
+            <param name="mails">邮件列表</param>
+            <returns>MailAddresses(this)</returns>
+        </member>
+        <member name="M:JieNor.Framework.EmailService.EmailAddresses.Add(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+             添加邮件地址
+            </summary>
+            <param name="contacts">邮件列表（Dictionary格式：Key 显示名字 ，value 邮件地址）</param>
+            <returns>MailAddresses(this)</returns>
+        </member>
+        <member name="T:JieNor.Framework.EmailService.SendSetting">
+            <summary>
+            邮件发送选项
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.EmailService.SendSetting.SettingID">
+            <summary>
+            设置编号
+            </summary> 
+        </member>
+        <member name="P:JieNor.Framework.EmailService.SendSetting.ConnectType">
+            <summary>
+            连网类型 0使用路由连接 1使用拨号连接
+            </summary> 
+        </member>
+        <member name="P:JieNor.Framework.EmailService.SendSetting.IPInterval">
+            <summary>
+            发送多少封邮件后更换IP
+            一般的邮件服务器，都针对同一个IP做收发邮件封数的限制，如果超过，
+            则会导致邮件服务器拒收发邮件或者将发件人列入黑名单或将邮件列为垃圾邮件
+            </summary> 
+        </member>
+        <member name="P:JieNor.Framework.EmailService.SendSetting.SmtpInterval">
+            <summary>
+            发送多少封邮件后更换SMTP
+            一般的邮件接收服务器，都针对同一个IP所用的邮件发送服务器做发送邮件封数的限制，如果超过，
+            则会导致邮件接收服务器拒收邮件或者将发件人列入黑名单或将邮件列为垃圾邮件
+            </summary> 
+        </member>
+        <member name="P:JieNor.Framework.EmailService.SendSetting.MaxRetryCount">
+            <summary>
+            更换IP最多重试次数
+            </summary> 
+        </member>
+        <member name="P:JieNor.Framework.EmailService.SendSetting.SendRetryCount">
+            <summary>
+            发送邮件失败重试次数
+            </summary> 
+        </member>
+        <member name="P:JieNor.Framework.EmailService.SmtpServer.SmtpHost">
+            <summary>
+            SMTP服务器
+            </summary> 
+        </member>
+        <member name="P:JieNor.Framework.EmailService.SmtpServer.SmtpPort">
+            <summary>
+            SMTP端口
+            </summary> 
+        </member>
+        <member name="P:JieNor.Framework.EmailService.SmtpServer.UserName">
+            <summary>
+            登录用户名
+            </summary> 
+        </member>
+        <member name="P:JieNor.Framework.EmailService.SmtpServer.Password">
+            <summary>
+            登录密码
+            </summary> 
+        </member>
+        <member name="P:JieNor.Framework.EmailService.SmtpServer.IsSSL">
+            <summary>
+            是否支持SSL
+            </summary> 
+        </member>
+        <member name="P:JieNor.Framework.EmailService.SmtpServer.Status">
+            <summary>
+            状态 0可用 1不可用
+            </summary> 
+        </member>
+        <member name="P:JieNor.Framework.EmailService.SmtpServer.Interval">
+            <summary>
+            发送（接收）邮件时间间隔(毫秒)
+            一般的邮件服务器，都设置有相应的邮件发送（接收）时间间隔，如果超过，
+            则会导致邮件服务器拒收发邮件或者将发件人列入黑名单或将邮件列为垃圾邮件
+            </summary> 
+        </member>
+        <member name="P:JieNor.Framework.EmailService.SmtpServer.TotalSends">
+            <summary>
+            总共发送邮件次数
+            </summary> 
+        </member>
+        <member name="P:JieNor.Framework.EmailService.SmtpServer.TotalSendFails">
+            <summary>
+            总共发送失败次数
+            </summary> 
+        </member>
+        <member name="P:JieNor.Framework.EmailService.SmtpServer.CreateTime">
+            <summary>
+            创建时间
+            </summary> 
+        </member>
+        <member name="P:JieNor.Framework.EmailService.SmtpServer.CreatorName">
+            <summary>
+            创建人
+            </summary> 
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,169 @@
+﻿<!--页面菜单列表-->
+<div class="page-menu-list">
+</div>
+<!--页面内容面板-->
+<div class="row">
+	<div class="col-md-6">
+		<form action="javascript:;" class="form-horizontal">
+			<div class="portlet box yellow-casablanca">
+		        <div class="portlet-title">
+		            <div class="caption">
+		                <i class="fa fa-user"></i>基本信息
+		            </div>
+		            <div class="tools">
+		                <a href="javascript:;" class="collapse"></a>
+		            </div>
+		        </div>
+		        <div class="portlet-body form">
+				    <div class="form-body">
+				    	<!--验证提示信息-->
+				        <div class="alert alert-danger display-hide">
+				            <button class="close" data-close="alert"></button>
+				            页面中有一些带红色星号 * 的信息是必填项，请检查是否都有正确录入！
+				        </div>
+		                <div class="form-group">
+		                    <label class="col-md-4 control-label">任务类型</label>
+		                    <div class="col-md-7">
+		                        <div class="input-icon right">
+		                            <input type="text" class="form-control" name="ftasktype" placeholder="文本">
+		                        </div>
+		                    </div>
+		                </div>
+	            		<div class="form-group">
+		                    <label class="col-md-4 control-label">需制单</label>
+		                    <div class="col-md-7 cols">
+		                        <div class="switch-type1"  style="margin:0 0 -13px 10px;">
+			                		<span></span>
+			                	</div>
+		                    </div>
+		                </div>
+	            		<div class="form-group" style="display: none;">
+		                    <label class="col-md-4 control-label">对应数据</label>
+		                    <div class="col-md-7">
+		                        <div class="input-icon right">
+		                            <input id="fdocobj" type="text" class="form-control" name="fdocobj" placeholder="业务单据对象">
+		                        </div>
+		                    </div>
+		                </div>
+						<div class="form-group">
+		                    <label class="col-md-4 control-label">分组</label>
+		                    <div class="col-md-7">
+		                        <div class="input-icon right">
+		                            <input type="text" class="form-control" name="fgrouping" placeholder="文本">
+		                        </div>
+		                    </div>
+		                </div>
+		                <div class="form-group">
+				            <label class="col-md-4 control-label">描述</label>
+				            <div class="col-md-7 cols">
+				                <div class="input-icon right">
+				                    <textarea cols="40" rows="6" name="ftaskdescription" class="form-control" style="overflow:visible" placeholder="任务描述"></textarea>
+				                </div>
+				            </div>
+				        </div>
+		               <div class="form-group">
+		                    <label class="col-md-4 control-label">预置</label>
+		                    <div class="col-md-4 cols">
+		                        <div class="checkbox-list">
+		                            <label class="checkbox-inline">
+		                                <input type="checkbox" name="fpreset" readonly="readonly">
+		                            </label>
+		                        </div>
+		                    </div>
+		                </div>
+		                <div class="form-group">
+		                    <label class="col-md-4 control-label">移动端业务</label>
+		                    <div class="col-md-7">
+		                        <div class="input-icon right">
+		                            <input type="text" class="form-control" name="fbusiness" placeholder="易家居App业务单据对象" readonly="readonly">
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</form>
+	</div>
+	<div class="col-md-6">
+		<form action="javascript:;" class="form-horizontal">
+			<div class="portlet box yellow-casablanca">
+		        <div class="portlet-title">
+		            <div class="caption">
+		                <i class="fa fa-user"></i>其他信息
+		            </div>
+		            <div class="tools">
+		                <a href="javascript:;" class="collapse"></a>
+		            </div>
+		        </div>
+		        <div class="portlet-body form">
+				    <div class="form-body">
+				    	<!--验证提示信息-->
+				        <div class="alert alert-danger display-hide">
+				            <button class="close" data-close="alert"></button>
+				            页面中有一些带红色星号 * 的信息是必填项，请检查是否都有正确录入！
+				        </div>
+		            	<div class="form-group">
+		                    <label class="col-md-4 control-label">创建人</label>
+		                    <div class="col-md-7 cols">
+		                        <div class="input-icon right">
+		                            <input type="text" class="form-control" name="ffounder" readonly="readonly" placeholder="员工基础，自动获取" />
+		                        </div>
+		                    </div>
+		                </div>
+		                <div class="form-group">
+		                    <label class="col-md-4 control-label">创建日期</label>
+		                    <div class="col-md-7 cols">
+		                        <div class="input-icon right">
+		                            <input type="text" class="form-control" name="fcreatedate" readonly="readonly" placeholder="日期字段，自动获取" />
+		                        </div>
+		                    </div>
+		                </div>
+		                <div class="form-group">
+		                    <label class="col-md-4 control-label">完成人</label>
+		                    <div class="col-md-7 cols">
+		                        <div class="input-icon right">
+		                            <input type="text" class="form-control" name="ffinish" readonly="readonly" placeholder="员工基础，自动获取" />
+		                        </div>
+		                    </div>
+		                </div>
+		                <div class="form-group">
+		                    <label class="col-md-4 control-label">完成日期</label>
+		                    <div class="col-md-7 cols">
+		                        <div class="input-icon right">
+		                            <input type="text" class="form-control" name="ffinishdate" readonly="readonly" placeholder="日期字段，自动获取" />
+		                        </div>
+		                    </div>
+		                </div>
+		                <div class="form-group">
+		                    <label class="col-md-4 control-label">忽略人</label>
+		                    <div class="col-md-7 cols">
+		                        <div class="input-icon right">
+		                            <input type="text" class="form-control" name="fignore" readonly="readonly" placeholder="员工基础，自动获取" />
+		                        </div>
+		                    </div>
+		                </div>
+		                <div class="form-group">
+		                    <label class="col-md-4 control-label">忽略日期</label>
+		                    <div class="col-md-7 cols">
+		                        <div class="input-icon right">
+		                            <input type="text" class="form-control" name="fignoredate" readonly="readonly" placeholder="日期字段，自动获取" />
+		                        </div>
+		                    </div>
+		                </div>
+		                <div class="form-group">
+		                    <label class="col-md-4 control-label">数据状态</label>
+		                    <div class="col-md-7 cols">
+		                        <div class="input-icon right">
+		                            <select class="form-control" name="fstatus" disabled="disabled">
+		                                <option value="创建">创建</option>
+		                                <option value="禁用">禁用</option>
+		                            </select>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</form>
+	</div>
+</div>

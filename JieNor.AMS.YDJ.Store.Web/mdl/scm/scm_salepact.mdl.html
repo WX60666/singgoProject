@@ -1,0 +1,59 @@
+﻿<!--
+    本模板是根据服务端需求提炼而成，客户端页面只需要遵循下述节点的一些属性描述规范即可，
+    至于节点布局，样式等没有要求（也就是xpath没要求），可由客户端页面实际需求自由发挥，
+    但需要服务端保存的节点需遵守下述规范：基本就是增加几个自定义属性（id,fn,tn）
+-->
+<html lang="en">
+<head>
+</head>
+<body id="Scm_SalePact"  el=1 basemodel="bill_basetmpl" mulaudit="true" cn="销售合同">
+
+    <div id="FBillHead" el="51" pk="FId" tn="T_Scm_SalePact" pn="FBillHead" cn="销售合同信息">
+         
+        <select id="FBillType" el="123"  refId="bd_billtype" dfld="FName"  ek="FBillHead" fn="FBillType" pn="FBillType" cn="单据类型">
+            <option value="存储值">显示值</option>
+        </select>
+
+        <input ek="FBillHead" el="112" type="datetime" id="FOrderDate" fn="FOrderDate" pn="FOrderDate" cn="下单日期" />
+
+        <input ek="FBillHead" el="106" type="text" id="FStoreId"  refId="bd_stock" dfld="FName"  fn="FStoreId" pn="FStoreId" cn="门店" />
+        <input ek="FBillHead" el="106" type="text" id="FSaleManId"  refId="sec_user" dfld="FName" fn="FSaleManId" pn="FSaleManId" cn="导购员" />
+        <input ek="FBillHead" el="112" type="datetime" id="FStoreOrderDate" fn="FStoreOrderDate" pn="FStoreOrderDate" cn="门店下单日期" />
+
+        <input ek="FBillHead" el="117" type="text" id="FAiderType" fn="FAiderType" pn="FAiderType" cn="辅助人类型" />
+        <input ek="FBillHead" el="100" type="text" id="FAiderId" fn="FAiderId" pn="FAiderId" cn="辅助人" />
+        <input ek="FBillHead" el="100" type="text" id="FDesignSchemeId" fn="FDesignSchemeId" pn="FDesignSchemeId" cn="设计方案" />
+
+        <input ek="FBillHead" el="100" type="text" id="FDepositNo" fn="FDepositNo" pn="FDepositNo" cn="定金单号" />
+        <input ek="FBillHead" el="117" type="text" id="FBrandType" fn="FBrandType" pn="FBrandType" cn="品牌类型" />
+        <input ek="FBillHead" el="112" type="datetime" id="FDeliveryDate" fn="FDeliveryDate" pn="FDeliveryDate" cn="交货日期" />
+
+        <input ek="FBillHead" el="106" type="text" id="FCustId" refId="bd_customer" dfld="FName"  fn="FCustId" pn="FCustId" cn="客户" />
+
+        <input ek="FBillHead" el="106" type="text" id="FExternalId"  refId="bd_customer" dfld="FName" fn="FExternalId" pn="FExternalId" cn="外部带单人" />
+        <input ek="FBillHead" el="102" type="text" id="FExternalAmount" fn="FExternalAmount" pn="FExternalAmount" cn="外部带单返利" />
+        <input ek="FBillHead" el="102" type="text" id="FWaitTopupAmount" fn="FWaitTopupAmount" pn="FWaitTopupAmount" cn="待充值金额" />
+        <input ek="FBillHead" el="102" type="text" id="FTopupAmount" fn="FTopupAmount" pn="FTopupAmount" cn="充值总金额" />
+        <input ek="FBillHead" el="116" type="checkbox" id="FIsViolate" fn="FIsViolate" pn="FIsViolate" cn="是否违规单" />
+        <input ek="FBillHead" el="102" type="text" id="FSaleFeats" fn="FSaleFeats" pn="FSaleFeats" cn="销售业绩" />
+        <input ek="FBillHead" el="102" type="text" id="FTopupRate" fn="FTopupRate" pn="FTopupRate" cn="充值率" />
+          
+        <table id="FEntity" el="52" pk="FEntryId" tn="T_Scm_SalePactEntry" pn="FEntity" cn="销售合同明细">
+            <tr>
+                <th ek="FEntity" el="106" id="FMaterialId"  refId="bd_material" dfld="FName" fn="FMaterialId" pn="FMaterialId" cn="物料">物料</th>
+                <th ek="FEntity" el="102" id="FLength" fn="FLength" pn="FLength" cn="长">长</th>
+                <th ek="FEntity" el="102" id="FWidth" fn="FWidth" pn="FWidth" cn="宽">宽</th>
+                <th ek="FEntity" el="102" id="FHeight" fn="FHeight" pn="FHeight" cn="高">高</th>
+                <th ek="FEntity" el="100" id="FColorId" fn="FColorId" pn="FColorId" cn="颜色">颜色</th>
+                <th ek="FEntity" el="109" id="FUnitId" refId="bd_unit" dfld="FName"  fn="FUnitId" pn="FUnitId" cn="单位">单位</th>
+                <th ek="FEntity" el="103" id="FQty" fn="FQty" pn="FQty" cn="数量">数量</th>
+                <th ek="FEntity" el="104" id="FPrice" fn="FPrice" pn="FPrice" cn="单价">单价</th>
+                <th ek="FEntity" el="102" id="FDiscount" fn="FDiscount" pn="FDiscount" cn="折扣">折扣</th>
+                <th ek="FEntity" el="102" id="FAmount" fn="FAmount" pn="FAmount" cn="金额">金额</th>
+                <th ek="FEntity" el="100" id="FRemark" fn="FRemark" pn="FRemark" cn="备注">备注</th>
+            </tr>
+        </table>
+
+    </div>
+</body>
+</html>

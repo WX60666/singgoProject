@@ -1,0 +1,150 @@
+/* 这里用于写一些我们自定义的 css ，这些 css 将会覆盖系统的相关 css */
+
+/* 首页头部 和 tab 页签标题相关 */
+.page-header-fixed {
+	position:fixed;
+	top:0;
+	z-index:1000
+}
+.page-tabs-fixed {
+	position:fixed;
+	top:100px;
+	z-index:110;
+	height:59px
+}
+.page-tabs-fixed .page-content2 {
+	height:59px;
+	padding-bottom:0
+}
+.page-content {
+	padding-top:0
+}
+.page-tabs-fixed .tabbable-custom {
+	overflow:initial
+}
+.page-tabs-fixed .close-tab {
+	font-size:10px !important;
+	line-height:10px;
+	font-weight:100
+}
+.page-head-placeholder {
+	height:159px
+}
+.page-container-index .page-content2 {
+	padding-top:0
+}
+
+@media screen and (max-width:993px) {
+	.page-tabs-fixed {
+	height:45px;
+	top:52px
+}
+.page-head-placeholder {
+	height:97px
+}
+.page-tabs-fixed .page-content2 {
+	height:45px
+}
+.page-tabs-fixed .row {
+	height:45px
+}
+
+}@media screen and (max-width:620px) {
+	.page-tabs-fixed {
+	height:45px;
+	top:92px
+}
+.page-head-placeholder {
+	height:137px
+}
+.page-tabs-fixed .page-content2 {
+	height:45px
+}
+.page-tabs-fixed .row {
+	height:45px
+}
+}
+
+/* 首页 tab 页签相关 */
+.close-tab {
+	position:absolute;
+	right:2px;
+	top:2px;
+	z-index:100;
+	cursor:pointer;
+	color:#D5DCE0;
+	display:none;
+	width:10px
+}
+.close-tab:hover{
+    color:#879BA7;
+}
+.page-content2 .nav-tabs {
+	position:relative
+}
+.page-content2 .nav-tabs li {
+	position:relative
+}
+.page-content2 .nav-tabs li a{
+	color:#F2784B;
+}
+.page-content2 .nav-tabs li a:hover{
+	color:#DF4710;
+}
+.tabbable-custom > .nav-tabs > li.active > a{
+    color:#555;
+}
+.page-content2 .tab-drop {
+	margin-right:30px
+}
+.page-content2 .rightMenu {
+	position:absolute;
+	width:150px;
+	z-index:99;
+	display:none
+}
+.page-content .tab-content {
+    padding:0px;
+}
+.page-content .tab-content .tab-pane{
+    padding:10px;
+    min-height:600px;
+    width:100%;
+}
+
+/* 登录对话框相关 */
+#login-dialog .input-icon{
+    border-left: 2px solid #f2784b !important
+}
+#login-dialog .input-icon .form-control {
+  border-left: 0;
+}
+
+/* 基础资料下拉表格相关 */
+.bd-select-table {
+    display:none;
+    position:absolute;
+    z-index:100;
+    width:450px;
+}
+
+/* 单据表体基础资料控件放大镜图标 */
+.bd-select-icon{
+    position: absolute;cursor: pointer;top: 6px;right:0px;width:18px;height:19px;text-align: right;background: white;
+}
+
+/* 特定的 margin 和 padding */
+.m5{margin:5px;}
+.m10{margin:10px;}
+.m15{margin:15px;}
+.m20{margin:20px;}
+.mb5{margin-bottom:5px;}
+.mb10{margin-bottom:10px;}
+.mb15{margin-bottom:15px;}
+.mb20{margin-bottom:20px;}
+.mtb5lr0{margin:5px 0;}
+
+/* 隐藏 */
+.e-hide{
+    display:none;
+}

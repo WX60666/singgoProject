@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body id="ydj_salesreturn" basemodel="bd_basetmpl" el="1" cn="销售退货">
+    <div id="FBillHead" el="51" pk="fid" tn="t_ydj_salesreturn" pn="FBillHead" cn="销售退货"> 
+        <!--客户信息-->
+        <input type="Text" id="fscaledate" el="108" ek="FBillHead" fn="fscaledate" ts="" visible="-1" cn="出库单号" />
+        <input type="datetime" id="fslipdate" el="113" ek="FBillHead" fn="fslipdate" ts="" cn="出库日期" visible="-1" />
+        <input type="text" id="fcustomerid" el="106" ek="FBillHead" fn="fcustomerid" refid="ydj_customer" ts="" visible="-1" cn="客户" />
+        <input type="text" id="fstorehouse" el="106" ek="FBillHead" fn="fstorehouse" refid="ydj_storehouse" ts="" visible="-1" cn="仓库" />
+    	<input el="100" ek="fbillhead" visible="-1" id="fdescription" fn="fdescription" pn="fdescription" cn="备注" />
+    	<!--客户信息-->
+    	<input el="100" ek="fbillhead" visible="-1" id="freceiver" fn="freceiver" pn="freceiver" cn="收货人" />
+        <select el="122" ek="fbillhead" visible="-1" id="fprovince" fn="fprovince" pn="fprovince" cn="省" cg="省" refid="bd_enum" dfld="fenumitem"></select>
+        <select el="122" ek="fbillhead" visible="-1" id="fcity" fn="fcity" pn="fcity" cn="市" cg="市" refid="bd_enum" dfld="fenumitem"></select>
+        <select el="122" ek="fbillhead" visible="-1" id="fregion" fn="fregion" pn="fregion" cn="区" cg="区" refid="bd_enum" dfld="fenumitem"></select>
+        <input el="100" ek="fbillhead" visible="-1" id="faddress" fn="faddress" pn="faddress" cn="收货地址" />
+        <input el="100" ek="fbillhead" visible="-1" id="fphone" fn="fphone" pn="fphone" cn="联系电话" />
+
+        <input type="text" id="freturnamount" el="105" ek="FBillHead" fn="freturnamount" ts="" visible="-1" cn="退货金额" />
+        
+    </div>
+
+	
+</body>
+</html>
+

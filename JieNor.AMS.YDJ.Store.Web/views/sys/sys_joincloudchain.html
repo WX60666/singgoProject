@@ -1,0 +1,108 @@
+<!--页面内容面板-->
+<form action="javascript:;" class="form-horizontal">
+	<div class="portlet box yellow-casablanca">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-user"></i>加入云链系统
+            </div>
+            <div class="tools">
+                <a href="javascript:;" class="collapse"></a>
+            </div>
+        </div>
+        <div class="portlet-body form">
+		    <div class="form-body">
+		    	<!--验证提示信息-->
+		        <div class="alert alert-danger display-hide">
+		            <button class="close" data-close="alert"></button>
+		            页面中有一些带红色星号 * 的信息是必填项，请检查是否都有正确录入！
+		        </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">云链令牌</label>
+                    <div class="col-md-4">
+                        <div class="input-icon right">
+                            <input type="text" name='fcloudChainToken' class="form-control" placeholder="云链令牌">
+                        </div>
+                    </div>
+                    <span class="col-md-4">了解什么是<a href="/dynamic/sys_mainfw?operationno=getcctoken" target="_blank">云链令牌</a></span>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">产品标识</label>
+                    <div class="col-md-4">
+                        <div class="input-icon right">
+                            <input type="text" name='fproductId' class="form-control" placeholder="产品标识" readonly="readonly">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">企业注册号<span class="required">*</span></label>
+                    <div class="col-md-4">
+                        <div class="input-icon right">
+                            <input type="text" name="fcompanyId" class="form-control" 
+                            	placeholder="企业注册号" required="required">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">企业名称<span class="required">*</span></label>
+                    <div class="col-md-4">
+                        <div class="input-icon right">
+                            <input type="text" name="fcompanyName" class="form-control" 
+                            	placeholder="企业名称" required="required">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">法人名称<span class="required">*</span></label>
+                    <div class="col-md-4">
+                        <div class="input-icon right">
+                            <input type="text" name="flegalName" class="form-control" 
+                            	placeholder="法人名称" required="required">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">开放服务配置</label>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">用户<span class="required">*</span></label>
+                    <div class="col-md-4">
+                        <div class="input-icon right">
+                            <input type="text" name="fuserName" class="form-control" 
+                            	placeholder="用户" required="required">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">账套标识<span class="required">*</span></label>
+                    <div class="col-md-4">
+                        <div class="input-icon right">
+                            <input type="text" name="faccountSign" class="form-control" 
+                            	placeholder="账套标识" required="required">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">服务秘钥</label>
+                    <div class="col-md-4">
+                        <div class="input-icon right">
+                            <input type="password" name="fserviceSecretKey" class="form-control" 
+                            	placeholder="服务秘钥" readonly="readonly">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">消息链路标识</label>
+                    <div class="col-md-4">
+                        <div class="input-icon right">
+                            <input type="text" name="fmqId" class="form-control" placeholder="消息链路标识" readonly="readonly">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-actions right">
+		        <button type="submit" class="btn yellow-casablanca" id="cloudSubmit">加入</button>
+		        <button type="button" class="btn default" id="cloudCancel">取消</button>
+		    </div>
+        </div>
+    </div>
+</form>

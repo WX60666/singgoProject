@@ -1,0 +1,18 @@
+﻿<!--本模板是根据服务端需求提炼而成，客户端页面只需要遵循下述节点的一些属性描述规范即可，
+    至于节点布局，样式等没有要求（也就是xpath没要求），可由客户端页面实际需求自由发挥，
+    但需要服务端保存的节点需遵守下述规范：基本就是增加几个自定义属性（id,fn,tn）
+    -->
+<html lang="en">
+<head>
+</head>
+<body id="bas_printtmpl" el=1  basemodel="bd_basetmpl" cn="打印模版">
+    <div id="fbillhead" el="51"  pk="FId" tn="t_bas_printtmpl"  pn="fbillhead" cn="基本信息">
+        
+        <input type="text" id="FSrcFormId" el="108" ek="fbillhead" fn="FSrcFormId"  cn="数据来源" desc="数据来源" visible="-1"/>
+        <input type="text" id="FModule" el="100" ek="FBillHead" fn="FModule" pn="FModule" cn="所属模块"  visible="-1" /> 
+        <input type="text" id="fcontent" el="127" ek="FBillHead" fn="fcontent" pn="fcontent" cn="模板信息" /> 
+        <input type="text" id="ftype" el="100" ek="FBillHead" fn="ftype" pn="ftype" cn="模板类型" />
+</div>
+
+</body>
+</html>

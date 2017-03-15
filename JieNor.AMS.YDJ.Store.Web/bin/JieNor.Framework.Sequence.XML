@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JieNor.Framework.Sequence</name>
+    </assembly>
+    <members>
+        <member name="M:PerfmonUtil.StartMonitor">
+            <summary>
+            开始监控
+            </summary>
+        </member>
+        <member name="M:PerfmonUtil.EndMonitor">
+            <summary>
+            结束监控
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.Sequence.SequenceHelper">
+            <summary>
+            表主键的相关服务（获取、更新、修正等等）
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Sequence.SequenceHelper.GetSequence``1">
+            <summary>
+            返回指定个数的序列（仅支持 int64，string，guid三种类型）
+            </summary>
+            <typeparam name="T"></typeparam>  
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Sequence.SequenceHelper.GetSequence``1(System.Int32)">
+            <summary>
+            返回指定个数的序列（仅支持 int64，string，guid三种类型）
+            </summary>
+            <typeparam name="T"></typeparam> 
+            <param name="count">需要申请的系列号个数</param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Sequence.SequenceHelper.GetInt64Sequence(System.Int32)">
+            <summary>
+            返回整数的序列
+            </summary> 
+            <param name="count">需要申请的系列号个数</param>
+            <returns>指定数量的序列</returns>
+        </member>
+        <member name="M:JieNor.Framework.Sequence.SequenceHelper.GetStringSequence(System.Int32)">
+            <summary>
+            
+            </summary> 
+            <param name="count">需要申请的系列号个数</param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Sequence.SequenceHelper.GetGuidSequence(System.Int32)">
+            <summary>
+            
+            </summary> 
+            <param name="count">需要申请的系列号个数</param>
+            <returns></returns>
+        </member>
+        <member name="F:JieNor.Framework.Sequence.SequenceWorker.Twepoch">
+             <summary>
+            1451577600000 是2016-01-01 00:00:00这一时刻到1970-01-01 00:00:00
+            时刻所经过的毫秒数(当前时刻减去1451577600000的值在2^41 里)
+             </summary>
+        </member>
+        <member name="P:JieNor.Framework.Sequence.SequenceWorker.WorkerId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Sequence.SequenceWorker.DatacenterId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Sequence.SequenceWorker.Sequence">
+            <summary>
+            当前序号
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Sequence.SequenceWorker.NextId">
+            <summary>
+            获取序号
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

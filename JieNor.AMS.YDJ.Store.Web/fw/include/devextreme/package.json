@@ -1,0 +1,107 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "devextreme@~16.1.4",
+        "scope": null,
+        "escapedName": "devextreme",
+        "name": "devextreme",
+        "rawSpec": "~16.1.4",
+        "spec": ">=16.1.4 <16.2.0",
+        "type": "range"
+      },
+      "E:\\BaiduYunDownload\\devextreme-examples-master\\requirejs-jquery"
+    ]
+  ],
+  "_from": "devextreme@>=16.1.4 <16.2.0",
+  "_id": "devextreme@16.1.8",
+  "_inCache": true,
+  "_location": "/devextreme",
+  "_nodeVersion": "4.6.0",
+  "_npmOperationalInternal": {
+    "host": "packages-18-east.internal.npmjs.com",
+    "tmp": "tmp/devextreme-16.1.8.tgz_1479381466219_0.5167308589443564"
+  },
+  "_npmUser": {
+    "name": "devextreme",
+    "email": "chartjs@devexpress.com"
+  },
+  "_npmVersion": "3.9.0",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "devextreme@~16.1.4",
+    "scope": null,
+    "escapedName": "devextreme",
+    "name": "devextreme",
+    "rawSpec": "~16.1.4",
+    "spec": ">=16.1.4 <16.2.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/devextreme/-/devextreme-16.1.8.tgz",
+  "_shasum": "e02f7fdfce4a3c40c25ad6ec3aca49a3e013e250",
+  "_shrinkwrap": null,
+  "_spec": "devextreme@~16.1.4",
+  "_where": "E:\\BaiduYunDownload\\devextreme-examples-master\\requirejs-jquery",
+  "bin": {
+    "devextreme-bundler-init": "bin/bundler-init.js",
+    "devextreme-bundler": "bin/bundler.js"
+  },
+  "dependencies": {},
+  "description": "DevExtreme supplies HTML/JS tools for mobile and web development.",
+  "devDependencies": {
+    "eslint": "^2.10.2",
+    "eslint-plugin-spellcheck": "0.0.7",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-eol": "^0.1.2",
+    "gulp-footer": "^1.0.5",
+    "gulp-header": "^1.7.1",
+    "gulp-if": "^2.0.0",
+    "gulp-jsbeautifier": "^2.0.3",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
+    "gulp-uglify": "^1.5.3",
+    "lazypipe": "^1.0.1",
+    "run-sequence": "^1.1.5",
+    "systemjs": "^0.19.31",
+    "systemjs-plugin-css": "^0.1.23",
+    "systemjs-plugin-text": "0.0.8",
+    "vinyl-named": "^1.1.0",
+    "webpack": "^1.13.0",
+    "webpack-stream": "github:jmurzy/webpack-stream#f82b9bc",
+    "yargs": "^4.6.0"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "e02f7fdfce4a3c40c25ad6ec3aca49a3e013e250",
+    "tarball": "https://registry.npmjs.org/devextreme/-/devextreme-16.1.8.tgz"
+  },
+  "format": "amd",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "maintainers": [
+    {
+      "name": "devextreme",
+      "email": "chartjs@devexpress.com"
+    }
+  ],
+  "name": "devextreme",
+  "optionalDependencies": {},
+  "peerDependencies": {
+    "jquery": "^2.0.0",
+    "jszip": "^2.0.0 || ^3.0.0",
+    "globalize": "^1.0.0",
+    "webpack": "^1.13.0"
+  },
+  "readme": "ERROR: No README data found!",
+  "scripts": {
+    "compile:watch": "gulp dev",
+    "lint": "eslint"
+  },
+  "version": "16.1.8"
+}

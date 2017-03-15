@@ -1,0 +1,7 @@
+﻿; (function () {
+    //afterDoOperation:function(args)
+    //{
+
+    //};
+
+})();

@@ -1,0 +1,132 @@
+/*因   为我设置的是根据主体大小12px进行设置，rem布局*/
+html,body{
+	font-size: 12px;
+}
+@media (min-width:1200px) {
+	.page-search-pane .top-form.act{
+		width: 65.7%;
+	}
+}
+@media (max-width:995px) {
+	.page-search-pane .top-form.act{
+		width: 98%;
+	}
+}
+
+/*头部过滤方案*/
+
+/*过滤方案*/
+.tab-more{
+	margin-bottom: .2rem;
+	position: relative;
+	line-height: 2.5rem;
+}
+.tab-more span{
+	cursor: pointer;
+}
+
+/*页面内的菜单列表*/
+.page-menu-list{
+	margin-bottom: .8rem;
+	line-height: 3rem;
+	background-color: #428bca;
+    display:none;
+}
+.page-menu-list button{
+	margin-right: -5px;
+}
+.page-menu-list button.border-right{
+	border-right:1px solid #d6d6d6
+}
+
+/*点击按钮显示更多选项*/
+.top-form .dropdown-menu{
+	margin-top:5px;
+	height: 20rem;
+	overflow: auto;
+	text-align: center;
+}
+.top-form .dropdown-menu a:hover{
+	background-color: cornflowerblue;
+}
+.top-form.act{
+	/*width: 62.69%;*/
+	width: 65.5%;
+	position: absolute;
+	top: 7.35rem;
+    left: .8rem;
+	z-index: 102;
+	background-color: #fff;
+	border: 1px solid #8C8C8C;
+	box-sizing: border-box;
+	border-radius: 5%;
+	box-shadow: 0px 0px 2px deepskyblue;
+}
+/*为了在点搜索框后的弹窗在没有功能按键那一行的情况下不抖动设置的样式*/
+div[type=page] .top-form.act{
+	width: 67.0%;
+    position: absolute;
+    top: 3.4rem;
+    left: -0.1rem;
+}
+/*为了在点搜索框后的弹窗在有功能按键那一行的情况下不抖动设置的样式*/
+div[type=page] .top-form.act.have{
+    top: 7.6rem;   
+}
+
+.top-form{
+	padding: .3rem 0;
+}
+
+.top-form.act>form{
+	display: block;
+}
+.top-form.act #moreDrop{
+	top: 1rem;
+	right: 5.7rem;
+}
+.top-form.act #moreDrop i{
+	display: block;
+	width: 15px;
+	text-align: center;
+}
+
+.top-form form{
+	position: relative;
+}
+.top-form form a#deleteOne{
+	position: absolute;
+	z-index: 103;
+	right: 5.8rem;
+    top: .4rem;
+}
+
+.col-md-8{
+	position: relative;
+}
+
+#moreDrop{
+	position: absolute;
+	z-index: 103;
+	right: 5.6rem;
+    top: 1.0rem;
+}
+.col-md-8>form{
+	display: none;
+	margin: .2rem 0;
+}
+
+.col-md-8>form:nth-child(1){
+	display: block;
+}
+
+.top-form.col-md-8 .col-md-4 .input-group{
+	width: 100%;
+}
+
+.top-func-right{
+	height: 3.5rem;
+	line-height: 2.5rem;
+	float: right;
+	text-align: center;
+}

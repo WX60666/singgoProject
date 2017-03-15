@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body id="ydj_integraladjust" basemodel="bd_basetmpl" el="1" cn="积分调整单">
+    <div id="FBillHead" el="51" pk="fid" tn="T_Ydj_Integraladjust" pn="FBillHead" cn="积分调整单"> 
+    	
+    	<!--基本信息-->
+        <input type="Text" id="fnumber" el="108" ek="FBillHead" fn="fnumber" ts="" visible="-1" cn="流水号" />
+        <input type="datetime" id="fadjustdate" el="113" ek="FBillHead" fn="fadjustdate" ts="" cn="调整日期" visible="-1"  defval="@currentshortdate"/>
+        <input type="text" id="fintegral" el="101" ek="FBillHead" fn="fintegral" ts="" cn="积分" visible="-1" />
+        <input type="text" id="fdescription" el="100" ek="FBillHead" fn="fdescription" ts="" cn="调整原因" visible="-1" />
+        <input type="checkbox" id="faddup" el="116" ek="FBillHead" fn="faddup" ts="" visible="-1" cn="计入累计积分" />
+		
+		<!--客户信息-->
+        <input type="text" id="fcustomerid" el="106" ek="FBillHead" fn="fcustomerid"  ts="" visible="-1" cn="客户" refid="ydj_customer" />
+        <input type="text" id="fmembergrade" el="101" ek="FBillHead" fn="fmembergrade" ts="" cn="会员等级" visible="-1" />
+        <input type="text" id="fcusintegral" el="101" ek="FBillHead" fn="fcusintegral" ts="" cn="可用积分" visible="-1" />
+		
+    </div>
+	
+</body>
+</html>
+

@@ -1,0 +1,3176 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JieNor.Framework.MetaCore</name>
+    </assembly>
+    <members>
+        <member name="M:PerfmonUtil.StartMonitor">
+            <summary>
+            开始监控
+            </summary>
+        </member>
+        <member name="M:PerfmonUtil.EndMonitor">
+            <summary>
+            结束监控
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.BizDynamicDataRow">
+            <summary>
+            封装动态实体对象，以便能通过字段key获取对应的值
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.BizDynamicDataRow.TryGetMember(System.Dynamic.GetMemberBinder,System.Object@)">
+            <summary>
+            返回字段值
+            </summary>
+            <param name="binder"></param>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.BizDynamicDataRow.IsExistsFld(System.String,JieNor.Framework.MetaCore.FormMeta.HtmlField@)">
+            <summary>
+            是否单据字段
+            </summary>
+            <param name="fldKey"></param>
+            <param name="fld"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.BizDynamicDataRow.IsEntityFld(System.String,JieNor.Framework.MetaCore.FormMeta.HtmlField@)">
+            <summary>
+            是否单据体、子单据体字段
+            </summary>
+            <param name="fldKey"></param>
+            <param name="fld"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.BizDynamicDataRow.Count(System.String)">
+            <summary>
+            行数
+            </summary>
+            <param name="fldKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.BizDynamicDataRow.Max(System.String)">
+            <summary>
+            取列表字段的最大值：
+            表头字段,直接返回字段值；
+            表体字段，取表体所有行当中的最大值行；
+            子表体字段，则遍历其对应的表体所有行的子表体，取最大值，返回
+            </summary>
+            <param name="fldKey">字段标识</param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.BizDynamicDataRow.Min(System.String)">
+            <summary>
+            取列表字段的最小值
+            </summary>
+            <param name="fldKey">字段标识</param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.BizDynamicDataRow.Avg(System.String)">
+            <summary>
+            取列表字段的平均值
+            </summary>
+            <param name="fldKey">字段标识</param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.BizDynamicDataRow.Sum(System.String)">
+            <summary>
+            取列表字段的合计值
+            </summary>
+            <param name="fldKey">字段标识</param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.BizDynamicDataRow.Like(System.String,System.String)">
+            <summary>
+            包含某关键字（模糊匹配）
+            </summary>
+            <param name="fldKey">字段标识</param>
+            <param name="value">关键字</param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.BizDynamicDataRow.LLike(System.String,System.String)">
+            <summary>
+            左包含某关键字
+            </summary>
+            <param name="fldKey">字段标识</param>
+            <param name="value">关键字</param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.BizDynamicDataRow.RLike(System.String,System.String)">
+            <summary>
+            右包含某关键字
+            </summary>
+            <param name="fldKey">字段标识</param>
+            <param name="value">关键字</param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.BizDynamicDataRow.Exists(System.String,System.String)">
+            <summary>
+            列表字段值是否存在某个值（精确匹配）
+            </summary>
+            <param name="fldKey">列表字段标识</param>
+            <param name="value">关键字</param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.BLA.BLAEngine`1">
+            <summary>
+            业务逻辑装配引擎：自动分析各装配单元的执行优先级
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.MetaCore.BLA.BLAEngine`1.initLogicUnits">
+            <summary>
+            初始执行单元
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.BLA.BLAEngine`1.Run">
+            <summary>
+            执行装配单元
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.BLA.BLAEngine`1.OnError(System.Action{System.Exception})">
+            <summary>
+            业务引擎出错
+            </summary>
+            <param name="error"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.BLA.BLAEngine`1.OnComplete(System.Action{System.Collections.Generic.Dictionary{System.String,System.Object}})">
+            <summary>
+            业务引擎执行完毕
+            </summary>
+            <param name="complete"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.BLA.BLAEngine`1.GetOutput(JieNor.Framework.MetaCore.BLA.IBizLogicUnit)">
+            <summary>
+            获取执行单元输出对象
+            </summary>
+            <param name="unit"></param>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.BLA.BLAEngine`1.SetInput(System.Collections.Generic.List{`0}@)">
+            <summary>
+            设置执行单元输入信息，并输出已准备好的执行单元
+            </summary>
+            <param name="lstReadyUnits"></param>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.BLA.InputPropertyAttribute.PropertyName">
+            <summary>
+            输入属性名称
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.BLA.OutputPropertyAttribute.PropertyName">
+            <summary>
+            输入属性名称
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.BLA.IBizLogicUnit">
+            <summary>
+            单据转换处理逻辑单元
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.ExtendedDataEntity">
+            <summary>
+            扩展的实体，允许为每个实体定义额外的扩展数据
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.MetaCore.ExtendedDataEntity.DataEntity">
+            <summary>
+            关联的实体对象
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.MetaCore.ExtendedDataEntity.RowIndex">
+            <summary>
+            如果是分录，描述了此分录在此实体分录中的位置。如果是主表，总是为0
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.MetaCore.ExtendedDataEntity.SubRowIndex">
+            <summary>
+            如果是子单据体，描述了其在子单据体的行索引
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.MetaCore.ExtendedDataEntity.DataEntityIndex">
+            <summary>
+            如果是批量任务，此分录所在的根实体(单据)在批量任务中的位置。
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.MetaCore.ExtendedDataEntity.BillNo">
+            <summary>
+            单据编号
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.ExtendedDataEntity.Item(System.String)">
+            <summary>
+            获取/设置扩展的数据。
+            </summary>
+            <param name="name">要检索的属性名称</param>
+            <returns>对应的值</returns>
+            <remarks>
+            如果传递的实体本身的属性，将返回实体的值。
+            对于扩展的属性，可以赋值一个函数，当调用其值时，将调用此函数
+            </remarks>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.ExtendedDataEntitySet">
+            <summary>
+            按照不同表名称存放扩展数据的数据结构
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.ExtendedDataEntitySet.AddEntryRows(JieNor.Framework.MetaCore.FormMeta.HtmlForm,System.Int32,System.Collections.Generic.Dictionary{System.String,JieNor.Framework.SuperOrm.Collections.ForWriteList{JieNor.Framework.MetaCore.ExtendedDataEntity}},JieNor.Framework.SuperOrm.DataEntity.DynamicObject,JieNor.Framework.MetaCore.FormMeta.HtmlEntryEntity)">
+            <summary>
+            添加分录行
+            </summary>
+            <param name="dataEntityIndex"></param>
+            <param name="dict"></param>
+            <param name="dataEntity"></param>
+            <param name="entryEntity"></param>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.ExtendedDataEntitySet.FindByEntityKey(System.String)">
+            <summary>
+            根据表的键，获取对应的数据行集合
+            </summary>
+            <param name="entityKey">实体的键</param>
+            <returns>如果包含数据，返回扩展实体集合，否则返回null</returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.ExtendedDataEntitySet.AddExtendedDataEntities(System.String,JieNor.Framework.MetaCore.ExtendedDataEntity[])">
+            <summary>
+            添加一批新的扩展行到指定的表中
+            </summary>
+            <param name="entityKey">要添加到哪个表中</param>
+            <param name="rows">要添加的行</param>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.ExtendedDataEntitySet.RemoveExtendedDataEntity(System.String,System.Int32)">
+            <summary>
+            删除指定索引的数据。
+            </summary>
+            <param name="entityKey">要删除哪个表的数据</param>
+            <param name="index">索引</param>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.ExtendedDataEntitySet.RemoveExtendedDataEntity(System.String,JieNor.Framework.MetaCore.ExtendedDataEntity)">
+            <summary>
+            删除指定的行
+            </summary>
+            <param name="entityKey">要删除的键。</param>
+            <param name="row">行</param>
+            <returns>是否发现并删除。</returns>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormMeta.ConvertElement.BillGroupObject">
+            <summary>
+            表单分组对象
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.ConvertElement.BillGroupObject.Id">
+            <summary>
+            分组字段标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.ConvertElement.BillGroupObject.Name">
+            <summary>
+            分组字段名称
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.ConvertElement.BillGroupObject.Order">
+            <summary>
+            分组字段顺序
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormMeta.ConvertElement.ConvertForm">
+            <summary>
+            单据转换模型
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.ConvertElement.ConvertForm.SourceFormId">
+            <summary>
+            源单标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.ConvertElement.ConvertForm.TargetFormId">
+            <summary>
+            目标单标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.ConvertElement.ConvertForm.Rules">
+            <summary>
+            单据转换规则列表
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormMeta.ConvertElement.ConvertRule">
+            <summary>
+            单据转换规则
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.ConvertElement.ConvertRule.Id">
+            <summary>
+            转换规则内码
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.ConvertElement.ConvertRule.Name">
+            <summary>
+            转换规则名称
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.ConvertElement.ConvertRule.Number">
+            <summary>
+            转换规则编码
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.ConvertElement.ConvertRule.SourceFormId">
+            <summary>
+            源单标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.ConvertElement.ConvertRule.TargetFormId">
+            <summary>
+            目标单标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.ConvertElement.ConvertRule.ActiveEntityKey">
+            <summary>
+            转换关系标识，本次转换的主单据体
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.ConvertElement.ConvertRule.FilterString">
+            <summary>
+            源单过滤条件
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.ConvertElement.ConvertRule.FieldMappings">
+            <summary>
+            字段映射规则集合
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.ConvertElement.ConvertRule.BillGroups">
+            <summary>
+            来源数据分单规则
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.ConvertElement.ConvertRule.FieldGroups">
+            <summary>
+            来源数据按单分组规则
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormMeta.ConvertElement.FieldMapObject">
+            <summary>
+            字段映射对象
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.ConvertElement.FieldMapObject.Id">
+            <summary>
+            目标单字段标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.ConvertElement.FieldMapObject.Name">
+            <summary>
+            映射字段名称
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.ConvertElement.FieldMapObject.SrcFieldId">
+            <summary>
+            来源单字段标识，可能是表达式
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.ConvertElement.FieldMapObject.MapType">
+            <summary>
+            映射类型<see cref="T:JieNor.Framework.Enu_FieldMapType"/>
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.ConvertElement.FieldMapObject.MapActionWhenGrouping">
+            <summary>
+            分组时的映射动作<see cref="T:JieNor.Framework.Enu_FieldMapActionWhenGrouping"/>
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.ConvertElement.FieldMapObject.Order">
+            <summary>
+            映射顺序
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormMeta.ConvertElement.FieldGroupObject">
+            <summary>
+            分组字段标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.ConvertElement.FieldGroupObject.Id">
+            <summary>
+            分组字段标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.ConvertElement.FieldGroupObject.Name">
+            <summary>
+            分组字段名称
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.ConvertElement.FieldGroupObject.Order">
+            <summary>
+            分组字段顺序
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.ConvertElement.FieldGroupObject.TargetEntityKey">
+            <summary>
+            目标实体标识：说明分组针对目标哪个实体的
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormMeta.HtmlNotesCountField">
+            <summary>
+            批注数 字段
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormMeta.HtmlPrintCountField">
+            <summary>
+            打印次数 字段
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormMeta.HtmlAttacthCountField">
+            <summary>
+            附件数字段
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormMeta.HtmlJsonField">
+            <summary>
+            Json字段
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormMeta.HtmlTreeEntryEntity">
+            <summary>
+            树形单据体
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormMeta.UIItemState">
+            <summary>
+            UI元素状态
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.UIItemState.PropId">
+            <summary>
+            属性标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.UIItemState.Id">
+            <summary>
+            元素标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.UIItemState.Value">
+            <summary>
+            属性值
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormMeta.HtmlCheckBoxField">
+            <summary>
+            复选框字段
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormMeta.HtmlBillTypeField">
+            <summary>
+            单据类型字段
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormMeta.HtmlBillStatusField">
+            <summary>
+            单据状态字段，存储审核状态、禁用状态等等标志
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormMeta.HtmlComboField">
+            <summary>
+            下拉列表字段
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlComboField.CategoryFilter">
+            <summary>
+            对应的枚举类型：如  性别
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlFieldExtension.ToDbType(System.Int32)">
+            <summary>
+            获取当前字段元素对应的db存储类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlFieldExtension.ToPropertyType(System.Int32)">
+            <summary>
+            获取字段属性对应的clr类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlFieldExtension.ToFilterString(JieNor.Framework.DataTransferObject.Report.FilterRowObject,JieNor.Framework.MetaCore.FormModel.List.SelectField)">
+            <summary>
+            将过滤界面设置的过滤条件转换成对应的sql
+            </summary>
+            <param name="filterRow"></param>
+            <param name="selFld"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlFieldExtension.ToSqlValue(System.String,System.Data.DbType)">
+            <summary>
+            将过滤界面设置的过滤条件值 转换成对应的sql 值
+            </summary>
+            <param name="value"></param>
+            <param name="dbType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlFieldExtension.ToInSqlValue(System.String,System.Data.DbType)">
+            <summary>
+            将过滤界面设置的过滤条件值 转换成对应的sql 值
+            </summary>
+            <param name="value"></param>
+            <param name="dbType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlFieldExtension.ToListColumn(JieNor.Framework.MetaCore.FormMeta.HtmlField,JieNor.Framework.UserContext)">
+            <summary>
+            将html字段元素转换成列表模型元素
+            </summary>
+            <param name="htmlField"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlFieldExtension.ToListSelectField(JieNor.Framework.MetaCore.FormMeta.HtmlForm,JieNor.Framework.UserContext)">
+            <summary>
+            将表单元素转换成列表的列选择模型
+            </summary>
+            <param name="htmlForm"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlFieldExtension.ToListSelectField(JieNor.Framework.MetaCore.FormMeta.HtmlField,JieNor.Framework.MetaCore.FormMeta.HtmlForm,JieNor.Framework.UserContext)">
+            <summary>
+            将html字段元素转换成列表的列选择模型
+            </summary>
+            <param name="htmlFld"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlFieldExtension.BuildHtmlSelectFld(JieNor.Framework.MetaCore.FormMeta.HtmlField)">
+            <summary>
+            构建字段信息
+            </summary>
+            <param name="htmlFld"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlFieldExtension.BuildTableNameAs(JieNor.Framework.MetaCore.FormMeta.HtmlForm,System.Collections.Generic.List{JieNor.Framework.MetaCore.FormModel.List.SelectField})">
+            <summary>
+            构建表别名
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlFieldExtension.BuildTableIndex(JieNor.Framework.MetaCore.FormMeta.HtmlForm,System.Collections.Generic.List{JieNor.Framework.MetaCore.FormModel.List.SelectField})">
+            <summary>
+            构建表顺序
+            </summary>
+            <param name="fldLst"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormMeta.HtmlModifyDateField">
+            <summary>
+            修改日期字段
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormMeta.HtmlDateField">
+            <summary>
+            日期字段
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormMeta.HtmlDateTimeField">
+            <summary>
+            长日期字段
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormMeta.HtmlCreateDateField">
+            <summary>
+            创建日期字段
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormMeta.HtmlModifierField">
+            <summary>
+            修改人字段
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormMeta.HtmlCreaterField">
+            <summary>
+            创建人字段
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormMeta.HtmlMultiLangTextField">
+            <summary>
+            多语言文本字段
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormMeta.HtmlMulComboField">
+            <summary>
+            多选下拉列表字段
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormMeta.HtmlUserField">
+            <summary>
+            用户字段
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormMeta.HtmlUnitField">
+            <summary>
+            计量单位字段
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormMeta.HtmlQtyField">
+            <summary>
+            数量字段
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormMeta.HtmlPriceField">
+            <summary>
+            单价字段
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormMeta.HtmlIntegerField">
+            <summary>
+            整数字段
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormMeta.HtmlImageField">
+            <summary>
+            图片字段
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormMeta.HtmlFileField">
+            <summary>
+            文件选择字段
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormMeta.HtmlDecimalField">
+            <summary>
+            小数字段
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlDecimalField.RoundType">
+            <summary>
+            舍入类型:0-由单位决定,1-强制四舍五入,2-强制进位,3-强制舍位
+            </summary> 
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlDecimalField.DataScope">
+            <summary>
+            数据范围
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlDecimalField.FieldScale">
+            <summary>
+            小数精度
+            </summary> 
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlDecimalField.FieldPrecision">
+            <summary>
+            整体精度（包含小数精度＋整数精度）
+            </summary> 
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormMeta.HtmlBillNoField">
+            <summary>
+            单据编码字段
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormMeta.HtmlBaseDataField">
+            <summary>
+            基础资料字段
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlBaseDataField.RefFormId">
+            <summary>
+            引用的表单标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlBaseDataField.DisplayFldKeyString">
+            <summary>
+            对应的基础资料显示字段：对应模型的字段Key，如FNumber
+            如果是列表里面要显示多个，则用逗号或分号分割，如 FNumber,FName
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlBaseDataField.DisplayFldKeys">
+            <summary>
+            对应的基础资料显示字段
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlBaseDataField.Filter">
+            <summary>
+            额外的过滤条件：注意，跟本基础资料有关的字段标识，加上方括号。
+            比如： [FName] ='?????????' And Exists (select 1 from tableX  where tableX.fnumber=[fnumber]))
+                   只有加上方括号的关键字，系统才会去替换解析（加上表别名，解析对应表字段），否则原样出来这个过滤条件
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlBaseDataField.RefHtmlForm(JieNor.Framework.UserContext)">
+            <summary>
+            引用表单元数据
+            </summary> 
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlBaseDataField.RefDynamicProperty">
+            <summary>
+            引用对象属性
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlBaseDataField.RefDynamicObjectType">
+            <summary>
+            引用对象类型
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlBaseDataField.GetRefField(JieNor.Framework.UserContext,System.String)">
+            <summary>
+            获取引用字段
+            </summary>
+            <param name="fieldKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlBaseDataField.GetRefNumberField(JieNor.Framework.UserContext)">
+            <summary>
+            获取基础资料编码字段
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlBaseDataField.GetRefNameField(JieNor.Framework.UserContext)">
+            <summary>
+            获取引用资料名称字段
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormMeta.HtmlAmountField">
+            <summary>
+            金额字段
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormMeta.HtmlTextField">
+            <summary>
+            文本字段
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormMeta.HtmlComplexField">
+            <summary>
+            复杂字段信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlComplexField.RefFormDynamicObjectType">
+            <summary>
+            关联表单类型
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlComplexField.RefFormDynamicProperty">
+            <summary>
+            关联表单属性对象
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormMeta.HtmlElement">
+            <summary>
+            页面元素
+            </summary>
+            <remarks>
+            元素类型(ElementType)取值范围：
+            HtmlForm:0~50;
+            HtmlField:100~500;
+            HtmlEntity:51~99;
+            </remarks>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlElement.Id">
+            <summary>
+            元素唯一标识(在一个页面里面唯一)
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlElement.Caption">
+            <summary>
+            元素名称
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlElement.ElementType">
+            <summary>
+            元素类型
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlElement.Class">
+            <summary>
+            元素样式
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlElement.Style">
+            <summary>
+            元素样式
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlElement.Visible">
+            <summary>
+            可见性
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlElement.IsVisible(JieNor.Framework.DataTransferObject.HtmlElementVisibleScene)">
+            <summary>
+            判断元素的可见性场景
+            </summary>
+            <param name="scene"></param>
+            <returns></returns>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlElement.CustomProperties">
+            <summary>
+            解析html模板标签里未识别的属性
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlElement.SetHtmlElementInfo(HtmlAgilityPack.IHtmlBaseNode)">
+            <summary>
+            设置字段的相关属性（在实例化时调用）
+            </summary> 
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlElement.SetFieldProperty(System.Type,HtmlAgilityPack.IHtmlBaseNode)">
+            <summary>
+            设置属性值
+            </summary>
+            <param name="type"></param>
+            <param name="htmlNodeInfo"></param>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlElement.SetPropertyValue(System.Object,System.Collections.Generic.IEnumerable{System.Reflection.PropertyInfo},HtmlAgilityPack.IHtmlBaseNode)">
+            <summary>
+            设置字段的属性值：先按属性名称检索匹配，后按别名检索匹配
+            </summary>
+            <param name="obj"></param>
+            <param name="propertyInfos"></param>
+            <param name="htmlNodeInfo"></param>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormMeta.HtmlElementExtension">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlElementExtension.GetFieldPropertyType(JieNor.Framework.MetaCore.FormMeta.HtmlField)">
+            <summary>
+            获取字段属性对应的clr类型
+            </summary>
+            <param name="field"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormMeta.HtmlEntity">
+            <summary>
+            页面对应的动态实体信息
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlEntity.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlEntity.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlEntity.TableName">
+            <summary>
+            对应的数据库表名
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlEntity.PropertyName">
+            <summary>
+            对应的动态实体属性名
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlEntity.PkFieldName">
+            <summary>
+            对应的主键字段名
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlEntity.CacheExpiryIn">
+            <summary>
+            缓存过期时间：默认为1小时
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlEntity.CacheQueueLength">
+            <summary>
+            缓存队列长度：默认为1000
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlEntity.DynamicObjectType">
+            <summary>
+            对应的动态实体类型
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlEntity.GetEntityAttributes">
+            <summary>
+            获得动态实体属性
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormMeta.HtmlHeadEntity">
+            <summary>
+            单据头信息
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormMeta.HtmlEntryEntity">
+            <summary>
+            单据体（分录明细）的信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlEntryEntity.SubEntryList">
+            <summary>
+            包含的子单据体信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlEntryEntity.DynamicProperty">
+            <summary>
+            对应的动态实体属性
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlEntryEntity.SeqDynamicProperty">
+            <summary>
+            序号属性
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormMeta.HtmlField">
+            <summary>
+            页面字段
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlField.SuffixTableName">
+            <summary>
+            对应的数据库表后缀名（拆分表）
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlField.FieldName">
+            <summary>
+            对应的数据库字段名
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlField.PropertyName">
+            <summary>
+            对应的动态实体类里面的属性名
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlField.ListTabIndex">
+            <summary>
+            列表字段顺序
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlField.AllowFilter">
+            <summary>
+            允许参与过滤
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlField.AllowGroup">
+            <summary>
+            允许参与分组
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlField.AllowSort">
+            <summary>
+            允许排序
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlField.SortDirection">
+            <summary>
+            排序方式：0--asc;1--desc，只有allowsort=true时才生效
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlField.AggreateStyle">
+            <summary>
+            聚合类型，默认为 Count : Count = 0,Sum = 1,Avg = 2,Max = 3,Min = 4;
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlField.DynamicProperty">
+            <summary>
+            动态属性信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlField.EntityKey">
+            <summary>
+            字段所属实体标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlField.Entity">
+            <summary>
+            字段对应的实体对象
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlField.Length">
+            <summary>
+            字段值长度
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlField.Width">
+            <summary>
+            列宽度
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlField.Align">
+            <summary>
+            对齐方式
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlField.DefaultValue">
+            <summary>
+            默认值表达式
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlField.RegisterDynamicProperty(JieNor.Framework.UserContext,JieNor.Framework.SuperOrm.Metadata.DataEntity.DynamicObjectType,JieNor.Framework.RecursiveStackManager)">
+            <summary>
+            注册并更新动态实体属性定义
+            </summary>
+            <param name="dt">动态实体定义</param>
+            <param name="stackMgr"></param>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlField.GetCustomAttributes(System.Boolean)">
+            <summary>
+            返回当前字段可用属性
+            </summary>
+            <param name="inherit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlField.GetFieldPropertyType">
+            <summary>
+            获取字段属性对应的clr类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlField.GetFieldDbType">
+            <summary>
+            获取当前字段元素对应的db存储类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlField.IsBillHeadField">
+            <summary>
+            是否表头字段
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormMeta.HtmlForm">
+            <summary>
+            动态页面（动态表单）信息
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlForm.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlForm.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlForm.MulAudit">
+            <summary>
+            是否可以启用多级审批
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlForm.HeadEntity">
+            <summary>
+            单据头信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlForm.BillHeadTableName">
+            <summary>
+            单据主表名称
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlForm.BillPKFldName">
+            <summary>
+            单据主键字段
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlForm.NumberFldKey">
+            <summary>
+            编码字段
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlForm.NameFldKey">
+            <summary>
+            名称字段
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlForm.BillFormIdFldKey">
+            <summary>
+            单据的FormId字段
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlForm.EntryList">
+            <summary>
+            单据体信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlForm.FormIdDynamicProperty">
+            <summary>
+            FormId字段的动态实体属性
+            </summary> 
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlForm.DataEntityType(JieNor.Framework.UserContext)">
+            <summary>
+            页面对应的动态实体结构
+            </summary>  
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlForm.RegisterFormIdDynamicProperty(JieNor.Framework.SuperOrm.Metadata.DataEntity.DynamicObjectType)">
+            <summary>
+            注册FormId字段的动态实体属性
+            </summary>
+            <param name="dt"></param>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlForm.FieldList">
+            <summary>
+            页面元素信息
+            </summary> 
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlForm.GetElement(System.String)">
+            <summary>
+            获取特定元素
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlForm.GetField(System.String)">
+            <summary>
+            获取特定字段信息
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlForm.IsBaseDataField(System.String)">
+            <summary>
+            判断是否基础资料字段
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlForm.GetEntity(System.String)">
+            <summary>
+            获取特定实体信息,为空，则返回表头实体
+            </summary>
+            <param name="enKey">为空，则返回表头实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlForm.GetEntryEntity(System.String)">
+            <summary>
+            获取特定单据体信息
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlForm.GetEntryFieldList(System.String)">
+            <summary>
+            获取特定单据体的字段信息
+            </summary>
+            <param name="entryId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlForm.GetSubEntryEntity(System.String)">
+            <summary>
+            获取特定子单据体信息
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlForm.GetNumberField">
+            <summary>
+            获取编码字段信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlForm.GetNameField">
+            <summary>
+            获取名称字段对象
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlForm.GetFieldList(System.Func{JieNor.Framework.MetaCore.FormMeta.HtmlField,System.Int32})">
+            <summary>
+            取得所有字段列表
+            </summary>
+            <param name="sortFunc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlForm.GetDynamicObjectType(JieNor.Framework.UserContext,System.Boolean)">
+            <summary>
+            返回当前元数据对应的动态实体定义
+            </summary>
+            <param name="forceRebuild">是否强迫重构,不使用缓存数据;默认为false, 使用缓存，提高性能</param>
+            <returns>动态实体的定义对象</returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlForm.GetDynamicObjectType(JieNor.Framework.UserContext,JieNor.Framework.RecursiveStackManager)">
+            <summary>
+            增加防嵌套管理器
+            </summary>
+            <param name="stackMgr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlForm.BuildDynamicObjectType(JieNor.Framework.UserContext,JieNor.Framework.RecursiveStackManager)">
+            <summary>
+            构建动态实体定义
+            </summary>
+            <param name="stackMgr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlForm.BuilderHeaderDataType(JieNor.Framework.UserContext,JieNor.Framework.MetaCore.FormMeta.HtmlForm,JieNor.Framework.MetaCore.FormMeta.HtmlHeadEntity,JieNor.Framework.RecursiveStackManager)">
+            <summary>
+            构建单据头的ORM实体模型
+            </summary>
+            <param name="form"></param>
+            <param name="entity"></param>
+            <param name="stackMgr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlForm.BuilderHeaderDataType(JieNor.Framework.UserContext,JieNor.Framework.MetaCore.FormMeta.HtmlForm,JieNor.Framework.MetaCore.FormMeta.HtmlHeadEntity,System.String,JieNor.Framework.RecursiveStackManager)">
+            <summary>
+            构建单据头的ORM实体模型
+            </summary>
+            <param name="form"></param>
+            <param name="entity"></param>
+            <param name="namePropertyName">基础资料名称字段对应的属性名</param>
+            <param name="stackMgr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlForm.BuilderEntryDataType(JieNor.Framework.UserContext,JieNor.Framework.MetaCore.FormMeta.HtmlEntryEntity,System.Collections.Generic.List{JieNor.Framework.MetaCore.FormMeta.HtmlField},JieNor.Framework.RecursiveStackManager)">
+            <summary>
+            构建非单据头的实体ORM对象模型：
+            子单据头、单据体、子单据体
+            </summary>
+            <param name="entity"></param>
+            <param name="fldLst"></param>
+            <param name="stackMgr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlForm.RegisterProperty(JieNor.Framework.UserContext,JieNor.Framework.MetaCore.FormMeta.HtmlEntity,JieNor.Framework.SuperOrm.Metadata.DataEntity.DynamicObjectType,System.Collections.Generic.List{JieNor.Framework.MetaCore.FormMeta.HtmlField},JieNor.Framework.RecursiveStackManager)">
+            <summary>
+            注册实体模型的字段到动态实体
+            </summary>
+            <param name="entity">实体模型</param>
+            <param name="dt">动态实体定义</param>
+            <param name="fldLst"></param>
+            <param name="stackMgr"></param>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormMeta.HtmlParser">
+            <summary>
+            页面解析器
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.MetaCore.FormMeta.HtmlParser.htmlFieldInstance">
+            <summary>
+            缓存页面字段的实例 
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.MetaCore.FormMeta.HtmlParser.htmlForms">
+            <summary>
+            缓存页面的服务端模型：
+            key的组成： formid + "|" + copany
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.MetaCore.FormMeta.HtmlParser.orgHtmlFormFiles">
+            <summary>
+            页面模型路径
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.MetaCore.FormMeta.HtmlParser.htmlModelForms">
+            <summary>
+            缓存模板页面的json数据
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.MetaCore.FormMeta.HtmlParser._htmlFormMetaWatcher">
+            <summary>
+            目录监控
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlParser.LoadBizObjectList">
+            <summary>
+            获取系统的业务模型简要信息, key--formid,value -- caption
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlParser.LoadFormMetaFromCache(System.String,JieNor.Framework.UserContext)">
+            <summary>
+            加载html内容形成服务端模型
+            </summary>
+            <param name="formId">单据（页面）标识</param>
+             <param name="ctx">登录信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlParser.SetEntityFieldRef(JieNor.Framework.MetaCore.FormMeta.HtmlForm)">
+            <summary>
+            元数位置更新
+            </summary>
+            <param name="hform"></param>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlParser.GetHtmlEntityList(HtmlAgilityPack.HtmlDocument,JieNor.Framework.MetaCore.FormMeta.HtmlForm)">
+            <summary>
+            获取单据体信息
+            </summary>
+            <param name="doc"></param>
+            <param name="hform"></param>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlParser.GetHtmlSubEntityList(HtmlAgilityPack.HtmlDocument,JieNor.Framework.MetaCore.FormMeta.HtmlForm,System.Collections.Generic.List{JieNor.Framework.MetaCore.FormMeta.HtmlEntryEntity})">
+            <summary>
+            获取子单据体信息
+            </summary>
+            <param name="doc"></param>
+            <param name="hform"></param>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlParser.GetHtmlHeadEntity(HtmlAgilityPack.HtmlDocument,JieNor.Framework.MetaCore.FormMeta.HtmlForm)">
+            <summary>
+            取表头信息
+            </summary>
+            <param name="doc"></param>
+            <param name="hform"></param>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlParser.SetFieldDefaultValue(JieNor.Framework.MetaCore.FormMeta.HtmlForm,JieNor.Framework.MetaCore.FormMeta.HtmlHeadEntity)">
+            <summary>
+            字段的默认值
+            </summary>
+            <param name="hform"></param>
+            <param name="headEntity"></param>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlParser.GetHtmlFieldList(HtmlAgilityPack.HtmlDocument,JieNor.Framework.MetaCore.FormMeta.HtmlForm)">
+            <summary>
+            获取字段列表
+            </summary>
+            <param name="doc"></param>
+            <param name="hform"></param>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlParser.GetHtmlElementInstance(System.Int32)">
+            <summary>
+            获取实例化后的Html字段信息
+            </summary>
+            <param name="elementType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlParser.CreateHtmlElementInstance">
+            <summary>
+            实例化Html字段信息
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlParser.AutoBuildCheckLogEntry(JieNor.Framework.MetaCore.FormMeta.HtmlForm)">
+            <summary>
+            动态构建审批日志表
+            </summary>
+            <param name="hform"></param>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlParser.SetOrgHtmlFormPath(System.String)">
+            <summary>
+            获取各个组织的表单模型文件名信息。
+            模型文件名格式 ：表单标识.Mdl.[企业代码].[扩展号].Html ，
+            注意扩展号是序列号，如1，2，3，4，5，6......
+              比如  ：sec_user.Mdl.jienor.2.Html 
+                    表示该表单sec_user 是 jienor 这个组织的第二次扩展
+            </summary>
+            <param name="strMonitorPath"></param>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlParser.GetHtmlFileInfor(System.String)">
+            <summary>
+            通过formId找到对应的页面模型文件
+            </summary>
+            <param name="formId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlParserExtension.ExistsCheckLogEntry(JieNor.Framework.SuperOrm.DataEntity.DynamicObject)">
+            <summary>
+            判断是否存在审批日志单据体
+            </summary>
+            <param name="billData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormMeta.HtmlParserExtension.ExistsCheckLogEntry(JieNor.Framework.MetaCore.FormMeta.HtmlForm)">
+            <summary>
+            判断是否存在审批日志单据体
+            </summary>
+            <param name="htmlForm"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormMeta.HtmlSubEntryEntity">
+            <summary>
+            子单据体
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormMeta.HtmlSubEntryEntity.ParentEntityKey">
+            <summary>
+            父级表体标识
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormModel.OrgFormMetaObject">
+            <summary>
+            各个组织的表单模型信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.OrgFormMetaObject.FormId">
+            <summary>
+            表单模型标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.OrgFormMetaObject.FileName">
+            <summary>
+            模型对应的文件名
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.OrgFormMetaObject.FileFullName">
+            <summary>
+            模型对应的文件名，含路径
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.OrgFormMetaObject.ExtendList">
+            <summary>
+            扩展表单的文件信息：
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormModel.OrgFormMetaObject.AddExtend(JieNor.Framework.MetaCore.FormModel.ExtendHtmlForm)">
+            <summary>
+             增加扩展模型
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormModel.ExtendHtmlForm">
+            <summary>
+            表单扩展信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.ExtendHtmlForm.FormId">
+            <summary>
+            表单标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.ExtendHtmlForm.FileName">
+            <summary>
+            模型对应的文件名
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.ExtendHtmlForm.FileFullName">
+            <summary>
+            模型对应的文件名，含路径
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.ExtendHtmlForm.CompanyId">
+            <summary>
+            组织标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.ExtendHtmlForm.Index">
+            <summary>
+            扩展顺序，顺序号越高，则级别越高；
+            解析时按顺序号解析，顺序号高的扩展覆盖顺序号低的扩展
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormModel.List.SqlBuilderParameter">
+            <summary>
+            sqlbuilder类的参数对象类
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.List.SqlBuilderParameter.FormId">
+            <summary>
+            业务对象Id
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.List.SqlBuilderParameter.SelectedFieldKeys">
+            <summary>
+            选择的字段列表字段对象
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormModel.List.SqlBuilderParameter.AddSelectField(System.String)">
+            <summary>
+            增加选中的显示字段：多个字段，用逗号或分号隔开，如  fnumber，fname，fdesc
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.List.SqlBuilderParameter.WhereString">
+            <summary>
+            过滤条件
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.List.SqlBuilderParameter.OrderByString">
+            <summary>
+            列表排序条件，类似 FBillNo Desc,FCustId.FNumber Desc 
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.List.SqlBuilderParameter.PageIndex">
+            <summary>
+            当前页码
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.List.SqlBuilderParameter.PageCount">
+            <summary>
+            每页显示的行数
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormModel.List.SqlBuilderParameter.SetFilter(System.String,System.String,System.String)">
+            <summary>
+            增加过滤条件
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormModel.List.SqlBuilderParameter.SetFilter(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            增加过滤条件
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormModel.List.SqlBuilderParameter.SetFilter(JieNor.Framework.DataTransferObject.Report.FilterRowObject)">
+            <summary>
+            增加过滤条件
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormModel.List.SqlBuilderParameter.SetFilter(System.Collections.Generic.List{JieNor.Framework.DataTransferObject.Report.FilterRowObject})">
+            <summary>
+            增加过滤条件
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormModel.List.EntityTable">
+            <summary>
+            表单实体表
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.List.EntityTable.Seq">
+            <summary>
+            序号
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.List.EntityTable.TableName">
+            <summary>
+            表体的物理表名, 如t_bd_Material
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.List.EntityTable.PkFldName">
+            <summary>
+            表的PK, 如FId
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.List.EntityTable.TableNameAs">
+            <summary>
+            表别名, 如t0
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.List.EntityTable.FullPkFldName">
+             <summary>
+            表的PK，带表别名, 如t0.FId
+             </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.List.EntityTable.FilterString">
+            <summary>
+            额外的过滤条件，如 关联枚举表 ，增加 ： FCategory='性别'
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.List.EntityTable.IndexKey">
+            <summary>
+             
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.List.EntityTable.FromTableAs">
+            <summary>
+            表查询, 如 From t_bd_department as t0
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormModel.List.EntityTable.InnerJoinTableAs(System.String,System.String)">
+            <summary>
+            表查询, 如 Inner Join t_bd_department as t0 on t0.FDeptId = 
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormModel.List.EntityTable.LeftJoinTableAs(System.String,System.String)">
+            <summary>
+            表查询, 如 Inner Join t_bd_department as t0 on t0.FDeptId = 
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormModel.List.SelectField">
+            <summary>
+            列表选择的字段信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.List.SelectField.Id">
+            <summary>
+            字段标识,等于 模型文件中的字段Id 
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.List.SelectField.EntityKey">
+            <summary>
+            字段所在实体标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.List.SelectField.FullId">
+            <summary>
+            完整的字段Id，包含字段所在的实体表名, 格式如：FBillHead.FNumber;
+            对于引用字段如基础资料字段, 利用该属性分析标间关联关系: EntityTable.FieldName = xxxTable.FId
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.List.SelectField.FieldName">
+            <summary>
+            数据库字段名
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.List.SelectField.ReturnFldName">
+            <summary>
+            字段取数后的真实列名：如 Select t0.FName AS FDeptName ... 中的 FDeptName 部分；
+            为避免在临时表中重复，一般使用字段标识表示；基础资料属性，则会添加上属性后缀，为Key_PropertyName
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.List.SelectField.ElementType">
+            <summary>
+            字段元数类型
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.List.SelectField.PropertyType">
+            <summary>
+            映射到内存时的类型
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.List.SelectField.FieldDbType">
+            <summary>
+            数据库存贮类型
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.List.SelectField.Visible">
+            <summary>
+            可见性；标注字段在列表、过滤、排序、显示隐藏列上是否可见；
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.List.SelectField.ControlField">
+            <summary>
+            是否控制字段，例如精度控制等
+            是必须组装到sql中去的
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.List.SelectField.SelectFldNameAs">
+            <summary>
+            获取查询字段名，例如： t0.FAmount as FAmount （多用于 select 语句）
+            </summary>
+            <returns>例如： t0.FAmount as FAmount</returns>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.List.SelectField.SelectFldName">
+            <summary>
+            获取查询字段名，返回： t0.FAmount （多用于 where， order by，group by 语句）
+            </summary>
+            <returns>例如： t0.FAmount </returns>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.List.SelectField.IsRefFld">
+            <summary>
+            是否引用字段，如 单据上的部门字段，属于引用字段
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.List.SelectField.RefFormId">
+            <summary>
+            引用字段的模型标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.List.SelectField.RefFldKey">
+            <summary>
+            引用字段的字段标识，比如部门字段，引用的是 部门名称，则这里对应的就是 FName
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.List.SelectField.RefFieldName">
+            <summary>
+            引用字段对应的数据库字段名 
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.List.SelectField.RefEntityKey">
+            <summary>
+            字段的引用字段所在的实体标识，比如部门字段，引用的是 部门名称，
+            则这里对应的就是部门名称对应的实体标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.List.SelectField.RefFldFullKey">
+            <summary>
+            对于引用字段如基础资料，格式为 Id.RefProperty，如 FDept.FName ,FDept.FNumber
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.List.SelectField.RefTable">
+            <summary>
+            引用字段对应的关联表信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.List.SelectField.IsSuffixTable">
+            <summary>
+            是否保存在拆分表中
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.List.SelectField.SuffixTable">
+            <summary>
+            字段所在拆分表的表格信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.List.SelectField.EntityTable">
+            <summary>
+            字段所在实体对应的表格信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.List.SelectField.ParentTable">
+            <summary>
+            字段所在实体的上级实体对应的表格信息
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormModel.List.SelectField.ToString">
+            <summary>
+             
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormModel.FormUserProfile">
+            <summary>
+            表单用户配置信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.FormUserProfile.Id">
+            <summary>
+            配置文件标识：通常跟着表单走时，使用formId。
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.FormUserProfile.Category">
+            <summary>
+            配置分类：list-列表，bill-单据，other-自定义
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.FormUserProfile.FilterSchemeId">
+            <summary>
+            最近使用的过滤方案内码
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.FormUserProfile.ListLayout">
+            <summary>
+            列表布局信息
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormModel.ElementLayout">
+            <summary>
+            元素布局相关信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.ElementLayout.Id">
+            <summary>
+            字段标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.ElementLayout.DispOrder">
+            <summary>
+            显示顺序
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.ElementLayout.Width">
+            <summary>
+            列宽度
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormModel.ElementLayout.SortDirection">
+            <summary>
+            列排序方向
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.QueryObject">
+            <summary>
+            查询对象
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.QueryObject.PageCount">
+            <summary>
+            每页显示记录数
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.QueryObject.PageIndex">
+            <summary>
+            当前要返回的哪一页的数据
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.QueryObject.SelectPkField">
+            <summary>
+            当前查询对象的主键字段
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.QueryObject.SqlSelect">
+            <summary>
+            select语句
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.QueryObject.SqlFrom">
+            <summary>
+            from语句
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.QueryObject.SqlWhere">
+            <summary>
+            过滤条件
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.QueryObject.SqlOrderBy">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.QueryObject.SqlGroupBy">
+            <summary>
+            分组
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.QueryObject.SelectFlds">
+            <summary>
+            选中返回的字段列表
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.QueryObject.AllCountSql">
+            <summary>
+            符合条件的总记录数sql（不分页时的总记录数）
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.QueryObject.CurrentCountSql">
+            <summary>
+            本次查询返回的记录数sql
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.QueryObject.BillCountSql">
+            <summary>
+            符合条件的单据数sql
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.QueryObject.Sql">
+            <summary>
+            最终的查询sql
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormOp.FlowControlContext">
+            <summary>
+            流程控制上下文信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.FlowControlContext.Ctx">
+            <summary>
+            登录信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.FlowControlContext.FormId">
+            <summary>
+            当前操作的业务对象类型
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.FlowControlContext.OperateNo">
+            <summary>
+            当前的操作类型
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.FlowControlContext.CurrentBillData">
+            <summary>
+            当前操作的业务对象的数据信息
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormOp.ConvertService.BillConvertContext">
+            <summary>
+            单据下推上下文
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ConvertService.BillConvertContext.SourceFormId">
+            <summary>
+            真实源单标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ConvertService.BillConvertContext.TargetFormId">
+            <summary>
+            真实目标单标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ConvertService.BillConvertContext.SelectedRows">
+            <summary>
+            源单选中行信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ConvertService.BillConvertContext.RuleId">
+            <summary>
+            源单至目标单的转换规则标识
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormOp.ConvertService.ConvertLinkRelation">
+            <summary>
+            单据转换关系对象描述
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ConvertService.ConvertLinkRelation.TargetDataEntity">
+            <summary>
+            目标数据包对象
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ConvertService.ConvertLinkRelation.SourceDataEntities">
+            <summary>
+            关联源单数据
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ConvertService.ConvertLinkRelation.TargetEntity">
+            <summary>
+            当前关系的目标单实体
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ConvertService.ConvertLinkRelation.SourceEntity">
+            <summary>
+            当前关系的源单实体
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ConvertService.ConvertLinkRelation.LinkResultObjects">
+            <summary>
+            关联记录结果
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormOp.ConvertService.ConvertLinkResult">
+            <summary>
+            单据转换源信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ConvertService.ConvertLinkResult.DataEntity">
+            <summary>
+            获取数据对象
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ConvertService.ConvertLinkResult.SrcBillId">
+            <summary>
+            来源单据头主键
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ConvertService.ConvertLinkResult.SrcBillNo">
+            <summary>
+            来源单编号
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ConvertService.ConvertLinkResult.SrcEntryId">
+            <summary>
+            源单明细主键
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ConvertService.ConvertLinkResult.SrcEntityKey">
+            <summary>
+            源单明细标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ConvertService.ConvertLinkResult.SrcDetailId">
+            <summary>
+            源单子明细主键
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ConvertService.ConvertLinkResult.SrcDetailKey">
+            <summary>
+            源单子明细标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ConvertService.ConvertLinkResult.Id">
+            <summary>
+            返回/设置  主键属性。
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ConvertService.ConvertLinkResult.FkId">
+            <summary>
+            关联实体外键信息
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormOp.ConvertService.ConvertLinkResult.Clone">
+            <summary>
+            克隆一个新的实体对象。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormOp.ConvertService.ConvertResult">
+            <summary>
+            转换结果
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ConvertService.ConvertResult.HtmlForm">
+            <summary>
+            目标单模型
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ConvertService.ConvertResult.TargetDataObjects">
+            <summary>
+            单据转换服务的输出结果（目标单据数据包）
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ConvertService.ConvertResult.ConvertRelations">
+            <summary>
+            转换关系结果
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ConvertService.ConvertResult.MockUISave">
+            <summary>
+            模拟界面保存
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormOp.ConvertService.ConvertSourceQueryObject">
+            <summary>
+            单据转换数据源
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ConvertService.ConvertSourceQueryObject.TempTableName">
+            <summary>
+            临时表名
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ConvertService.ConvertSourceQueryObject.TempTableNameAs">
+            <summary>
+            临时表别名
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ConvertService.ConvertSourceQueryObject.SelectedRows">
+            <summary>
+            临时表对应的数据行
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ConvertService.ConvertSourceQueryObject.ActiveQueryEntity">
+            <summary>
+            当前查询主实体
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ConvertService.ConvertSourceQueryObject.QueryObject">
+            <summary>
+            构建查询对象
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ConvertService.ConvertSourceQueryObject.ParamList">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormOp.ConvertService.PlugIn.BeforeCreateTargetBillDataEventArgs">
+            <summary>
+            在创建目标单据数据包之后，通常目标单据数据包在初始化后某些字段的默认值处理机制可以在这个事件里处理
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ConvertService.PlugIn.BeforeCreateTargetBillDataEventArgs.TargetDataEntity">
+            <summary>
+            目标单据数据包对象,此对象在转换时出现多个目标单时，此数据作为所有目标单的基础模板
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormOp.ConvertService.PlugIn.AfterGetSourceBillDataEventArgs">
+            <summary>
+            在获取完源单数据之后触发
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ConvertService.PlugIn.AfterGetSourceBillDataEventArgs.SourceDataEntities">
+            <summary>
+            单据转换的来源单数据对象
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ConvertService.PlugIn.AfterGroupSourceDataEventArgs.GroupInfo">
+            <summary>
+            当前分组信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ConvertService.PlugIn.AfterGroupSourceDataEventArgs.IsBillGroup">
+            <summary>
+            是拆单分组，还是单内数据分组
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ConvertService.PlugIn.AfterGroupSourceDataEventArgs.SourceGroupData">
+            <summary>
+            分组后的源单数据
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormOp.ConvertService.PlugIn.BeforeGetSourceBillDataEventArgs">
+            <summary>
+            获取源单数据前事件对象
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ConvertService.PlugIn.BeforeGetSourceBillDataEventArgs.Cancel">
+            <summary>
+            是否取消平台取数操作
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ConvertService.PlugIn.BeforeGetSourceBillDataEventArgs.DataReader">
+            <summary>
+            查询结果
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ConvertService.PlugIn.BeforeGetSourceBillDataEventArgs.QueryObject">
+            <summary>
+            查询对象
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ConvertService.PlugIn.BeforeGetSourceBillDataEventArgs.ActiveQueryEntity">
+            <summary>
+            当前激活主查询实体
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormOp.ConvertService.PlugIn.OnGroupBillEntryDataEventArgs">
+            <summary>
+            来源单数据分组前事件
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ConvertService.PlugIn.OnGroupBillEntryDataEventArgs.GroupInfo">
+            <summary>
+            当前分组信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ConvertService.PlugIn.OnGroupBillEntryDataEventArgs.GroupEntityKey">
+            <summary>
+            分组实体标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ConvertService.PlugIn.OnGroupBillEntryDataEventArgs.GroupFunc">
+            <summary>
+            分组回调函数
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormOp.ConvertService.PlugIn.OnSplitBillDataEventArgs">
+            <summary>
+            来源单数据分组前事件
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ConvertService.PlugIn.OnSplitBillDataEventArgs.GroupInfo">
+            <summary>
+            当前分组信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ConvertService.PlugIn.OnSplitBillDataEventArgs.IsBillGroup">
+            <summary>
+            是拆单分组，还是单内数据分组
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ConvertService.PlugIn.OnSplitBillDataEventArgs.GroupFunc">
+            <summary>
+            分组回调函数
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormOp.ConvertService.PlugIn.ConvertActionEventArgs">
+            <summary>
+            单据转换事件基类
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ConvertService.PlugIn.ConvertActionEventArgs.SourceFormId">
+            <summary>
+            来源单标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ConvertService.PlugIn.ConvertActionEventArgs.TargetFormId">
+            <summary>
+            目标单标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ConvertService.PlugIn.ConvertActionEventArgs.Rule">
+            <summary>
+            当前使用的转换规则对象
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormOp.ConvertService.PlugIn.OnConvertCompleteEventArgs">
+            <summary>
+            单据转换完成事件
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormOp.ConvertService.PlugIn.OnConvertCompleteEventArgs.#ctor(System.Collections.Generic.IEnumerable{JieNor.Framework.SuperOrm.DataEntity.DynamicObject},System.Collections.Generic.Dictionary{JieNor.Framework.SuperOrm.DataEntity.DynamicObject,JieNor.Framework.MetaCore.FormOp.ConvertService.ConvertLinkRelation})">
+            <summary>
+            构造函数
+            </summary>
+            <param name="targetData"></param>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ConvertService.PlugIn.OnConvertCompleteEventArgs.TargetDataEntities">
+            <summary>
+            目标单据数据包对象
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ConvertService.PlugIn.OnConvertCompleteEventArgs.ConvertRelations">
+            <summary>
+            单据转换上下游关联关系
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormOp.ConvertService.PlugIn.OnPrepareQueryBuilderParameterEventArgs">
+            <summary>
+            准备来源单查询对象事件参数
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormOp.ConvertService.PlugIn.OnPrepareQueryBuilderParameterEventArgs.#ctor(System.Collections.Generic.IEnumerable{JieNor.Framework.MetaCore.FormOp.ConvertService.ConvertSourceQueryObject})">
+            <summary>
+            构造函数
+            </summary>
+            <param name="sqlQueryObjs"></param>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ConvertService.PlugIn.OnPrepareQueryBuilderParameterEventArgs.SourceQueryObjects">
+            <summary>
+            sql查询构建参数对象
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ConvertService.PlugIn.OnPrepareQueryBuilderParameterEventArgs.SqlParams">
+            <summary>
+            自定义查询参数
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormOp.DynamicBillView">
+            <summary>
+            动态实体视图
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormOp.DynamicBillView.#ctor">
+            <summary>
+            动态单据视图
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.DynamicBillView.Item(System.String)">
+            <summary>
+            提供索引器访问
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.DynamicBillView.Id">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.DynamicBillView.Properties">
+            <summary>
+            单据头数据
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.DynamicBillView.Tag">
+            <summary>
+            辅助数据包
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.DynamicBillView.Parent">
+            <summary>
+            父级视图
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.DynamicBillView.ChildViews">
+            <summary>
+            子级数据
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormOp.DynamicBillView.GetOrAddChildView(System.String)">
+            <summary>
+            获取一个子级视图集合
+            </summary>
+            <param name="entityKey"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormOp.DynamicBillViewCollection">
+            <summary>
+            动态实体视图集合
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormOp.DynamicBillViewCollection.#ctor(JieNor.Framework.MetaCore.FormOp.DynamicBillView)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="parent"></param>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormOp.FormService.PlugIn.OnLocateServiceTargetEventArgs">
+            <summary>
+            定位当前操作的处理服务
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.FormService.PlugIn.OnLocateServiceTargetEventArgs.Target">
+            <summary>
+            服务定位信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.FormService.PlugIn.PrepareValidationRulesEventArgs.RollbackWhenError">
+            <summary>
+            校验出错全部回滚
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormOp.FormService.PlugIn.OnCheckPermssionArgs">
+            <summary>
+            权限检测事件
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.FormService.PlugIn.OnCheckPermssionArgs.IgnoreCheck">
+            <summary>
+            权限检测结果
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.FormService.PlugIn.OnCheckPermssionArgs.PermItem">
+            <summary>
+            权限项:当IgnoreCheck为false时，必须有值
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormOp.FormService.PlugIn.AfterExecuteOperationTransaction.#ctor(JieNor.Framework.SuperOrm.DataEntity.DynamicObject[])">
+            <summary>
+            构造函数
+            </summary>
+            <param name="dataEntities"></param>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormOp.FormService.PlugIn.BeforeExecuteOperationTransaction">
+            <summary>
+            执行操作前事件参数
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormOp.FormService.PlugIn.BeforeExecuteOperationTransaction.#ctor(JieNor.Framework.SuperOrm.DataEntity.DynamicObject[])">
+            <summary>
+            构造函数
+            </summary>
+            <param name="dataEntities"></param>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.FormService.PlugIn.BeforeExecuteOperationTransaction.Cancel">
+            <summary>
+            是否取消后续操作
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormOp.FormService.PlugIn.BeginOperationTransactionArgs">
+            <summary>
+            开始操作事务事件参数
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormOp.FormService.PlugIn.BeginOperationTransactionArgs.#ctor(JieNor.Framework.SuperOrm.DataEntity.DynamicObject[])">
+            <summary>
+            构造函数
+            </summary>
+            <param name="objs"></param>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.FormService.PlugIn.BeginOperationTransactionArgs.CancelOperation">
+            <summary>
+            是否取消平台对本操作的内置处理
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.FormService.PlugIn.BeginOperationTransactionArgs.CancelFormService">
+            <summary>
+            是否取消执行本操作所关联的表单服务
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormOp.FormService.PlugIn.BeginSetStatusTransactionArgs">
+            <summary>
+            开始设置单据状态事件
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.FormService.PlugIn.BeginSetStatusTransactionArgs.EntityKey">
+            <summary>
+            当前操作的表体Key，如果为整单该参数为空 
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.FormService.PlugIn.BeginSetStatusTransactionArgs.PkEntryIds">
+            <summary>
+            当前操作的表体行内码集合，如果为整单该参数为空 
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.FormService.PlugIn.BeginSetStatusTransactionArgs.Paras">
+            <summary>
+            操作参数 
+            Paras[0]:审核方式 0: 驳回，1：审核，2：反审核
+            Paras[1]:意见 
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormOp.FormService.PlugIn.BeginSetStatusTransactionArgs.#ctor(JieNor.Framework.SuperOrm.DataEntity.DynamicObject[],System.String,System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.Object,System.Object}},System.Collections.Generic.List{System.Object})">
+            <summary>
+            构造函数
+            </summary>
+            <param name="dataEntitys"></param>
+            <param name="entityKey"></param>
+            <param name="entryIds"></param>
+            <param name="paras"></param>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormOp.FormService.PlugIn.EndOperationTransactionArgs.#ctor(JieNor.Framework.SuperOrm.DataEntity.DynamicObject[])">
+            <summary>
+            构造函数
+            </summary>
+            <param name="objs"></param>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.FormService.PlugIn.EndSetStatusTransactionArgs.EntityKey">
+            <summary>
+            当前操作的表体Key，如果为整单该参数为空 
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.FormService.PlugIn.EndSetStatusTransactionArgs.PkEntryIds">
+            <summary>
+            当前操作的表体行内码集合，如果为整单该参数为空 
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.FormService.PlugIn.EndSetStatusTransactionArgs.Paras">
+            <summary>
+            操作参数 
+            Paras[0]:审核方式 0: 驳回，1：审核，2：反审核
+            Paras[1]:意见 
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormOp.FormService.PlugIn.EndSetStatusTransactionArgs.#ctor(JieNor.Framework.SuperOrm.DataEntity.DynamicObject[],System.String,System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.Object,System.Object}},System.Collections.Generic.List{System.Object})">
+            <summary>
+            构造函数
+            </summary>
+            <param name="dataEntitys"></param>
+            <param name="entityKey"></param>
+            <param name="entryIds"></param>
+            <param name="paras"></param>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormOp.FormService.PlugIn.InitializeServiceEventArgs.#ctor">
+            <summary>
+            构造函数
+            </summary>
+            <param name="paramter"></param>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormOp.FormService.PlugIn.OnPrepareOperationServiceEventArgs">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormOp.FormService.PlugIn.OnPrepareOperationServiceEventArgs.#ctor">
+            <summary>
+            服务端操作插件初始化事件定义
+            </summary>
+            <param name="ctx"></param>
+            <param name="option"></param>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.FormService.PlugIn.OnPrepareOperationServiceEventArgs.SurportBatchTransaction">
+            <summary>
+            是否支持批量事件
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.FormService.PlugIn.OnPrepareOperationServiceEventArgs.SupportTransaction">
+            <summary>
+            标识此操作是否启动事务
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.FormService.PlugIn.OnPrepareOperationServiceEventArgs.AllowSetOperationResult">
+            <summary>
+            是否允许平台自动添加操作成功的消息
+            默认为true
+            业务上有非事务型的操作，需要设置此参数为false
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.FormService.PlugIn.OnPrepareOperationServiceEventArgs.RollbackWhenValidationError">
+            <summary>
+            true:操作一旦遇到校验错误,直接回滚.
+            false:操作遇到错误不回滚,但会过滤掉出错的实体,继续处理正确的实体
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormOp.FormService.PlugIn.OperationTransactionArgs">
+            <summary>
+            操作服务事物处理参数
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.FormService.PlugIn.OperationTransactionArgs.DataEntitys">
+            <summary>
+            本次事务处理的实体,可以重新赋值,以达到过滤的目的,但赋值前后要确保实体描述结构(DynamicObjectType)要一致
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormOp.FormService.PlugIn.OperationTransactionArgs.#ctor(JieNor.Framework.SuperOrm.DataEntity.DynamicObject[])">
+            <summary>
+            构造函数
+            </summary>
+            <param name="dataEntity"></param>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormOp.FormService.OperationResultExtensions">
+            <summary>
+            操作结果扩展方法
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormOp.FormService.OperationResultExtensions.MergeResult(JieNor.Framework.DataTransferObject.Poco.IOperationResult,JieNor.Framework.DataTransferObject.Poco.IOperationResult)">
+            <summary>
+            合并操作结果
+            </summary>
+            <param name="result"></param>
+            <param name="mergeResult"></param>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormOp.OpData.BaseDataSummary">
+            <summary>
+            简单数据摘要
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.OpData.BaseDataSummary.Id">
+            <summary>
+            内码标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.OpData.BaseDataSummary.Number">
+            <summary>
+            编码或单据编号
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.OpData.BaseDataSummary.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.OpData.BaseDataSummary.ExtendData">
+            <summary>
+            扩展数据属性
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormOp.OpData.BillSavedSummary">
+            <summary>
+            单据保存摘要
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.OpData.BillSavedSummary.Caption">
+            <summary>
+            表单标题
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormOp.HtmlViewAction">
+            <summary>
+            前端视图交互指令
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.HtmlViewAction.ActionId">
+            <summary>
+            指令代码
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.HtmlViewAction.ActionParams">
+            <summary>
+            指令数据
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormOp.HtmlViewAction.ToUrlActionData">
+            <summary>
+            将action转换成url数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormOp.HtmlViewAction.Parse(System.String)">
+            <summary>
+            从html数据中转换成action对象
+            </summary>
+            <param name="urlPara"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormOp.OperateOptionExtentions.SetInteractionFlag(JieNor.Framework.SuperOrm.OperateOption,System.String)">
+            <summary>
+            获取当前交互发起人关联的数据上下文
+            </summary>
+            <param name="option"></param>
+            <param name="sponsor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormOp.OperateOptionExtentions.HasInteractionFlag(JieNor.Framework.SuperOrm.OperateOption,System.String)">
+            <summary>
+            检测某种交互标志是否被设置
+            </summary>
+            <param name="option"></param>
+            <param name="sponsor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormOp.OperateOptionExtentions.SetIgnoreInteractionFlag(JieNor.Framework.SuperOrm.OperateOption,System.Boolean)">
+            <summary>
+            设置是否禁止交互的选项标志,这个通常是用于后台调用服务
+            </summary>
+            <param name="option"></param>
+            <param name="bFlag"></param>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormOp.OperateOptionExtentions.GetIgnoreInteractionFlag(JieNor.Framework.SuperOrm.OperateOption)">
+            <summary>
+            检查选项是否要忽略交互
+            </summary>
+            <param name="option"></param>
+            <returns></returns>
+        </member>
+        <member name="F:JieNor.Framework.MetaCore.FormOp.OperateOptionExtentions.CST_KEY_InteractionDictData">
+            <summary>
+            记录交互请求发起人标志的字典包在选项中对应的Key
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.MetaCore.FormOp.OperateOptionExtentions.CST_KEY_IgnoreInteraction">
+            <summary>
+            禁止服务交互的标识
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormOp.OperateOptionExtentions.UpdateHtmlFieldValue(JieNor.Framework.DataTransferObject.Poco.IOperationResult,System.String,System.Object)">
+            <summary>
+            实现操作可以向前端传递赋值指令
+            </summary>
+            <param name="result"></param>
+            <param name="fieldKey"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormOp.OperateOptionExtentions.ToDictionary(JieNor.Framework.SuperOrm.OperateOption)">
+            <summary>
+            将服务端选项对象转换成字典
+            </summary>
+            <param name="option"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormOp.OperateOptionExtentions.FromDictionary(JieNor.Framework.SuperOrm.OperateOption,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            将字典信息拷贝至选项对象
+            </summary>
+            <param name="option"></param>
+            <param name="dctOption"></param>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormOp.OperateOptionExtentions.ToOperateOption(System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            将字典转换成选项对象
+            </summary>
+            <param name="dctOption"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormOp.OperateOptionExtentions.FromOperateOption(System.Collections.Generic.Dictionary{System.String,System.Object},JieNor.Framework.SuperOrm.OperateOption)">
+            <summary>
+            将选项对象信息复制到字典
+            </summary>
+            <param name="dctOption"></param>
+            <param name="option"></param>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormOp.OperationContext">
+            <summary>
+            操作上下文信息
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.FormOp.OperationContext.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.OperationContext.UserContext">
+            <summary>
+            用户上下文
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.OperationContext.Container">
+            <summary>
+            当前服务容器
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.OperationContext.PageId">
+            <summary>
+            当前页面标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.OperationContext.HtmlForm">
+            <summary>
+            表单元数据模型
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.OperationContext.FormCaption">
+            <summary>
+            表单名称
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.OperationContext.OperationNo">
+            <summary>
+            操作代码
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.OperationContext.DataEntities">
+            <summary>
+            操作上下文关联数据
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.OperationContext.QueryStringParam">
+            <summary>
+            动态参数
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.OperationContext.SimpleData">
+            <summary>
+            简单数据对象
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.OperationContext.Option">
+            <summary>
+            操作选项
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.OperationContext.SelectedRows">
+            <summary>
+            操作上下文关联的选中数据
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.OperationContext.Result">
+            <summary>
+            操作结果信息
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormOp.BillOperationContext">
+            <summary>
+            表单操作上下文
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.FormOp.ListOperationContext">
+            <summary>
+            列表操作上下文
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ListOperationContext.WhereString">
+            <summary>
+            列表过滤条件:类似 [FBillNo] ='XXXXXX' And [BCreateDate] ='2016-01-01' 
+            的形式，字段标识加上 方括号以便解析
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ListOperationContext.OrderByString">
+            <summary>
+            列表排序条件，类似 FBillNo Desc,FCustId.FNumber Desc 
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ListOperationContext.SelectFields">
+            <summary>
+            列表查询字段
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ListOperationContext.PageIndex">
+            <summary>
+            当前页码
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.FormOp.ListOperationContext.PageCount">
+            <summary>
+            每页显示的行数
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.MetaCore.MetaAttribute.HtmlAttributeKey.ElementId">
+            <summary>
+            元素Id
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.MetaCore.MetaAttribute.HtmlAttributeKey.ElementCaption">
+            <summary>
+            元素标题
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.MetaCore.MetaAttribute.HtmlAttributeKey.ElementType">
+            <summary>
+            元素类型
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.MetaCore.MetaAttribute.HtmlAttributeKey.ElementCSS">
+            <summary>
+            元素样式
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.MetaCore.MetaAttribute.HtmlAttributeKey.ElementStyle">
+            <summary>
+            元素样式
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.MetaCore.MetaAttribute.HtmlAttributeKey.RefFormId">
+            <summary>
+            基础资料引用的form id
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.MetaCore.MetaAttribute.HtmlAttributeKey.RefDispFld">
+            <summary>
+            基础资料引用 字段key
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.MetaCore.MetaAttribute.HtmlAttributeKey.EnumType">
+            <summary>
+            枚举类型
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.MetaCore.MetaAttribute.HtmlAttributeKey.SuffixTableName">
+            <summary>
+            拆分表后缀
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.MetaCore.MetaAttribute.HtmlAttributeKey.FieldName">
+            <summary>
+            数据库字段名
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.MetaCore.MetaAttribute.HtmlAttributeKey.PropertyName">
+            <summary>
+            属性名
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.MetaCore.MetaAttribute.HtmlAttributeKey.ListTabIndex">
+            <summary>
+            列表显示顺序
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.MetaCore.MetaAttribute.HtmlAttributeKey.EntityKey">
+            <summary>
+            实体标识
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.MetaCore.MetaAttribute.HtmlAttributeKey.FieldLength">
+            <summary>
+            字段长度
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.MetaCore.MetaAttribute.HtmlAttributeKey.TableName">
+            <summary>
+            表名称
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.MetaCore.MetaAttribute.HtmlAttributeKey.PkFieldName">
+            <summary>
+            表主键
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.MetaCore.MetaAttribute.HtmlAttributeKey.CacheExpiryIn">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.MetaCore.MetaAttribute.HtmlAttributeKey.CacheQueueLength">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.MetaCore.MetaAttribute.HtmlAttributeKey.ParentEntityKey">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.MetaCore.MetaAttribute.HtmlAttributeKey.NumberFldKey">
+            <summary>
+            编码字段标识
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.MetaCore.MetaAttribute.HtmlAttributeKey.NameFldKey">
+            <summary>
+            名称字段标识
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.MetaCore.MetaAttribute.HtmlAttributeKey.Filter">
+            <summary>
+            枚举类型
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.MetaCore.MetaAttribute.HtmlAttributeKey.DefaultValue">
+            <summary>
+            默认值模型属性标识
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.MetaCore.MetaAttribute.HtmlAttributeKey.LevelFieldKey">
+            <summary>
+            树表层级字段标识属性
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.MetaCore.MetaAttribute.HtmlAttributeKey.ParentIdFieldKey">
+            <summary>
+            树表父行字段标识属性
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.MetaCore.MetaAttribute.HtmlAttributeKey.LeafFieldKey">
+            <summary>
+            树表叶子字段标识属性
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.MetaCore.MetaAttribute.HtmlAttributeKey.ExpandedFieldKey">
+            <summary>
+            树表展开字段标识属性
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.MetaAttribute.HtmlAttributeAttribute.AliasName">
+            <summary>
+            别名
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.PermData.PermAuth">
+            <summary>
+            权限验证
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.PermData.PermAuth.#ctor">
+            <summary>
+            权限验证
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.PermData.PermAuth.UserId">
+            <summary>
+            用户身份信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.PermData.PermAuth.FormId">
+            <summary>
+            表单标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.PermData.PermAuth.OperationNo">
+            <summary>
+            操作代码
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.PermData.PermAuth.PermId">
+            <summary>
+            权限项代码
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.PermData.PermAuth.ModuleId">
+            <summary>
+            模块代码：保留
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.PermData.PermAuth.CompanyId">
+            <summary>
+            企业主体标识：默认从web.config里读取
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.PermData.PermAuth.ProductId">
+            <summary>
+            产品标识：默认从web.config里读取
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.Validator.ValidationManager">
+            <summary>
+            校验管理器
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.Validator.ValidationManager.Validate(JieNor.Framework.MetaCore.FormOp.OperationContext,JieNor.Framework.MetaCore.FormMeta.HtmlForm,JieNor.Framework.SuperOrm.DataEntity.DynamicObject[]@,System.Collections.Generic.IEnumerable{JieNor.Framework.MetaCore.Validator.IDataValidRule})">
+            <summary>
+            调用校验服务
+            </summary>
+            <param name="htmlForm"></param>
+            <param name="dataEntities"></param>
+            <param name="rules"></param>
+            <returns></returns>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.Validator.ValidationResultEntry.DataEntity">
+            <summary>
+            验证关联的实体对象
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.Validator.ValidationRule`2.EntityKey">
+            <summary>
+            目标实体标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.MetaCore.Validator.ValidationRule`2.Rule">
+            <summary>
+            校验表达式
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.MetaCore.Validator.ValidationRuleExtensions">
+            <summary>
+            校验规则扩展方法库
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.Validator.ValidationRuleExtensions.RuleFor``1(System.Object,System.String,System.Linq.Expressions.Expression{System.Func{JieNor.Framework.SuperOrm.DataEntity.DynamicObject,``0}})">
+            <summary>
+            创建一个新的校验规则
+            </summary>
+            <typeparam name="TProperty"></typeparam>
+            <param name="obj"></param>
+            <param name="entityKey"></param>
+            <param name="expr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.Validator.ValidationRuleExtensions.RuleFor``2(System.Object,System.String,System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            创建一个新的校验规则
+            </summary>
+            <typeparam name="TData"></typeparam>
+            <typeparam name="TProperty"></typeparam>
+            <param name="obj"></param>
+            <param name="entityKey"></param>
+            <param name="expr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.Validator.ValidationRuleExtensions.WithMessage``2(JieNor.Framework.MetaCore.Validator.ValidationRule{``0,``1},System.String,System.Func{``0,``1,System.Object}[])">
+            <summary>
+            设置指定校验规则不通过时的消息内容
+            </summary>
+            <typeparam name="TData"></typeparam>
+            <typeparam name="TProperty"></typeparam>
+            <param name="rule"></param>
+            <param name="message"></param>
+            <param name="formatArgs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.Validator.ValidationRuleExtensions.NotEmpty``2(JieNor.Framework.MetaCore.Validator.ValidationRule{``0,``1})">
+            <summary>
+            校验指定表达式值不是空值(对于值类型的，默认值也是空值）
+            </summary>
+            <typeparam name="TData"></typeparam>
+            <typeparam name="TProperty"></typeparam>
+            <param name="rule"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.Validator.ValidationRuleExtensions.Empty``2(JieNor.Framework.MetaCore.Validator.ValidationRule{``0,``1})">
+            <summary>
+            校验指定表达式值是空值(对于值类型的，默认值也是空值）
+            </summary>
+            <typeparam name="TData"></typeparam>
+            <typeparam name="TProperty"></typeparam>
+            <param name="rule"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.Validator.ValidationRuleExtensions.Null``2(JieNor.Framework.MetaCore.Validator.ValidationRule{``0,``1})">
+            <summary>
+            校验指定表达式值是空值
+            </summary>
+            <typeparam name="TData"></typeparam>
+            <typeparam name="TProperty"></typeparam>
+            <param name="rule"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.Validator.ValidationRuleExtensions.NotNull``2(JieNor.Framework.MetaCore.Validator.ValidationRule{``0,``1})">
+            <summary>
+            校验指定表达式值不是空值
+            </summary>
+            <typeparam name="TData"></typeparam>
+            <typeparam name="TProperty"></typeparam>
+            <param name="rule"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.Validator.ValidationRuleExtensions.NotEqual``2(JieNor.Framework.MetaCore.Validator.ValidationRule{``0,``1},``1,System.Collections.IEqualityComparer)">
+            <summary>
+            校验指定表达式值是否不等于某个值
+            </summary>
+            <typeparam name="TData"></typeparam>
+            <typeparam name="TProperty"></typeparam>
+            <param name="rule"></param>
+            <param name="objTarget"></param>
+            <param name="comparer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.Validator.ValidationRuleExtensions.NotEqual``2(JieNor.Framework.MetaCore.Validator.ValidationRule{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Collections.IEqualityComparer)">
+            <summary>
+            校验指定表达式值是否不等于某个值
+            </summary>
+            <typeparam name="TData"></typeparam>
+            <typeparam name="TProperty"></typeparam>
+            <param name="rule"></param>
+            <param name="objTarget"></param>
+            <param name="comparer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.Validator.ValidationRuleExtensions.Equal``2(JieNor.Framework.MetaCore.Validator.ValidationRule{``0,``1},``1,System.Collections.IEqualityComparer)">
+            <summary>
+            校验指定表达式值是否等于某个值
+            </summary>
+            <typeparam name="TData"></typeparam>
+            <typeparam name="TProperty"></typeparam>
+            <param name="rule"></param>
+            <param name="objTarget"></param>
+            <param name="comparer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.Validator.ValidationRuleExtensions.Equal``2(JieNor.Framework.MetaCore.Validator.ValidationRule{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Collections.IEqualityComparer)">
+            <summary>
+            校验指定表达式值是否等于某个值
+            </summary>
+            <typeparam name="TData"></typeparam>
+            <typeparam name="TProperty"></typeparam>
+            <param name="rule"></param>
+            <param name="objTarget"></param>
+            <param name="comparer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.Validator.ValidationRuleExtensions.IsTrue``2(JieNor.Framework.MetaCore.Validator.ValidationRule{``0,``1},System.Func{``0,``1,System.Boolean})">
+            <summary>
+            检验任意条件表达式
+            </summary>
+            <typeparam name="TData"></typeparam>
+            <typeparam name="TProperty"></typeparam>
+            <param name="rule"></param>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.Validator.ValidationRuleExtensions.Range``1(JieNor.Framework.MetaCore.Validator.ValidationRule{``0,System.String},System.Int32,System.Int32)">
+            <summary>
+            校验指定字符串的长度
+            </summary>
+            <typeparam name="TData"></typeparam>
+            <param name="rule"></param>
+            <param name="min"></param>
+            <param name="max"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.Validator.ValidationRuleExtensions.Range``1(JieNor.Framework.MetaCore.Validator.ValidationRule{``0,System.String},System.Func{``0,System.Int32},System.Func{``0,System.Int32})">
+            <summary>
+            校验指定字符串的长度
+            </summary>
+            <typeparam name="TData"></typeparam>
+            <param name="rule"></param>
+            <param name="min"></param>
+            <param name="max"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.Validator.ValidationRuleExtensions.Length``1(JieNor.Framework.MetaCore.Validator.ValidationRule{``0,System.String},System.Int32)">
+            <summary>
+            校验指定字符串的长度
+            </summary>
+            <typeparam name="TData"></typeparam>
+            <param name="rule"></param>
+            <param name="len"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.Validator.ValidationRuleExtensions.Length``1(JieNor.Framework.MetaCore.Validator.ValidationRule{``0,System.String},System.Func{``0,System.Int32})">
+            <summary>
+            校验指定字符串的长度
+            </summary>
+            <typeparam name="TData"></typeparam>
+            <param name="rule"></param>
+            <param name="len"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.Validator.ValidationRuleExtensions.GreaterThan``2(JieNor.Framework.MetaCore.Validator.ValidationRule{``0,``1},``1)">
+            <summary>
+            校验指定表达式值是否大于某个值
+            </summary>
+            <typeparam name="TData"></typeparam>
+            <typeparam name="TProperty"></typeparam>
+            <param name="rule"></param>
+            <param name="targetValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.Validator.ValidationRuleExtensions.GreaterThan``2(JieNor.Framework.MetaCore.Validator.ValidationRule{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            校验指定表达式值是否大于某个值
+            </summary>
+            <typeparam name="TData"></typeparam>
+            <typeparam name="TProperty"></typeparam>
+            <param name="rule"></param>
+            <param name="targetFunc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.Validator.ValidationRuleExtensions.GreaterThanOrEqualTo``2(JieNor.Framework.MetaCore.Validator.ValidationRule{``0,``1},``1)">
+            <summary>
+            校验指定表达式值是否大于等于某个值
+            </summary>
+            <typeparam name="TData"></typeparam>
+            <typeparam name="TProperty"></typeparam>
+            <param name="rule"></param>
+            <param name="targetValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.Validator.ValidationRuleExtensions.GreaterThanOrEqualTo``2(JieNor.Framework.MetaCore.Validator.ValidationRule{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            校验指定表达式值是否大于等于某个值
+            </summary>
+            <typeparam name="TData"></typeparam>
+            <typeparam name="TProperty"></typeparam>
+            <param name="rule"></param>
+            <param name="targetFunc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.Validator.ValidationRuleExtensions.LessThan``2(JieNor.Framework.MetaCore.Validator.ValidationRule{``0,``1},``1)">
+            <summary>
+            校验指定表达式值是否小于某个值
+            </summary>
+            <typeparam name="TData"></typeparam>
+            <typeparam name="TProperty"></typeparam>
+            <param name="rule"></param>
+            <param name="targetValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.Validator.ValidationRuleExtensions.LessThan``2(JieNor.Framework.MetaCore.Validator.ValidationRule{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            校验指定表达式值是否小于某个值
+            </summary>
+            <typeparam name="TData"></typeparam>
+            <typeparam name="TProperty"></typeparam>
+            <param name="rule"></param>
+            <param name="targetFunc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.Validator.ValidationRuleExtensions.LessThanOrEqualTo``2(JieNor.Framework.MetaCore.Validator.ValidationRule{``0,``1},``1)">
+            <summary>
+            校验指定表达式值是否小于等于某个值
+            </summary>
+            <typeparam name="TData"></typeparam>
+            <typeparam name="TProperty"></typeparam>
+            <param name="rule"></param>
+            <param name="targetValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.Validator.ValidationRuleExtensions.LessThanOrEqualTo``2(JieNor.Framework.MetaCore.Validator.ValidationRule{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            校验指定表达式值是否小于等于某个值
+            </summary>
+            <typeparam name="TData"></typeparam>
+            <typeparam name="TProperty"></typeparam>
+            <param name="rule"></param>
+            <param name="targetFunc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.Validator.ValidationRuleExtensions.IsMatch``1(JieNor.Framework.MetaCore.Validator.ValidationRule{``0,System.String},System.Func{``0,System.String},System.Text.RegularExpressions.RegexOptions)">
+            <summary>
+            校验指定表达式值是否匹配特定的正则表达式
+            </summary>
+            <typeparam name="TData"></typeparam>
+            <param name="rule"></param>
+            <param name="targetFunc"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.Validator.ValidationRuleExtensions.IsMatch``1(JieNor.Framework.MetaCore.Validator.ValidationRule{``0,System.String},System.String,System.Text.RegularExpressions.RegexOptions)">
+            <summary>
+            校验指定表达式值是否匹配特定的正则表达式
+            </summary>
+            <typeparam name="TData"></typeparam>
+            <param name="rule"></param>
+            <param name="regexpr"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.Validator.ValidationRuleExtensions.BetweenIn``2(JieNor.Framework.MetaCore.Validator.ValidationRule{``0,``1},``1,``1)">
+            <summary>
+            校验指定表达式值是否在指定的区间内
+            </summary>
+            <typeparam name="TData"></typeparam>
+            <typeparam name="TProperty"></typeparam>
+            <param name="rule"></param>
+            <param name="from"></param>
+            <param name="to"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.MetaCore.Validator.ValidationRuleExtensions.BetweenOut``2(JieNor.Framework.MetaCore.Validator.ValidationRule{``0,``1},``1,``1)">
+            <summary>
+            校验指定表达式值是否不在指定的区间内
+            </summary>
+            <typeparam name="TData"></typeparam>
+            <typeparam name="TProperty"></typeparam>
+            <param name="rule"></param>
+            <param name="from"></param>
+            <param name="to"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

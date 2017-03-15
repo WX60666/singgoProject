@@ -1,0 +1,177 @@
+﻿<!--页面菜单列表-->
+<div class="page-menu-list">
+</div>
+<!--页面内容面板-->
+<form action="###" class="form-horizontal">
+    <div class="alert alert-danger display-hide">
+        <button class="close" data-close="alert"></button>
+        页面中有一些带红色星号 * 的信息是必填项，请检查是否都有正确录入！
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="portlet box yellow-casablanca">
+                <div class="portlet-title">
+                    <div class="caption"><i class="fa fa-user"></i>记录</div>
+                    <div class="tools"><a href="###" class="collapse"></a></div>
+                </div>
+                <div class="portlet-body form">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">调拨单号 <span required="required">*</span></label>
+                            <div class="col-md-7 cols">
+                                <div class="input-icon right">
+                                    <input type="text" class="form-control" autocomplete="off"
+                                           name="frequisitionnumber" placeholder="流水号" required="required" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">调拨日期<span required="required">*</span></label>
+                            <div class="col-md-7">
+                                <div class="input-group date date-picker">
+                                    <input type="text" class="form-control" name="frequisitiondate" placeholder="调拨日期" required="required" />
+                                    <span class="input-group-addon">
+                                        <i class="fa fa-calendar"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">备注</label>
+                            <div class="col-md-7 cols">
+                                <div class="input-icon right">
+                                    <textarea cols="40" rows="3" name="fdescription"
+                                              class="form-control" style="overflow:visible" placeholder="备注......"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="portlet box yellow-casablanca">
+                <div class="portlet-title">
+                    <div class="caption"><i class="fa fa-user"></i>录入</div>
+                    <div class="tools"><a href="###" class="collapse"></a></div>
+                </div>
+                <div class="portlet-body form">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label"></label>
+                            <div class="col-md-7 cols">
+                                <div class="input-icon right">
+                                    <textarea cols="40" rows="8" name="frecord" required="required"
+                                              class="form-control" style="overflow:visible" placeholder="请录入信息......"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<div class="row">
+	<div class="col-md-6">
+		<form action="javascript:;" class="form-horizontal">
+			<div class="portlet box yellow-casablanca">
+		        <div class="portlet-title">
+		            <div class="caption">
+		                <i class="fa fa-user"></i>其他信息
+		            </div>
+		            <div class="tools">
+		                <a href="javascript:;" class="collapse"></a>
+		            </div>
+		        </div>
+		        
+		        <div class="portlet-body form">
+				    <div class="form-body">
+		                <div class="row">
+		                	<div class="col-md-6">
+			                	<div class="form-group">
+				                    <label class="col-md-4 control-label">创建人</label>
+				                    <div class="col-md-7 cols">
+				                        <div class="input-icon right">
+				                            <input type="text" class="form-control" name="ffounder" readonly="readonly" placeholder="员工基础，自动获取" />
+				                        </div>
+				                    </div>
+				                </div>
+				                <div class="form-group">
+				                    <label class="col-md-4 control-label">创建日期</label>
+				                    <div class="col-md-7 cols">
+				                        <div class="input-icon right">
+				                            <input type="text" class="form-control" name="fcreatedate" readonly="readonly" placeholder="日期字段，自动获取" />
+				                        </div>
+				                    </div>
+				                </div>
+				                <div class="form-group">
+				                    <label class="col-md-4 control-label">审核人</label>
+				                    <div class="col-md-7 cols">
+				                        <div class="input-icon right">
+				                            <input type="text" class="form-control" name="fexamine" readonly="readonly" placeholder="员工基础，自动获取" />
+				                        </div>
+				                    </div>
+				                </div>
+				                <div class="form-group">
+				                    <label class="col-md-4 control-label">审核日期</label>
+				                    <div class="col-md-7 cols">
+				                        <div class="input-icon right">
+				                            <input type="text" class="form-control" name="fexaminedate" readonly="readonly" placeholder="日期字段，自动获取" />
+				                        </div>
+				                    </div>
+				                </div>
+			                </div>
+			                <div class="col-md-6">
+			                	<div class="form-group">
+				                    <label class="col-md-4 control-label">作废人</label>
+				                    <div class="col-md-7 cols">
+				                        <div class="input-icon right">
+				                            <input type="text" class="form-control" name="fcancel" readonly="readonly" placeholder="员工基础，自动获取" />
+				                        </div>
+				                    </div>
+				                </div>
+				                <div class="form-group">
+				                    <label class="col-md-4 control-label">作废日期</label>
+				                    <div class="col-md-7 cols">
+				                        <div class="input-icon right">
+				                            <input type="text" class="form-control" name="fcanceldate" readonly="readonly" placeholder="日期字段，自动获取" />
+				                        </div>
+				                    </div>
+				                </div>
+				                <div class="form-group">
+				                    <label class="col-md-4 control-label">数据状态</label>
+				                    <div class="col-md-7 cols">
+				                        <div class="input-icon right">
+				                            <select class="form-control" name="fstatus" disabled="disabled">
+				                                <option value="创建">创建</option>
+				                                <option value="已确认">已确认</option>
+				                                <option value="作废">作废</option>
+				                            </select>
+				                        </div>
+				                    </div>
+				                </div>
+			                </div>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</form>
+	</div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="portlet box yellow-casablanca">
+            <div class="portlet-title">
+                <div class="caption"><i class="fa fa-user"></i>调拨</div>
+                <div class="tools"><a href="###" class="collapse"></a></div>
+            </div>
+            <div class="portlet-body form">
+                <div class="form-body">
+                    <table entryid="finventoryentry" data-options="allowAdd:true,allowDel:true,allowEdit:true"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>jnwebserver</name>
+    </assembly>
+    <members>
+        <member name="M:PerfmonUtil.StartMonitor">
+            <summary>
+            开始监控
+            </summary>
+        </member>
+        <member name="M:PerfmonUtil.EndMonitor">
+            <summary>
+            结束监控
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.WebServer.Program">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.WebServer.Program.Main(System.String[])">
+            <summary>
+            程序入口点
+            </summary>
+        </member>
+    </members>
+</doc>

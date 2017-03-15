@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body id="bas_billnosetting" basemodel="bd_basetmpl" el="1" cn="单据编码设置">
+    <div id="FBillHead" el="51" pk="fchecklogid" tn="t_bas_nosetting" pn="FBillHead" cn="单据编码设置"> 
+        <input type="text" id="fname" desc="如采购订单编号设置" />
+        <input type="text" id="fbillformid" el="106" ek="FBillHead" fn="fbillformid" pn="fbillformid" cn="表单标识" />         
+         
+        <table id="FEntity" el="52" pk="FEntryId" tn="t_bas_nosettingentry" pn="FEntity" cn="审批级次">
+            <tr>
+                <th ek="FEntity" el="100" id="FRemark" fn="FRemark" pn="FRemark" cn="描述">备注</th>
+               
+                <th ek="FEntity" el="100" id="ffilter" fn="ffilter" pn="ffilter" len="500" cn="条件">条件</th>
+                 
+                <th ek="FEntity" el="100" id="fexpress" fn="fexpress" pn="fexpress" len="500" cn="编码表达式" desc="编码表达式：如 'cgrk' + FDate(YYYYMMDD) + Seq(4) ">编码表达式</th>
+                  
+            </tr>
+        </table>
+
+
+    </div>
+
+
+</body>
+</html>

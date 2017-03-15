@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D371C781-16BA-4FB4-9DB4-F31838D727D2}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JieNor.AMS.YDJ.Store.Web</RootNamespace>
+    <AssemblyName>JieNor.AMS.YDJ.Store.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="deploy\install.html" />
+    <Content Include="deploy\install\t_bd_enum.sql" />
+    <Content Include="deploy\upgrade.html" />
+    <Content Include="fw\js\ydj\ydj_basicsetting.js" />
+    <Content Include="fw\js\ydj\ydj_brand.js" />
+    <Content Include="fw\js\ydj\ydj_cash.js" />
+    <Content Include="fw\js\ydj\ydj_client.js" />
+    <Content Include="fw\js\ydj\ydj_clientrecord.js" />
+    <Content Include="fw\js\ydj\ydj_color.js" />
+    <Content Include="fw\js\ydj\ydj_commoditygallery.js" />
+    <Content Include="fw\js\ydj\ydj_customer.js" />
+    <Content Include="fw\js\ydj\ydj_customerrecord.js" />
+    <Content Include="fw\js\ydj\ydj_dept.js" />
+    <Content Include="fw\js\ydj\ydj_expenseitem.js" />
+    <Content Include="fw\js\ydj\ydj_inventorysheet.js" />
+    <Content Include="fw\js\ydj\ydj_material.js" />
+    <Content Include="fw\js\ydj\ydj_norms.js" />
+    <Content Include="fw\js\ydj\ydj_order.js" />
+    <Content Include="fw\js\ydj\ydj_otherstockin.js" />
+    <Content Include="fw\js\ydj\ydj_otherstockout.js" />
+    <Content Include="fw\js\ydj\ydj_parts.js" />
+    <Content Include="fw\js\ydj\ydj_product.js" />
+    <Content Include="fw\js\ydj\ydj_purchaseorder.js" />
+    <Content Include="fw\js\ydj\ydj_purchasereturn.js" />
+    <Content Include="fw\js\ydj\ydj_purchasestockin.js" />
+    <Content Include="fw\js\ydj\ydj_requisition.js" />
+    <Content Include="fw\js\ydj\ydj_salesreturn.js" />
+    <Content Include="fw\js\ydj\ydj_salesslip.js" />
+    <Content Include="fw\js\ydj\ydj_scalerecord.js" />
+    <Content Include="fw\js\ydj\ydj_series.js" />
+    <Content Include="fw\js\ydj\ydj_sizeprice.js" />
+    <Content Include="fw\js\ydj\ydj_storehouse.js" />
+    <Content Include="fw\js\ydj\ydj_storeposition.js" />
+    <Content Include="fw\js\ydj\ydj_suit.js" />
+    <Content Include="fw\js\ydj\ydj_supplier.js" />
+    <Content Include="fw\js\ydj\ydj_unit.js" />
+    <Content Include="hostconfig.txt" />
+    <Content Include="mdl\ydj\weixin\ydj_wx_userbinding.mdl.html" />
+    <Content Include="mdl\ydj\ydj_brand.mdl.html" />
+    <Content Include="mdl\ydj\ydj_cash.mdl.html" />
+    <Content Include="mdl\ydj\ydj_color.mdl.html" />
+    <Content Include="mdl\ydj\ydj_commoditygallery.mdl.html" />
+    <Content Include="mdl\ydj\ydj_customer.mdl.html" />
+    <Content Include="mdl\ydj\ydj_customerrecord.mdl.html" />
+    <Content Include="mdl\ydj\ydj_dept.mdl.html" />
+    <Content Include="mdl\ydj\ydj_expenseitem.mdl.html" />
+    <Content Include="mdl\ydj\ydj_inventorysheet.mdl.html" />
+    <Content Include="mdl\ydj\ydj_material.mdl.html" />
+    <Content Include="mdl\ydj\ydj_norms.mdl.html" />
+    <Content Include="mdl\ydj\ydj_designscheme.mdl.html" />
+    <Content Include="mdl\ydj\ydj_privilege.mdl.html" />
+    <Content Include="mdl\ydj\ydj_otherstockin.mdl.html" />
+    <Content Include="mdl\ydj\ydj_otherstockout.mdl.html" />
+    <Content Include="mdl\ydj\ydj_parts.mdl.html" />
+    <Content Include="mdl\ydj\ydj_product.mdl.html" />
+    <Content Include="mdl\ydj\ydj_purchaseorder.mdl.html" />
+    <Content Include="mdl\ydj\ydj_purchasereturn.mdl.html" />
+    <Content Include="mdl\ydj\ydj_order.mdl.html" />
+    <Content Include="mdl\ydj\ydj_purchasestockin.mdl.html" />
+    <Content Include="mdl\ydj\ydj_requisition.mdl.html" />
+    <Content Include="mdl\ydj\ydj_salesreturn.mdl.html" />
+    <Content Include="mdl\ydj\ydj_salesslip.mdl.html" />
+    <Content Include="mdl\ydj\ydj_scalerecord.mdl.html" />
+    <Content Include="mdl\ydj\ydj_series.mdl.html" />
+    <Content Include="mdl\ydj\ydj_sizeprice.mdl.html" />
+    <Content Include="mdl\ydj\ydj_storehouse.mdl.html" />
+    <Content Include="mdl\ydj\ydj_storeposition.mdl.html" />
+    <Content Include="mdl\ydj\ydj_suit.mdl.html" />
+    <Content Include="mdl\ydj\ydj_supplier.mdl.html" />
+    <Content Include="mdl\ydj\ydj_unit.mdl.html" />
+    <Content Include="packages.config" />
+    <Content Include="mdl\ydj\ydj_color.menu.json" />
+    <Content Include="mdl\ydj\ydj_commoditygallery.menu.json" />
+    <Content Include="mdl\ydj\ydj_customer.menu.json" />
+    <Content Include="mdl\ydj\ydj_customerrecord.menu.json" />
+    <Content Include="mdl\ydj\ydj_expenseitem.menu.json" />
+    <Content Include="mdl\ydj\ydj_inventorysheet.menu.json" />
+    <Content Include="mdl\ydj\ydj_material.menu.json" />
+    <Content Include="mdl\ydj\ydj_norms.menu.json" />
+    <Content Include="mdl\ydj\ydj_otherstockin.menu.json" />
+    <Content Include="mdl\ydj\ydj_otherstockout.menu.json" />
+    <Content Include="mdl\ydj\ydj_product.menu.json" />
+    <Content Include="mdl\ydj\ydj_purchaseorder.menu.json" />
+    <Content Include="mdl\ydj\ydj_purchasereturn.menu.json" />
+    <Content Include="mdl\ydj\ydj_purchasestockin.menu.json" />
+    <Content Include="mdl\ydj\ydj_requisition.menu.json" />
+    <Content Include="mdl\ydj\ydj_salesreturn.menu.json" />
+    <Content Include="mdl\ydj\ydj_salesslip.menu.json" />
+    <Content Include="mdl\ydj\ydj_storehouse.menu.json" />
+    <Content Include="mdl\ydj\ydj_storeposition.menu.json" />
+    <Content Include="mdl\ydj\ydj_suit.menu.json" />
+    <Content Include="mdl\ydj\ydj_supplier.menu.json" />
+    <Content Include="mdl\ydj\ydj_unit.menu.json" />
+    <Content Include="mdl\ydj\ydj_order.menu.json" />
+    <Content Include="mdl\ydj\ydj_designscheme.menu.json" />
+    <Content Include="mdl\ydj\ydj_brand.menu.json" />
+    <Content Include="mdl\ydj\ydj_cash.menu.json" />
+    <Content Include="mdl\ydj\ydj_parts.menu.json" />
+    <Content Include="mdl\ydj\ydj_scalerecord.menu.json" />
+    <Content Include="mdl\ydj\ydj_series.menu.json" />
+    <Content Include="mdl\ydj\ydj_dept.menu.json" />
+    <Content Include="mdl\ydj\convert\ydj_order2ydj_salesslip.0.cvt.json" />
+    <Content Include="mdl\ydj\ydj_sizeprice.menu.json" />
+    <None Include="Properties\PublishProfiles\123.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="views\ydj\ydj_basicsetting.html" />
+    <Content Include="views\ydj\ydj_brand.html" />
+    <Content Include="views\ydj\ydj_cash.html" />
+    <Content Include="views\ydj\ydj_client.html" />
+    <Content Include="views\ydj\ydj_clientrecord.html" />
+    <Content Include="views\ydj\ydj_color.html" />
+    <Content Include="views\ydj\ydj_commoditygallery.html" />
+    <Content Include="views\ydj\ydj_customer.html" />
+    <Content Include="views\ydj\ydj_customerrecord.html" />
+    <Content Include="views\ydj\ydj_dept.html" />
+    <Content Include="views\ydj\ydj_expenseitem.html" />
+    <Content Include="views\ydj\ydj_inventorysheet.html" />
+    <Content Include="views\ydj\ydj_material.html" />
+    <Content Include="views\ydj\ydj_norms.html" />
+    <Content Include="views\ydj\ydj_order.html" />
+    <Content Include="views\ydj\ydj_otherstockin.html" />
+    <Content Include="views\ydj\ydj_otherstockout.html" />
+    <Content Include="views\ydj\ydj_parts.html" />
+    <Content Include="views\ydj\ydj_product.html" />
+    <Content Include="views\ydj\ydj_purchaseorder.html" />
+    <Content Include="views\ydj\ydj_purchasereturn.html" />
+    <Content Include="views\ydj\ydj_purchasestockin.html" />
+    <Content Include="views\ydj\ydj_requisition.html" />
+    <Content Include="views\ydj\ydj_salesreturn.html" />
+    <Content Include="views\ydj\ydj_salesslip.html" />
+    <Content Include="views\ydj\ydj_scalerecord.html" />
+    <Content Include="views\ydj\ydj_series.html" />
+    <Content Include="views\ydj\ydj_sizeprice.html" />
+    <Content Include="views\ydj\ydj_storehouse.html" />
+    <Content Include="views\ydj\ydj_storeposition.html" />
+    <Content Include="views\ydj\ydj_suit.html" />
+    <Content Include="views\ydj\ydj_supplier.html" />
+    <Content Include="views\ydj\ydj_unit.html" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="fw\js\ydj\mobile\" />
+    <Folder Include="fw\js\ydj\weixin\" />
+    <Folder Include="mdl\ydj\mobile\" />
+    <Folder Include="views\ydj\mobile\" />
+    <Folder Include="views\ydj\weixin\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58359</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:58359/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

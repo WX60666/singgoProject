@@ -1,0 +1,83 @@
+﻿<!doctype html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body id="ydj_customer" basemodel="bd_basetmpl" el="1" cn="客户">
+    <div id="fbillhead" el="51" pk="fid" tn="T_YDJ_Customer" pn="fbillhead" cn="客户">
+
+        <!--基本信息-->
+        <input el="100" ek="fbillhead" visible="-1" id="fphone" fn="fphone" pn="fphone" cn="电话" />
+        <select el="122" ek="fbillhead" visible="-1" id="fprovince" fn="fprovince" pn="fprovince" cn="省" cg="省" refid="bd_enum" dfld="fenumitem"></select>
+        <select el="122" ek="fbillhead" visible="-1" id="fcity" fn="fcity" pn="fcity" cn="市" cg="市" refid="bd_enum" dfld="fenumitem"></select>
+        <select el="122" ek="fbillhead" visible="-1" id="fregion" fn="fregion" pn="fregion" cn="区" cg="区" refid="bd_enum" dfld="fenumitem"></select>
+        <input el="100" ek="fbillhead" visible="-1" id="faddress" fn="faddress" pn="faddress" cn="详细地址" />
+        <input el="100" ek="fbillhead" visible="-1" id="fsource" fn="fsource" pn="fsource" cn="客户来源" cg="客户来源" refid="bd_enum" dfld="fenumitem" />
+
+        <!--意向信息-->
+        <select el="122" ek="fbillhead" visible="-1" id="fspace" fn="fspace" pn="fspace" cn="空间" cg="空间" refid="bd_enum" dfld="fenumitem"></select>
+        <select el="122" ek="fbillhead" visible="-1" id="fhousetype" fn="fhousetype" pn="fhousetype" cn="户型" cg="户型" refid="bd_enum" dfld="fenumitem"></select>
+        <select el="122" ek="fbillhead" visible="-1" id="fstyle" fn="fstyle" pn="fstyle" cn="风格" cg="风格" refid="bd_enum" dfld="fenumitem"></select>
+        <select el="122" ek="fbillhead" visible="-1" id="fcategory" fn="fcategory" pn="fcategory" cn="品类" cg="品类" refid="bd_enum" dfld="fenumitem"></select>
+        <input el="106" ek="fbillhead" visible="-1" id="fbrandid" fn="fbrandid" pn="fbrandid" cn="品牌" cg="品牌" refid="ydj_brand" dfld="fname"/>
+        <input el="106" ek="fbillhead" visible="-1" id="fmaterialid" fn="fmaterialid" pn="fmaterialid" cn="材质" refid="ydj_material" />
+        <input el="106" ek="fbillhead" visible="-1" id="fcolorid" fn="fcolorid" pn="fcolorid" cn="颜色" refid="ydj_color" />
+        <input type="text" id="fpremark" el="100" ek="fbillhead" fn="fpremark" ts="" cn="备注" visible="-1" />
+
+        <!--其它信息-->
+        <input el="106" ek="fbillhead" visible="-1" id="fdeptid" fn="fdeptid" pn="fdeptid" cn="所属门店" refid="ydj_dept" dfld="fname" />
+        <input el="106" ek="fbillhead" visible="-1" id="fdutyid" fn="fdutyid" pn="fdutyid" cn="负责人" refid="ydj_customer" dfld="fname" />
+        <input el="106" ek="fbillhead" visible="-1" id="fassistid" fn="fassistid" pn="fassistid" cn="辅助带单人" refid="ydj_customer" dfld="fname" />
+        <input el="106" ek="fbillhead" visible="-1" id="fstylistid" fn="fstylistid" pn="fstylistid" cn="设计师" refid="ydj_customer" dfld="fname" />
+
+        <!--客户详情-->
+        <input el="110" ek="fbillhead" visible="-1" id="fimage" fn="fimage" pn="fimage" cn="头像" />
+        <!--<input el="100" ek="fbillhead" visible="-1" id="fjob" fn="fjob" pn="fjob" cn="职业" cg="职业" refid="bd_enum" dfld="fenumitem" />-->
+        <select el="122" ek="fbillhead" visible="-1" id="fjob" fn="fjob" pn="fjob" cn="职业" cg="职业" refid="bd_enum" dfld="fenumitem"></select>
+        <input el="113" ek="fbillhead" visible="-1" id="fbirthday" fn="fbirthday" pn="fbirthday" cn="生日" />
+        <input el="100" ek="fbillhead" visible="-1" id="femail" fn="femail" pn="femail" cn="电子邮箱" />
+        <input el="100" ek="fbillhead" visible="-1" id="fwechat" fn="fwechat" pn="fwechat" cn="微信" />
+        <input el="100" ek="fbillhead" visible="-1" id="fmemberlevel" fn="fmemberlevel" pn="fmemberlevel" cn="会员等级" />
+        <input el="100" ek="fbillhead" visible="-1" id="flabel" fn="flabel" pn="flabel" cn="标签" />
+        <input el="116" ek="fbillhead" visible="-1" id="fisdealer" fn="fisdealer" pn="fisdealer" cn="经销商" />
+        <!--<input el="100" ek="fbillhead" visible="-1" id="fdealerlevel" fn="fdealerlevel" pn="fdealerlevel" cn="经销商级别" cg="经销商级别" refid="bd_enum" dfld="fenumitem" />-->
+        <select el="122" ek="fbillhead" visible="-1" id="fdealerlevel" fn="fdealerlevel" pn="fdealerlevel" cn="经销商级别" cg="经销商级别" refid="bd_enum" dfld="fenumitem"></select>
+        <select el="122" ek="fbillhead" visible="-1" id="fbstate" fn="fbstate" pn="fbstate" cn="业务状态" cg="业务状态" refid="bd_enum" dfld="fenumitem"></select>
+
+        <!--会员积分-->
+        <input type="checkbox" id="fvipstate" el="116" ek="fbillhead" fn="fvipstate" ts="HY" visible="-1" cn="会员状态" />
+        <input type="text" id="fviplevel" el="106" ek="fbillhead" fn="fviplevel" pn="fviplevel" refid="" ts="HY" visible="-1" cn="会员等级" />
+        <input type="date" id="fopentime" el="112" ek="fbillhead" fn="fopentime" ts="HY" cn="开通日期" visible="-1" />
+        <input type="number" id="ftotalintegral" el="102" ek="fbillhead" fn="ftotalintegral" ts="HY" cn="累计积分" visible="-1" />
+        <input type="number" id="fsurpluslintegral" el="102" ek="fbillhead" fn="fsurpluslintegral" ts="HY" cn="可用积分" visible="-1" />
+
+    </div>
+
+    <!--相关记录（先不做，表也设计有不足，后期完成）-->
+
+    <!--量尺-->
+    <!--<table id="fscaleentry" el="52" pk="fentryid" tn="T_YDJ_CustomerScale" pn="fscaleentry" cn="量尺">
+        <tr>
+            <th ek="fscaleentry" el="106" id="fexecutor_es" fn="fexecutorid" pn="fexecutorid" cn="执行人"></th>
+            <th ek="fscaleentry" el="113" id="fcreatedate_es" fn="fcreatedate" pn="fcreatedate" cn="创建时间"></th>
+            <th ek="fscaleentry" el="113" id="fexpiredate_es" fn="fexpiredate" pn="fexpiredate" cn="截止时间"></th>
+            <th ek="fscaleentry" el="100" id="fcontent_es" fn="fcontent" pn="fcontent" cn="内容"></th>
+            <th ek="fscaleentry" el="100" id="fstatus_es" fn="fstatus" pn="fstatus" cn="状态"></th>
+        </tr>
+    </table>-->
+
+    <!--设计-->
+    <!--<table id="fdesignentry" el="52" pk="fentryid" tn="T_YDJ_CustomerDesign" pn="fdesignentry" cn="设计">
+        <tr>
+            <th ek="fdesignentry" el="106" id="fexecutor_ed" fn="fexecutorid" pn="fexecutorid" cn="执行人"></th>
+            <th ek="fdesignentry" el="113" id="fcreatedate_ed" fn="fcreatedate" pn="fcreatedate" cn="创建时间"></th>
+            <th ek="fdesignentry" el="113" id="fexpiredate_ed" fn="fexpiredate" pn="fexpiredate" cn="截止时间"></th>
+            <th ek="fdesignentry" el="100" id="fcontent_ed" fn="fcontent" pn="fcontent" cn="内容"></th>
+            <th ek="fdesignentry" el="100" id="fstatus_ed" fn="fstatus" pn="fstatus" cn="状态"></th>
+        </tr>
+    </table>-->
+
+
+</body>
+</html>

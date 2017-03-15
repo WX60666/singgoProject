@@ -1,0 +1,35 @@
+﻿#配置缓存的读写分离信息
+fw:redis.host www.jienor.com:6379
+
+#消息队列的主机名用户及密码配置
+fw:rabbitmq.host www.jienor.com
+fw:rabbitmq.username jienor
+fw:rabbitmq.password jienor.com
+
+#站点email信使配置
+fw:mail.pop3 pop.exmail.qq.com
+fw:mail.smtp smtp.exmail.qq.com
+fw:mail.username register@jienor.com
+fw:mail.password Jn@12345
+
+
+
+#微服务参数配置：网关，消息中继模式（central或p2p）
+ms.gateway http://eis.jienor.cn/
+#微服务网关访问验证码 
+ms.gateway.authcode eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjhuRiIsImF1dGhvciI6ImxpbnVzIiwicHJvZHVjdCI6ImZ3IiwiY29tcGFueSI6ImpuIn0.eyJpc3MiOm51bGwsInN1YiI6IjEyNjI3MjA2MDk4MTY5ODU2MCIsImlhdCI6MTQ4NDAzNzY2OSwiZXhwIjoxNDg0NjQyNDY5LCJhdWQiOiJhYmNkQDEyMzQiLCJlbWFpbCI6ImxpbnVzQGppZW5vci5jb20iLCJuYW1lIjoi546L5p6XIiwicHJlZmVycmVkX3VzZXJuYW1lIjoibGludXNAamllbm9yLmNvbSIsIm1ldGEiOm51bGx9.ghtKOAR4_LT4wL9WagvNmlWoR2qbCGnq87PzvohYJ19ZxYR9hzIFM5IGrqzPL2ZC7wAcCiZQRkdxWHt2GlDBLfMN0wLG5-dF3lJ9jh2e9XA8Ma58Bz4GX-lvbY2BKk_1hJDxuTPeZ86uVNXMI_sZwtjFDxiVs_vA0yrUbYnIUuA
+
+#业务产品标识，此参数通常由未来的自动部署系统自动生成
+ms.productid fw
+
+
+jwt.AuthKeyBase64 d2FuZ2xpbg==
+jwt.PrivateKeyXml <RSAKeyValue><Modulus>8nFads748/pcVhOjk78jaerOrfJJZ5d8h0UHUzXKzuQ4PUoBds7cSoZI735k5/Wd1yjb32D2D/Udj2XgVgKMh6WQQXGl5bklLLtd0wm9PRbY44wr4xMDMbpaPWac2jkcycU5BPudM6N8dMImRvvM2c/TYVzY8u3e75pxUmNKesE=</Modulus><Exponent>AQAB</Exponent><P>9ZAuQXQLdUcJKghYK7MSruVoVPXK0yFXIoORrleNzgG7Y8IClYxxE7CIGbVw//lOR+iOc+X35kgfpIDR9XmvFw==</P><Q>/L84q0+7AmHJnNXiRzPcvqBIzXEiPvVvHbx6ueLKVC4hNR+daC3rRRgEKi4MX02AyG8qWKTC+MQyn0s2lnSL5w==</Q><DP>BW/Sxlo2YrtW5ZpXsWf+kua7X54thm0ni7kUAaMonZYGOxgxjHQWkNQIv2D4BoLTi94HQWOnEG8qXC8J9wBhsw==</DP><DQ>HPxhJ2Rxcgh88rukw72y5znCn60F3GqRX7up53+W7KiNrmX9y2DYxofGkn/Nc3CUAGifVqMuqRD3LUWW8RJUqQ==</DQ><InverseQ>aloRXdZsZIXNpK5UmP0XabyEJqnf4YB0MdFOEclQwU7xtE7yn44ttuTs9CZBhjBTbqPF/nBR7NgfNsNGS2icwA==</InverseQ><D>Fupc7R7qDBGNebtYekYWQFQn3ewpQQfiBt0g8J4EgeKzaCOfGM47pzWjHjP5sK0YErazdZ0yFNcLyLqN5kNOafLD/gOSZfboHI6OIuua7PNEwF6b9c6nig8b+6aHxBkLou1Og2a18riGYcLRaEIJr2li9E9TfVv1T1bZv62B9Cs=</D></RSAKeyValue>
+#jwt.PublicKeyXml <RSAKeyValue><Modulus>8nFads748/pcVhOjk78jaerOrfJJZ5d8h0UHUzXKzuQ4PUoBds7cSoZI735k5/Wd1yjb32D2D/Udj2XgVgKMh6WQQXGl5bklLLtd0wm9PRbY44wr4xMDMbpaPWac2jkcycU5BPudM6N8dMImRvvM2c/TYVzY8u3e75pxUmNKesE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue>
+jwt.HashAlgorithm RS256
+#令牌过期时间为一周
+jwt.ExpireTokensInDays 7
+#本机jwt令牌听众标识
+jwt.Audience abcd@1234
+#本机jwt令牌发行者信息
+jwt.issuer fw.abcd

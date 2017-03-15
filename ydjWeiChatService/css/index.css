@@ -1,0 +1,23 @@
+.page {
+	font-family: "微软雅黑";
+}
+
+.header_cell {
+	margin: 0;
+}
+
+.header_binding {
+	margin-top: 0.2rem;
+	font-size: 0.2rem;
+}
+
+.unbound {
+	color: #000000;
+	background-color: orange;
+}
+
+.footer {
+	position: fixed;
+	bottom: 0.4rem;
+	width: 100%;
+}

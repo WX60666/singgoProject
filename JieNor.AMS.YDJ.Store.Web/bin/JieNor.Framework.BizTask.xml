@@ -1,0 +1,439 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JieNor.Framework.BizTask</name>
+    </assembly>
+    <members>
+        <member name="M:PerfmonUtil.StartMonitor">
+            <summary>
+            开始监控
+            </summary>
+        </member>
+        <member name="M:PerfmonUtil.EndMonitor">
+            <summary>
+            结束监控
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.BizTask.AppDomainLoader`1">
+            <summary>
+            应用程序域加载者
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:JieNor.Framework.BizTask.AppDomainLoader`1.Load(System.String,System.String,System.AppDomain@)">
+            <summary>
+            加载应用程序域，获取相应实例
+            </summary>
+            <param name="dllpath"></param>
+            <param name="classpath"></param>
+            <param name="domain"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.BizTask.AppDomainLoader`1.UnLoad(System.AppDomain)">
+            <summary>
+            卸载应用程序域
+            </summary>
+            <param name="domain"></param>
+        </member>
+        <member name="T:JieNor.Framework.BizTask.RunOnceCorn">
+            <summary>
+            格式[runonce]
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.BizTask.SimpleCorn">
+            <summary>
+            格式[simple,0,1,2012-01-01 17:25,2012-01-01 17:25]
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.BizTask.TaskConst">
+            <summary>
+            任务日志类型
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.BizTask.TaskRuntimeInfo">
+            <summary>
+            任务运行时信息
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.BizTask.TaskRuntimeInfo.TaskInfo">
+            <summary>
+            任务信息
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.BizTask.TaskRuntimeInfo.Domain">
+            <summary>
+            任务所在的应用程序域
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.BizTask.TaskRuntimeInfo.TaskJob">
+            <summary>
+            应用程序域中任务dll实例引用
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.BizTask.TaskRuntimeInfo.TaskLock">
+            <summary>
+            任务锁机制,用于执行状态的锁定，保证任务单次运行
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.BizTask.TaskJob">
+            <summary>
+            通用任务的回调job
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.BizTask.TaskPoolManager">
+            <summary>
+            全局任务池管理：任务的添加，移除，全局仅一个实例
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.BizTask.TaskPoolManager._taskpoolmanager">
+            <summary>
+            任务池管理者,全局仅一个实例
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.BizTask.TaskPoolManager.TaskRuntimePool">
+            <summary>
+            任务池
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.BizTask.TaskPoolManager._locktag">
+            <summary>
+            任务池管理操作锁标记
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.BizTask.TaskPoolManager._sched">
+            <summary>
+            任务池执行计划
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.BizTask.TaskPoolManager.#cctor">
+            <summary>
+            静态初始化
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.BizTask.TaskPoolManager.Dispose">
+            <summary>
+            资源释放
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.BizTask.TaskPoolManager.CreateInstance">
+            <summary>
+            获取任务池的全局唯一实例
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.BizTask.TaskPoolManager.Add(JieNor.Framework.BizTask.TaskRuntimeInfo)">
+            <summary>
+            将任务移入任务池
+            </summary> 
+            <param name="taskRuntimeInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.BizTask.TaskPoolManager.Remove(System.String)">
+            <summary>
+            将任务移出任务池
+            </summary>
+            <param name="taskid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.BizTask.TaskPoolManager.Get(System.String)">
+            <summary>
+            获取任务池中任务运行时信息
+            </summary>
+            <param name="taskid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.BizTask.TaskPoolManager.GetList">
+            <summary>
+            获取任务列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.BizTask.BaseTask">
+            <summary>
+            任务基类：所有其他后台任务，从这个基类继承实现
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.BizTask.BaseTask.IsTesting">
+            <summary>
+            是否运行在测试中
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.BizTask.BaseTask.Interrupted">
+            <summary>
+            是否中断执行
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.BizTask.BaseTask.ctx">
+            <summary>
+            标准操作上下文
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.BizTask.BaseTask.TaskInfo">
+            <summary>
+            任务信息 
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.BizTask.BaseTask.TaskLogging">
+            <summary>
+            记录任务执行情况
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.BizTask.BaseTask.SafeDisposeOperator">
+            <summary>
+            任务安全释放类
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.BizTask.BaseTask.TryRun">
+            <summary>
+            线上环境运行入口
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.BizTask.BaseTask.Run">
+            <summary>
+            执行任务
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.BizTask.BaseTask.TestRun">
+            <summary>
+            测试执行任务
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.BizTask.BaseTask.Dispose">
+            <summary>
+            资源释放
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.BizTask.TaskBuilder">
+            <summary>
+            任务操作提供者
+            提供任务的开始，关闭,重启，卸载
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.BizTask.TaskBuilder.GetAndStartTasks(JieNor.Framework.MetaCore.FormOp.OperationContext)">
+            <summary>
+            从后台获取所有任务列表，并把已标记为启动的任务启动
+            </summary>
+            <param name="ctx"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.BizTask.TaskBuilder.InterrupteTask(JieNor.Framework.MetaCore.FormOp.OperationContext,System.String)">
+            <summary>
+            中断正在执行的任务
+            </summary>
+            <param name="ctx"></param>
+            <param name="taskid"></param>
+        </member>
+        <member name="M:JieNor.Framework.BizTask.TaskBuilder.TestRunTaskNow(JieNor.Framework.MetaCore.FormOp.OperationContext,System.String)">
+            <summary>
+            测试任务的执行
+            </summary>
+            <param name="ctx"></param>
+            <param name="taskid"></param>
+        </member>
+        <member name="M:JieNor.Framework.BizTask.TaskBuilder.Start(JieNor.Framework.MetaCore.FormOp.OperationContext,JieNor.Framework.SuperOrm.DataEntity.DynamicObject)">
+            <summary>
+            启动某个任务：任务状态设置为启用状态，同时启动任务
+            </summary>
+            <param name="ctx"></param>
+            <param name="task"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.BizTask.TaskBuilder.Start(JieNor.Framework.MetaCore.FormOp.OperationContext,System.String)">
+            <summary>
+            启动某个任务：任务状态设置为启用状态，同时启动任务
+            </summary>
+            <param name="ctx"></param>
+            <param name="taskid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.BizTask.TaskBuilder.Stop(System.String)">
+            <summary>
+            关闭某个任务：任务状态设置为停止状态
+            </summary>
+            <param name="taskid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.BizTask.TaskBuilder.Start(JieNor.Framework.MetaCore.FormOp.OperationContext,JieNor.Framework.SuperOrm.DataEntity.DynamicObject,System.Boolean)">
+            <summary>
+            启动某个任务：任务状态设置为启用状态，同时启动任务
+            </summary>
+            <param name="ctx"></param>
+            <param name="task"></param>
+            <param name="upateStatus"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.BizTask.TaskBuilder.DisposeTask(System.String,JieNor.Framework.BizTask.TaskRuntimeInfo,System.Boolean)">
+            <summary>
+            任务的资源释放
+            </summary>
+            <param name="taskid"></param>
+            <param name="taskruntimeinfo"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.BizTask.SystemMonitor.BaseMonitor">
+            <summary>
+            监控器基类
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.BizTask.SystemMonitor.BaseMonitor.Interval">
+            <summary>
+            监控间隔时间 （毫秒）
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.BizTask.SystemMonitor.TaskStopMonitor">
+            <summary>
+            任务的停止监控者
+            用于任务异常停止的检测
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.BizTask.SystemMonitor.TaskRecoverMonitor">
+            <summary>
+            任务的回收监控者
+            用于任务异常卸载的资源回收
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.BizTask.SystemMonitor.TaskPerformanceMonitor">
+            <summary>
+            任务的执行时性能监控器
+            用于检测当前任务运行的性能情况
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.BizTask.SystemMonitor.PingTaskWebMonitor">
+            <summary>
+            ping 业务站点
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.BizTask.EnumTaskLogType">
+            <summary>
+            任务日志类型
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.BizTask.EnumTaskStatus">
+            <summary>
+            任务启用状态： 已停用 / 已启用
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.BizTask.EnumTaskRunStatus">
+            <summary>
+            任务当前的执行状态：准备 / 正在执行
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.BizTask.TaskLock">
+            <summary>
+            任务锁机制
+            双重锁保护
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.BizTask.TaskLock.TryToLockSingleInstance">
+            <summary>
+            内部加锁
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.BizTask.TaskLock.EndToLockSingleInstance">
+            <summary>
+            内部释放锁
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.BizTask.TaskDispose">
+            <summary>
+            任务安全卸载类
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.BizTask.TaskDispose.WaitDisposeFinished">
+            <summary>
+            阻塞等待资源释放标识,若DisposedState=Finished,则终止等待;若超时,则报错
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.BizTask.TaskDisposedState">
+            <summary>
+            任务当前资源释放状态
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.BizTask.TaskSafeDisposeTimeOutException">
+            <summary>
+            任务资源安全释放超时错误
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.BizTask.TaskSafeDisposeTimeOutException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            父类实现了ISerializable接口的，子类也必须有序列化构造函数，否则反序列化时会出错。
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="T:JieNor.Framework.BizTask.TaskRuntimeLogging">
+            <summary>
+            记录任务执行情况
+            仅平台内部使用
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.BizTask.TaskRuntimeLogging.TaskJob">
+            <summary>
+            任务dll实例引用
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.BizTask.TaskRuntimeLogging.UpdateTaskStatus(JieNor.Framework.BizTask.EnumTaskStatus)">
+            <summary>
+            设置任务的启用状态
+            </summary>
+            <param name="status"></param>
+        </member>
+        <member name="M:JieNor.Framework.BizTask.TaskRuntimeLogging.UpdateTaskRunningStatus(JieNor.Framework.BizTask.EnumTaskRunStatus)">
+            <summary>
+            设置任务的当前执行状态
+            </summary>
+            <param name="status"></param>
+        </member>
+        <member name="M:JieNor.Framework.BizTask.TaskRuntimeLogging.UpdateLastStartTime(System.DateTime)">
+            <summary>
+            记录最近一次开始执行时间
+            </summary>
+            <param name="time"></param>
+        </member>
+        <member name="M:JieNor.Framework.BizTask.TaskRuntimeLogging.UpdateLastEndTime(System.DateTime)">
+            <summary>
+            记录最近一次结束执行时间
+            </summary>
+            <param name="time"></param>
+        </member>
+        <member name="M:JieNor.Framework.BizTask.TaskRuntimeLogging.UpdateTaskError(System.DateTime)">
+            <summary>
+            记录最近一次执行的错误信息
+            </summary>
+            <param name="time"></param>
+        </member>
+        <member name="M:JieNor.Framework.BizTask.TaskRuntimeLogging.UpdateTaskSuccess">
+            <summary>
+            记录最近一次执行的成功信息
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.BizTask.TaskRuntimeLogging.AddLog(JieNor.Framework.SuperOrm.DataEntity.DynamicObject)">
+            <summary>
+            记录执行日志
+            </summary>
+            <param name="logInfo"></param>
+        </member>
+        <member name="M:JieNor.Framework.BizTask.TaskRuntimeLogging.AddLogSyn(JieNor.Framework.SuperOrm.DataEntity.DynamicObject)">
+            <summary>
+            异步记录执行日志
+            </summary>
+            <param name="logInfo"></param>
+        </member>
+        <member name="M:JieNor.Framework.BizTask.TaskRuntimeLogging.CreateObject(System.String)">
+            <summary>
+            创建新的业务对象
+            </summary>
+            <param name="formId">业务对象form标识</param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.BizTask.TaskRuntimeLogging.SaveObject(System.String,JieNor.Framework.SuperOrm.DataEntity.DynamicObject)">
+            <summary>
+            保存业务数据
+            </summary>
+            <param name="formId">业务对象form标识</param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

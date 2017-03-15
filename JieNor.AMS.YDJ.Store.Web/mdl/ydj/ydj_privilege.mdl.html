@@ -1,0 +1,52 @@
+﻿<!doctype html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body id="ydj_privilege" basemodel="bd_basetmpl" el="1" cn="满额优惠">
+    <div id="fbillhead" el="51" pk="fid" tn="t_ydj_privilege" pn="fbillhead" cn="满额优惠">
+
+        <!--基本信息-->
+        <input el="113" ek="fbillhead" visible="-1" id="fstartdate" fn="fstartdate" pn="fstartdate" cn="开始时间" defval="currentdate" />
+        <input el="113" ek="fbillhead" visible="-1" id="fenddate" fn="fenddate" pn="fenddate" cn="结束时间" defval="currentdate" />
+        <select el="122" ek="fbillhead" visible="-1" id="fcustrange" fn="fcustrange" pn="fcustrange" cn="客户范围" cg="客户范围" refid="bd_enum" dfld="fenumitem"></select>
+        <input el="116" ek="fbillhead" visible="-1" id="fismultilevel" fn="fismultilevel" pn="fismultilevel" cn="多级优惠" />
+
+    </div>
+
+    <!--适用门店-->
+    <table id="fdeptentry" el="52" pk="fentryid" tn="t_ydj_privilegdept" pn="fdeptentry" cn="适用门店">
+        <tr>
+            <th el="106" ek="fdeptentry" id="fdeptid" fn="fdeptid" pn="fdeptid" cn="门店"></th>
+        </tr>
+    </table>
+
+    <!--会员等级-->
+    <table id="fviplevelentry" el="52" pk="fentryid" tn="t_ydj_privilegviplevel" pn="fviplevelentry" cn="会员等级">
+        <tr>
+            <th el="122" ek="fviplevelentry" id="fviplevel" fn="fviplevel" pn="fviplevel" cn="会员等级" cg="会员等级" refid="bd_enum" dfld="fenumitem"></th>
+        </tr>
+    </table>
+
+    <!--优惠明细-->
+    <table id="fentry" el="52" pk="fentryid" tn="t_ydj_privilegeentry" pn="fentry" cn="商品明细">
+        <tr>
+            <th el="101" ek="fentry" id="flevel" fn="flevel" pn="flevel" cn="级别"></th>
+            <th el="104" ek="fentry" id="ffullamount" fn="ffullamount" pn="ffullamount" cn="满额"></th>
+            <th el="116" ek="fentry" id="fisminuscash" fn="fisminuscash" pn="fisminuscash" cn="减现金"></th>
+            <th el="105" ek="fentry" id="fminuscash" fn="fminuscash" pn="fminuscash" cn="所减现金"></th>
+            <th el="116" ek="fentry" id="fisgift" fn="fisgift" pn="fisgift" cn="送赠品"></th>
+            <th el="106" ek="fentry" id="fproductid" fn="fproductid" pn="fproductid" cn="产品名称" refid="ydj_product"></th>
+            <th el="106" ek="fentry" id="fnormsid" fn="fnormsid" pn="fnormsid" cn="规格" refid="ydj_norms"></th>
+            <th el="106" ek="fentry" id="fmaterialid" fn="fmaterialid" pn="fmaterialid" cn="材质" refid="ydj_material"></th>
+            <th el="106" ek="fentry" id="fcolorid" fn="fcolorid" pn="fcolorid" cn="颜色" refid="ydj_color"></th>
+            <th el="116" ek="fentry" id="fisintegral" fn="fisintegral" pn="fisintegral" cn="送积分"></th>
+            <th el="116" ek="fentry" id="fisquota" fn="fisquota" pn="fisquota" cn="是否定额"></th>
+            <th el="105" ek="fentry" id="fquota" fn="fquota" pn="fquota" cn="定额"></th>
+            <th el="116" ek="fentry" id="fismultiple" fn="fismultiple" pn="fismultiple" cn="是否倍数"></th>
+            <th el="105" ek="fentry" id="fmultiple" fn="fmultiple" pn="fmultiple" cn="倍数"></th>
+        </tr>
+    </table>
+</body>
+</html>

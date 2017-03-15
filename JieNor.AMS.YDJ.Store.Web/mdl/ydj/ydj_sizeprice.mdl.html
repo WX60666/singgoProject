@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body id="ydj_sizeprice" basemodel="bd_basetmpl" el="1" cn="尺寸定价">
+    <div id="FBillHead" el="51" pk="fid" tn="T_YDJ_SizePrice" pn="FBillHead" cn="尺寸定价"> 
+    	<!--基本信息-->
+        <input type="text" id="fmaterial" el="106" ek="FBillHead" fn="fmaterial" refid="ydj_product" ts="" visible="-1" cn="物料" refid="ydj_material"/>
+        <input type="text" id="fquality" el="106" ek="FBillHead" fn="fquality" refid="ydj_material" ts="" visible="-1" cn="材质" refid="ydj_norms" />
+        <input type="text" id="fcolor" el="106" ek="FBillHead" fn="fcolor" refid="ydj_color" ts="" visible="-1" cn="颜色" refid="ydj_color" />        
+            	        
+        <!--尺寸区间（明细）-->
+	    <table id="fentity" el="52" pk="FEntryId" tn="T_YDJ_SizePriceEntry" pn="fentity" cn="尺寸区间">
+	        <tr>
+                <th id="flongmax" el="103" ek="fentity" fn="flongmax" ts="" cn="长(单位/mm)上限" visible="0"></th>
+                <th id="flongmin" el="103" ek="fentity" fn="flongmin" ts="" cn="长(单位/mm)下限" visible="0"></th>
+                <th id="fwidthmax" el="103" ek="fentity" fn="fwidthmax" ts="" cn="宽(单位/mm)上限" visible="0"></th>
+                <th id="fwidthmin" el="103" ek="fentity" fn="fwidthmin" ts="" cn="宽(单位/mm)下限" visible="0"></th>
+                <th id="fthickmax" el="103" ek="fentity" fn="fthickmax" ts="" cn="厚(单位/mm)上限" visible="0"></th>
+                <th id="fthickmin" el="103" ek="fentity" fn="fthickmin" ts="" cn="厚(单位/mm)下限" visible="0"></th>
+                <th id="fpurcharseprice" el="104" ek="fentity" fn="fpurcharseprice" ts="" cn="采购价" visible="0"></th>
+                <th id="fprice" el="104" ek="fentity" fn="fprice" ts="" cn="售价" visible="0"></th>
+                <th id="fsellprice" el="104" ek="fentity" fn="fsellprice" ts="" cn="经销价" visible="0"></th>                	            
+	        </tr>
+	    </table>
+    </div>    
+</body>
+</html>
+

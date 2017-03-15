@@ -1,0 +1,193 @@
+﻿<!--页面菜单列表-->
+<div class="page-menu-list">
+</div>
+<!--页面内容面板-->
+<form action="javascript:;" class="form-horizontal">
+	<div class="portlet box yellow-casablanca">
+        <div class="portlet-title">
+            <div class="caption">
+                	基本信息
+            </div>
+            <div class="tools">
+                <a href="javascript:;" class="collapse"></a>
+            </div>
+        </div>
+        <div class="portlet-body form">
+		    <div class="form-body">
+		    	<!--验证提示信息-->
+		        <div class="alert alert-danger display-hide">
+		            <button class="close" data-close="alert"></button>
+		            页面中有一些带红色星号 * 的信息是必填项，请检查是否都有正确录入！
+		        </div>
+		        <div class="row">
+		        	<div class="col-md-6">
+		        		<div class="form-group">
+		                    <label class="col-md-3 control-label">日期<span class="required">*</span></label>
+		                    <div class="col-md-8">
+		                        <div class="input-group date date-picker">
+		                            <input type="text" class="form-control" name="fdate" 
+		                            		placeholder="进店日期" required="required" />
+		                            <span class="input-group-addon">
+		                                <i class="fa fa-calendar"></i>
+		                            </span>
+		                        </div>
+		                    </div>
+		                </div>
+		                <div class="form-group">
+		                    <label class="col-md-3 control-label">收支类型</label>
+		                    <div class="col-md-8">
+		                        <div class="radio-list">
+		                            <label class="radio-inline" id="fcollect">
+		                                <input type="radio" name="fszlx" value="收" checked="checked">
+		                               	收
+		                            </label>
+		                            <label class="radio-inline" id="fpayment">
+		                                <input type="radio" name="fszlx" value="支">
+		                               	 支
+		                            </label>
+		                        </div>
+		                    </div>
+		                </div>
+		        		<div class="form-group">
+		                    <label class="col-md-3 control-label">客户名称 <span class="required">*</span></label>
+		                    <div class="col-md-8 cols">
+		                        <div class="input-icon right">
+		                            <input type="text" class="form-control" name="fname" 
+		                            	placeholder="客户名称" required="required">
+		                        </div>
+		                    </div>
+		                </div>
+		                <div class="form-group">
+				            <label class="col-md-3 control-label">备注</label>
+				            <div class="col-md-8 cols">
+				                <div class="input-icon right">
+				                    <textarea cols="40" rows="6" name="fdescription" class="form-control" 
+				                    	style="overflow:visible" placeholder="多行文本......"></textarea>
+				                </div>
+				            </div>
+				        </div>
+		            </div>
+		            <div class="col-md-6">
+		            	<div class="form-group">
+		                    <label class="col-md-3 control-label">用途 <span class="required">*</span> </label>
+		                    <div class="col-md-8">
+		                        <select class="form-control select2me" required="required" name="Fusage" id="usage">
+									<option value="货款">货款</option>
+									<option value="储值/定金">储值/定金</option>
+								</select>
+		                    </div>
+		               </div>
+		        		<div class="form-group">
+		                    <label class="col-md-3 control-label">总额</label>
+		                    <div class="col-md-8 cols">
+		                        <div class="input-icon right">
+		                            <input type="text" class="form-control" name="fsum" 
+		                            	id="fsum" readonly="readonly" value="Amount" />
+		                        </div>
+		                    </div>
+		                </div>
+		            	<div class="form-group">
+		                    <label class="col-md-3 control-label">会员等级</label>
+		                    <div class="col-md-8 cols">
+		                        <div class="input-icon right">
+		                            <input type="text" class="form-control" name="fmemberrank" 
+		                            	placeholder="会员等级">
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+			    </div>
+            </div>
+        </div>
+    </div>
+    <div class="portlet box yellow-casablanca">
+        <div class="portlet-title">
+            <div class="caption">
+                	结算信息
+            </div>
+            <div class="tools">
+                <a href="javascript:;" class="collapse"></a>
+            </div>
+        </div>
+        <div class="portlet-body form">
+		    <div class="form-body">
+		        <div class="row">
+		        	<div class="col-md-6">
+		        		<div class="form-group">
+		                    <label class="col-md-3 control-label">支付方式</label>
+		                    <div class="col-md-8 cols">
+		                        <div class="input-icon right pay-method">
+		                            <div id="cash" class="col-xs-3"><img src="../../fw/images/cash.png" /><span>现金</span></div>
+		                            <div id="bank" class="col-xs-3"><img src="../../fw/images/bank.png" /><span>银行</span></div>
+		                            <div id="alipay" class="col-xs-3"><img src="../../fw/images/alipay.png" /><span>支付宝</span></div>
+		                            <div id="wechat" class="col-xs-3"><img src="../../fw/images/wechat.png" /><span>微信支付</span></div>
+		                        </div>
+		                    </div>
+		                </div>
+		                <div class="form-group" id="banknum_box" style="display: none;">
+		                    <label class="col-md-3 control-label">银行账号</label>
+		                    <div class="col-md-8 cols">
+		                        <div class="input-icon right">
+		                            <input type="text" class="form-control" name="Fbanknum" 
+		                            	placeholder="银行账号基础资料" />
+		                        </div>
+		                    </div>
+		                </div>
+		        		<div class="form-group">
+		                    <label class="col-md-3 control-label">金额</label>
+		                    <div class="col-md-8 cols">
+		                        <div class="input-icon right">
+		                            <input type="number" class="form-control" name="Fmoney" placeholder="金额" id="money" />
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		            <div class="col-md-6">
+		            	<div class="form-group" id="czzf">
+		                    <label class="col-md-3 control-label">储值支付</label>
+		                    <div class="col-md-8 cols">
+		                    	<span class="col-md-2 col-xs-2" style="height: 34px;">
+		                    		<div class="switch-type1" id="fczzf-switch" style="margin:0 0 -13px -5px;">
+				                		<span></span>
+				                	</div>
+				                </span>
+		                        <div class="input-icon right col-md-10 col-xs-10" id="Fstored">
+		                            <input type="number" class="form-control" name="Fstored" id="FstoredVal" placeholder="储值支付金额">
+		                        </div>
+		                    </div>
+		                </div>
+		                <div class="form-group" id="kyye">
+		                    <label class="col-md-3 control-label"></label>
+		                    <div class="col-md-8 cols">
+		                        <div class="input-icon right availmoney">
+		                                                                      可用余额15元
+		                        </div>
+		                    </div>
+		                </div>
+		                <div class="form-group" id="jfsy">
+		                    <label class="col-md-3 control-label">积分使用</label>
+		                    <div class="col-md-8 cols">
+		                    	<span class="col-md-2 col-xs-2" style="height: 34px;">
+		                    		<div class="switch-type1" id="fjfsy-switch" style="margin:0 0 -13px -5px;">
+				                		<span></span>
+				                	</div>
+		                    	</span>
+		                        <div class="input-icon right col-md-10 col-xs-10" id="Fintegration">
+		                            <input type="number" class="form-control" name="Fintegration" id="FintegrationVal" placeholder="积分抵现金额">
+		                        </div>
+		                    </div>
+		                </div>
+		                <div class="form-group" id="kyjf">
+		                    <label class="col-md-3 control-label"></label>
+		                    <div class="col-md-8 cols">
+		                        <div class="input-icon right availinteg">
+		                                                                      可用积分150分，可抵扣15元
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+			    </div>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,39 @@
+﻿<!--本模板是根据服务端需求提炼而成，客户端页面只需要遵循下述节点的一些属性描述规范即可，
+    至于节点布局，样式等没有要求（也就是xpath没要求），可由客户端页面实际需求自由发挥，
+    但需要服务端保存的节点需遵守下述规范：基本就是增加几个自定义属性（id,fn,tn）
+    -->
+<html lang="en">
+<head>
+</head>
+<body id="ydj_task" basemodel="bd_basetmpl" el=1 cn="任务">
+    <div id="fbillhead" el="51" pk="fid" tn="T_Ydj_Task" pn="fbillhead" cn="任务">
+    	<!--基本信息-->
+        <input type="text" id="ftasktype" el="106" ek="FBillHead" fn="ftasktype" refid="" ts="" visible="-1" cn="任务类型" />
+        <input type="text" id="fgrouping" el="100" ek="FBillHead" fn="fgrouping" ts="" cn="任务分组" visible="-1" />
+        <input type="text" id="fdescription" el="100" ek="FBillHead" fn="fdescription" ts="" cn="任务描述" visible="-1" />
+        <select id="furgent" el="117" ek="FBillHead" fn="furgent" ts="" refid="" cg="优先级"  visible="-1" cn="优先级">
+            <option value="0">高</option>
+            <option value="1">中</option>
+            <option value="2">低</option>
+        </select>
+        <input type="datetime" id="fstartdate" el="113" ek="FBillHead" fn="fstartdate" ts="" cn="开始时间" visible="-1" />
+        <input type="datetime" id="fenddate" el="113" ek="FBillHead" fn="fenddate" ts="" cn="截止时间" visible="-1" />
+        
+        
+        <!--关联信息-->
+        <input type="Text" id="ftasknum" el="108" ek="FBillHead" fn="ftasknum" ts="" visible="-1" cn="任务编号" />
+        <select id="FCombo1" el="117" ek="FBillHead" fn="FCombo1" ts="" refid="" cg="任务来源方式" visible="-1" cn="任务来源方式">
+            <option value="0">业务发起</option>
+            <option value="1">手工创建</option>
+        </select>
+        <select id="ftasksource" el="117" ek="FBillHead" fn="ftasksource" ts="" refid="" cg="来源业务对象" visible="-1" cn="来源业务对象">
+            <option value="0">客户</option>
+            <option value="1">收银单</option>
+            <option value="2">订货单</option>
+        </select>
+        <input type="Text" id="fbusinessobjnum" el="108" ek="FBillHead" fn="fbusinessobjnum" ts="" visible="-1" cn="业务对象编号" />
+
+    </div>
+
+</body>
+</html>

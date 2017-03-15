@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body id="ydj_payment" basemodel="bd_basetmpl" el="1" cn="付款单">
+    <div id="FBillHead" el="51" pk="fid" tn="T_Ydj_Payment" pn="FBillHead" cn="付款单">
+
+    	<!--基本信息-->
+        <input type="Text" id="fnumber" el="108" ek="FBillHead" fn="fnumber" ts="" visible="-1" cn="流水号" />
+        <input type="text" id="fsupplier" el="106" ek="FBillHead" fn="fsupplier" ts="" visible="-1" cn="供应商" refid="ydj_supplier"/>
+        <input type="datetime" id="fdate" el="113" ek="FBillHead" fn="fdate" ts="" cn="日期" visible="-1"  defval="@currentlongdate"/>
+        <select id="fpurpose" el="117" ek="FBillHead" fn="fpurpose" ts="" refid="" cg="付款用途" visible="-1" cn="付款用途">
+            <option value=""></option>
+        </select>
+        <div id="fbusinessdirec" el="114" ek="FBillHead" fn="fbusinessdirec" ts="" cn="业务方向" visible="-1"></div>
+        <input type="text" id="fbalance" el="105" ek="FBillHead" fn="fbalance" ts="" visible="-1" cn="金额" />
+        <input type="text" id="fdescription" el="100" ek="FBillHead" fn="fdescription" ts="" cn="备注" visible="-1" />
+		
+    </div>
+	<!--源单信息明细-->
+    <table id="fsourceorderentry" el="52" pk="fentryid" tn="t_ydj_sourceorder" pn="fsourceorderentry" cn="源单信息">
+        <tr>
+            <th type="Text" id="fordernumber" el="108" ek="fsourceorderentry" fn="fordernumber" ts="" cn="订货单号" visible="-1"></th>
+            <th id="fpayable" el="105" ek="fsourceorderentry" fn="fpayable" ts="" cn="应付金额" visible="-1"></th>
+            <th id="frealpaid" el="105" ek="fsourceorderentry" fn="frealpaid" ts="" cn="实付金额" visible="-1"></th>
+            <th id="fpaid" el="105" ek="fsourceorderentry" fn="fpaid" ts="" cn="已付金额" visible="-1"></th>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,1437 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JieNor.Framework.AppService</name>
+    </assembly>
+    <members>
+        <member name="M:PerfmonUtil.StartMonitor">
+            <summary>
+            开始监控
+            </summary>
+        </member>
+        <member name="M:PerfmonUtil.EndMonitor">
+            <summary>
+            结束监控
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.AppService.BillConvertService">
+            <summary>
+            单据转换服务
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.AppService.BillConvertService.IsPush(JieNor.Framework.UserContext,JieNor.Framework.MetaCore.FormOp.ConvertService.BillConvertContext)">
+            <summary>
+            判断指定单据是否存在指定下游的数据
+            </summary>
+            <param name="ctx"></param>
+            <param name="convertArgs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.AppService.BillConvertService.ValidAndThrowError(JieNor.Framework.UserContext,JieNor.Framework.MetaCore.FormMeta.ConvertElement.ConvertRule)">
+            <summary>
+            校验单据转换规则是否正确并报错
+            </summary>
+            <param name="ctx"></param>
+            <param name="rule"></param>
+        </member>
+        <member name="M:JieNor.Framework.AppService.BillConvertService.Push(JieNor.Framework.UserContext,JieNor.Framework.MetaCore.FormOp.ConvertService.BillConvertContext)">
+            <summary>
+            将指定单据根据特定转换规则下推成下游单据
+            </summary>
+            <param name="ctx"></param>
+            <param name="convertArgs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.AppService.BillConvertService.SaveConvertData(JieNor.Framework.UserContext,JieNor.Framework.MetaCore.FormOp.ConvertService.ConvertResult)">
+            <summary>
+            /保存转换后数据
+            </summary>
+            <param name="ctx"></param>
+            <param name="convertData"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.AppService.WarmUpService.BillNoBuilder">
+            <summary>
+             单据编号、基础资料编码的生成器（注意，已经有编号的，不再重新生成）
+             1、单据编号组成：
+                    A、常量：可选，单引号包住 ，比如  'RKD' ，'BM'
+                    B、单据上字段：可选，可多选 ，如  FDate
+                    C、流水号：必选，且放最后
+             2、单据字段取值规则：
+                    A、基础资料字段：取编码
+                    B、日期字段：默认取 YYYYMMDD ，可以自己定义格式，如 FDate(YYYYMM) 表示 取年月，FDate(YYYY) 表示 取年
+                    C、其他字段：直接取值
+             3、流水号取数规则：格式如 seq（4），表示取4位流水号，由上述 1、2 加起来作为分组依据，从1开始取流水号
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.AppService.WarmUpService.BillNoBuilder.SetBillNo(JieNor.Framework.MetaCore.FormOp.OperationContext,System.String,System.Collections.Generic.IEnumerable{JieNor.Framework.SuperOrm.DataEntity.DynamicObject})">
+            <summary>
+            构建单据编号 （基础资料编码）
+            1、从编码配置表获取编码的表达式
+            2、构建单据编号
+            3、设置单据编号
+            需注意：
+            A、没有设置编码表达式的，默认设置为 'No.' + Seq(10)
+            B、单据上的编码字段不为空的，不再重新编码（要重新编码，请先清空编码字段）
+            </summary>
+            <param name="ctx"></param>
+            <param name="formId"></param>
+            <param name="billDatas"></param>
+        </member>
+        <member name="M:JieNor.Framework.AppService.WarmUpService.BillNoBuilder.SetBillNo(JieNor.Framework.MetaCore.FormOp.OperationContext,System.String,JieNor.Framework.SuperOrm.DataEntity.DynamicObject,System.String)">
+            <summary>
+            构建单据编号 （基础资料编码），单据编号由 常量（可选） + 单据上字段值（可多选） + 流水号 组成
+            </summary>
+            <param name="formId">业务对象Id</param>
+            <param name="billData">业务对象实例，如单据数据</param>
+            <param name="express">获取编码的表达式：如  'cgrk' + FDate + Seq(4)，需要注意的是流水号放最后</param>
+            <returns>编码表达式 'cgrk' + FDate + Seq(4) ，
+            则返回格式如 cgrk201606070001、cgrk201606070002 的编码</returns>
+        </member>
+        <member name="M:JieNor.Framework.AppService.WarmUpService.BillNoBuilder.SetBillNo(JieNor.Framework.MetaCore.FormOp.OperationContext,System.String,System.Collections.Generic.IEnumerable{JieNor.Framework.SuperOrm.DataEntity.DynamicObject},System.String)">
+            <summary>
+            构建单据编号 （基础资料编码），单据编号由 常量（可选） + 单据上字段值（可多选） + 流水号 组成
+            </summary>
+            <param name="formId">业务对象Id</param>
+            <param name="billDatas">业务对象实例，如单据数据</param>
+            <param name="express">获取编码的表达式：如  'cgrk' + FDate + Seq(4)，需要注意的是流水号放最后</param>
+            <returns>编码表达式 'cgrk' + FDate + Seq(4) ，
+            则返回格式如 cgrk201606070001、cgrk201606070002 的编码</returns>
+        </member>
+        <member name="M:JieNor.Framework.AppService.WarmUpService.BillNoBuilder.GetBillNo(JieNor.Framework.MetaCore.FormOp.OperationContext,System.String,System.Collections.Generic.IEnumerable{JieNor.Framework.SuperOrm.DataEntity.DynamicObject},System.String)">
+            <summary>
+            构建单据编号 （基础资料编码），单据编号由 常量（可选） + 单据上字段值（可多选） + 流水号 组成
+            </summary>
+            <param name="formId">业务对象Id</param>
+            <param name="billDatas">业务对象实例，如单据数据</param>
+            <param name="express">获取编码的表达式：如  'cgrk' + FDate + Seq(4)，需要注意的是流水号放最后</param>
+            <returns>编码表达式 'cgrk' + FDate + Seq(4) ，
+            则返回格式如 cgrk201606070001、cgrk201606070002 的编码</returns>
+        </member>
+        <member name="M:JieNor.Framework.AppService.WarmUpService.BillNoBuilder.GetBillNo(JieNor.Framework.MetaCore.FormOp.OperationContext,System.String,JieNor.Framework.SuperOrm.DataEntity.DynamicObject,System.String)">
+            <summary>
+            构建单据编号 （基础资料编码），单据编号由 常量（可选） + 单据上字段值（可多选） + 流水号 组成
+            </summary>
+            <param name="formId">业务对象Id</param>
+            <param name="billData">业务对象实例，如单据数据</param>
+            <param name="express">获取编码的表达式：如 'cgrk' + FDate + Seq(4)，需要注意的是流水号放最后</param> 
+            <returns>编码表达式 'cgrk' + FDate + Seq(4) ，
+            则返回格式如 cgrk201606070001、cgrk201606070002 的编码</returns>
+        </member>
+        <member name="M:JieNor.Framework.AppService.WarmUpService.BillNoBuilder.GetPrefixNoGroup(JieNor.Framework.UserContext,System.String,System.Collections.Generic.List{JieNor.Framework.SuperOrm.DataEntity.DynamicObject},System.String[])">
+            <summary>
+            按编码前缀获取分组数据
+            </summary>
+            <param name="formId"></param>
+            <param name="beBuilds"></param>
+            <param name="expItem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.AppService.WarmUpService.BillNoBuilder.GetNotExistBillNo(System.Collections.Generic.IEnumerable{JieNor.Framework.SuperOrm.DataEntity.DynamicObject},System.String)">
+            <summary>
+            获取未有编码的单据
+            </summary>
+            <param name="billDatas"></param>
+            <param name="fldKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.AppService.WarmUpService.BillNoBuilder.PreFilter(JieNor.Framework.MetaCore.FormOp.OperationContext,System.String,JieNor.Framework.SuperOrm.DataEntity.DynamicObject,System.String)">
+            <summary>
+            检查是否符合条件
+            </summary>
+            <param name="ctx"></param>
+            <param name="formId"></param>
+            <param name="billData"></param>
+            <param name="preFilter">条件表达式，如 fbilltype.fname='费用报销'</param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.AppService.WarmUpService.BillNoBuilder.GetBillNoSetting(JieNor.Framework.MetaCore.FormOp.OperationContext,System.String)">
+            <summary>
+            获取编码设置信息
+            </summary>
+            <param name="ctx"></param>
+            <param name="formId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.AppService.WarmUpService.BillNoBuilder.GetPrefixBillNo(JieNor.Framework.UserContext,System.String,JieNor.Framework.SuperOrm.DataEntity.DynamicObject,System.String[])">
+            <summary>
+            获取编码前缀
+            </summary>
+            <param name="formId"></param>
+            <param name="billData"></param>
+            <param name="expItem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.AppService.WarmUpService.BillNoBuilder.GetFieldValue(JieNor.Framework.MetaCore.FormMeta.HtmlField,System.String,System.String,JieNor.Framework.SuperOrm.DataEntity.DynamicObject)">
+            <summary>
+            获取单据字段值
+            </summary>
+            <param name="fldKey"></param>
+            <param name="formatString"></param>
+            <param name="formId"></param>
+            <param name="billData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.AppService.WarmUpService.BillNoBuilder.IsField(JieNor.Framework.UserContext,System.String,System.String,JieNor.Framework.MetaCore.FormMeta.HtmlField@,System.String@)">
+            <summary>
+            判断是否单据字段
+            </summary>
+            <param name="formId"></param>
+            <param name="key"></param>
+            <param name="fld"></param>
+            <param name="formatString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.AppService.WarmUpService.BillNoBuilder.GetSequenceValue(System.Int32,System.String,System.String,System.UInt32)">
+            <summary>
+            加上流水号，形成单据编号
+            </summary>
+            <param name="capacity">流水号位数</param>
+            <param name="formId">业务对象key</param>
+            <param name="prefix">当前编码前缀</param> 
+            <param name="count">流水号的数量</param> 
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.AppService.WarmUpService.BillNoBuilder.GetSeqCapacity(System.String)">
+            <summary>
+            获取流水号位数
+            </summary>
+            <param name="seqExp">序列号表达式里的流水号位数，格式如 Seq(4) 表示 4位流水号</param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.AppService.WarmUpService.PreLoadBaseModelTmpl">
+            <summary>
+            预加载系统必须的基模板模型
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.AppService.WarmUpService.PreLoadSecModelTmpl">
+            <summary>
+            预加载系统必须的权限相关的服务端模型
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.AppService.WarmUpService.PreLoadSysModelTmpl">
+            <summary>
+            预加载系统必须的服务端模型如模块、菜单、主页、
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.AppService.ConvertAction.BaseConvertAction">
+            <summary>
+            单据转换逻辑单元基类
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.ConvertAction.BaseConvertAction.UserContext">
+            <summary>
+            用户上下文
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.ConvertAction.BaseConvertAction.BillConvertContext">
+            <summary>
+            单据转换上下文
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.ConvertAction.BaseConvertAction.PlugInProxy">
+            <summary>
+            插件代理类
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.ConvertAction.BaseConvertAction.MetaModelService">
+            <summary>
+            元数据服务
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.ConvertAction.BaseConvertAction.DBService">
+            <summary>
+            数据库服务
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.AppService.ConvertAction.BaseConvertAction.Execute">
+            <summary>
+            逻辑执行接口
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.AppService.ConvertAction.ConvertDynamicRow">
+            <summary>
+            单据转换公式引擎计算对象
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.ConvertAction.ConvertDynamicRow.HtmlForm">
+            <summary>
+            表单模型
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.ConvertAction.ConvertDynamicRow.ConvertSourceData">
+            <summary>
+            转换数据源
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.ConvertAction.ConvertDynamicRow.LinkSourceData">
+            <summary>
+            表达式计算过程中同时收集关联关系
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.ConvertAction.ConvertDynamicRow.CurrentLinkResultTemplate">
+            <summary>
+            当前关联关系对象模板
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.ConvertAction.ConvertDynamicRow.LinkResultObjects">
+            <summary>
+            单据转换关联结果
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.AppService.ConvertAction.ConvertDynamicRow.TryGetMember(System.Dynamic.GetMemberBinder,System.Object@)">
+            <summary>
+            返回字段值
+            </summary>
+            <param name="binder"></param>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.AppService.ConvertAction.ConvertDynamicRow.TryGetMember(System.String,System.Object@)">
+            <summary>
+            获取指定表达式的值
+            </summary>
+            <param name="key"></param>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.AppService.ConvertAction.CreateTargetDataAction">
+            <summary>
+            单据转换逻辑单元：创建目标单
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.ConvertAction.CreateTargetDataAction.ConvertRule">
+            <summary>
+            转换规则
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.ConvertAction.CreateTargetDataAction.BillDataGroups">
+            <summary>
+            源单分组数据
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.ConvertAction.CreateTargetDataAction.SourceDataEntities">
+            <summary>
+            源单的原始数据源：包括多路径数据数据（多表）
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.ConvertAction.CreateTargetDataAction.TargetDataEntities">
+            <summary>
+            生成的目标单数据
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.ConvertAction.CreateTargetDataAction.SourceHtmlForm">
+            <summary>
+            源单业务模型
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.ConvertAction.CreateTargetDataAction.TargetHtmlForm">
+            <summary>
+            目标单业务模型
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.ConvertAction.CreateTargetDataAction.ExprEngine">
+            <summary>
+            表达式引擎
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.ConvertAction.CreateTargetDataAction.ConvertRelations">
+            <summary>
+            输出转换关系
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.ConvertAction.CreateTargetDataAction.dctLinkRowTemplate">
+            <summary>
+            关联模板行初始化
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.AppService.ConvertAction.CreateTargetDataAction.Execute">
+            <summary>
+            逻辑执行
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.AppService.ConvertAction.CreateTargetDataAction.DoHeadEntityMapping(JieNor.Framework.MetaCore.FormMeta.HtmlHeadEntity,System.Linq.IGrouping{JieNor.Framework.SuperOrm.DataEntity.DataEntityGroupKey.ComplexKey,System.Collections.Generic.Dictionary{System.String,System.Object}},JieNor.Framework.SuperOrm.DataEntity.DynamicObject)">
+            <summary>
+            单据头映射
+            </summary>
+            <param name="headEntity"></param>
+            <param name="sourceDataEntities"></param>
+            <param name="targetDataEntity"></param>
+        </member>
+        <member name="M:JieNor.Framework.AppService.ConvertAction.CreateTargetDataAction.DoEntryEntityMapping(JieNor.Framework.MetaCore.FormMeta.HtmlEntryEntity,System.Collections.Generic.IEnumerable{System.Collections.Generic.Dictionary{System.String,System.Object}},JieNor.Framework.SuperOrm.DataEntity.DynamicObject)">
+            <summary>
+            执行表体字段映射操作
+            </summary>
+            <param name="entryEntity"></param>
+            <param name="sourceDataEntities"></param>
+            <param name="targetDataEntity"></param>
+        </member>
+        <member name="P:JieNor.Framework.AppService.ConvertAction.GetSourceDataAction.SourceHtmlForm">
+            <summary>
+            源单模型
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.ConvertAction.GetSourceDataAction.TargetHtmlForm">
+            <summary>
+            目标单模型
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.ConvertAction.GetSourceDataAction_1.SourceHtmlForm">
+            <summary>
+            源单模型
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.ConvertAction.GetSourceDataAction_1.TargetHtmlForm">
+            <summary>
+            目标单模型
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.AppService.ConvertAction.GroupSourceDataAction">
+            <summary>
+            对源单数据进行分组逻辑处理
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.ConvertAction.GroupSourceDataAction.SourceDataEntities">
+            <summary>
+            来源单数据信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.ConvertAction.GroupSourceDataAction.BillDataGroups">
+            <summary>
+            分组后数据
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.AppService.ConvertAction.GroupSourceDataAction.Execute">
+            <summary>
+            进行分组逻辑处理
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.ConvertAction.InitializeAction.ConvertRule">
+            <summary>
+            输出属性：转换规则
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.ConvertAction.InitializeAction.SourceHtmlForm">
+            <summary>
+            源单模型
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.ConvertAction.InitializeAction.TargetHtmlForm">
+            <summary>
+            目标单模型
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.ConvertAction.InitializeAction.ConvertService">
+            <summary>
+            单据转换服务
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.ConvertAction.PrepareQueryParameterAction.SourceHtmlForm">
+            <summary>
+            源单模型
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.ConvertAction.PrepareQueryParameterAction.TargetHtmlForm">
+            <summary>
+            目标单模型
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.AppService.DefaultValueCalculator">
+            <summary>
+            表单默认值计算器的实现
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.AppService.DefaultValueCalculator.Execute(JieNor.Framework.UserContext,JieNor.Framework.MetaCore.FormMeta.HtmlForm,JieNor.Framework.SuperOrm.DataEntity.DynamicObject[],System.String)">
+            <summary>
+            针对指定数据包进行默认值计算，注意数据包对象要与对应实体匹配
+            </summary>
+            <param name="ctx"></param>
+            <param name="hForm"></param>
+            <param name="dataEntities"></param>
+            <param name="activeEntityKey"></param>
+        </member>
+        <member name="T:JieNor.Framework.AppService.MetaModelService">
+            <summary>
+            元模型管理服务
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.MetaModelService.Cache">
+            <summary>
+            缓存对象
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.AppService.MetaModelService.LoadFormModel(JieNor.Framework.UserContext,System.String)">
+            <summary>
+            获取页面模型
+            </summary>
+            <param name="ctx"></param>
+            <param name="formId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.AppService.MetaModelService.GetListMenu(JieNor.Framework.UserContext,System.String)">
+            <summary>
+            获取列表菜单对象
+            </summary>
+            <param name="ctx"></param>
+            <param name="formId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.AppService.MetaModelService.GetBillMenu(JieNor.Framework.UserContext,System.String)">
+            <summary>
+            获取表单菜单对象
+            </summary>
+            <param name="ctx"></param>
+            <param name="formId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.AppService.MetaModelService.GetFormMenuFromFile(System.String)">
+            <summary>
+            从文件中读取菜单对象
+            </summary>
+            <param name="filePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.AppService.MetaModelService.LoadConvertModel(JieNor.Framework.UserContext,System.String,System.String)">
+            <summary>
+            加载单据转换模型
+            </summary>
+            <param name="ctx"></param>
+            <param name="sourceFormId"></param>
+            <param name="targetFormId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.AppService.MetaModelService.LoadConvertRule(JieNor.Framework.UserContext,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="ctx"></param>
+            <param name="ruleId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.AppService.ReportService.QueryBizObjectList">
+            <summary>
+            获取系统的业务模型简要信息。
+            返回的数据格式 ：Dictionary  ，  key -- formid ，value -- 业务对象标题
+                            如： sec_user -- 用户； db_customer -- 客户
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.AppService.ReportService.QueryBizObjectList._htmlFormMetaWatcher">
+            <summary>
+            目录监控
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.AppService.ReportService.OfficeFuzzyQuery">
+            <summary>
+            基础资料数据选择：获取基础资料等查询数据（office客户端的字段模糊查询）
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.ReportService.OfficeFuzzyQuery.RefDisplayFields">
+            <summary>
+            要显示的字段
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.AppService.ReportService.OfficeFuzzyQuery.GetFuzzyListColumns">
+            <summary>
+            获取返回的列表字段
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.AppService.ReportService.LoadFilterScheme">
+            <summary>
+            Office数据查询：获取业务对象关联的过滤方案
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.AppService.ReportService.LoadBizObjectList">
+            <summary>
+            获取系统模块的业务对象信息 
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.AppService.ReportService.OfficeDemoReport">
+            <summary>
+            Office报表示例.
+            Excel报表开发步骤：
+            1、定义报表模型：在Excel报表模版中新增报表模型，定义报表字段等信息，
+               注意 [取数服务] 字段要设置，这个字段填写 服务的操作码，比如这个示例，则填写 为 OfficeDemoReport
+            2、定义过滤界面，未定义则用通用过滤界面
+            3、编写服务端取数服务：继承基类服务 OfficeRptDataService
+                A、如果返回的报表标题是动态的，请 override  --  DataTitle ， 具体参照本示例  
+                B、如果报表数据显示界面需要显示过滤条件信息，请 override  --  FilterTitle ， 具体参照本示例
+                C、如果返回的报表字段是动态的（报表模型里面未定义），请override  --   Columns ， 具体参照本示例
+                D、最最重要的部分：重写报表取数服务函数 BuildQueryData ，返回报表数据，具体参照本示例
+            </summary> 
+        </member>
+        <member name="P:JieNor.Framework.AppService.ReportService.OfficeDemoReport.DataTitle">
+            <summary>
+            在这里返回报表的标题，比如：销售毛利表
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.ReportService.OfficeDemoReport.FilterTitle">
+            <summary>
+            在这里返回相关的过滤条件描述信息。
+            一般情况下，报表的数据界面上方，都会显示一些简要的查询条件信息，方便用户查看
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.AppService.ReportService.OfficeDemoReport.BuildColumnHeads">
+            <summary>
+            返回报表查询字段：默认返回报表模型里面定义的字段列表。
+            1、对于动态的报表（字段动态），请在这个方法里面构建
+            2、对于多行表头，注意构建字段顺序，否则出错
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.AppService.ReportService.OfficeDemoReport.BuildQueryData(JieNor.Framework.DataTransferObject.Report.ListDesc@)">
+            <summary>
+            构建报表数据 ：
+            1、出于性能考虑，要求返回IDataReader类型的数据包
+            2、返回的desc数据包，office端查询，强制要求要返回本次查询返回的记录数，
+               即 ListDesc.CurrentRows 字段要赋值 ，以便构建二维数组做批量填充
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.AppService.ReportService.OfficeRptDataService">
+            <summary>
+            Office端： 报表数据查询服务
+            </summary> 
+        </member>
+        <member name="T:JieNor.Framework.AppService.ReportService.OfficeBizListDataService">
+            <summary>
+            Office端： 业务的列表数据查询服务
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.AppService.ReportService.OfficeBizListDataService.BuildQueryData(JieNor.Framework.DataTransferObject.Report.ListDesc@)">
+            <summary>
+            构建查询数据 
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.AppService.ReportService.AbstractQueryDataService">
+            <summary>
+            数据查询服务
+            </summary> 
+        </member>
+        <member name="P:JieNor.Framework.AppService.ReportService.AbstractQueryDataService.IsOffice">
+            <summary>
+            是否office端查询
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.ReportService.AbstractQueryDataService.FilterObject">
+            <summary>
+            报表过滤条件（过滤条件、排序、显示隐藏列等）：由客户端传过来
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.ReportService.AbstractQueryDataService.DataTitle">
+            <summary>
+            设置数据的标题：报表数据 -- 设置为报表名称，列表数据--设置为列表名称
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.ReportService.AbstractQueryDataService.FilterTitle">
+            <summary>
+            设置返回的过滤条件信息：一般来说，报表查询时，在报表查询出来的列表上方，显示一些相应的过滤条件信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.ReportService.AbstractQueryDataService.Options">
+            <summary>
+            相关一些选项信息，如字段信息及其他相关系统选项、打印选项等等
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.AppService.ReportService.AbstractQueryDataService.GetRptColObjectFromModel">
+            <summary>
+            从数据库获取报表模型里面定义的字段列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.AppService.ReportService.AbstractQueryDataService.GetColumnInfo(System.Data.IDataReader,System.Collections.Generic.List{JieNor.Framework.DataTransferObject.Report.ColumnObject})">
+            <summary>
+            设置返回的字段：只返回显示及隐藏的字段，不显示的字段，不返回
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.AppService.ReportService.AbstractQueryDataService.QueryData(JieNor.Framework.UserContext,JieNor.Framework.DataTransferObject.Report.FilterSchemeObject)">
+            <summary>
+            返回查询数据：
+            注意：1、只返回显示及隐藏的字段，不显示的字段，不返回
+                  2、一般web页面或winform页面数据，以  List 形式返回数据
+                  3、office数据，以二维数组的形式返回报表数据，数组的填充，与字段的显示顺序一致，这样在excel页签就可以批量填充
+            </summary>
+            <param name="ctx"></param>
+            <param name="filter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.AppService.ReportService.AbstractQueryDataService.DoExecute(JieNor.Framework.SuperOrm.DataEntity.DynamicObject[]@)">
+            <summary>
+            返回查询数据 
+            </summary>
+            <param name="dataEntities"></param>
+        </member>
+        <member name="M:JieNor.Framework.AppService.ReportService.AbstractQueryDataService.BuildQueryData(JieNor.Framework.DataTransferObject.Report.ListDesc@)">
+            <summary>
+            构建查询数据 ：
+            1、出于性能考虑，要求返回IDataReader类型的数据包
+            2、返回的desc数据包，office端查询，强制要求要返回本次查询返回的记录数，
+               即 ListDesc.CurrentRows 字段要赋值 ，以便构建二维数组做批量填充
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.AppService.ReportService.AbstractQueryDataService.PackQueryData(System.Data.IDataReader,JieNor.Framework.DataTransferObject.Report.ListDesc,System.Collections.Generic.List{JieNor.Framework.DataTransferObject.Report.ColumnObject})">
+            <summary>
+            数据打包：返回查询数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.AppService.ReportService.OfficeRptTestData">
+            <summary>
+            Office报表测试数据
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.ReportService.OfficeRptTestData.RowCount">
+            <summary>
+            测试数据行数，缺省 5万行
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.AppService.ReportService.OfficeRptTestData.BuildTestData">
+            <summary>
+            构建简单的测试数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.AppService.ReportService.LoadHtmlForm">
+            <summary>
+            获取表单模型的字段信息
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.AppService.ReportService.LoadModuleTmpl">
+            <summary>
+            获取各个系统模块的office模板信息 
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.AppService.ReportService.LoadModule">
+            <summary>
+            获取系统模块信息
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.AppService.ReportService.LoadOfficeTmplContent">
+            <summary>
+            获取模板信息
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.AppService.ReportService.LoadOfficeTmplOption">
+            <summary>
+            获取模板选项信息
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.AppService.OperationService.Push">
+            <summary>
+            保存操作
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.OperationService.Push.OperationName">
+            <summary>
+            操作名称
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.AppService.OperationService.Push.DoExecute(JieNor.Framework.SuperOrm.DataEntity.DynamicObject[]@)">
+            <summary>
+            执行下推过程逻辑
+            </summary>
+            <param name="dataEntities"></param>
+        </member>
+        <member name="T:JieNor.Framework.AppService.OperationService.BaseRefQuery">
+            <summary>
+            基础资料引用属性查询
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.AppService.OperationService.BaseRefQuery.GetFilter(System.Collections.Generic.List{JieNor.Framework.DataTransferObject.Report.ColumnObject},System.String)">
+            <summary>
+            重置过滤条件信息，只允许
+            </summary>
+            <param name="lstColumns"></param>
+            <param name="matchRule"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.AppService.OperationService.Close">
+            <summary>
+            关闭表单
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.AppService.OperationService.Close.SaveUserProfile(JieNor.Framework.UserContext,System.String,JieNor.Framework.MetaCore.FormModel.FormUserProfile,System.Boolean)">
+            <summary>
+            保存用户配置信息
+            </summary>
+            <param name="formId"></param>
+            <param name="profileData"></param>
+            <param name="isActiveProfile"></param>
+        </member>
+        <member name="M:JieNor.Framework.AppService.OperationService.Close.LoadUserProfile(JieNor.Framework.UserContext,System.String,System.String,System.String)">
+            <summary>
+            加载用户配置信息
+            </summary>
+            <param name="formId"></param>
+            <param name="profileId"></param>
+            <param name="category"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.AppService.OperationService.DoNothing">
+            <summary>
+            空操作
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.AppService.OperationService.Cache">
+            <summary>
+            缓存测试操作：缓存测试
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.AppService.OperationService.QueryCombo">
+            <summary>
+            下拉列表的数据查询：主要用于下拉列表的数据加载显示
+            传递的 SimpleData 包含如下参数：
+                fieldkey ： 必填，查询的字段Key，
+                比如 销售订单上的 单据状态（假定为 FStatus） ，则 传递 FStatus 
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.AppService.OperationService.QueryCombo.GetFilter">
+            <summary>
+            获取过滤条件
+            </summary> 
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.AppService.OperationService.QueryCombo.GetListColumns">
+            <summary>
+            获取返回的列表字段
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:JieNor.Framework.AppService.OperationService.QueryCombo.LookUpFormId">
+            <summary>
+            查询的对象模型 formid
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.OperationService.QueryCombo.FieldKey">
+            <summary>
+            模糊查询的字段标识（如销售订单上的部门字段标识）
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.AppService.OperationService.FuzzyQuery">
+            <summary>
+            模糊查询：主要用于编辑界面的基础资料选择或枚举类型的下拉列表显示数据
+            传递的 SimpleData 包含如下参数：
+                fieldkey ： 必填，查询的字段Key，比如 销售订单上的 部门字段（假定为 FDetptId） ，则 传递 FDetptId 
+                searchkey：可选，模糊查询的关键字，如 研发部
+                fetchcount：可选，返回的记录数，默认返回10条
+                matchrule ：可选，匹配规则，like，llike，rlike，默认 llike 
+            注：模糊查询选项 fetchcount 和 matchrule， 如果跟后端的不一样，会自动保存到后台
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.OperationService.FuzzyQuery.IsQueryDataOnly">
+            <summary>
+            是否只查数据
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.AppService.OperationService.FuzzyQuery.GetFilter(System.Collections.Generic.List{JieNor.Framework.DataTransferObject.Report.ColumnObject},System.String)">
+            <summary>
+            获取过滤条件
+            </summary>
+            <param name="lstColumns"></param>
+            <param name="matchRule"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.AppService.OperationService.FuzzyQuery.GetListColumns">
+            <summary>
+            获取返回的列表字段
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.AppService.OperationService.FuzzyQuery.GetUserProfile">
+            <summary>
+            获取用户设置的模糊查询规则
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.AppService.OperationService.FuzzyQuery.SaveUserProfile(JieNor.Framework.SuperOrm.DataEntity.DynamicObject,JieNor.Framework.AppService.OperationService.FuzzyQuery.Setting)">
+            <summary>
+            保存模糊查询选项：客户端有传递的才保存
+            </summary>
+            <param name="obj"></param>
+            <param name="setting"></param>
+        </member>
+        <member name="P:JieNor.Framework.AppService.OperationService.FuzzyQuery.FetchCount">
+            <summary>
+            模糊查询返回的记录数
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.OperationService.FuzzyQuery.PageIndex">
+            <summary>
+            当前要查询的数据页码
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.OperationService.FuzzyQuery.LookUpFormId">
+            <summary>
+            模糊查询的对象模型 formid
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.OperationService.FuzzyQuery.SearchKey">
+            <summary>
+            模糊查询的 的关键字：自动去掉前后空格
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.OperationService.FuzzyQuery.FieldKey">
+            <summary>
+            模糊查询的字段标识（如销售订单上的部门字段标识）
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.OperationService.FuzzyQuery.Setting.FetchCount">
+            <summary>
+            模糊查询返回的记录数，默认10条
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.OperationService.FuzzyQuery.Setting.PageIndex">
+            <summary>
+            当前查询的页号
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.AppService.OperationService.FuzzyQuery.Setting.GetMatchRule">
+            <summary>
+            模糊查询的匹配规则（包含，左包含，右包含），默认左包含
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.OperationService.ListOperation.SaveFilter.IsShare">
+            <summary>
+            是否设置为共享
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.AppService.OperationService.ListOperation.SaveFilter.LoadFilterScheme(JieNor.Framework.UserContext,System.String)">
+            <summary>
+            加载过滤方案
+            </summary>
+            <param name="ctx"></param>
+            <param name="formId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.AppService.OperationService.ListOperation.SaveFilter.SaveFilterScheme(JieNor.Framework.UserContext,System.String,JieNor.Framework.DataTransferObject.Report.FilterSchemeObject)">
+            <summary>
+            保存过滤方案
+            </summary>
+            <param name="ctx"></param>
+            <param name="formId"></param>
+            <param name="scheme"></param>
+        </member>
+        <member name="T:JieNor.Framework.AppService.OperationService.Modify">
+            <summary>
+            修改
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.AppService.OperationService.New">
+            <summary>
+            表单新增操作
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.AppService.OperationService.New.DoExecute(JieNor.Framework.SuperOrm.DataEntity.DynamicObject[]@)">
+            <summary>
+            新增逻辑处理
+            </summary>
+            <param name="dataEntities"></param>
+        </member>
+        <member name="T:JieNor.Framework.AppService.OperationService.Query">
+            <summary>
+            列表初始化操作
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.OperationService.Query.ListOperationContext">
+            <summary>
+            列表操作上下文
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.OperationService.Query.OpenStyle">
+            <summary>
+            页面的打开方式：默认为页签方式打开
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.AppService.OperationService.QueryData">
+            <summary>
+            列表查询数据操作
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.OperationService.QueryData.ListOperationContext">
+            <summary>
+            列表操作上下文
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.AppService.OperationService.QuerySelector">
+            <summary>
+            基础资料选择弹窗列表初始化操作
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.OperationService.QuerySelector.OpenStyle">
+            <summary>
+            页面的打开方式：模态弹窗方式打开
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.OperationService.QuerySelector.FieldKey">
+            <summary>
+            模糊查询的字段标识（如销售订单上的部门字段标识）
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.AppService.OperationService.QueryWhole">
+            <summary>
+            查询整单数据
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.OperationService.QueryWhole.IsQueryDataOnly">
+            <summary>
+            是否只查询数据
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.AppService.OperationService.Refresh">
+            <summary>
+            刷新操作
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.OperationService.Refresh.OperationName">
+            <summary>
+            操作名称
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.OperationService.Refresh.IsQueryDataOnly">
+            <summary>
+            是否只查询数据
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.AppService.OperationService.Refresh.DoExecute(JieNor.Framework.SuperOrm.DataEntity.DynamicObject[]@)">
+            <summary>
+            操作执行
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.AppService.OperationService.UnSubmit">
+            <summary>
+            撤销操作:1、如果未定义审批信息，则直接撤销
+                     2、如果未提交，则忽略
+                     3、设置单据状态为保存，同时记录撤销日志
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.AppService.OperationService.UnSubmit.SetUnSubmitInfo(JieNor.Framework.SuperOrm.DataEntity.DynamicObject[]@)">
+            <summary>
+            设置为已审批 
+            </summary> 
+            <param name="billDatas"></param>
+        </member>
+        <member name="M:JieNor.Framework.AppService.OperationService.UnSubmit.SetUnSubmitInfo(JieNor.Framework.SuperOrm.DataEntity.DynamicObject)">
+            <summary>
+            设置为已审批
+            </summary>
+            <param name="billData"></param>
+        </member>
+        <member name="M:JieNor.Framework.AppService.OperationService.UnSubmit.SetUnSubmitInfo(JieNor.Framework.SuperOrm.DataEntity.DynamicObject,JieNor.Framework.SuperOrm.DataEntity.DynamicObject)">
+            <summary>
+            设置提交信息
+            </summary>
+            <param name="setting"></param>
+            <param name="billData"></param>
+        </member>
+        <member name="M:JieNor.Framework.AppService.OperationService.UnSubmit.IsSubmit(JieNor.Framework.SuperOrm.DataEntity.DynamicObject,JieNor.Framework.SuperOrm.DataEntity.DynamicObject)">
+            <summary>
+            判断是否已经提交
+            </summary>
+            <param name="setting"></param>
+            <param name="billData"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.AppService.OperationService.UnAudit">
+            <summary>
+            反审核操作
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.AppService.OperationService.UnAudit.GetBillLastestAuditLevel(JieNor.Framework.SuperOrm.DataEntity.DynamicObject,JieNor.Framework.SuperOrm.DataEntity.DynamicObject)">
+            <summary>
+            获取最后审核对应的审核级次 
+            </summary>
+            <param name="setting"></param>
+            <param name="billData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.AppService.OperationService.UnAudit.SetUnAuditInfo(JieNor.Framework.SuperOrm.DataEntity.DynamicObject,JieNor.Framework.SuperOrm.DataEntity.DynamicObject)">
+            <summary>
+            反审核时，设置为 保存状态
+            </summary>
+            <param name="setting"></param>
+            <param name="billData"></param>
+        </member>
+        <member name="M:JieNor.Framework.AppService.OperationService.UnAudit.IsSubmit(JieNor.Framework.SuperOrm.DataEntity.DynamicObject,JieNor.Framework.SuperOrm.DataEntity.DynamicObject)">
+            <summary>
+            判断是否已经提交
+            </summary>
+            <param name="setting"></param>
+            <param name="billData"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.AppService.OperationService.Audit">
+            <summary>
+            审核操作
+            步骤 ：
+            1、检查多级审核设置，看是否启用了审核，未启用则忽略
+            2、如果启用审核，看单据是否符合条件，符合条件的才需要进行审核
+            3、检查对应单据是否已审核完成，已完成审核的忽略
+            4、获取单据的当前审核级次（满足对应的前提条件），检查当前操作用户是否在审核级次包含的人员范围内，不满足则忽略
+            5、存在对应的审核级次并且当前用户在审核的人员范围内，则进行审核
+            6、审核：设置审核人、审核日期、审核状态、增加审核日志
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.OperationService.Audit.AuditAgree">
+            <summary>
+            是否审批同意
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.OperationService.Audit.AuditDesc">
+            <summary>
+            审批意见
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.AppService.OperationService.Audit.SetAuditLog(JieNor.Framework.SuperOrm.DataEntity.DynamicObject,JieNor.Framework.SuperOrm.DataEntity.DynamicObject)">
+            <summary>
+            增加审批日志
+            </summary>
+            <param name="currentLevel"></param>
+            <param name="billData"></param>
+        </member>
+        <member name="M:JieNor.Framework.AppService.OperationService.Audit.SetAuditInfo(JieNor.Framework.SuperOrm.DataEntity.DynamicObject,JieNor.Framework.SuperOrm.DataEntity.DynamicObject,JieNor.Framework.SuperOrm.DataEntity.DynamicObject)">
+            <summary>
+            设置审批信息
+            </summary>
+            <param name="setting"></param>
+            <param name="currLevel"></param>
+            <param name="billData"></param>
+        </member>
+        <member name="M:JieNor.Framework.AppService.OperationService.Audit.GetNextAuditLevel(JieNor.Framework.MetaCore.FormOp.OperationContext,JieNor.Framework.SuperOrm.DataEntity.DynamicObject,JieNor.Framework.SuperOrm.DataEntity.DynamicObject,JieNor.Framework.SuperOrm.DataEntity.DynamicObject)">
+            <summary>
+            获取下一级审批信息
+            </summary>
+            <param name="setting">多级审批信息</param>
+            <param name="currLevel">当前审批级次</param>
+            <param name="billData">单据数据</param>
+            <returns>下一级审批信息</returns>
+        </member>
+        <member name="M:JieNor.Framework.AppService.OperationService.Audit.GetBillCurrentAuditLevel(JieNor.Framework.MetaCore.FormOp.OperationContext,JieNor.Framework.SuperOrm.DataEntity.DynamicObject,JieNor.Framework.SuperOrm.DataEntity.DynamicObject)">
+            <summary>
+            获取单据的当前审批级次信息
+            </summary>
+            <param name="setting"></param>
+            <param name="billData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.AppService.OperationService.Audit.GetLastAuditLog(JieNor.Framework.SuperOrm.DataEntity.DynamicObject,JieNor.Framework.SuperOrm.DataEntity.DynamicObjectCollection)">
+            <summary>
+            取审批日志里面的最后审批级次
+            </summary>
+            <param name="billData">单据数据</param>
+            <param name="checkSetting">审批级次信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.AppService.OperationService.Audit.IsSubmit(JieNor.Framework.SuperOrm.DataEntity.DynamicObject,JieNor.Framework.SuperOrm.DataEntity.DynamicObject)">
+            <summary>
+            判断是否已经提交审核
+            </summary>
+            <param name="setting"></param>
+            <param name="billData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.AppService.OperationService.Audit.IsFinishAudit(JieNor.Framework.SuperOrm.DataEntity.DynamicObject,JieNor.Framework.SuperOrm.DataEntity.DynamicObject)">
+            <summary>
+            判断是否已经审核完成
+            </summary>
+            <param name="setting"></param>
+            <param name="billData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.AppService.OperationService.Audit.IsPreFilter(JieNor.Framework.MetaCore.FormOp.OperationContext,JieNor.Framework.SuperOrm.DataEntity.DynamicObject,JieNor.Framework.SuperOrm.DataEntity.DynamicObject)">
+            <summary>
+            判断整单是否满足前提条件
+            </summary>
+            <param name="setting"></param>
+            <param name="billData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.AppService.OperationService.Audit.IsLevelFilter(JieNor.Framework.MetaCore.FormOp.OperationContext,JieNor.Framework.SuperOrm.DataEntity.DynamicObject,JieNor.Framework.SuperOrm.DataEntity.DynamicObject)">
+            <summary>
+            依据本级的过滤条件，判断是否需要审核（满足条件方需要审核）
+            </summary>
+            <param name="currentLevel"></param>
+            <param name="billData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.AppService.OperationService.Audit.IsIncludeUser(JieNor.Framework.MetaCore.FormOp.OperationContext,JieNor.Framework.SuperOrm.DataEntity.DynamicObject)">
+            <summary>
+            判断当前用户是否在当前审批级次的审批人列表当中
+            </summary>
+            <param name="currentLevel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.AppService.OperationService.Audit.GetAuditSetting(JieNor.Framework.MetaCore.FormOp.OperationContext)">
+            <summary>
+            获取单据的多级审批信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.AppService.OperationService.Audit.SetAuditFldValue(JieNor.Framework.SuperOrm.DataEntity.DynamicObject,System.String,System.Object)">
+            <summary>
+            设置相关审批字段的值
+            </summary>
+            <param name="billData"></param>
+            <param name="fldKey"></param>
+            <param name="value"></param>
+        </member>
+        <member name="T:JieNor.Framework.AppService.OperationService.Draft">
+            <summary>
+            暂存操作
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.AppService.OperationService.Delete">
+            <summary>
+            删除操作
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.AppService.OperationService.Save">
+            <summary>
+            保存操作
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.AppService.OperationService.Submit">
+            <summary>
+            提交操作:1、如果未定义审批信息，则直接设置为已审核
+                     2、如果已经提交，则忽略
+                     3、设置单据状态为提交状态，同时预插入审批路线（审批日志）
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.AppService.OperationService.Submit.SetAuditInfo(JieNor.Framework.SuperOrm.DataEntity.DynamicObject[]@)">
+            <summary>
+            设置为已审批 
+            </summary> 
+            <param name="billDatas"></param>
+        </member>
+        <member name="M:JieNor.Framework.AppService.OperationService.Submit.SetAuditInfo(JieNor.Framework.SuperOrm.DataEntity.DynamicObject)">
+            <summary>
+            设置为已审批
+            </summary>
+            <param name="billData"></param>
+        </member>
+        <member name="M:JieNor.Framework.AppService.OperationService.Submit.SetSubmitInfo(JieNor.Framework.SuperOrm.DataEntity.DynamicObject,JieNor.Framework.SuperOrm.DataEntity.DynamicObject)">
+            <summary>
+            设置提交信息
+            </summary>
+            <param name="setting"></param>
+            <param name="billData"></param>
+        </member>
+        <member name="M:JieNor.Framework.AppService.OperationService.Submit.IsSubmit(JieNor.Framework.SuperOrm.DataEntity.DynamicObject,JieNor.Framework.SuperOrm.DataEntity.DynamicObject)">
+            <summary>
+            判断是否已经提交
+            </summary>
+            <param name="setting"></param>
+            <param name="billData"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.AppService.OperationService.View">
+            <summary>
+            查看
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.AppService.OperationService.View.DoExecute(JieNor.Framework.SuperOrm.DataEntity.DynamicObject[]@)">
+            <summary>
+            操作执行
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.AppService.QueryBuilder.FuzzySqlBuilder">
+            <summary>
+            编辑界面的基础资料的模糊查询sql构建器
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.AppService.QueryBuilder.QueryService">
+            <summary>
+            查询服务
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.AppService.QueryBuilder.QueryService.htmlFormFields">
+            <summary>
+            缓存模型可选的字段列表
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.AppService.QueryBuilder.QueryService.GetHtmlFormSelectField(JieNor.Framework.MetaCore.FormModel.List.SqlBuilderParameter)">
+            <summary>
+            返回模型页面可选的字段列表
+            </summary>
+            <param name="para"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.AppService.QueryBuilder.QueryService.GetSelectField(JieNor.Framework.UserContext,System.String,System.String)">
+            <summary>
+            获取指定表单模型的查询字段对象
+            </summary>
+            <param name="formId"></param>
+            <param name="fldKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.AppService.QueryBuilder.QueryService.GetEntityTable(JieNor.Framework.UserContext,System.String,System.String)">
+            <summary>
+            获取指定实体查询对象
+            </summary>
+            <param name="formId"></param>
+            <param name="entityKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.AppService.QueryBuilder.QueryService.BuilQueryObject(JieNor.Framework.MetaCore.FormModel.List.SqlBuilderParameter)">
+            <summary>
+            构建查询对象
+            </summary>
+            <param name="para"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.AppService.QueryBuilder.QueryService.BuildGroupBySql(JieNor.Framework.MetaCore.FormModel.List.SqlBuilderParameter,JieNor.Framework.MetaCore.QueryObject)">
+            <summary>
+            构建 group by 语句
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.AppService.QueryBuilder.QueryService.BuildOrderBySql(JieNor.Framework.MetaCore.FormModel.List.SqlBuilderParameter,JieNor.Framework.MetaCore.QueryObject)">
+            <summary>
+            构建 order by 语句
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.AppService.QueryBuilder.QueryService.SetDefaultOrderBy(JieNor.Framework.MetaCore.FormModel.List.SqlBuilderParameter,JieNor.Framework.MetaCore.QueryObject)">
+            <summary>
+            默认的排序
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.AppService.QueryBuilder.QueryService.BuildWhereSql(JieNor.Framework.MetaCore.FormModel.List.SqlBuilderParameter,JieNor.Framework.MetaCore.QueryObject)">
+            <summary>
+            构建 where 语句 
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.AppService.QueryBuilder.QueryService.BuildFromSql(JieNor.Framework.MetaCore.FormModel.List.SqlBuilderParameter,JieNor.Framework.MetaCore.QueryObject)">
+            <summary>
+            构建 from 语句
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.AppService.QueryBuilder.QueryService.BuildSelectSql(JieNor.Framework.MetaCore.QueryObject)">
+            <summary>
+            构建 select 语句
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.AppService.QueryBuilder.QueryService.AnalysisSelectFld(JieNor.Framework.MetaCore.FormModel.List.SqlBuilderParameter,JieNor.Framework.MetaCore.QueryObject)">
+            <summary>
+            处理前端传递的查询字段
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.AppService.QueryBuilder.QueryService.AnalysisHtmlFormFld(JieNor.Framework.UserContext,System.String)">
+            <summary>
+            分析并缓存模型信息
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.AppService.QueryBuilder.ListSqlBuilder">
+            <summary>
+            列表数据查询的sql构建器
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AppService.QueryBuilder.ListSqlBuilder.ctx">
+            <summary>
+            上下文信息
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.AppService.SqlStringParser.IntiTransActions(JieNor.Framework.UserContext)">
+            <summary>
+            初始化翻译处理器
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.AppService.SqlStringParser.GetRealSqlFilter(JieNor.Framework.UserContext,JieNor.Framework.MetaCore.FormMeta.HtmlForm,System.String)">
+            <summary>
+            获取真实的sql过滤条件
+            </summary>
+            <param name="ctx"></param>
+            <param name="hForm"></param>
+            <param name="strFilter"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.AppService.SystemPlugIn.BroardcastMessage.Broardcast">
+            <summary>
+            广播消息保存插件
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.AppService.SystemPlugIn.MainFw.ModifyPassword">
+            <summary>
+            修改当前用户密码
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.AppService.SystemPlugIn.MainFw.ProcIndexAction">
+            <summary>
+            处理首页动作
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.AppService.SystemPlugIn.MainFw.ProcIndexAction.EndOperationTransaction(JieNor.Framework.MetaCore.FormOp.FormService.PlugIn.EndOperationTransactionArgs)">
+            <summary>
+            操作结束时处理事件
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="T:JieNor.Framework.AppService.SystemPlugIn.MainFw.SwitchRealLog">
+            <summary>
+            是否开启实时日志系统
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.AppService.SystemPlugIn.MainFw.InitScheme">
+            <summary>
+            初始化指定表单的表结构
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.AppService.SystemPlugIn.MainFw.MenuModuleService">
+            <summary>
+            首页菜单模块服务
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.AppService.SystemPlugIn.MainFw.MenuModuleService.FilterBizModule(System.Collections.Generic.List{JieNor.Framework.DataEntity.MainFw.BizModuleItem})">
+            <summary>
+            
+            </summary>
+            <param name="bizModules"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.AppService.SystemPlugIn.MainFw.SyncGatewayAuthCode">
+            <summary>
+            同步网关验证码：前提是本系统已加入云链，网关才可以给此产品发送服务验证机制更新的内容
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.AppService.SystemPlugIn.MainFw.SystemConsoleService">
+            <summary>
+            获取主控台需要的所有信息：用户信息，流程消息等
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.AppService.SystemProfileService">
+            <summary>
+            系统参数服务
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.AppService.SystemProfileService.CreateOrUpdateProfile(JieNor.Framework.UserContext,System.String,System.String,System.String,System.String)">
+            <summary>
+            创建或更新指定参数
+            </summary>
+            <param name="ctx"></param>
+            <param name="category"></param>
+            <param name="key"></param>
+            <param name="value"></param>
+            <param name="desc"></param>
+        </member>
+        <member name="M:JieNor.Framework.AppService.SystemProfileService.GetAllProfiles(JieNor.Framework.UserContext)">
+            <summary>
+            获取所有系统参数
+            </summary>
+            <param name="ctx"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.AppService.SystemProfileService.GetProfile(JieNor.Framework.UserContext,System.String)">
+            <summary>
+            获取系统参数
+            </summary>
+            <param name="ctx"></param>
+            <param name="category"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.AppService.SystemProfileService.GetProfile(JieNor.Framework.UserContext,System.String,System.String)">
+            <summary>
+            获取系统参数
+            </summary>
+            <param name="ctx"></param>
+            <param name="category"></param>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

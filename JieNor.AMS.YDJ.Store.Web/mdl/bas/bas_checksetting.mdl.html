@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body id="bas_checksetting" basemodel="bd_basetmpl" el="1" cn="多级审批设置">
+    <div id="FBillHead" el="51" pk="fid" tn="t_bas_checksetting" pn="FBillHead" cn="多级审批设置">
+        <input type="text" id="fname" desc="如采购订单审批设置" />
+        <input type="text" id="fbillformid" el="106" ek="FBillHead" fn="fbillformid" pn="fbillformid" cn="表单标识" />
+        <input type="text" id="fstatusfldkey" el="106" ek="FBillHead" fn="fstatusfldkey" pn="fstatusfldkey" cn="状态字段标志" />
+        <input type="text" id="fdatefldkey" el="106" ek="FBillHead" fn="fdatefldkey" pn="fdatefldkey" cn="日期字段标志" />
+        <input type="text" id="foperatorfldkey" el="106" ek="FBillHead" fn="foperatorfldkey" pn="foperatorfldkey" cn="操作人字段标志" />
+        <input type="text" id="fprefilter" el="106" ek="FBillHead" fn="fprefilter" pn="fprefilter" cn="过滤条件" />
+         
+        <table id="FEntity" el="52" pk="FEntryId" tn="t_bas_checksettingentry" pn="FEntity" cn="审批级次">
+            <tr>
+                <th ek="FEntity" el="100" id="ffilterstring" fn="ffilterstring" pn="ffilterstring" cn="前提条件">前提条件</th>
+                <th ek="FEntity" el="101" id="findex"  fn="findex" pn="findex" cn="审批级次">审批级次</th>     
+                <th ek="FEntity" el="100" id="flevelname" fn="flevelname" pn="flevelname" cn="审批级次名称">审批级次名称</th>
+                <th ek="FEntity" el="116" id="fissingl" fn="fissingl" pn="fissingl" cn="是否会签" >是否会签</th>
+                
+                <th ek="FEntity" el="100" id="fuserid"   fn="fuserid" pn="fuserid" len="500" cn="参与人id" desc="多个参与人用分号或逗号分隔开">参与人</th>
+                <th ek="FEntity" el="100" id="fuserdesc" fn="fuserdesc" pn="fuserdesc"len="500"  cn="参与人名称" desc="多个参与人用分号或逗号分隔开">参与人</th>
+                
+                <th ek="FEntity" el="100" id="froleid" fn="froleid" pn="froleid" len="500" cn="参与角色id" desc="多个参与角色用分号或逗号分隔开">参与角色</th>
+                <th ek="FEntity" el="100" id="froledesc" fn="froledesc" pn="froledesc" len="500" cn="参与角色名称" desc="多个参与角色用分号或逗号分隔开">参与角色</th>
+                
+                <th ek="FEntity" el="100" id="fpostid" fn="fpostid" pn="fpostid" len="500" cn="参与岗位id" desc="多个参与岗位用分号或逗号分隔开">参与岗位</th>
+                <th ek="FEntity" el="100" id="fpostdesc" fn="fpostdesc" pn="fpostdesc" len="500" cn="参与岗位名称" desc="多个参与岗位用分号或逗号分隔开">参与岗位</th>
+               
+                <th ek="FEntity" el="100" id="FPassDesc" fn="FPassDesc" pn="FPassDesc" cn="审批通过的提示信息">审批通过的提示信息</th>
+                <th ek="FEntity" el="100" id="FNoPassDesc" fn="FNoPassDesc" pn="FNoPassDesc" cn="审批不通过的提示信息">审批通过的提示信息</th>
+                <th ek="FEntity" el="100" id="FRemark" fn="FRemark" pn="FRemark" cn="备注">备注</th>
+            </tr>
+        </table>
+
+
+     </div>
+
+
+</body>
+</html>

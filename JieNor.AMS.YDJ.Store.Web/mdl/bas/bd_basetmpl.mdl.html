@@ -1,0 +1,30 @@
+﻿<!--本模板是根据服务端需求提炼而成，客户端页面只需要遵循下述节点的一些属性描述规范即可，
+    至于节点布局，样式等没有要求（也就是xpath没要求），可由客户端页面实际需求自由发挥，
+    但需要服务端保存的节点需遵守下述规范：基本就是增加几个自定义属性（id,fn,tn）
+    -->
+<html lang="en">
+<head>
+</head>
+<body id="bd_basetmpl" el=1 cn="基础资料模板">
+    <div id="fbillhead" el="51"   pn="fbillhead" cn="基本信息">
+        
+        <input type="text" id="fnumber" el="100" ek="fbillhead" fn="fnumber" pn="fnumber" cn="编码" desc="编码" visible="-1"/>
+        <input type="text" id="fname" el="100" ek="fbillhead" fn="fname" pn="fname" cn="名称" desc="编码" visible="-1"/>
+        <input type="text" id="fdescription" el="100" ek="fbillhead" fn="fdescription" pn="fdescription" cn="备注" visible="-1"/>
+         
+        <input type="text" id="fcreatorid" el="118" ek="fbillhead" refId="Sec_User" dfld="FName" fn="fcreatorid" pn="fcreatorid" cn="创建人" visible="-1"/>
+        <input type="datetime" id="fcreatedate" el="119" ek="fbillhead" fn="fcreatedate" pn="fcreatedate" cn="创建日期" visible="-1"/>
+        <input type="text" id="fmodifierid" el="120" ek="fbillhead" refId="Sec_User" dfld="FName" fn="fmodifierid" pn="fmodifierid" cn="修改人" visible="-1"/>
+        <input type="datetime" id="fmodifydate" el="121" ek="fbillhead" fn="fmodifydate" pn="fmodifydate" cn="修改日期" visible="-1"/>
+          
+        <input type="checkbox" id="fispreset" el="116" ek="fbillhead" fn="fispreset" pn="fispreset" cn="系统预设" visible="-1"/>
+      
+        <select id="fstatus" el="122" refId="bd_enum" dfld="fenumitem" cg="数据状态" ek="fbillhead" fn="fstatus" pn="fstatus" cn="数据状态" visible="-1">
+        <input type="text" id="fapproveid" el="118" ek="fbillhead" refId="Sec_User" dfld="FName" fn="fapproveid" pn="fapproveid" cn="审核人" visible="-1" />
+        <input type="datetime" id="fapprovedate" el="119" ek="fbillhead" fn="fapprovedate" pn="fapprovedate" cn="审核日期" visible="-1" />
+
+
+</div>
+
+</body>
+</html>

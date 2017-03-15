@@ -1,0 +1,69 @@
+﻿//业务对象定义:可以定义在多个json里，系统会自动查找所有*.bo.json结尾的文件
+//id:业务对象标识，同cloud的formid概念
+//name:业务对象名称，单据名称
+//tplfile:业务对象模板文件名
+//domaintype:领域类型，单据及基础资料都称为--bill,动态表单为--dynamic,报表为--report,打印模板为--print,移动模板在原领域类型前全部加“m-”
+[
+  //--start:用户管理模块对象
+  {
+    "id": "sec_user",
+    "name": "用户",
+    "tplfile": "sec_user.mdl.html",
+    "domaintype": "bill"
+  },
+  {
+    "id": "sec_role",
+    "name": "角色",
+    "tplfile": "sec_role.mdl.html",
+    "domaintype": "bill"
+  },
+  {
+    "id": "sec_permitem",
+    "name": "权限项",
+    "tplfile": "sec_permitem.mdl.html",
+    "domaintype": "bill"
+  },
+  {
+    "id": "sec_permauth",
+    "name": "权限配置记录",
+    "tplfile": "sec_permauth.mdl.html",
+    "domaintype": "bill"
+  },
+  {
+    "id": "sec_permconfig",
+    "name": "权限配置",
+    "tplfile": "sec_permconfig.mdl.html",
+    "domaintype": "dynamic"
+  },
+  //系统模块管理
+  {
+    "id": "sys_bizmodule",
+    "name": "业务模块",
+    "tplfile": "sys_bizmodule.mdl.html",
+    "domaintype": "bill"
+  },
+  {
+    "id": "sys_menugroup",
+    "name": "菜单组",
+    "tplfile": "sys_menugroup.mdl.html",
+    "domaintype": "bill"
+  },
+  {
+    "id": "sys_menuitem",
+    "name": "菜单项",
+    "tplfile": "sys_menuitem.mdl.html",
+    "domaintype": "bill"
+  },
+  {
+    "id": "sys_product",
+    "name": "产品",
+    "tplfile": "sys_product.mdl.html",
+    "domaintype": "bill"
+  },
+  {
+    "id": "sys_userprofile",
+    "name": "用户配置",
+    "tplfile": "sys_userprofile.mdl.html",
+    "domaintype": "bill"
+  }
+]

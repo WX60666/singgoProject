@@ -1,0 +1,131 @@
+﻿<!--页面菜单列表-->
+<div class="page-menu-list">
+</div>
+<!--页面内容面板-->
+<form action="javascript:;" class="form-horizontal">
+    <div class="portlet box yellow-casablanca">
+        <div class="portlet-title">
+            <div class="caption"><i class="fa fa-user"></i>测试明细功能</div>
+            <div class="tools"><a href="javascript:;" class="collapse"></a></div>
+        </div>
+        <div class="portlet-body form">
+            <div class="form-body">
+                <table entryid="ftestentry1" data-options="allowAdd:true,allowDel:true,allowEdit:true"></table>
+            </div>
+        </div>
+    </div>
+    <div class="portlet box yellow-casablanca">
+        <div class="portlet-title">
+            <div class="caption"><i class="fa fa-user"></i>用户资料编辑</div>
+            <div class="tools"><a href="javascript:;" class="collapse"></a></div>
+        </div>
+        <div class="portlet-body form">
+            <div class="form-body">
+                <!--验证提示信息-->
+                <div class="alert alert-danger display-hide">
+                    <button class="close" data-close="alert"></button>
+                    页面中有一些带红色星号 * 的信息是必填项，请检查是否都有正确录入！
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">用户名称 <span class="required">*</span></label>
+                    <div class="col-md-4">
+                        <div class="input-icon right">
+                            <i class="fa"></i>
+                            <input type="text" class="form-control" autocomplete="off"
+                                   name="fname" placeholder="用户名称" required="required" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">办公电话</label>
+                    <div class="col-md-4">
+                        <div class="input-icon right">
+                            <i class="fa"></i>
+                            <input type="text" class="form-control" autocomplete="off"
+                                   name="ftelphone" placeholder="办公电话" />
+                        </div>
+                        <span class="help-block">
+                            例如：0755 - 12345678
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">分机号</label>
+                    <div class="col-md-4">
+                        <div class="input-icon right">
+                            <i class="fa"></i>
+                            <input type="text" class="form-control" autocomplete="off"
+                                   name="ftelbranch" placeholder="分机号" digits="true" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">手机</label>
+                    <div class="col-md-4">
+                        <div class="input-icon right">
+                            <i class="fa"></i>
+                            <input type="text" class="form-control" autocomplete="off"
+                                   name="fphone" placeholder="手机" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">短号</label>
+                    <div class="col-md-4">
+                        <div class="input-icon right">
+                            <i class="fa"></i>
+                            <input type="text" class="form-control" autocomplete="off"
+                                   name="fshortphone" placeholder="短号" digits="true" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">pop3 收信服务器</label>
+                    <div class="col-md-4">
+                        <div class="input-icon right">
+                            <i class="fa"></i>
+                            <input type="text" class="form-control" autocomplete="off"
+                                   name="fpopserver" placeholder="pop3 收信服务器" />
+                        </div>
+                        <span class="help-block">
+                            例如：pop.jnmail.com
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">smtp 发信服务器</label>
+                    <div class="col-md-4">
+                        <div class="input-icon right">
+                            <i class="fa"></i>
+                            <input type="text" class="form-control" autocomplete="off"
+                                   name="fsmtpserver" placeholder="smtp 发信服务器" />
+                        </div>
+                        <span class="help-block">
+                            例如：smtp.jnmail.com
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">用户状态</label>
+                    <div class="col-md-4">
+                        <select class="form-control select2me" name="fstatus">
+                            <option value="">选择...</option>
+                            <option value="1">待激活</option>
+                            <option value="2">正常</option>
+                            <option value="3">冻结</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">备注</label>
+                    <div class="col-md-4">
+                        <div class="input-icon right">
+                            <textarea class="form-control" autocomplete="off"
+                                      name="fdescription" placeholder="备注" rows="4"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,46 @@
+﻿#配置缓存的读写分离信息
+fw:redis.masterhost jienor.com@www.jienor.com:6382
+fw:redis.slavehost password@www.domain.com:port
+
+#消息队列的主机名用户及密码配置
+fw:rabbitmq.host www.jienor.com
+fw:rabbitmq.username jienor
+fw:rabbitmq.password jienor.com
+
+#站点email信使配置
+fw:mail.pop3 pop.exmail.qq.com
+fw:mail.smtp smtp.exmail.qq.com
+fw:mail.username register@jienor.com
+fw:mail.password Jn@12345
+
+#默认登录页面地址
+fw.defaultpage /views/account/login.html
+
+#微服务参数配置：网关，消息中继模式（central或p2p）
+ms.gateway http://eis.jienor.cn/
+#微服务网关访问验证码 
+ms.gateway.authcode ZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKU1V6STFOaUlzSW10cFpDSTZJamh1UmlJc0ltRjFkR2h2Y2lJNklteHBiblZ6SWl3aWNISnZaSFZqZENJNkltWjNJaXdpWTI5dGNHRnVlU0k2Ym5Wc2JIMC5leUpwYzNNaU9tNTFiR3dzSW5OMVlpSTZJakV5TmpJM01qQTJNRGs0TVRZNU9EVTJNQ0lzSW1saGRDSTZNVFE0TkRZME56TXlNaXdpWlhod0lqb3hOVEUyTVRnek16SXlMQ0poZFdRaU9pSmhZbU5rUURFeU16UWlMQ0psYldGcGJDSTZJbXhwYm5WelFHcHBaVzV2Y2k1amIyMGlMQ0p1WVcxbElqb2k1NDZMNXA2WElpd2ljSEpsWm1WeWNtVmtYM1Z6WlhKdVlXMWxJam9pYkdsdWRYTkFhbWxsYm05eUxtTnZiU0lzSW0xbGRHRWlPbTUxYkd4OS5WVlU4QU1xdGRva1djQ3AwbUdfcFR1TURKQWNsOGNTNGJoV1FnaXlTQ290T0ZlSElpaTFOaERUclpDbl9QbnE5SGs5UHRBdUMxSDk4T2pOaFNKZEFROGIwOUd2Y0hnWFF0aFhQRkczd0FjbzdwbVloRmdVVS1YVWVYUTRXYUhRcVdpQjlpZVc0ejZHR2p5TVRMMmg3S1BYX3VUMHdJcXZGNF9GQXhQQXNmRG8=
+
+#业务产品标识，此参数通常由未来的自动部署系统自动生成
+ms.product store
+ms.product.id 3B4E970E-7D50-405C-B7CB-81A1E652123F
+ms.product.name 易到家门店管理系统
+
+#当前站点允许使用的企业信息:默认站点
+ms.company.id store.yidaohome.com
+ms.company.number store
+ms.company.name 深圳易到家软件有限公司
+ms.company.dbid Data Source=www.jienor.com,1444;Initial Catalog=JNSaasYDJDb;User ID=dypub;Password=888888;
+ms.company.dbidreadonly Data Source=www.jienor.com,1444;Initial Catalog=JNSaasYDJDb;User ID=dypub;Password=888888;
+
+
+jwt.AuthKeyBase64 d2FuZ2xpbg==
+jwt.PrivateKeyXml <RSAKeyValue><Modulus>8nFads748/pcVhOjk78jaerOrfJJZ5d8h0UHUzXKzuQ4PUoBds7cSoZI735k5/Wd1yjb32D2D/Udj2XgVgKMh6WQQXGl5bklLLtd0wm9PRbY44wr4xMDMbpaPWac2jkcycU5BPudM6N8dMImRvvM2c/TYVzY8u3e75pxUmNKesE=</Modulus><Exponent>AQAB</Exponent><P>9ZAuQXQLdUcJKghYK7MSruVoVPXK0yFXIoORrleNzgG7Y8IClYxxE7CIGbVw//lOR+iOc+X35kgfpIDR9XmvFw==</P><Q>/L84q0+7AmHJnNXiRzPcvqBIzXEiPvVvHbx6ueLKVC4hNR+daC3rRRgEKi4MX02AyG8qWKTC+MQyn0s2lnSL5w==</Q><DP>BW/Sxlo2YrtW5ZpXsWf+kua7X54thm0ni7kUAaMonZYGOxgxjHQWkNQIv2D4BoLTi94HQWOnEG8qXC8J9wBhsw==</DP><DQ>HPxhJ2Rxcgh88rukw72y5znCn60F3GqRX7up53+W7KiNrmX9y2DYxofGkn/Nc3CUAGifVqMuqRD3LUWW8RJUqQ==</DQ><InverseQ>aloRXdZsZIXNpK5UmP0XabyEJqnf4YB0MdFOEclQwU7xtE7yn44ttuTs9CZBhjBTbqPF/nBR7NgfNsNGS2icwA==</InverseQ><D>Fupc7R7qDBGNebtYekYWQFQn3ewpQQfiBt0g8J4EgeKzaCOfGM47pzWjHjP5sK0YErazdZ0yFNcLyLqN5kNOafLD/gOSZfboHI6OIuua7PNEwF6b9c6nig8b+6aHxBkLou1Og2a18riGYcLRaEIJr2li9E9TfVv1T1bZv62B9Cs=</D></RSAKeyValue>
+#jwt.PublicKeyXml <RSAKeyValue><Modulus>8nFads748/pcVhOjk78jaerOrfJJZ5d8h0UHUzXKzuQ4PUoBds7cSoZI735k5/Wd1yjb32D2D/Udj2XgVgKMh6WQQXGl5bklLLtd0wm9PRbY44wr4xMDMbpaPWac2jkcycU5BPudM6N8dMImRvvM2c/TYVzY8u3e75pxUmNKesE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue>
+jwt.HashAlgorithm RS256
+#令牌过期时间为一周
+jwt.ExpireTokensInDays 7
+#本机jwt令牌听众标识
+jwt.Audience abcd@1234
+#本机jwt令牌发行者信息
+jwt.issuer fw.abcd

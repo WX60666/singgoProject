@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body id="ydj_scalerecord" basemodel="bd_basetmpl" el="1" cn="量尺记录">
+    <div id="FBillHead" el="51" pk="fid" tn="t_ydj_scalerecord" pn="FBillHead" cn="量尺记录"> 
+    	<!--基本信息-->
+        <input el="113" type="datetime" id="fscaledate" ek="FBillHead" fn="fscaledate" ts="" cn="量尺时间" visible="-1"/>
+        <div el="114" id="flclx" ek="FBillHead" fn="flclx" ts="" cn="量尺类型" visible="-1"> </div>
+        <select el="117" id="fhousestyleid" ek="FBillHead" fn="fhousestyleid" ts="" refid="" cg="风格" dfld="fenumitem" visible="-1" cn="风格">
+            <option value=""></option>
+        </select>
+        <input el="105" type="text" id="fbudgetid" ek="FBillHead" fn="fbudgetid" ts="" visible="-1" cn="预算金额" />
+        <input el="106" type="text" id="fcustomerid" ek="FBillHead" fn="fcustomerid" refid="ydj_customer" ts="" visible="-1" cn="客户" />
+        <input el="100" type="text" id="fphone" ek="FBillHead" fn="fphone" ts="" cn="联系电话" visible="-1" />
+        <select el="122" ek="fbillhead" visible="-1" id="fprovince" fn="fprovince" pn="fprovince" cn="省" cg="省" refid="bd_enum" dfld="fenumitem"></select>
+        <select el="122" ek="fbillhead" visible="-1" id="fcity" fn="fcity" pn="fcity" cn="市" cg="市" refid="bd_enum" dfld="fenumitem"></select>
+        <select el="122" ek="fbillhead" visible="-1" id="fregion" fn="fregion" pn="fregion" cn="区" cg="区" refid="bd_enum" dfld="fenumitem"></select>
+        <input el="100" type="text" id="faddress" ek="FBillHead" fn="faddress" ts="" cn="详细地址" visible="-1" />
+
+        <!--量尺信息-->
+        <select el="117" id="fintentionid" ek="FBillHead" fn="fintentionid" ts="" refid="" cg="意向产品" dfld="fenumitem" visible="-1" cn="意向产品">
+            <option value=""></option>
+        </select>
+        <input el="102" type="number" id="farea" ek="FBillHead" fn="farea" ts="" cn="面积" visible="-1" />
+        <select el="117" id="fspace" ek="FBillHead" fn="fspace" ts="" refid="" cg="空间" dfld="fenumitem" visible="-1" cn="空间">
+            <option value=""></option>
+        </select>
+        <select el="117" id="FCombo1" ek="FBillHead" fn="FCombo1" ts="" refid="" cg="户型" dfld="fenumitem" visible="-1" cn="户型">
+            <option value=""></option>
+        </select>
+        <input el="112" type="date" id="fnote" ek="FBillHead" fn="fnote" ts="" cn="方案预计提交时间" visible="-1" />
+        <input el="100" type="text" id="fdescroption" ek="FBillHead" fn="fdescroption" ts="" cn="备注" visible="-1" />
+    </div>
+</body>
+</html>
+

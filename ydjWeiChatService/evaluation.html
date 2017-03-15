@@ -6,53 +6,7 @@
 		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 		<title>订单评价</title>
 		<link rel="stylesheet" href="css/weui.min.css" />
-		<style type="text/css">
-			.page {
-				font-family: "微软雅黑";
-			}
-			
-			.star_cell {
-				width: 100%;
-				height: 3rem;
-				line-height: 3rem;
-				text-align: center;
-			}
-			
-			.star_cell img {
-				vertical-align: middle;
-			}
-			
-			.attitude {
-				margin-top: 0.2rem;
-				text-align: center;
-				font-size: 18px;
-			}
-			
-			.single_tag {
-				padding: 5px;
-			}
-			
-			.tag_group a {
-				margin-left: 15px;
-				padding-left: 8px;
-				padding-right: 8px;
-			}
-			
-			.comments_suggests {
-				font-size: 14px;
-				margin: 0;
-				margin-bottom: 1.5rem;
-			}
-			
-			.c_s_aera {
-				font-family: "微软雅黑";
-			}
-			
-			.submit_btn {
-				margin-bottom: 1.5rem;
-				width: 90%;
-			}
-		</style>
+		<link rel="stylesheet" href="css/evaluation.css"/>
 	</head>
 
 	<body>
@@ -139,22 +93,22 @@
 				if(index == 1) {
 					if(obj.id == 1) {
 						obj.id = 0;
-						removeClass(obj, 'weui-btn_primary');
-						addClass(obj, 'weui-btn_default');
+						Class.removeClass(obj, 'weui-btn_primary');
+						Class.addClass(obj, 'weui-btn_default');
 					} else {
 						obj.id = 1;
-						removeClass(obj, 'weui-btn_default');
-						addClass(obj, 'weui-btn_primary');
+						Class.removeClass(obj, 'weui-btn_default');
+						Class.addClass(obj, 'weui-btn_primary');
 					}
 				} else {
 					if(obj.id == 1) {
 						obj.id = 0;
-						removeClass(obj, 'weui-btn_warn');
-						addClass(obj, 'weui-btn_default');
+						Class.removeClass(obj, 'weui-btn_warn');
+						Class.addClass(obj, 'weui-btn_default');
 					} else {
 						obj.id = 1;
-						removeClass(obj, 'weui-btn_default');
-						addClass(obj, 'weui-btn_warn');
+						Class.removeClass(obj, 'weui-btn_default');
+						Class.addClass(obj, 'weui-btn_warn');
 					}
 				}
 
@@ -186,12 +140,12 @@
 					document.getElementsByClassName('c_s_aera')[0].value = finalContent;
 				}
 				if(finalContent != "") {
-					if(hasClass(submit_btn, 'weui-btn_disabled')) {
-						removeClass(submit_btn, "weui-btn_disabled");
+					if(Class.hasClass(submit_btn, 'weui-btn_disabled')) {
+						Class.removeClass(submit_btn, "weui-btn_disabled");
 					}
 				} else {
-					if(!hasClass(submit_btn, 'weui-btn_disabled')) {
-						addClass(submit_btn, "weui-btn_disabled");
+					if(!Class.hasClass(submit_btn, 'weui-btn_disabled')) {
+						Class.addClass(submit_btn, "weui-btn_disabled");
 					}
 				}
 

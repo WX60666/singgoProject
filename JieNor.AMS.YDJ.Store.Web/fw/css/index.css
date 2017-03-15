@@ -1,0 +1,255 @@
+
+.body{
+	min-width: 750px;
+    padding: 0;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: #fff;
+}
+/*头部*/
+.body .top{
+	height: 45px;
+	background-color: #449be0;
+}
+.top-nav{
+	padding-top: 10px;
+}
+.top-left{
+	float: left;
+	width: 82px;
+	height: 35px;
+}
+.top-center{
+	height: 35px;
+    float: left;
+    width: 80%;
+    min-width: 610px;
+    list-style: none;
+}
+
+.top-navList{
+	overflow: hidden;
+}
+
+.top-center li{
+    float: left;
+    z-index: 99;
+    width: 10%;
+    cursor: pointer;
+    background: url(../images/main-tab-bg.png);
+}
+.top-center li.current{
+	background-image: url(../images/main-tab-bg-current.png);
+    background-position: right -34px;
+    margin-right: -10px;
+}
+
+.top-center li .top-inner{
+	position: relative;
+	display: block;
+	height: 34px;
+	background-color: cadetblue;
+}
+.top-center li .top-inner:hover{
+	background-color: green;
+}
+.top-center li .top-inner.current{
+	background-color: white;
+}
+
+
+.top-center li .top-inner a.top-nav-item{
+	display: block;
+	height: 100%;
+	text-align: center;
+	line-height: 34px;
+}
+.top-center li .top-inner a.refresh{
+	background: url(../images/tab-refresh.png) no-repeat center;
+	position: absolute;
+	width: 13px;
+	height: 13px;
+	right: 10px;
+    bottom: 10px;
+    
+}
+.top-center li .top-inner a.close{
+	background: url(../images/tab-close.png) no-repeat center;
+	position: absolute;
+	width: 13px;
+	height: 13px;
+	right: 10px;
+    bottom: 10px;
+}
+/*左边栏*/
+.body .left{
+	float: left;
+	height: 749px;
+	background-color: #354960;
+    width: 8%;
+    min-width: 36px;
+    max-width: 62px;
+    min-height: 320px;
+}
+.body .left .item{
+	position: relative;
+}
+.body .left .item.current{
+	background:url(../images/nav-current.png);
+	background-repeat: repeat-y;
+}
+.body .left .item.current .item-link{
+	 background:none;
+}
+.body .left .item-link{
+	 display: block;
+	 height: 55px;
+    text-align: center;
+    line-height: 55px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #93A2B3;
+    font-family: 微软雅黑;
+    background-color: #354960;
+    
+}
+.body .left .item-link:hover{
+	background-color: #00BC8C;
+	color: #fff;
+}
+.body .left .item-container{
+	position: absolute;
+	border: 1px solid #000;
+	width:70px;
+	min-height: 25px;
+	text-align: center;
+	line-height: 40px;
+	left: 70px;
+    top: 12px;
+	z-index: 10;
+	cursor: pointer;
+	display: none;
+	
+}
+.body .left .item-container p a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	line-height: 25px;
+}
+/*加载的模块所显示的位置*/
+.body .main{
+    float: left;
+    height: 749px;
+    min-height: 320px;
+    overflow: hidden;
+    min-height: 420px;
+    width: 800px;/*根据浏览器页面进行宽度的改变*/
+  width:-moz-calc(100% - 62px);
+	width:-webkit-calc(100% - 62px);
+	width: calc(100% - 62px);
+   background-color: #9C9C9C;
+}
+/*加载的模块所显示的模块*/
+
+.body .main .current{
+	display:block
+}
+
+.body .main .content{
+	position: relative;
+	display: none;
+	height: 100%;
+}
+.body .main .content span{
+	position: absolute;
+	font-size: 24px;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+}
+
+/*警告栏*/
+.warm-container{
+	position: absolute;
+	left: 0;top: 0;right: 0;bottom: 0;
+	margin: auto;
+	display: none;
+}
+
+.warm-bg{
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	opacity: .5;
+}
+
+.warm-content{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+    font-family: Arial,sans-serif;
+    font-size: 12px;
+    width: 360px;
+    _width: 360px;
+    background: #fff;
+    border: solid 1px #99b1c4;
+    color: #000;
+    
+}
+.warm-message{
+	height: 200px;
+	line-height: 200px;
+	text-align: center;
+}
+#act-button{
+	position: absolute;
+	height: 24px;
+	width: 100px;
+	text-align: center;
+	line-height: 24px;
+	background-color: yellow;
+	cursor: pointer;
+	right: 10px;
+	bottom: 10px;
+}
+
+/*导航栏右键出现的更多功能*/
+.nav-function{
+	width: 150px;
+    height: 180px;
+    position: absolute;
+    left: 0;
+    top: 20px;
+    z-index: 99999;
+    border: 1px solid #E7E7E7;
+    box-shadow: 1px 1px 2px #787878;
+    background-color: white;
+	display: none;
+}
+.nav-function-menu p{
+	height: 35px;
+}
+.nav-function-menu p a{
+	display: block;
+	height: 100%;
+	text-align: left;
+	line-height: 35px;
+	border-bottom: 1px solid #d1d4d5;
+    margin: 0 10px;
+}
+.nav-function-menu p a:hover{
+	background-color: #048fc2;
+}
+.nav-function-bg{
+	border-color: transparent transparent #CCC transparent;
+    border-style: solid;
+    border-width: 10px;
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: -21px;
+    left: 67px;
+}

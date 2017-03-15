@@ -1,0 +1,73 @@
+﻿<!doctype html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body id="ydj_afterservice" basemodel="bill_basetmpl" el="1" cn="售后服务单">
+    <div id="fbillhead" el="51" pk="fid" tn="t_ydj_afterservice" pn="fbillhead" cn="售后服务单">
+
+        <!--基本信息-->
+        <input el="108" ek="FBillHead" type="text" id="fjobnum" fn="fjobnum" ts="" visible="-1" cn="工单号" />
+        <input el="124" ek="FBillHead" type="text" id="fcontacts" fn="fcontacts" cn="联系人" refid="" ts="" visible="-1" />
+        <input el="100" ek="FBillHead" type="text" id="fphone" fn="fphone" ts="" cn="联系电话" visible="-1" />
+        <selec el="122"t ek="fbillhead" visible="-1" id="fprovince" fn="fprovince" pn="fprovince" cn="省" cg="省" refid="bd_enum" dfld="fenumitem"></select>
+        <select el="122" ek="fbillhead" visible="-1" id="fcity" fn="fcity" pn="fcity" cn="市" cg="市" refid="bd_enum" dfld="fenumitem"></select>
+        <select el="122" ek="fbillhead" visible="-1" id="fregion" fn="fregion" pn="fregion" cn="区" cg="区" refid="bd_enum" dfld="fenumitem"></select>
+        <input el="100" ek="FBillHead" type="text" id="faddress" fn="faddress" ts="" cn="联系地址" visible="-1" />
+        <div el="114" ek="FBillHead" id="fpriority" fn="fpriority" ts="" cn="优先级" visible="fpriority"> </div>
+        <select el="117" ek="FBillHead" id="fchannel" fn="fchannel" ts="" refid="" cg="学历" visible="-1" cn="来源渠道">
+            <option value="0">电话</option>
+            <option value="1">微信</option>
+            <option value="2">QQ</option>
+            <option value="3">上门</option>
+            <option value="4">短信</option>
+            <option value="5">邮件</option>
+        </select>
+        <input el="100" ek="FBillHead" type="text" id="fdescription" fn="fdescription" ts="" cn="服务描述" visible="-1" />
+
+		<!--服务方信息-->
+        <select el="117" ek="FBillHead" id="finstallitem" fn="finstallitem" pn="finstallitem" ts="" visible="-1" cn="售后类型">
+            <option value="0">维修</option>
+            <option value="1">拆装</option>
+            <option value="2">退货</option>
+        </select>
+        <select el="117" ek="FBillHead" id="freleasemode" fn="freleasemode" pn="freleasemode" ts="" visible="-1" cn="发布方式">
+            <option value="0">手工执行</option>
+            <option value="1">平台发布</option>
+            <option value="2">微信公众号</option>
+        </select>
+        <div el="114" ek="FBillHead" id="fserver" fn="fserver" ts="" cn="服务方" visible="fserver"></div>
+        <input el="106" ek="FBillHead" type="text" id="fserverper" fn="fserverper" refid="" ts="" visible="-1" cn="服务人员" />
+        <input el="106" ek="FBillHead" type="text" id="fserviceprovider" fn="fserviceprovider" refid="ydj_supplier" ts="" visible="-1" cn="服务商" />
+        <input el="122" ek="FBillHead" id="fstatus" fn="fstatus" refId="bd_enum" dfld="fenumitem" ts="" cg="服务状态" visible="-1" cn="服务状态" />
+		
+        <!--处理方案及评分-->
+        <input el="100" ek="FBillHead" type="text" id="fhandle" fn="fhandle" ts="" cn="处理方案" visible="-1" />
+        <select el="117" ek="FBillHead" id="fcustomerscore" fn="fcustomerscore" ts="" refid="" cg="客户评分" visible="-1" cn="客户评分">
+            <option value=""></option>
+        </select>
+    </div>
+
+
+    <!--问题商品-->
+    <table id="fproblemgoodsentry" el="52" pk="FEntryId" tn="t_ydj_problemgoods" pn="fproblemgoodsentry" cn="问题商品">
+        <tr>
+            <th el="108" ek="fproblemgoodsentry" id="fordernumber" type="text" fn="fordernumber" ts="" cn="订单号" visible="-1"></th>
+            <th el="113" ek="fproblemgoodsentry" id="forderdate" fn="forderdate" ts="" cn="订单日期" visible="-1"></th>
+            <th el="111" ek="fproblemgoodsentry" id="fmaterialimage" fn="fmaterialimage" ts="" cn="商品图片" visible="-1"></th>
+            <th el="108" ek="fproblemgoodsentry" id="fmaterialnum" type="text" fn="fmaterialnum" ts="" cn="商品编码" visible="-1"></th>
+            <th el="106" ek="fproblemgoodsentry" id="fproductid" fn="fproductid" refid="" ts="" cn="商品名称" visible="-1"></th>
+            <th el="117" ek="fproblemgoodsentry" id="fnorms" fn="fnorms" ts="" cn="规格" refid="" cg="规格" visible="-1"></th>
+            <th el="117" ek="fproblemgoodsentry" id="fmaterial" fn="fmaterial" ts="" cn="规格" refid="" cg="材质"  visible="-1"></th>
+            <th el="117" ek="fproblemgoodsentry" id="fcolor" fn="fcolor" ts="" cn="颜色" refid="" cg="颜色" visible="-1"></th>
+            <th el="105" ek="fproblemgoodsentry" id="fsaleprice" fn="fsaleprice" ts="" cn="销售价" visible="-1"></th>
+            <th el="103" ek="fproblemgoodsentry" id="fqty" fn="fqty" ts="" cn="数量" visible="-1"></th>
+            <th el="103" ek="fproblemgoodsentry" id="fproblemqty" fn="fproblemqty" ts="" cn="问题数量" visible="-1"></th>
+            <th el="100" ek="fproblemgoodsentry" id="fdescription" fn="fdescription" ts="" cn="问题描述" visible="-1"></th>
+            <th el="117" ek="fproblemgoodsentry" id="fduty" fn="fduty" ts="" cn="责任方" refid="" cg="责任方" visible="-1"></th>
+            <th el="100" ek="fproblemgoodsentry" id="fhandle" fn="fhandle" ts="" cn="处理方案" visible="-1"></th>
+        </tr>
+    </table>
+</body>
+</html>

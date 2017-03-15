@@ -1,0 +1,28 @@
+.page {
+	font-family: "微软雅黑";
+}
+
+.order_fields {
+	font-size: 17px;
+	color: #999999;
+}
+
+.order_cell {
+	margin-top: 0;
+}
+
+.amount_title {
+	color: #000000;
+}
+
+.single_order {
+	margin-top: 0.3rem;
+}
+
+.topcell {
+	margin-top: 0;
+}
+
+.single_cell {
+	background-color: rgba(235, 235, 235, 1);
+}

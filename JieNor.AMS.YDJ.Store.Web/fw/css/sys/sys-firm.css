@@ -1,0 +1,67 @@
+.page-content .tab-content .tab-pane{
+	min-height: 300px;
+}
+#firm-form ul.nav>li a{
+	color: #8C8C8C;
+}
+#firm-form ul.nav>li.active a{
+	color: #363636;
+}
+/*第一步的元素值符合标准和不符合标准的样式*/
+.tab-pane  div.col-md-4 span.help-block.error{
+	color: red;
+}
+.tab-pane  div.col-md-4 span.help-block.success{
+	color: green;
+}
+
+/*增加一行按钮*/
+
+/*删除一行按钮*/
+.delete-container{
+	display: block;
+	height: 50px;
+	margin: 5px 0; 
+	border:1px solid #CCCCCC;
+}
+.delete-container div{
+	float: left;
+}
+.delete-container>div:nth-child(1){
+	margin-top: 3px;
+}
+.delete-container>div:nth-child(2){
+	margin-top: 3px;
+	line-height: 38px;
+}
+
+/*清空按钮*/
+.delete-container .clearAll{
+	cursor: pointer;
+	float: right;
+	font-size: 14px;color: #333;
+	border: 1px solid #CCCCCC; 
+	width: 71px;
+	height: 48px;
+	text-align:center;
+	line-height: 50px;
+}
+
+#tab2 .firm-user-message input[type='radio']{
+	
+}
+
+/*为了让列中的复选框样式(除第一列外)看的清楚而设置的样式*/
+.dx-checkbox.dx-state-readonly .dx-checkbox-icon{
+	cursor: pointer;
+	border: 1px solid #ddd;
+	
+}
+.dx-checkbox.dx-state-readonly .dx-checkbox-icon:hover{
+	border: 1px solid #265a87;
+}
+/*为了让dxDataGrid的新增和保存功能中的有复选框那栏样式顺眼*/
+#tab2 .dx-datagrid .dx-checkbox-indeterminate .dx-checkbox-icon:before{
+	width: 0;
+	height: 0;
+}

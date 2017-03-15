@@ -1,0 +1,203 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JieNor.Framework.Cache</name>
+    </assembly>
+    <members>
+        <member name="M:PerfmonUtil.StartMonitor">
+            <summary>
+            开始监控
+            </summary>
+        </member>
+        <member name="M:PerfmonUtil.EndMonitor">
+            <summary>
+            结束监控
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.Cache.MultipleCacheManager">
+            <summary>
+            多级缓存管理器
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Cache.MultipleCacheManager.RedisClientsManager">
+            <summary>
+            redis缓存客户端管理器
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Cache.MultipleCacheManager.DynamicSerializer">
+            <summary>
+            实体对象序列化器
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Cache.MultipleCacheManager.UserContext">
+            <summary>
+            用户会话信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Cache.MultipleCacheManager.MemoryCacheClient">
+            <summary>
+            内存缓存客户端
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Cache.MultipleCacheManager.dctMemCacheClients">
+            <summary>
+            区域内存
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Cache.MultipleCacheManager.dctAllCacheKeys">
+            <summary>
+            缓存所有键标识
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Cache.MultipleCacheManager.dctOrmId2NumMap">
+            <summary>
+            orm实体的主键与业务主键（编码及编号）的标识映射表,redis缓存可以初始化
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Cache.MultipleCacheManager.RegionId">
+            <summary>
+            业务区域标识
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Cache.MultipleCacheManager.Get``1(System.String)">
+            <summary>
+            获取缓存数据
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Cache.MultipleCacheManager.GetAllByKeyPattern``1(System.String,JieNor.Framework.Enu_SearchType)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="keyPattern"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Cache.MultipleCacheManager.GetDcData(JieNor.Framework.SuperOrm.Metadata.DataEntity.IDataEntityType,System.String)">
+            <summary>
+            获取Orm缓存数据
+            </summary>
+            <param name="pkId"></param>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Cache.MultipleCacheManager.GetAllDcData(JieNor.Framework.SuperOrm.Metadata.DataEntity.IDataEntityType,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            从缓存中获取指定标识的数据对象
+            </summary>
+            <param name="dt"></param>
+            <param name="allPkIds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Cache.MultipleCacheManager.GetAllDcData(JieNor.Framework.SuperOrm.Metadata.DataEntity.IDataEntityType,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.Object}@)">
+            <summary>
+            从缓存中获取指定标识的数据对象
+            </summary>
+            <param name="dt"></param>
+            <param name="allPkIds"></param>
+            <param name="nohitPkIds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Cache.MultipleCacheManager.SetDcData(JieNor.Framework.SuperOrm.Metadata.DataEntity.IDataEntityType,System.Collections.Generic.IEnumerable{JieNor.Framework.SuperOrm.DataEntity.IDataEntityBase})">
+            <summary>
+            设置Orm缓存数据
+            </summary>
+            <param name="dt"></param>
+            <param name="dataEntities"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Cache.MultipleCacheManager.SetDcData(JieNor.Framework.SuperOrm.Metadata.DataEntity.IDataEntityType,JieNor.Framework.SuperOrm.DataEntity.IDataEntityBase)">
+            <summary>
+            
+            </summary>
+            <param name="dt"></param>
+            <param name="dataEntity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Cache.MultipleCacheManager.Set``1(System.String,``0)">
+            <summary>
+            设置缓存数据
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Cache.MultipleCacheManager.Set``1(System.String,``0,System.Nullable{System.TimeSpan})">
+            <summary>
+            设置缓存数据
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+            <param name="expiryIn"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Cache.MultipleCacheManager.Set``1(System.String,``0,System.Nullable{System.DateTime})">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+            <param name="expiryAt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Cache.MultipleCacheManager.PGet``1(ServiceStack.Caching.ICacheClient,System.String)">
+            <summary>
+            获取缓存数据
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="client"></param>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Cache.MultipleCacheManager.GetCacheKey(System.String)">
+            <summary>
+            获取缓存标识
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Cache.MultipleCacheManager.Increment(System.String,System.UInt32)">
+            <summary>
+            计数
+            </summary>
+            <param name="key"></param>
+            <param name="amount"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Cache.MultipleCacheManager.RemoveAllByKeyPattern(System.String,JieNor.Framework.Enu_SearchType)">
+            <summary>
+            移除指定标识的缓存数据
+            </summary>
+            <param name="keyPattern"></param>
+            <param name="type"></param>
+        </member>
+        <member name="T:JieNor.Framework.Cache.PermissionConst">
+            <summary>
+            网络控制的相关常量
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.Cache.NetWorkCtrlConst">
+            <summary>
+            冲突操作控制的相关常量
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Cache.NetWorkCtrlConst.NetworkCtrlObj_Set_Key">
+            <summary>
+            监控对象所在的缓存数据包节点（对应数据库表 T_BAS_NETWORKCTRLOBJECT）
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Cache.NetWorkCtrlConst.NetworkCtrlMutObj_Set_Key">
+            <summary>
+            互斥的监控对象所在的缓存数据包节点（对应数据库表 T_BAS_NETWORKCTRLMUTEX）
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Cache.NetWorkCtrlConst.NetWorkCtrlMonitor_Set_Key">
+            <summary>
+            监控结果所在的缓存数据包节点：开启监控时，往这里新增数据（对应数据库表 T_BAS_NETWORKCTRLRECORDS）
+            </summary>
+        </member>
+    </members>
+</doc>

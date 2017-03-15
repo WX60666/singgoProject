@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<title>交易详情</title>
+		<link rel="stylesheet" href="../../../fw/css/ydj/weixin/weui.min.css" />
+		<link rel="stylesheet" href="../../../fw/css/ydj/weixin/trading_detail.css"/>
+		
+	</head>
+
+	<body>
+		<div class="page">
+			<div class="weui-cells__title">查看订单详情</div>
+			<div class="single_order">
+				<div class="weui-cells order_cell">
+					<div class="weui-cell">
+						<div class="weui-cell__bd">
+							<span class="seller">销售方 : </span>
+							<span class="seller_name order_fields">敬天家居</span>
+						</div>
+						<div class="weui-cell__ft order_date">2017-2-15</div>
+					</div>
+				</div>
+				<div class="weui-cells order_cell">
+					<div class="weui-cell">
+						<div class="weui-cell__bd">
+							<p><span class="stores_title">门&nbsp;&nbsp;&nbsp;店 : </span><span class="stores order_fields">金牌博耐店</span></p>
+							<p><span class="order_id_title">订单号 : </span><span class="order_id order_fields">20170215001</span></p>
+							<p><span class="response_title">负责人 : </span><span class="response order_fields">张三</span><img src="../../../fw/images/weixin/timg.jpg"  class="call_icon" /></p>
+						</div>
+						<div class="weui-cell__ft"><span class="amount_title ">金额 : </span><span class="amount order_fields ">2500</span></div>
+					</div>
+				</div>
+				<div class="weui-cells order_cell">
+					<a class="weui-cell weui-cell_access" href="evaluation.html">
+						<div class="weui-cell__bd">
+							<p>评价本次交易 </p>
+						</div>
+						<div class="weui-cell__ft">
+						</div>
+					</a>
+
+				</div>
+			</div>
+			<div class="weui-cells__title">产品明细</div>
+			<div class="single_property">
+				<div class="single_product_prop">
+					<div class="weui-cells detail_cell">
+						<div class="weui-cell">
+							<div class="weui-cell__bd">
+								<p>卫生间衣柜</p>
+							</div>
+						</div>
+					</div>
+					<div class="weui-cells detail_cell">
+						<div class="weui-cell">
+							<div class="weui-cell__bd">
+								<p><span class="stores_title">属 性 : </span><span class="stores order_fields">108*1.6*0.3,红樱桃</span></p>
+								<p><span class="order_id_title">金 额 : </span><span class="order_id order_fields">2500</span></p>
+								<p><span class="response_title">状 态 : </span><span class="response order_fields">到货</span></p>
+								<p><span class="response_title">数 量 : </span><span class="response order_fields">1</span></p>
+							</div>
+							<!--<div class="weui-cell__ft"><span class="amount_title">金额 : </span><span class="amount ">2500</span></div>-->
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<div class="single_property">
+				<div class="single_product_prop">
+					<div class="weui-cells detail_cell">
+						<div class="weui-cell">
+							<div class="weui-cell__bd">
+								<p>卫生间衣柜</p>
+							</div>
+						</div>
+					</div>
+					<div class="weui-cells detail_cell">
+						<div class="weui-cell">
+							<div class="weui-cell__bd">
+								<p><span class="stores_title">属 性 : </span><span class="stores order_fields">108*1.6*0.3,红樱桃</span></p>
+								<p><span class="order_id_title">金 额 : </span><span class="order_id order_fields">2500</span></p>
+								<p><span class="response_title">状 态 : </span><span class="response order_fields">到货</span></p>
+								<p><span class="response_title">数 量 : </span><span class="response order_fields">1</span></p>
+							</div>
+							<!--<div class="weui-cell__ft"><span class="amount_title">金额 : </span><span class="amount ">2500</span></div>-->
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<!--Confirm-->
+			<div id="dialog1" style="display: none;">
+				<div class="weui-mask"></div>
+				<div class="weui-dialog">
+					<div class="weui-dialog__hd"><strong class="weui-dialog__title">提示</strong></div>
+					<div class="weui-dialog__bd">确认拨打电话 :
+						<span id="confirm_num"></span> 吗?
+					</div>
+					<div class="weui-dialog__ft">
+						<a href="javascript:;"  id="call_cancel" class="weui-dialog__btn weui-dialog__btn_default">取消</a>
+						<a href="tel:18520819760" class="weui-dialog__btn weui-dialog__btn_primary">确定</a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<script src="../../../fw/js/ydj/weixin/trading_detail.js"></script>
+	</body>
+
+</html>

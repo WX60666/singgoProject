@@ -1,0 +1,21 @@
+<!--本模板是根据服务端需求提炼而成，客户端页面只需要遵循下述节点的一些属性描述规范即可，
+    至于节点布局，样式等没有要求（也就是xpath没要求），可由客户端页面实际需求自由发挥，
+    但需要服务端保存的节点需遵守下述规范：基本就是增加几个自定义属性（id,fn,tn）
+    -->
+<html lang="en">
+<head>
+</head>
+<body id="sys_attachment" el=1 cn="附件">
+    <div id="fbillhead" el="51" pk="fid" tn="T_Eis_Attachment" pn="fbillhead" cn="附件">
+        <input type="text" id="fname" el="100" ek="FBillHead" fn="fname" pn="fname" cn="文件名" visible="-1" />
+        <input type="text" id="falias" el="100" ek="FBillHead" fn="falias" pn="falias" cn="别名" visible="-1" />
+        <input type="text" id="ftype" el="100" ek="FBillHead" fn="ftype" pn="ftype" cn="文件类型" visible="-1" />
+        <input type="text" id="ffilesize" el="100" ek="FBillHead" fn="ffilesize" pn="ffilesize" cn="大小（KB）" visible="-1" />
+        <input type="text" id="fdesc" el="100" ek="FBillHead" fn="fdesc" pn="fdesc" cn="说明" visible="-1" />
+        <input type="text" id="fcreatorid" el="100" ek="FBillHead" fn="fcreatorid" pn="fcreatorid" cn="创建人" visible="-1" />
+        <input type="text" id="FCreateDate" el="100" ek="FBillHead" fn="FCreateDate" pn="FCreateDate" cn="创建时间" visible="-1" />
+        <input type="text" id="fmodifierid" el="100" ek="FBillHead" fn="fmodifierid" pn="fmodifierid" cn="修改人" visible="-1" />
+        <input type="text" id="fmodifydate" el="100" ek="FBillHead" fn="fmodifydate" pn="fmodifydate" cn="修改时间" visible="-1" />
+    </div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+﻿<!--本模板是根据服务端需求提炼而成，客户端页面只需要遵循下述节点的一些属性描述规范即可，
+    至于节点布局，样式等没有要求（也就是xpath没要求），可由客户端页面实际需求自由发挥，
+    但需要服务端保存的节点需遵守下述规范：基本就是增加几个自定义属性（id,fn,tn）
+    -->
+<html lang="en">
+<head>
+</head>
+<body id="sec_permitem" basemodel="bd_basetmpl" el=1 cn="权限项">
+    <div id="fbillhead" el="51" pk="fid" tn="T_Sec_PermItem" pn="fbillhead" cn="权限项信息">
+        <select id="fgroup" el="117" ek="FBillHead" fn="fgroup" pn="fgroup" ts="" visible="-1" cn="权限分组">
+            <option value="查看">查看</option>
+            <option value="编辑">编辑</option>
+            <option value="业务操作">业务操作</option>
+            <option value="其它">其它</option>
+        </select>
+
+    </div>
+
+</body>
+</html>

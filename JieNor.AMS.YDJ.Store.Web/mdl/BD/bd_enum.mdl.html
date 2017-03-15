@@ -1,0 +1,25 @@
+﻿<!--
+    针对页面的下拉列表类型、单选数据，抽象成枚举类型的数据，统一放一个表记录
+    服务端通通按类似基础资料的方式进行处理。
+
+    比如：性别 是个枚举类型的数据，在页面上定义的元素类型为 combo
+    -->
+<html lang="en">
+<head>
+</head>
+<body id="bd_enum" el=1 cn="枚举" nbfk="fenumitem" nmfk="fenumitem">
+    <div id="fbillhead" el="51" pk="fid" tn="T_BD_Enum" pn="fbillhead" cn="枚举">
+
+        <input type="text" id="fcategory" el="100" ek="FBillHead" fn="fcategory" pn="fcategory" cn="枚举类型名称，如 性别" />
+        <input type="text" id="fenumitem" el="100" ek="FBillHead" fn="fenumitem" pn="fenumitem" cn="枚举项" />
+        <select id="fforbidstatus" el="117" ek="FBillHead" fn="fforbidstatus" pn="fforbidstatus" ts="" visible="-1" cn="禁用状态">
+            <option value="0">正常</option>
+            <option value="1">禁用</option>
+        </select>
+        <input type="text" id="forder" el="101" ek="FBillHead" fn="forder" pn="forder" cn="序号" />
+        <input type="text" id="fgroup" el="100" ek="FBillHead" fn="fgroup" pn="fgroup" cn="分组" />
+        <input type="text" id="fissys" el="116" ek="FBillHead" fn="fissys" pn="fissys" cn="是否系统预设" />
+
+    </div>
+</body>
+</html>

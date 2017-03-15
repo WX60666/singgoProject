@@ -1,0 +1,2913 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JieNor.Framework</name>
+    </assembly>
+    <members>
+        <member name="M:PerfmonUtil.StartMonitor">
+            <summary>
+            开始监控
+            </summary>
+        </member>
+        <member name="M:PerfmonUtil.EndMonitor">
+            <summary>
+            结束监控
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.ClrLocalValueItem">
+            <summary>
+            多语言信息基类
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.ClrLocalValueItem.LocalId">
+            <summary>
+            语言ID
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.Consts.TableNameConst">
+            <summary>
+            TableNameConst  
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Consts.TableNameConst.TempTableNameAs">
+            <summary>
+            冲突操作监控结果FormId
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.Consts.HtmlFormIdConst">
+            <summary>
+            HtmlFormId 常量
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Consts.HtmlFormIdConst.NetworkCtrlMonitorResult">
+            <summary>
+            冲突操作监控结果FormId
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Consts.HtmlFormIdConst.NetworkCtrlObject">
+            <summary>
+            冲突操作监控对象FormId
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Consts.HtmlFormIdConst.NetworkCtrlMutexObject">
+            <summary>
+            冲突操作监控互斥对象FormId
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Consts.HtmlFormIdConst.SystemUser">
+            <summary>
+            用户 FormId
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Consts.HtmlFormIdConst.FlowCtrlPolicy">
+            <summary>
+            控制策略 FormId
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.Consts.PermConst">
+            <summary>
+            权限项常量
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Consts.PermConst.PermssionItem_View">
+            <summary>
+            权限项：查看
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Consts.PermConst.PermssionItem_New">
+            <summary>
+            权限项：新增
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Consts.PermConst.PermssionItem_Modify">
+            <summary>
+            权限项：修改
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Consts.PermConst.PermssionItem_Delete">
+            <summary>
+            权限项：删除
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Consts.PermConst.PermssionItem_Submit">
+            <summary>
+            权限项：提交
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Consts.PermConst.PermssionItem_Audit">
+            <summary>
+            权限项：审核
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Consts.PermConst.PermssionItem_Unaudit">
+            <summary>
+            权限项：反审核
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Consts.PermConst.PermssionItem_Print">
+            <summary>
+            权限项：打印
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.CustomException.BusinessException">
+            <summary>
+            业务异常对象定义
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.CustomException.BusinessException.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:JieNor.Framework.CustomException.MicroServiceInvokeException">
+            <summary>
+            微服务调用异常
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.CustomException.MicroServiceNotFoundException">
+            <summary>
+            微服务找不到异常
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.CustomException.InitPageException">
+            <summary>
+            页面初始化异常
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.CustomException.InitPageException.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.CustomException.InitPageException.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="P:JieNor.Framework.CustomException.InitPageException.PageId">
+            <summary>
+            页面标识
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.CustomException.InteractionException">
+            <summary>
+            操作交互类异常对象
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.CustomException.InteractionException.#ctor(System.String,System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="sponsor"></param>
+            <param name="message"></param>
+        </member>
+        <member name="P:JieNor.Framework.CustomException.InteractionException.Sponsor">
+            <summary>
+            发起交互的对象
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.Enums.BillStatus">
+            <summary>
+            单据状态：草稿 A、保存 B、已提交 C、审核中 D、已审核 E
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Enums.BillStatus.A">
+            <summary>
+            草稿
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Enums.BillStatus.B">
+            <summary>
+            保存
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Enums.BillStatus.C">
+            <summary>
+            已提交
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Enums.BillStatus.D">
+            <summary>
+            审核中
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Enums.BillStatus.E">
+            <summary>
+            已审核
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.Enums.AlignEnum">
+            <summary>
+            对齐方式枚举
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.Enums.ExpressionKind">
+            <summary>
+            表达式的代码类型
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Enums.ExpressionKind.AutoDetect">
+            <summary>
+            在交给解析器执行的时候，由解析器自动检测
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Enums.ExpressionKind.Expression">
+            <summary>
+            表达式
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Enums.ExpressionKind.Script">
+            <summary>
+            脚本
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.Enums.IMEnums">
+            <summary>
+            实时通讯系统枚举
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.Enums.IMEnums.Enu_MessageStatus">
+            <summary>
+            系统消息状态
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Enums.IMEnums.Enu_MessageStatus.None">
+            <summary>
+            无状态
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Enums.IMEnums.Enu_MessageStatus.All">
+            <summary>
+            所有状态
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Enums.IMEnums.Enu_MessageStatus.Unread">
+            <summary>
+            未读状态
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Enums.IMEnums.Enu_MessageStatus.Read">
+            <summary>
+            已读状态
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Enums.IMEnums.Enu_MessageStatus.NotifyMessage">
+            <summary>
+            通知消息
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Enums.IMEnums.Enu_MessageStatus.SystemMessage">
+            <summary>
+            系统消息
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Enums.IMEnums.Enu_MessageStatus.BillMessage">
+            <summary>
+            单据关联消息
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Enums.IMEnums.Enu_MessageStatus.BizFlowMessage">
+            <summary>
+            流程消息
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Enums.IMEnums.Enu_MessageStatus.TaskMessage">
+            <summary>
+            任务消息，必须携带消息处理器
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Enums.IMEnums.Enu_MessageStatus.InstantMessage">
+            <summary>
+            即时消息
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.Enu_SearchType">
+            <summary>
+            缓存键匹配模式
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Enu_SearchType.Default">
+            <summary>
+            默认搜索方式
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Enu_SearchType.StartWith">
+            <summary>
+            以特定字符开头
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Enu_SearchType.EndWith">
+            <summary>
+            以特定字符结尾
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Enu_SearchType.Contains">
+            <summary>
+            包含指定字符
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Enu_SearchType.RegEx">
+            <summary>
+            正则匹配
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.Enu_DomainType">
+            <summary>
+            领域类型
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Enu_DomainType.None">
+            <summary>
+            空值
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Enu_DomainType.DynForm">
+            <summary>
+            普通表单
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Enu_DomainType.Bill">
+            <summary>
+            带有CRuD的编辑表单
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Enu_DomainType.List">
+            <summary>
+            数据列表
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Enu_DomainType.Report">
+            <summary>
+            数据报表
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.Enu_BillStatus">
+            <summary>
+            单据状态
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Enu_BillStatus.New">
+            <summary>
+            新增
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Enu_BillStatus.View">
+            <summary>
+            查看
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Enu_BillStatus.Modify">
+            <summary>
+            修改
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Enu_BillStatus.Query">
+            <summary>
+            列表
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.Enu_OpenStyle">
+            <summary>
+            打开页面的展示方式
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Enu_OpenStyle.Default">
+            <summary>
+            默认
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Enu_OpenStyle.Modal">
+            <summary>
+            模态
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Enu_OpenStyle.NonModal">
+            <summary>
+            非模态
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Enu_OpenStyle.InContainer">
+            <summary>
+            指示页面显示在指定容器里
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.Enu_FieldMapType">
+            <summary>
+            单据转换字段映射方式
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Enu_FieldMapType.Default">
+            <summary>
+            字段至字段映射
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Enu_FieldMapType.Expression">
+            <summary>
+            表达式映射
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.Enu_FieldMapActionWhenGrouping">
+            <summary>
+            分组时的字段映射取值动作
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Enu_FieldMapActionWhenGrouping.Default">
+            <summary>
+            默认，通常是文本类的自动取第一个，数字类的自动汇总
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Enu_FieldMapActionWhenGrouping.FirstOne">
+            <summary>
+            分组集合里的第一行值
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Enu_FieldMapActionWhenGrouping.LastOne">
+            <summary>
+            分组集合里的最后一行值
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Enu_FieldMapActionWhenGrouping.SumOrMerge">
+            <summary>
+            文本类合并（","），数字类求和
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.Enu_FieldMapActionWhenGrouping.CustomProc">
+            <summary>
+            自定义处理,平台不再干预
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.IMicroServiceAuthEvent">
+            <summary>
+            微服务验证事件
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.IMicroServiceAuthEvent.IsAuthorized(JieNor.Framework.UserAuthTicket,System.String)">
+            <summary>
+            是否验证通过
+            </summary>
+            <param name="authSession"></param>
+            <param name="provider"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.IoC.AutofacAdapter">
+            <summary>
+            autofac ioc适配器
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.IoC.AutofacAdapter.#ctor(Autofac.IContainer)">
+            <summary>
+            构造函数，接收autofac的构建容器
+            </summary>
+            <param name="container"></param>
+        </member>
+        <member name="M:JieNor.Framework.IoC.AutofacAdapter.Resolve``1">
+            <summary>
+            解析指定类型的服务
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.IoC.AutofacAdapter.TryResolve``1">
+            <summary>
+            尝试解析指定类型的服务
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.IoC.AutofacAdapter.GetService``1(System.Object[])">
+            <summary>
+            带参数解析组件
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="paraList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.IoC.AutofacAdapter.BeginLifetimeScope(System.String)">
+            <summary>
+            开启组件生命周期管理
+            </summary>
+            <param name="tag"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.IoC.AutofacAdapter.GetService``1">
+            <summary>
+            获取指定类型的服务实例
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.IoC.AutofacAdapter.TryGetService``1">
+            <summary>
+            尝试获取指定服务实例
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.IoC.HttpReqResExtensions.GetRequestId(ServiceStack.Web.IRequest)">
+            <summary>
+            获取当前请求标识
+            </summary>
+            <param name="req"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.IoC.HttpReqResExtensions.SetRequestId(ServiceStack.Web.IRequest)">
+            <summary>
+            向http请求添加请求标识
+            </summary>
+            <param name="req"></param>
+        </member>
+        <member name="T:JieNor.Framework.IoC.InjectSingletonServiceAttribute">
+            <summary>
+            是否以单例方式注入
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.IoC.IServiceMetadata">
+            <summary>
+            服务元数据特性描述类
+            </summary>
+            具体实现请参考<seealso cref="T:JieNor.Framework.IoC.FormIdAttribute"/>和<seealso cref="T:JieNor.Framework.IoC.OperationNoAttribute"/>,尽量做到Key名与类名类似
+        </member>
+        <member name="P:JieNor.Framework.IoC.IServiceMetadata.Key">
+            <summary>
+            元数据键名，注意起一个好名字，不要和已实现此接口的人同名
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.IoC.IServiceMetadata.Value">
+            <summary>
+            元数据值
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.IoC.LifetimeScopeAttribute">
+            <summary>
+            生命周期特性
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.IoC.LifetimeScopeAttribute.Scope">
+            <summary>
+            生命周期
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.IoC.Enu_LifetimeScope">
+            <summary>
+            服务生命周期类型
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.IoC.LifeTimeServiceContainer.GetService``1(System.Object[])">
+            <summary>
+            带参数解析组件
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="paraList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.IoC.NamedParameterEx.#ctor(System.String,System.Object)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="P:JieNor.Framework.IoC.NamedParameterEx.Key">
+            <summary>
+            参数名
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.IoC.NamedParameterEx.Value">
+            <summary>
+            参数值
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.IoC.FormIdAttribute">
+            <summary>
+            注册插件服务
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.IoC.FormIdAttribute.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="formId">表单标识</param>
+        </member>
+        <member name="P:JieNor.Framework.IoC.FormIdAttribute.FormId">
+            <summary>
+            表单标识
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.IoC.OperationNoAttribute">
+            <summary>
+            注册插件服务
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.IoC.OperationNoAttribute.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="operationNo">操作代码</param>
+        </member>
+        <member name="T:JieNor.Framework.IoC.DefaultServiceRegisterModule">
+            <summary>
+            默认服务注册模块
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.IoC.DefaultServiceRegisterModule.ServiceContainer">
+            <summary>
+            服务容器
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.IoC.DefaultServiceRegisterModule.Load(Autofac.ContainerBuilder)">
+            <summary>
+            
+            </summary>
+            <param name="builder"></param>
+        </member>
+        <member name="P:JieNor.Framework.IoC.InjectServiceAttribute.AliasName">
+            <summary>
+            指定注册的服务别名：主要适用于一个接口多个实现的场景
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.IoC.InjectServiceAttribute.GetMetadata(System.Type)">
+            <summary>
+            动态元数据提供者
+            </summary>
+            <param name="targetType"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.JNTransactionScope">
+            <summary>
+            提供基于TransactionScope的事务功能。
+            </summary>
+            <remarks>
+            事务操作类型由参数option指定，对于请求事务Required和RequiresNew使用ReadCommitted事务隔离级别。
+            对于事务操作类型和事务隔离级别请参照msdn帮助。
+            </remarks>
+            <example>下面例子展示如何使用事务保存业务对象数据
+            <code>
+                 using (KDTransactionScope trans = new KDTransactionScope(TransactionScopeOption.Required))
+                {
+                    DynamicObject[] dynamicObjects = null;
+                    BusinessDataWriter write = new BusinessDataWriter(ctx);
+                    dynamicObjects = write.Save(dataEntities);
+                    trans.Complete();
+                }
+            </code>
+            </example>
+        </member>
+        <member name="T:JieNor.Framework.SerializeTypeInfoAttribute">
+            <summary>
+            指定某个类实现序列化类型信息
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.ThreadWorker">
+             <summary>
+             线程处理器,使用示例如下：
+             <![CDATA[
+                 UserContext userCtx = null;
+                 object otherBizPara = new object();
+                 IOperationResult result = new OperationResult();
+            
+                 ThreadWorker.QuequeTask(new Action<object>((p) =>
+                 {
+                     var px = p as TaskAsyncState;
+                     var userCtx = px.UserContext;
+                     var bizPara = px.BizParameter;
+                     var ret = px.ReturnResult;
+            
+                     //todo....
+            
+                 }),
+                 new TaskAsyncState()
+                 {
+                     UserContext = userCtx,
+                     BizParameter = otherBizPara,
+                     ReturnResult = result,
+                 },
+                 (asyncState) =>
+                     {
+                         var ret = asyncState.ReturnResult;
+                         //todo：根据结果再回调处理逻辑
+                     });
+             ]]>
+             </summary>
+        </member>
+        <member name="M:JieNor.Framework.ThreadWorker.BuildExceptionMessage(System.Exception,System.Text.StringBuilder)">
+            <summary>
+            构建线程异常信息
+            </summary>
+            <param name="ex"></param>
+            <param name="strBuilder"></param>
+        </member>
+        <member name="M:JieNor.Framework.ThreadWorker.QuequeTask(System.Action,System.Action{JieNor.Framework.AsynResult})">
+            <summary>
+            推送一条异步任务
+            </summary>
+            <param name="action"></param>
+            <param name="callback"></param>
+        </member>
+        <member name="M:JieNor.Framework.ThreadWorker.QuequeTask(System.Threading.Tasks.Task,System.Action{JieNor.Framework.AsynResult})">
+            <summary>
+            推送一个自定义的异步任务
+            </summary>
+            <param name="task"></param>
+            <param name="callback"></param>
+        </member>
+        <member name="M:JieNor.Framework.ThreadWorker.QuequeTask(System.Action{System.Object},JieNor.Framework.TaskAsyncState,System.Action{JieNor.Framework.AsynResult})">
+            <summary>
+            推送一个异步任务，回调函数可以接受到一个上下文参数数组
+            </summary>
+            <param name="action"></param>
+            <param name="asyncState"></param>
+            <param name="callback"></param>
+        </member>
+        <member name="T:JieNor.Framework.TaskAsyncState">
+            <summary>
+            线程数据结构
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AsynResult.Exception">
+            <summary>
+            内部异常
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AsynResult.Message">
+            <summary>
+            消息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AsynResult.Success">
+            <summary>
+            是否成功
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.AsynResult.ReturnResult">
+            <summary>
+            执行结束的方法输出
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.UserAuthTicket">
+            <summary>
+            用户认证凭据
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.UserAuthTicket.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.UserAuthTicket.DBId">
+            <summary>
+            当前会话关联的数据中心信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.UserAuthTicket.DBIdReadOnly">
+            <summary>
+            当前会话可用的只读数据中心信息（实现读写分离）
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.UserAuthTicket.EnableReadWriteSplitFeature">
+            <summary>
+            是否启用读写分离机制
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.UserAuthTicket.OnCreated(ServiceStack.Web.IRequest)">
+            <summary>
+            会话创建后
+            </summary>
+            <param name="httpReq"></param>
+        </member>
+        <member name="M:JieNor.Framework.UserAuthTicket.OnRegistered(ServiceStack.Web.IRequest,ServiceStack.Auth.IAuthSession,ServiceStack.IServiceBase)">
+            <summary>
+            会话注册后
+            </summary>
+            <param name="httpReq"></param>
+            <param name="session"></param>
+            <param name="service"></param>
+        </member>
+        <member name="M:JieNor.Framework.UserAuthTicket.OnLogout(ServiceStack.IServiceBase)">
+            <summary>
+            会话注销后
+            </summary>
+            <param name="authService"></param>
+        </member>
+        <member name="M:JieNor.Framework.UserAuthTicket.OnAuthenticated(ServiceStack.IServiceBase,ServiceStack.Auth.IAuthSession,ServiceStack.Auth.IAuthTokens,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            会话验证通过后
+            </summary>
+            <param name="authService"></param>
+            <param name="session"></param>
+            <param name="tokens"></param>
+            <param name="authInfo"></param>
+        </member>
+        <member name="M:JieNor.Framework.UserAuthTicket.IsAuthorized(System.String)">
+            <summary>
+            是否验证通过
+            </summary>
+            <param name="provider"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.UserAuthTicket.CreateJwtHead(ServiceStack.Text.JsonObject)">
+            <summary>
+            jwt头部打包拦截
+            </summary>
+            <param name="head"></param>
+        </member>
+        <member name="M:JieNor.Framework.UserAuthTicket.CreateJwtPayload(ServiceStack.Text.JsonObject)">
+            <summary>
+            拦截jwt过程负载处理过程
+            </summary>
+            <param name="payload"></param>
+        </member>
+        <member name="M:JieNor.Framework.UserAuthTicket.PopulatePayload(ServiceStack.Text.JsonObject,ServiceStack.Web.IRequest)">
+            <summary>
+            jwt反向生成session时的扩展信息处理
+            </summary>
+            <param name="payload"></param>
+            <param name="req"></param>
+        </member>
+        <member name="P:JieNor.Framework.UserAuthTicket.Product">
+            <summary>
+            产品信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.UserAuthTicket.Companys">
+            <summary>
+            当前用户关联的所有企业信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.UserAuthTicket.AppServer">
+            <summary>
+            当前应用服务地址
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.UserAuthTicket.GatewayServer">
+            <summary>
+            服务网关地址
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.UserAuthTicket.GatewayTokenId">
+            <summary>
+            网关访问钥匙
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.UserAuthTicket.UserAgent">
+            <summary>
+            用户端类型
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.UserAuthTicket.UserHost">
+            <summary>
+            用户地址
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.Company">
+            <summary>
+            企业实体对象
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Company.Id">
+            <summary>
+            企业标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Company.Number">
+            <summary>
+            企业代码
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Company.Name">
+            <summary>
+            企业名称
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Company.DbId">
+            <summary>
+            数据库读写实例
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Company.DbIdReadOnly">
+            <summary>
+            数据库只读实例
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DatabaseType">
+            <summary>
+            数据库类型定义
+            <seealso cref="T:JieNor.Framework.DatabaseType"/> 
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataCenterType">
+            <summary>
+            数据中心类型
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataCenterType.ManagementCenter">
+            <summary>
+            管理中心
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataCenterType.BusinessDataCenter">
+            <summary>
+            业务数据中心
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataCenterType.MultiLanguageCenter">
+            <summary>
+            多语言中心
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DBScriptListAccountType">
+            <summary>
+            脚本执行列表中注册的脚本分组类型
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DBScriptListAccountType.PDM">
+            <summary>
+            PDM中Table、View脚本
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DBScriptListAccountType.BOS">
+            <summary>
+            BOS运行平台所需数据
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DBScriptListAccountType.MC">
+            <summary>
+            管理中心所需数据
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DBScriptListAccountType.BusinessDataCenter">
+            <summary>
+            标准业务数据中心所需数据
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DBScriptListAccountType.ML">
+            <summary>
+            多语言中心所需数据
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DBScriptListAccountType.DEV">
+            <summary>
+            开发类型的帐套所需数据
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DBScriptListAccountType.DEMO">
+            <summary>
+            DEMO类型的帐套所需数据
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DBScriptListAccountType.PDM_Constraint">
+            <summary>
+            PDM中的Constraint脚本
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.K3ProductInfo">
+            <summary>
+            K3产品信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.K3ProductInfo.CurrentK3ProductVersion">
+            <summary>
+            当前产品版本信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.K3ProductInfo.K3ProductBeginVersion">
+            <summary>
+            产品初始版本信息
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataBaseBackupType.FullDatabaseBackups">
+            <summary>
+            完整数据库备份
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataBaseBackupType.PartialBackups">
+            <summary>
+            增量数据库备份
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataBaseBackupType.BookBackups">
+            <summary>
+            账簿备份
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.ParseMetaDataFileType">
+            <summary>
+            元数据文件解析类型
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.ParseMetaDataFileType.ALL">
+            <summary>
+            所有
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.ParseMetaDataFileType.BusinessObjectMetaData">
+             <summary>
+            业务对象元数据
+             </summary>
+        </member>
+        <member name="F:JieNor.Framework.ParseMetaDataFileType.BusinessObjectDependencyItem">
+            <summary>
+            业务对象依赖项
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DatabaseBusinessType">
+            <summary>
+            数据库业务类型
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DynamicResponseStatus">
+            <summary>
+            动态异常
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.LanguageInfo">
+            <summary>
+            系统支持的语言信息
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.LanguageInfo.InvariantLocaleId">
+            <summary>
+            中性语言
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.LocaleValue">
+            <summary>
+            多语言记录类，注意在BOS的商业处理中使用了其派生类，而不是当前类。
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.LocaleValue.langCapacity">
+            <summary>
+            目前3中语言
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.LocaleValue.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="P:JieNor.Framework.LocaleValue.Item(System.Int32)">
+            <summary>
+            通过给定区域编号，获取此区域的文本，如果函数在检测到此LCID未填写内容时，自动返回中性语言的数据
+            </summary>
+            <param name="localeId">区域编号</param>
+            <returns>此区域的文本，如果未设置，自动返回中性语言的数据。</returns>
+            <remarks>
+            简体中文是默认的语言，因此如果填充简体中文（2052）的数据时，将自动填充到中性语言上。
+            </remarks>
+        </member>
+        <member name="M:JieNor.Framework.LocaleValue.SetByLocaleId(System.Int32,System.String)">
+            <summary>
+            设置指定LocaleId的值
+            </summary>
+            <param name="localeId">LocaleId</param>
+            <param name="value">值</param>
+        </member>
+        <member name="M:JieNor.Framework.LocaleValue.TryGetValue(System.Int32,System.String@)">
+            <summary>
+            检测特定LCID的语言设置，注意此函数在检测到此LCID未填写内容时，不会自动返回中性语言的数据
+            </summary>
+            <param name="localeId">LCID值</param>
+            <param name="value">如果此LCID下包含数据，将返回此字符串信息，否则返回null</param>
+            <returns>此LCID下是否包含了字符串信息，如果有，返回true</returns>
+            <remarks>
+            注意此方法被BOS的派生类OrmLocaleValue重载。
+            </remarks>
+        </member>
+        <member name="M:JieNor.Framework.LocaleValue.ToString">
+            <summary>
+            转换成字符串的表示形式
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.LocaleValue.ToString(System.Globalization.CultureInfo)">
+            <summary>
+            根据时区信息返回字符串的形式。
+            </summary>
+            <param name="culture">当前时区信息</param>
+            <returns>字符串的形式。</returns>
+        </member>
+        <member name="M:JieNor.Framework.LocaleValue.op_Implicit(JieNor.Framework.LocaleValue)~System.String">
+            <summary>
+            支持LocaleValue转换为字符串。
+            </summary>
+            <param name="localeValue">一个LocaleValue对象</param>
+            <returns>本地时区对应的字符串</returns>
+        </member>
+        <member name="M:JieNor.Framework.LocaleValue.op_Implicit(JieNor.Framework.LocaleValue)~System.Int32">
+            <summary>
+            支持LocaleValue转换为int。
+            </summary>
+            <param name="localeValue">一个LocaleValue对象</param>
+            <returns>本地时区对应的int值</returns>
+        </member>
+        <member name="M:JieNor.Framework.LocaleValue.Merger(JieNor.Framework.LocaleValue,System.String,System.Boolean)">
+            <summary>
+            传入一个localValue，进行合并处理
+            </summary>
+            <param name="localeValue"></param>
+            <param name="sp"></param>
+            <param name="bAfter"></param>
+        </member>
+        <member name="M:JieNor.Framework.LocaleValue.Merger(System.String,System.String,System.Boolean)">
+            <summary>
+            传入一个value，进行合并处理
+            </summary>
+            <param name="sValue"></param>
+            <param name="sp"></param>
+            <param name="bAfter"></param>
+        </member>
+        <member name="M:JieNor.Framework.LocaleValue.GetEnumerator">
+            <summary>
+            返回所有有效的区域字符
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.LocaleValue.Equals(System.Object)">
+            <summary>
+            判断两个对象是否相等
+            </summary>
+            <param name="obj">另外一个比较的对象</param>
+            <returns>如果另外一个对象也是LocaleValue且内部存储的数据相等，将返回true</returns>
+        </member>
+        <member name="M:JieNor.Framework.LocaleValue.GetHashCode">
+            <summary>
+            返回重新计算的Hashcode值，他将所有的语言数据进行比对。
+            </summary>
+            <returns>新的Hash值</returns>
+        </member>
+        <member name="M:JieNor.Framework.LocaleValue.ParseFromString(System.String,System.Globalization.CultureInfo)">
+            <summary>
+            解析字符串，将其数据附加到当前实例。
+            </summary>
+            <param name="source">字符串源对象</param>
+        </member>
+        <member name="M:JieNor.Framework.LocaleValue.Parse(System.String,System.Globalization.CultureInfo)">
+            <summary>
+            从一个字符串转换成LocaleValue对象。
+            </summary>
+            <param name="source">字符串源</param>
+            <param name="culture">进行转换时对应的时区</param>
+            <returns>新的LocaleValue对象。</returns>
+        </member>
+        <member name="M:JieNor.Framework.LocaleValue.Add(System.Collections.Generic.KeyValuePair{System.Int32,System.String})">
+            <summary>
+            当插入一笔多语言数据时调用此方法。注意：ORMLocaleValue重载了此方法。
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:JieNor.Framework.LocaleValue.Clear">
+            <summary>
+            当清除多语言数据时调用此方法。注意：ORMLocaleValue重载了此方法。
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.LocaleValueConverter">
+            <summary>
+            LocaleValue的对象转换器，支持与字符串的互相转换。
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.SqlParam">
+            <summary>
+            Sql参数对象
+            </summary>
+            <remarks>
+            针对封装的KSQL参数化数据访问接口定义的参数对象。包含参数名称、类型、值、输入输出属性。
+            </remarks>
+            <example>
+            示例显示如何使用SqlParam
+            <code>
+            <![CDATA[
+            DBService dbService = new DBService();
+            List<SqlParam> list = new List<SqlParam>();
+            list.Add( new SqlParam("x", DbType.Xml, xml));
+            dbService.Execute(oractx, "UPDATE t_meta_objecttype SET FKERNELXML = @x where FID = 'BD_FLEXVALUESET';", list);
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="M:JieNor.Framework.SqlParam.#ctor(System.String,System.Data.DbType,System.Object)">
+            <summary>
+            数据访问参数对象构造函数
+            </summary>
+            <param name="name">参数名。（在SQL语句中请使用@标识参数名）</param>
+            <param name="dbType">参数数据类型。</param>
+            <param name="value">值。</param>
+        </member>
+        <member name="M:JieNor.Framework.SqlParam.#ctor(System.String,System.Data.DbType,System.Object,System.Data.ParameterDirection)">
+            <summary>
+            数据访问参数对象构造函数
+            </summary>
+            <param name="name">参数名。（在SQL语句中请使用@标识参数名）</param>
+            <param name="dbType">参数数据类型。</param>
+            <param name="value">值。</param>
+            <param name="direction">参数输入输出类型。</param>
+        </member>
+        <member name="M:JieNor.Framework.SqlParam.ConvertParamName(JieNor.Framework.DatabaseType)">
+            <summary>
+            将参数化查询的的参数名进行转换
+                对于Oracle数据库如果是@FName将转换为:FName
+            </summary>
+            <param name="dbtype"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.UserContext">
+            <summary>
+            登录上下文环境
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.UserContext.DBId">
+            <summary>
+            //数据中心实例
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.UserContext.DBIdReadOnly">
+            <summary>
+            只读数据中心实例
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.UserContext.EnableReadWriteSplitFeature">
+            <summary>
+            是否启用读写分离机制
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.UserContext.Meta">
+            <summary>
+            上下文的扩展数据
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.UserContext.Company">
+            <summary>
+            企业标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.UserContext.Companys">
+            <summary>
+            用户拥有的所有企业身份
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.UserContext.Product">
+            <summary>
+            产品标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.UserContext.UserLocale">
+            <summary>
+            用户区域语言信息
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.UserContext.DefaultLocale">
+            <summary>
+            系统默认语言
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.UserContext.ClientType">
+            <summary>
+            登录客户端类型
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.UserContext.UserToken">
+            <summary>
+            jwt令牌信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.UserContext.UserId">
+            <summary>
+            当前Context对应的用户ID
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.UserContext.UserName">
+            <summary>
+            当前用户名称
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.UserContext.UserPhone">
+            <summary>
+            用户手机
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.UserContext.DatabaseType">
+            <summary>
+            数据库类型属性,登录时设置
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.UserContext.CurrentRequestObject">
+            <summary>
+            当前请求对象
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.UserContext.UserHost">
+            <summary>
+            登陆用户ip
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.UserContext.AppServer">
+            <summary>
+            当前应用服务地址
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.UserContext.GatewayServer">
+            <summary>
+            网关地址
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.UserContext.GatewayTokenId">
+            <summary>
+            网关访问令牌
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.UserContext.Container">
+            <summary>
+            会话关联的服务容器
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.UserContext.IsAuthenticated">
+            <summary>
+            当前会话是否过期
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.UserContext.DisplayName">
+            <summary>
+            当前会话显示名称
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.UserContext.#ctor">
+            <summary>
+            debug使用
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.UserContext.UserSession">
+            <summary>
+            内部用户会话对象
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.UserContext.SetUserSession(JieNor.Framework.UserAuthTicket)">
+            <summary>
+            设置会话信息
+            </summary>
+            <param name="session"></param>
+        </member>
+        <member name="P:JieNor.Framework.UserContext.RequestSource">
+            <summary>
+            请求源头信息
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.UserContext.SetRequestSource(JieNor.Framework.RequestSource)">
+            <summary>
+            设置请求来源信息
+            </summary>
+            <param name="reqSource"></param>
+        </member>
+        <member name="T:JieNor.Framework.RequestSource">
+            <summary>
+            请求来源对象：表达了某个人在某企业里使用了某产品。
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.RequestSource.UserName">
+            <summary>
+            用户名称
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.RequestSource.UserId">
+            <summary>
+            用户代码
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.RequestSource.DisplayName">
+            <summary>
+            用户显示名称
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.RequestSource.Product">
+            <summary>
+            产品代码
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.RequestSource.Company">
+            <summary>
+            企业代码
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.RequestSource.FormId">
+            <summary>
+            表单标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.RequestSource.OperationNo">
+            <summary>
+            操作代码
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.ClientType">
+            <summary>
+            客户端类型
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.ClientType.WPF">
+            <summary>
+            桌面应用
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.ClientType.Silverlight">
+            <summary>
+            SL应用
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.ClientType.Html">
+            <summary>
+            纯页面应用
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.ClientType.Android">
+            <summary>
+            安卓应用
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.ClientType.IOS">
+            <summary>
+            苹果应用
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.ClientType.WinPhone">
+            <summary>
+            winphone应用
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.AssemblyUtils">
+            <summary>
+            动态加载与卸载程序集常用的方法
+            add by linus wang at 2016-04-22
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.AssemblyUtils.LoadAssembly(System.String,System.Boolean)">
+            <summary>
+            加载程序集
+            </summary>
+            <param name="sFilePath"></param>
+            <param name="bRecusive">是否独占式访问，若文件较大，则建议使用独占式访问</param>
+            <returns></returns>
+        </member>
+        <member name="P:JieNor.Framework.AssemblyUtils.AllAssemblies">
+            <summary>
+            获取所有加载的程序集
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.AssemblyUtils.GetAssemblyFiles">
+            <summary>
+            获取程序集文件路径集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:JieNor.Framework.AssemblyUtils.AppCodeAssemblies">
+            <summary>
+            Return all the App_Code assemblies
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.AssemblyUtils.GetAssemblyFilePath(System.Reflection.Assembly)">
+            <summary>
+            获取程序集真正的物理路径，而不是clr的编译缓存路径
+            </summary>
+            <param name="assembly"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.AssertUtil">
+            <summary>
+            断言工具类
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.AssertUtil.IsNotNull(System.Object,System.String)">
+            <summary>
+            断言某个对象不为空
+            </summary>
+            <param name="obj"></param>
+            <param name="message"></param>
+        </member>
+        <member name="M:JieNor.Framework.AssertUtil.IsNull(System.Object,System.String)">
+            <summary>
+            断言某个对象一定是空
+            </summary>
+            <param name="obj"></param>
+            <param name="message"></param>
+        </member>
+        <member name="M:JieNor.Framework.ByteUtil.ToBytes``1(``0)">
+            <summary>
+            将结构体对象转换成字节数组
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.ByteUtil.FromBytes``1(System.Byte[])">
+            <summary>
+            将指定字节数组数据转换成结构体对象
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="arr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.ByteUtil.ToHexString(System.Byte[])">
+            <summary>
+            将字节数组转换成16进制字符串
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.CalendarUtils">
+            <summary>
+            和日历相关的功能函数判断：如闰年、闰月、闰天
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.CalendarUtils.IsLeapMonth(System.Int32,System.Int32)">
+            <summary>
+            是否闰月
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.CalendarUtils.IsLeapYear(System.Int32)">
+            <summary>
+            是否闰年
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.Utils.DateExtensions">
+            <summary>
+            日期扩展 
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.GetTimeSpan(System.DateTime,System.DateTime)">
+            <summary>
+            时间差
+            </summary>
+            <param name="startTime">开始时间</param>
+            <param name="endTime">结束时间</param>
+            <returns>TimeSpan时间差</returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.ToDateTime(System.DateTime)">
+            <summary>
+            日期转字符串yyyy-MM-dd HH:mm:ss
+            </summary>
+            <param name="time">日期</param>
+            <returns>转字符串yyyy-MM-dd HH:mm:ss</returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.ToDateTime000000(System.DateTime)">
+            <summary>
+            日期转字符串yyyy-MM-dd 00:00:00
+            </summary>
+            <param name="time">日期</param>
+            <returns>转字符串yyyy-MM-dd HH:mm:ss</returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.ToDateTime235959(System.DateTime)">
+            <summary>
+            日期转字符串yyyy-MM-dd 23:59:59
+            </summary>
+            <param name="time">日期</param>
+            <returns>转字符串yyyy-MM-dd HH:mm:ss</returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.ToDate(System.DateTime)">
+            <summary>
+            日期转字符串yyyy-MM-dd
+            </summary>
+            <param name="time">日期</param>
+            <returns>转字符串yyyy-MM-dd</returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.ToTime(System.DateTime)">
+            <summary>
+            日期转字符串HH:mm:ss
+            </summary>
+            <param name="time">日期</param>
+            <returns>转字符串HH:mm:ss</returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.ToHHmm(System.DateTime)">
+            <summary>
+            日期转字符串HH:mm
+            </summary>
+            <param name="time">日期</param>
+            <returns>转字符串HH:mm</returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.ToDateTimeF(System.DateTime)">
+            <summary>
+            日期转字符串yyyy-MM-dd HH:mm:ss.fffffff
+            </summary>
+            <param name="time">日期</param>
+            <returns>转字符串yyyy-MM-dd HH:mm:ss.fffffff</returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.ToDateTimeFFF(System.DateTime)">
+            <summary>
+            日期转字符串yyyy-MM-dd HH:mm:ss.fff
+            </summary>
+            <param name="time">日期</param>
+            <returns>转字符串yyyy-MM-dd HH:mm:ss.fff</returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.ToAge(System.DateTime)">
+            <summary>
+            取年龄
+            </summary>
+            <param name="dateOfBirth">生日日期</param>
+            <returns>返回年龄</returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.ToAge(System.DateTime,System.DateTime)">
+            <summary>
+            取年龄
+            </summary>
+            <param name="dateOfBirth">生日日期</param>
+            <param name="referenceDate">参考日期</param>
+            <returns>返回年龄</returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.GetCountDaysOfMonth(System.DateTime)">
+            <summary>
+            这月多少天
+            </summary>
+            <param name="date">日期</param>
+            <returns>天数</returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.GetFirstDayOfMonth(System.DateTime)">
+            <summary>
+            这月的第一天
+            </summary>
+            <param name="date">日期</param>
+            <returns>这月的第一天DateTime</returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.GetFirstDayOfMonth(System.DateTime,System.DayOfWeek)">
+            <summary>
+            这月的第一天
+            </summary>
+            <param name="date">日期</param>
+            <param name="dayOfWeek">星期几</param>
+            <returns>这月的第一天DateTime</returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.GetLastDayOfMonth(System.DateTime)">
+            <summary>
+            这月的最后天
+            </summary>
+            <param name="date">日期</param>
+            <returns>这月的最后天DateTime</returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.GetLastDayOfMonth(System.DateTime,System.DayOfWeek)">
+            <summary>
+            这月的最后天
+            </summary>
+            <param name="date">日期</param>
+            <param name="dayOfWeek">星期几</param>
+            <returns>这月的最后天DateTime</returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.IsToday(System.DateTime)">
+            <summary>
+            今天否
+            </summary>
+            <param name="dt">日期</param>
+            <returns>true/false</returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.IsToday(System.DateTimeOffset)">
+            <summary>
+            今天否
+            </summary>
+            <param name="dto">时间点</param>
+            <returns>true/false</returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.SetTime(System.DateTime,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            重值时间
+            </summary>
+            <param name="date">日期</param>
+            <param name="hours">时</param>
+            <param name="minutes">分</param>
+            <param name="seconds">秒</param>
+            <returns>DateTime</returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.SetTime(System.DateTime,System.TimeSpan)">
+            <summary>
+            重值时间
+            </summary>
+            <param name="date">日期</param>
+            <param name="time">时间</param>
+            <returns>DateTime</returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.ToDateTimeOffset(System.DateTime)">
+            <summary>
+            ToDateTimeOffset 日期转时间点
+            </summary>
+            <param name="localDateTime">时间</param>
+            <returns>DateTimeOffset</returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.ToDateTimeOffset(System.DateTime,System.TimeZoneInfo)">
+            <summary>
+            ToDateTimeOffset 日期转时间点
+            </summary>
+            <param name="localDateTime">时间</param>
+            <param name="localTimeZone">localTimeZone</param>
+            <returns>DateTimeOffset</returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.GetFirstDayOfWeek(System.DateTime)">
+            <summary>
+            这周的第一天
+            </summary>
+            <param name="date">日期</param>
+            <returns>这周的第一天DateTime</returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.GetFirstDayOfWeek(System.DateTime,System.Globalization.CultureInfo)">
+            <summary>
+            这周的第一天
+            </summary>
+            <param name="date">日期</param>
+            <param name="cultureInfo">区域设置</param>
+            <returns>这周的第一天DateTime</returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.GetLastDayOfWeek(System.DateTime)">
+            <summary>
+            这周的最后一天
+            </summary>
+            <param name="date">日期</param>
+            <returns>这周的最后一天DateTime</returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.GetLastDayOfWeek(System.DateTime,System.Globalization.CultureInfo)">
+            <summary>
+            这周的最后一天
+            </summary>
+            <param name="date">日期</param>
+            <param name="cultureInfo">区域设置</param>
+            <returns>这周的最后一天DateTime</returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.GetWeekday(System.DateTime,System.DayOfWeek)">
+            <summary>
+            周日
+            </summary>
+            <param name="date">时间</param>
+            <param name="weekday">星期几</param>
+            <returns>周日DateTime</returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.GetWeekday(System.DateTime,System.DayOfWeek,System.Globalization.CultureInfo)">
+            <summary>
+            周日
+            </summary>
+            <param name="date">时间</param>
+            <param name="weekday">星期几</param>
+            <param name="cultureInfo">区域设置</param>
+            <returns>周日DateTime</returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.GetNextWeekday(System.DateTime,System.DayOfWeek)">
+            <summary>
+            下周日
+            </summary>
+            <param name="date">时间</param>
+            <param name="weekday">星期几</param>
+            <returns>下周日DateTime</returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.GetPreviousWeekday(System.DateTime,System.DayOfWeek)">
+            <summary>
+            上周日
+            </summary>
+            <param name="date">时间</param>
+            <param name="weekday">星期几</param>
+            <returns>上周日DateTime</returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.SetTime(System.DateTimeOffset,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            设置时间
+            </summary>
+            <param name="date">时间点</param>
+            <param name="hours">时</param>
+            <param name="minutes">分</param>
+            <param name="seconds">秒</param>
+            <returns>DateTimeOffset</returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.SetTime(System.DateTimeOffset,System.TimeSpan)">
+            <summary>
+            设置时间
+            </summary>
+            <param name="date">时间点</param>
+            <param name="time">时间</param>
+            <returns>DateTimeOffset</returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.SetTime(System.DateTimeOffset,System.TimeSpan,System.TimeZoneInfo)">
+            <summary>
+            设置时间
+            </summary>
+            <param name="date">时间点</param>
+            <param name="time">时间</param>
+            <param name="localTimeZone">TimeZoneInfo</param>
+            <returns>DateTimeOffset</returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.ToLocalDateTime(System.DateTimeOffset)">
+            <summary>
+            设置时间
+            </summary>
+            <param name="dateTimeUtc">时间点</param>
+            <returns>DateTime</returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.ToLocalDateTime(System.DateTimeOffset,System.TimeZoneInfo)">
+            <summary>
+            设置时间
+            </summary>
+            <param name="dateTimeUtc">时间点</param>
+            <param name="localTimeZone">TimeZoneInfo</param>
+            <returns>DateTime</returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.ToAgo(System.DateTime)">
+            <summary>
+            ***前 如1分钟前 1小时前
+            </summary>
+            <param name="date">时间</param>
+            <returns>***前 如1分钟前 1小时前</returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.WeekOfYear(System.DateTime)">
+            <summary>
+            一年多少周
+            </summary>
+            <param name="datetime">日期</param>
+            <returns>一年多少周</returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.WeekOfYear(System.DateTime,System.Globalization.CalendarWeekRule)">
+            <summary>
+            一年多少周
+            </summary>
+            <param name="datetime">日期</param>
+            <param name="weekrule">第一周的规则</param>
+            <returns>一年多少周</returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.WeekOfYear(System.DateTime,System.DayOfWeek)">
+            <summary>
+            一年多少周
+            </summary>
+            <param name="datetime">日期</param>
+            <param name="firstDayOfWeek">星期几</param>
+            <returns>一年多少周</returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.WeekOfYear(System.DateTime,System.Globalization.CalendarWeekRule,System.DayOfWeek)">
+            <summary>
+            一年多少周
+            </summary>
+            <param name="datetime">日期</param>
+            <param name="weekrule">第一周的规则</param>
+            <param name="firstDayOfWeek">星期几</param>
+            <returns>一年多少周</returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.GetQuarter(System.Int32)">
+            <summary>
+            第几季度
+            </summary>
+            <param name="month">日期</param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.IsWeekday(System.DateTime)">
+            <summary>
+            周日否
+            </summary>
+            <param name="date">日期</param>
+            <returns>true/false</returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.IsWeekend(System.DateTime)">
+            <summary>
+            周末否
+            </summary>
+            <param name="value">日期</param>
+            <returns>true/false</returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.IsLeapYear(System.DateTime)">
+            <summary>
+            闰年否
+            </summary>
+            <param name="value">日期</param>
+            <returns>true/false</returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.DayBegin(System.DateTime)">
+            <summary>
+            一天的开始时间 如2011-01-01 00:00:00
+            </summary>
+            <param name="date">日期</param>
+            <returns>一天的开始时间 如2011-1-1 00:00:00</returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.DayEnd(System.DateTime)">
+            <summary>
+            一天的结束时间 如2011-1-1 23:59:59
+            </summary>
+            <param name="date">日期</param>
+            <returns>一天的结束时间 如2011-1-1 23:59:59</returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.ToSqlDate(System.Object)">
+            <summary>
+            SQL日期
+            </summary>
+            <param name="obj">时间</param>
+            <returns>SQL日期</returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.IsOnTime(System.DateTime,System.DateTime,System.Int32)">
+            <summary>
+            IsOnTime 时间val与requiredTime之间的差值是否在maxToleranceInSecs范围之内。
+            </summary>
+            <param name="requiredTime">开始时间</param>
+            <param name="val">结束时间</param>
+            <param name="maxToleranceInSecs">范围</param>
+            <returns>IsOnTime 时间val与requiredTime之间的差值是否在maxToleranceInSecs范围之内。 true/false</returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.IsOnTime(System.DateTime,System.DateTime,System.Int32,System.Int32)">
+            <summary>
+            IsOnTime 对于循环调用，时间val与startTime之间的差值(>0)对cycleSpanInSecs求余数的结果是否在maxToleranceInSecs范围之内。
+            </summary>
+            <param name="startTime">开始时间</param>
+            <param name="val">结束时间</param>
+            <param name="cycleSpanInSecs">对cycleSpanInSecs求余数</param>
+            <param name="maxToleranceInSecs">范围之内</param>
+            <returns>IsOnTime 对于循环调用，时间val与startTime之间的差值(>0)对cycleSpanInSecs求余数的结果是否在maxToleranceInSecs范围之内。 true/false</returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.ToRFC822Time(System.DateTime)">
+            <summary>
+            RFC822
+            </summary>
+            <param name="date">时间</param>
+            <returns>RFC822时间字符串</returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.ToUpper(System.DateTime)">
+            <summary>
+            日期转大写
+            </summary>
+            <param name="time">当前时间</param>
+            <returns>日期转大写</returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.ToJavascriptDate(System.DateTime)">
+            <summary>
+            ToJavascriptDate
+            </summary>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.NextMonth(System.DateTime)">
+            <summary>
+            下个月
+            </summary>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.PrevMonth(System.DateTime)">
+            <summary>
+            上个月
+            </summary>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.DateBetweenSql(System.DateTime,System.DateTime)">
+            <summary>
+            取日期范围: 返回格式如 '2016-01-01 10:10:11'  and '2016-01-11 10:11:11'
+            </summary>
+            <param name="start">开始日期</param>
+            <param name="end">截止日期</param> 
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.ThisTodaySql(System.DateTime)">
+            <summary>
+            返回日期对应的sql: 返回格式如 '2016-01-01 00:00:00'  and '2016-01-01 23:59:59'
+            </summary>
+            <param name="date">日期</param> 
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.YesterdaySql(System.DateTime)">
+            <summary>
+            返回日期的上一天对应的sql: 返回格式如 '2016-01-01 00:00:00'  and '2016-01-01 23:59:59'  。
+            比如 2016-01-05 ， 则返回 '2016-01-04 00:00:00'  and '2016-01-04 23:59:59'
+            </summary>
+            <param name="date">日期</param> 
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.ThisWeekSql(System.DateTime)">
+            <summary>
+            本周（日期对应的那一周）对应的sql: 返回格式如 '2016-01-01 00:00:00'  and '2016-01-07 23:59:59'
+            </summary>
+            <param name="date">日期</param> 
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.LastWeekSql(System.DateTime)">
+            <summary>
+            上周（日期对应的上一周）对应的sql: 返回格式如 '2016-01-01 00:00:00'  and '2016-01-07 23:59:59'
+            </summary>
+            <param name="date">日期</param> 
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.ThisMonthSql(System.DateTime)">
+            <summary>
+            本月（日期对应的那一月）对应的sql: 返回格式如 '2016-01-01 00:00:00'  and '2016-01-31 23:59:59'
+            </summary>
+            <param name="date">日期</param> 
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.LastMonthSql(System.DateTime)">
+            <summary>
+            上月（日期对应的上月）对应的sql: 返回格式如 '2016-01-01 00:00:00'  and '2016-01-31 23:59:59'
+            </summary>
+            <param name="date">日期</param> 
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.NextMonthSql(System.DateTime)">
+            <summary>
+            下月（日期对应的下月）对应的sql: 返回格式如 '2016-01-01 00:00:00'  and '2016-01-31 23:59:59'
+            </summary>
+            <param name="date">日期</param> 
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.ThisYearSql(System.DateTime)">
+            <summary>
+            本年（日期对应的那一年）对应的sql: 返回格式如 '2016-01-01 00:00:00'  and '2016-12-31 23:59:59'
+            </summary>
+            <param name="date">日期</param> 
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Utils.DateExtensions.LastYearSql(System.DateTime)">
+            <summary>
+            上年（日期对应的上一年）对应的sql: 返回格式如 '2016-01-01 00:00:00'  and '2016-12-31 23:59:59'
+            </summary>
+            <param name="date">日期</param> 
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.CommonUtil.GetTypeKeyConfig(System.String)">
+            <summary>
+            获取配置文件中某个节点的值
+            </summary>
+            <param name="strKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.CommonUtil.UpdateAppConfig(System.String,System.String)">
+            <summary>
+            在＊.exe.config文件中appSettings配置节增加一对键、值对
+            </summary>
+            <param name="newKey"></param>
+            <param name="newValue"></param>
+        </member>
+        <member name="M:JieNor.Framework.CommonUtil.GetAppConfig(System.String)">
+            <summary>
+            获取指定配置中的内容
+            </summary>
+            <param name="sKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.CommonUtil.GetAppConfig(System.Object,System.String)">
+            <summary>
+            提供扩展方法快速获取参数
+            </summary>
+            <param name="inst"></param>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.CommonUtil.ToDbType(System.Type)">
+            <summary>
+            将clr类型映射至数据库类型
+            </summary>
+            <param name="clrType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.CommonUtil.ToClrType(System.Data.DbType)">
+            <summary>
+            将数据库类型映射至clr类型
+            </summary>
+            <param name="dbType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.CommonUtil.IsNullableType(System.Type)">
+            <summary>
+                判断类型是否为Nullable类型
+            </summary>
+            <param name="type"> 要处理的类型 </param>
+            <returns> 是返回True，不是返回False </returns>
+        </member>
+        <member name="M:JieNor.Framework.CommonUtil.GetUnderlyingType(System.Type)">
+            <summary>
+                通过类型转换器获取Nullable类型的基础类型
+            </summary>
+            <param name="type"> 要处理的类型对象 </param>
+            <returns> 对应的基础类型</returns>
+        </member>
+        <member name="M:JieNor.Framework.CommonUtil.CastTo(System.Object,System.Type)">
+            <summary>
+                把对象类型转换为指定类型
+            </summary>
+            <param name="value">要转换的值</param>
+            <param name="targetType">目标类型</param>
+            <returns> 转化后的指定类型的对象</returns>
+        </member>
+        <member name="M:JieNor.Framework.CommonUtil.CastTo``1(System.Object)">
+            <summary>
+                把对象类型转化为指定类型
+            </summary>
+            <typeparam name="T"> 动态类型 </typeparam>
+            <param name="value"> 要转化的源对象 </param>
+            <returns> 转化后的指定类型的对象，转化失败引发异常。 </returns>
+        </member>
+        <member name="M:JieNor.Framework.DBReaderUtils.GetString(System.Data.IDataReader,System.String)">
+            <summary>
+            获取string字段值
+            </summary>
+            <param name="dr">记录集合</param>
+            <param name="fieldName">字段名</param>
+            <returns>string</returns>
+        </member>
+        <member name="M:JieNor.Framework.DBReaderUtils.GetInt(System.Data.IDataReader,System.String)">
+            <summary>
+            获取int字段值
+            </summary>
+            <param name="dr">记录集合</param>
+            <param name="fieldName">字段名</param>
+            <returns>int</returns>
+        </member>
+        <member name="M:JieNor.Framework.DBReaderUtils.GetIntCompatibleNull(System.Data.IDataReader,System.String,System.Int32)">
+            <summary>
+            获取int字段值，兼容Null值
+            </summary>
+            <param name="dr">记录集合</param>
+            <param name="fieldName">字段名</param>
+            <param name="NullConvert">如果字段为null,强制返回的值</param>
+            <returns>int字段值</returns>
+        </member>
+        <member name="M:JieNor.Framework.DBReaderUtils.GetBoolean(System.Data.IDataReader,System.String)">
+            <summary>
+            获取bool字段值
+            </summary>
+            <param name="dr">记录集合</param>
+            <param name="fieldName">字段名</param>
+            <returns>bool</returns>
+        </member>
+        <member name="M:JieNor.Framework.DBReaderUtils.GetDateTime(System.Data.IDataReader,System.String)">
+            <summary>
+            获取dateTime字段值
+            </summary>
+            <param name="dr">记录集合</param>
+            <param name="fieldName">字段名</param>
+            <returns>dateTime</returns>
+        </member>
+        <member name="M:JieNor.Framework.DBReaderUtils.GetIntEx(System.Data.IDataReader,System.String)">
+            <summary>
+            获取int结构
+            </summary>
+            <param name="dr">记录集合</param>
+            <param name="fieldName">字段名</param>
+            <returns>int结构</returns>
+        </member>
+        <member name="M:JieNor.Framework.DBReaderUtils.GetBooleanEx(System.Data.IDataReader,System.String)">
+            <summary>
+            获取bool结构
+            </summary>
+            <param name="dr">记录集合</param>
+            <param name="fieldName">字段名</param>
+            <returns>bool的结构</returns>
+        </member>
+        <member name="M:JieNor.Framework.DBReaderUtils.GetDateTimeEx(System.Data.IDataReader,System.String)">
+            <summary>
+            获取dateTime结构
+            </summary>
+            <param name="dr">记录集合</param>
+            <param name="fieldName">字段名</param>
+            <returns>dateTime结构</returns>
+        </member>
+        <member name="M:JieNor.Framework.DBReaderUtils.ConvertTo``1(System.Object,System.Func{System.Object,``0})">
+            <summary>
+            转换从数据库读取出来的数据到指定的类型
+            </summary>
+            <typeparam name="T">希望转换的数据类型</typeparam>
+            <param name="value">希望转换的原始数据。</param>
+            <param name="convertFunc">允许指定一个转换器函数，如果未指定，系统将试图寻找默认的转换器。</param>
+            <returns>转换后的值。</returns>
+        </member>
+        <member name="M:JieNor.Framework.DBReaderUtils.ConvertTo``1(System.Object,System.Func{System.Object,``0},``0)">
+            <summary>
+            转换从数据库读取出来的数据到指定的类型
+            </summary>
+            <typeparam name="T">希望转换的数据类型</typeparam>
+            <param name="value">希望转换的原始数据。</param>
+            <param name="convertFunc">允许指定一个转换器函数，如果未指定，系统将试图寻找默认的转换器。</param>
+            <param name="defaultValue">如果原始数据是DbNull或null时，应该返回的值。</param>
+            <returns>转换后的值。</returns>
+        </member>
+        <member name="M:JieNor.Framework.DBReaderUtils.CreateDefaultConvertFunc">
+            <summary>
+            创建转换器字典
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.DBReaderUtils.ToGuid(System.Object)">
+            <summary>
+            转换对象的值到Guid
+            </summary>
+            <param name="value">要转换的值，支持byte、string转换到guid</param>
+            <returns>如果是DbNull将仍然返回DbNull，否则将尝试转换。</returns>
+        </member>
+        <member name="M:JieNor.Framework.DBReaderUtils.ToBoolean(System.Object)">
+            <summary>
+            主要是处理 0,1 这种表示形式。
+            </summary>
+            <param name="value">需要处理对象</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:JieNor.Framework.DBReaderUtils.AddConvertFunc``1(System.Collections.Generic.Dictionary{System.Type,System.Object},System.Func{System.Object,``0})">
+            <summary>
+            将指定类型转换器压入字典中
+            </summary>
+            <typeparam name="T">指定类型</typeparam>
+            <param name="funcs">转换器</param>
+            <param name="func">转换器集合</param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:JieNor.Framework.DBReaderUtils.GetDefaultConvertFunc``1" -->
+        <member name="M:JieNor.Framework.DBReaderUtils.GetValue``1(System.Data.IDataRecord,System.String)">
+            <summary>
+            IDataReader的扩展读取方法，可以指定数据类型，如果读取的字段是DbNull，将返回此类型的缺省值
+            </summary>
+            <typeparam name="T">此字段的数据类型</typeparam>
+            <param name="dr">读取器</param>
+            <param name="fieldName">字段的名称</param>
+            <returns>最后的结果，如果读取的字段是DbNull，将返回此类型的缺省值</returns>
+        </member>
+        <member name="M:JieNor.Framework.DBReaderUtils.GetValue``1(System.Data.IDataRecord,System.String,System.Func{System.Object,``0})">
+            <summary>
+            IDataReader的扩展读取方法，可以指定数据类型，如果读取的字段是DbNull，将返回此类型的缺省值
+            </summary>
+            <typeparam name="T">此字段的数据类型</typeparam>
+            <param name="dr">读取器</param>
+            <param name="fieldName">字段的名称</param>
+            <param name="convertFunc">数据的强制转换函数</param>
+            <returns>最后的结果，如果读取的字段是DbNull，将返回此类型的缺省值</returns>
+        </member>
+        <member name="M:JieNor.Framework.DBReaderUtils.GetValue``1(System.Data.IDataRecord,System.Int32)">
+            <summary>
+            IDataReader的扩展读取方法，可以指定数据类型，如果读取的字段是DbNull，将返回此类型的缺省值
+            </summary>
+            <typeparam name="T">此字段的数据类型</typeparam>
+            <param name="dr">读取器</param>
+            <param name="index">字段的所在的索引</param>
+            <returns>最后的结果，如果读取的字段是DbNull，将返回此类型的缺省值</returns>
+        </member>
+        <member name="M:JieNor.Framework.DBReaderUtils.GetValue``1(System.Data.IDataRecord,System.Int32,System.Func{System.Object,``0})">
+            <summary>
+            IDataReader的扩展读取方法，可以指定数据类型，如果读取的字段是DbNull，将返回此类型的缺省值
+            </summary>
+            <typeparam name="T">此字段的数据类型</typeparam>
+            <param name="dr">读取器</param>
+            <param name="index">字段的所在的索引</param>
+            <param name="convertFunc">数据的强制转换函数</param>
+            <returns>最后的结果，如果读取的字段是DbNull，将返回此类型的缺省值</returns>
+        </member>
+        <member name="M:JieNor.Framework.DictionaryUtils.Merge``2(System.Collections.Generic.Dictionary{``0,``1},System.Collections.Generic.Dictionary{``0,``1})">
+            <summary>
+            字典合并
+            </summary>
+            <typeparam name="TKey"></typeparam>
+            <typeparam name="TValue"></typeparam>
+            <param name="dctSrc"></param>
+            <param name="dctDst"></param>
+        </member>
+        <member name="M:JieNor.Framework.DictionaryUtils.Merge``2(System.Collections.Generic.IDictionary{``0,``1},System.Collections.Generic.IDictionary{``0,``1})">
+            <summary>
+            字典合并
+            </summary>
+            <typeparam name="TKey"></typeparam>
+            <typeparam name="TValue"></typeparam>
+            <param name="dctSrc"></param>
+            <param name="dctDst"></param>
+        </member>
+        <member name="M:JieNor.Framework.ImageUtil.GetRandomString(System.Int32)">
+            <summary>  
+            Generate random string  
+            </summary>  
+        </member>
+        <member name="M:JieNor.Framework.ImageUtil.GetRandomColor">
+            <summary>  
+            Generate random Color  
+            </summary>  
+        </member>
+        <member name="M:JieNor.Framework.ImageUtil.CreateValidateCodeImage(System.Int32,System.String@)">
+            <summary>  
+            Create Validation Code Image  
+            </summary>  
+        </member>
+        <member name="M:JieNor.Framework.ImageUtil.drawLine(System.Drawing.Graphics,System.Drawing.Bitmap,System.Random)">
+            <summary>  
+            Draw Line for noise  
+            </summary>  
+        </member>
+        <member name="M:JieNor.Framework.ImageUtil.drawPoint(System.Drawing.Bitmap,System.Random)">
+            <summary>  
+            Draw Point for noise  
+            </summary>  
+        </member>
+        <member name="M:JieNor.Framework.ImageUtil.ToBuffer(System.Drawing.Image)">
+            <summary>
+            将图片转换为字节数组
+            </summary>
+            <param name="img"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.JsonUtils">
+            <summary>
+            json对象工具类
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.JsonUtils.Merge(Newtonsoft.Json.Linq.JObject,Newtonsoft.Json.Linq.JObject,System.Func{Newtonsoft.Json.Linq.JToken,Newtonsoft.Json.Linq.JToken,System.String,System.Boolean},System.Boolean)">
+            <summary>
+            合并2个json对象
+            </summary>
+            <param name="srcObj"></param>
+            <param name="dstObj"></param>
+            <param name="isMatchArrayItem"></param>
+            <param name="isDeepClone"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.JsonUtils.Merge(Newtonsoft.Json.Linq.JArray,Newtonsoft.Json.Linq.JArray,System.Func{Newtonsoft.Json.Linq.JToken,Newtonsoft.Json.Linq.JToken,System.String,System.Boolean},System.Boolean,System.String)">
+            <summary>
+            两个json数组合并
+            </summary>
+            <param name="srcArrayObj"></param>
+            <param name="dstArrayObj"></param>
+            <param name="isMatchArrayItem"></param>
+            <param name="isDeepClone"></param>
+            <param name="parentPropKey"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.JwtUtil">
+            <summary>
+            微服务交互令牌工具类
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.JwtUtil.CreateJwtTokenBySession">
+            <summary>
+            将当前会话转换成jwt令牌
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.JwtUtil.CreateEncryptedJweToken(System.Collections.Generic.Dictionary{System.String,System.String},System.Security.Cryptography.RSAParameters)">
+            <summary>
+            创建负载加密的jwe信息
+            </summary>
+            <param name="jwtPayload"></param>
+            <param name="publicKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.JwtUtil.CreateJwtBearerToken(System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String},System.Func{System.Byte[],System.Byte[]})">
+            <summary>
+            创建jwt头部
+            </summary>
+            <param name="jwtHeader"></param>
+            <param name="jwtPayload"></param>
+            <param name="signData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.JwtUtil.CreateJwtHeader(System.String,System.String)">
+            <summary>
+            创建jwt头部信息
+            </summary>
+            <param name="algorithm"></param>
+            <param name="keyId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.JwtUtil.CreateJwtPayload(ServiceStack.Auth.IAuthSession,System.String,System.TimeSpan,System.String,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            创建jwt负载信息
+            </summary>
+            <param name="session"></param>
+            <param name="issuer"></param>
+            <param name="expireIn"></param>
+            <param name="audience"></param>
+            <param name="roles"></param>
+            <param name="permissions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.JwtUtil.CreateJwtToken(JieNor.Framework.UserContext,System.String,System.DateTime,JieNor.Framework.UserContext)">
+            <summary>
+            根据指定私钥创建当前上下文用户身份
+            </summary>
+            <param name="ctx"></param>
+            <param name="privateKeyXml"></param>
+            <param name="tokenExpireAt"></param>
+            <param name="targetSystemCtx"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.ListUtils">
+            <summary>
+            实现泛型集合类与DataTable间的互相转换
+            add by linus wang at 2016-04-27
+            应用场景：Dev的表格控件虽然可以绑定一些集合类型的数据源，但是却不支持添加行这样的编辑，所以如果把集合转换成
+                     DataTable之后再绑定，就会解决上述问题。
+            </summary>
+            <remarks>实现泛型集合类与DataTable间的互相转换</remarks>
+        </member>
+        <member name="M:JieNor.Framework.ListUtils.IsEmpty``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            检测一个集合是否为空
+            </summary>
+            <typeparam name="T">集合元素的类型</typeparam>
+            <param name="col">集合实例</param>
+            <returns>如果集合未包含任何元素，那么返回true,否则返回false</returns>
+        </member>
+        <member name="M:JieNor.Framework.ListUtils.JoinEx(System.Collections.Generic.IEnumerable{System.String},System.String,System.Boolean)">
+            <summary>
+            将一个字符的列表集合转化为带分隔符的字符串
+            </summary>
+            <param name="list"></param>
+            <param name="seporator"></param>
+            <param name="addquot"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.LocalComputer.GetLocalComputerName">
+            <summary>
+            当前计算机的名称
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.LocalComputer.GetHostName">
+            <summary>
+            获取本机的机器名称
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.LocalIp.GetLocalIp">
+            <summary>
+            获得本地ip
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.MathUtil">
+            <summary>
+            数学运算工具类
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.MathUtil.Round(System.Decimal,System.Int32,JieNor.Framework.RoundMode)">
+            <summary>
+            十进制四舍五入
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.MathUtil.Round(System.Double,System.Int32,JieNor.Framework.RoundMode)">
+            <summary>
+            双精度数四舍五入
+            </summary>
+            <param name="value"></param>
+            <param name="digits"></param>
+            <returns></returns>
+        </member>
+        <member name="F:JieNor.Framework.RoundMode.AwayFromZero">
+            <summary>
+            四舍五入
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.RoundMode.ToEven">
+            <summary>
+            设置为四舍六入五成双
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.RoundMode.Carry">
+            <summary>
+            按精度进位
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.RoundMode.Truncation">
+            <summary>
+            按精度舍尾
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.ObjectUtils.IsNullOrEmpty(System.Object)">
+            <summary>
+            判断指定的对象是否是空引用，或空字符串。
+            </summary>
+            <param name="value">需要测试的对象</param>
+            <returns>如果 value 参数为空引用或空字符串 ("")，则为 true；否则为 false。</returns>
+        </member>
+        <member name="M:JieNor.Framework.ObjectUtils.IsNullOrEmptyOrWhiteSpace(System.Object)">
+            <summary>
+            判断指定的对象是否是空引用，或空字符串， 或空白字符。
+            </summary>
+            <param name="value">需要测试的对象</param>
+            <returns>如果 value 参数为空引用或空字符串 ("")或空白字符，则为 true；否则为 false。</returns>
+        </member>
+        <member name="M:JieNor.Framework.ObjectUtils.CreateCopy(System.Object)">
+            <summary>
+            为对象创建一个拷贝
+            </summary>
+            <param name="obj">需要创建拷贝的对象</param>
+            <returns>新建立的拷贝对象</returns>
+        </member>
+        <member name="M:JieNor.Framework.ObjectUtils.CreateCopy(System.Object,JieNor.Framework.FormatterType)">
+            <summary>
+            为对象创建一个拷贝
+            </summary>
+            <param name="obj">需要创建拷贝的对象</param>
+            <param name="formatterType">格式类型</param>
+            <returns>新建立的拷贝对象</returns>
+        </member>
+        <member name="M:JieNor.Framework.ObjectUtils.GetObjectSream(System.Object)">
+            <summary>
+            将对象序列化为字节流
+            </summary>
+            <param name="obj">需要序列化的对象</param>
+            <returns>序列化后的字节流</returns>
+        </member>
+        <member name="M:JieNor.Framework.ObjectUtils.GetObject(System.Byte[])">
+            <summary>
+            将字节流反序列化为对象
+            </summary>
+            <param name="bytes">需要反序列化的字节流</param>
+            <returns>反序列化后的对象</returns>
+        </member>
+        <member name="M:JieNor.Framework.ObjectUtils.IsEmptyPrimaryKey(System.Object)">
+            <summary>
+            判断返回主键值是否是一个无效的值。
+            </summary>
+            <param name="pkValue">主键值</param>
+            <returns>主键值是一个无效的值，则为 true；否则为 false。</returns>
+        </member>
+        <member name="M:JieNor.Framework.ObjectUtils.Object2String(System.Object)">
+            <summary>
+            返回字符串
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.ObjectUtils.Object2Int(System.Object,System.Int32)">
+            <summary>
+            得到对象对应的数值
+            </summary>
+            <param name="obj">要转换的对象</param>
+            <param name="iDefaultValue">默认值</param>
+            <returns>得到的int值</returns>
+        </member>
+        <member name="M:JieNor.Framework.ObjectUtils.ToJson(System.Object)">
+            <summary>
+            将对象序列为json对象
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.ObjectUtils.FromJson``1(System.String)">
+            <summary>
+            反序列化
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="json"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.ObjectUtils.GetRandomString(System.Object,System.Int32)">
+            <summary>
+            以任一对象的哈希值为种子，返回一个指定长度的随机字符串，常用于密钥生成。
+            </summary>
+            <param name="obj"></param>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.ObjectUtils.As``1(System.Object)">
+            <summary>
+            将指定对象转换为指定类型
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.RecursionUtil">
+            <summary>
+            递归函数安全执行工具类
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.RecursionUtil.Invoke(JieNor.Framework.RecursiveStackManager,System.Reflection.MethodInfo,System.Object,System.Object[])">
+            <summary>
+            调用递归函数
+            </summary>
+            <param name="methodCallMgr"></param>
+            <param name="method"></param>
+            <param name="instance"></param>
+            <param name="paras"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.SecurityUtil">
+            <summary>
+            安全常用的工具函数
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.SecurityUtil.ComputeHash(System.IO.Stream,System.String)">
+            <summary>
+            计算哈希值
+            </summary>
+            <param name="stream">要计算哈希值的 Stream</param>
+            <param name="algName">算法:sha1,md5</param>
+            <returns>哈希值字节数组</returns>
+        </member>
+        <member name="M:JieNor.Framework.SecurityUtil.GetFileHashString(System.IO.Stream)">
+            <summary>
+            获取文件流的hash
+            </summary>
+            <param name="stream"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.SecurityUtil.GetFileHashString(System.String)">
+            <summary>
+            获取文件的hash
+            </summary>
+            <param name="strFile"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.SecurityUtil.DecodeFromBase64String``1(System.String,System.String)">
+            <summary>
+            从Base64串里获取指定对象
+            </summary>
+            <param name="strBase64Content"></param>
+            <param name="mixcode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.SecurityUtil.DecodeFromBase64String(System.String)">
+            <summary>
+            将Base64字符串转换成普通的字符串
+            </summary>
+            <param name="strBase64Content"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.SecurityUtil.EncodeFromBase64String(System.Object,System.String)">
+            <summary>
+            将指定对象加密成base64字符串
+            </summary>
+            <param name="objContent"></param>
+            <param name="mixcode"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.StringUtils">
+            <summary>
+            字符串函数
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.StringUtils.Traditional2Simplified(System.String)">
+            <summary>
+            将字符串由繁体中文转为简体中文
+            </summary>
+            <param name="text">需要转换的字符串</param>
+            <returns>转换后的字符串</returns>
+        </member>
+        <member name="M:JieNor.Framework.StringUtils.Simplified2Traditional(System.String)">
+            <summary>
+            将字符串7由简体中文转为繁体中文
+            </summary>
+            <param name="text">需要转换的字符串</param>
+            <returns>转换后的字符串</returns>
+        </member>
+        <member name="M:JieNor.Framework.StringUtils.LengthOfChar(System.String)">
+            <summary>
+            统计字条串中字符的个数(区分Unicode)
+            </summary>
+            <param name="str">字符串</param>
+            <returns>个数</returns>
+        </member>
+        <member name="M:JieNor.Framework.StringUtils.SplitRegex(System.String,System.String)">
+            <summary>
+            在指定的正则表达式模式所定义的位置，拆分指定的输入字符串。
+            </summary>
+            <param name="str1">要拆分的字符串</param>
+            <param name="strRegex">要匹配的正则表达式</param>
+            <returns>字符串数组</returns>
+        </member>
+        <member name="M:JieNor.Framework.StringUtils.SplitRegex(System.String,System.String,System.Int32)">
+            <summary>
+            在指定的正则表达式模式所定义的位置，将指定的输入字符串拆分指定的最大次数。
+            </summary>
+            <param name="str1">要拆分的字符串</param>
+            <param name="strRegex">要匹配的正则表达式</param>
+            <param name="limit">可拆分的最大次数</param>
+            <returns>字符串数组</returns>
+        </member>
+        <member name="M:JieNor.Framework.StringUtils.IsDate(System.String)">
+            <summary>
+            判断指定的字符串是否是日期
+            </summary>
+            <param name="sInput">要判断的字符串</param>
+            <returns>如果是日期， 则为true； 否则为false</returns>
+        </member>
+        <member name="M:JieNor.Framework.StringUtils.IsNumeric(System.String)">
+            <summary>
+            判断指定的字符串是否是数值
+            </summary>
+            <param name="value">要判断的字符串</param>
+            <returns>如果是数值， 则为true； 否则为false</returns>
+        </member>
+        <member name="M:JieNor.Framework.StringUtils.IsInt(System.String)">
+            <summary>
+            判断指定的字符串是否是整数
+            </summary>
+            <param name="value">要判断的字符串</param>
+            <returns>如果是整数， 则为true； 否则为false</returns>
+        </member>
+        <member name="M:JieNor.Framework.StringUtils.IsUnsign(System.String)">
+            <summary>
+            判断指定的字符串是否是无符号数值
+            </summary>
+            <param name="value">要判断的字符串</param>
+            <returns>如果是无符号数值， 则为true； 否则为false</returns>
+        </member>
+        <member name="M:JieNor.Framework.StringUtils.IsEmpty(System.String)">
+            <summary>
+            判断指定的字符串是否是空引用，或空字符串
+            </summary>
+            <param name="str">要判断的字符串</param>
+            <returns>如果字符串是NULL引用或者是Empty， 则为true； 否则为false</returns>
+        </member>
+        <member name="M:JieNor.Framework.StringUtils.IsNumberAndLetters(System.String)">
+            <summary>
+            判断指定的字符串是否是由数字及26个英文字母组成
+            </summary>
+            <param name="str">要判断的字符串</param>
+            <returns>如果字符串是由数字及26个英文字母组成， 则为true； 否则为false</returns>
+        </member>
+        <member name="M:JieNor.Framework.StringUtils.CustomReplace(System.String,System.String,System.String,System.Char)">
+            <summary>
+            字符串替换函数，可以指定替换时排除指定字符包含的部分
+            </summary>
+            <param name="source">字符串</param>
+            <param name="subSrc">被替换字符串</param>
+            <param name="subDest">替换字符串</param>
+            <param name="tag">指定替换时排除指定字符包含的部分的字符标识</param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.StringUtils.ReplaceFirst(System.String,System.String,System.String)">
+            <summary>
+            在指定输入字符串内，使用指定替换字符串替换第一个被替换字符串。 
+            </summary>
+            <param name="input">输入字符串</param>
+            <param name="oldValue">被替换字符串</param>
+            <param name="newValue">替换字符</param>
+            <returns>替换后的字符串</returns>
+        </member>
+        <member name="M:JieNor.Framework.StringUtils.CharAt(System.String,System.Int32)">
+            <summary>
+            取得字符串中指定索引处的字符
+            </summary>
+            <param name="str">需要搜索的字符串</param>
+            <param name="i">索引</param>
+            <returns>指定索引处的字符</returns>
+        </member>
+        <member name="M:JieNor.Framework.StringUtils.GetStringEx(System.String,System.String,System.String)">
+            <summary>
+            返回指定位置的特定分隔字符串中的以关键字命名的某段字符串
+            如  a=1 | b=2| c=3
+            输入 b 返回 2
+            </summary>
+            <param name="sString">按特定分隔字符串分割的字符串</param>
+            <param name="sSegment">关键字</param>
+            <param name="sP">分割字符串</param>
+            <returns>字符串</returns>
+        </member>
+        <member name="M:JieNor.Framework.StringUtils.GetString(System.String,System.Int32,System.String)">
+            <summary>
+            返回指定位置的特定分隔字符串中的某段字符串
+            </summary>
+            <param name="sString">按特定分隔字符串分割的字符串</param>
+            <param name="iPosition">位置</param>
+            <param name="sP">分割字符串</param>
+            <returns>字符串</returns>
+        </member>
+        <member name="M:JieNor.Framework.StringUtils.Inside(System.String,System.String[])">
+            <summary>
+            判断字符串是否包含指定的字符集中
+            </summary>
+            <param name="key">需要判断的字符串</param>
+            <param name="value">指定的字符集</param>
+            <returns>如果定义的字符集中包含字符串， 则为true； 否则为false</returns>
+        </member>
+        <member name="M:JieNor.Framework.StringUtils.Union``1(System.Collections.Generic.IEnumerable{``0[]})">
+            <summary>
+            合并，去掉相同项
+            </summary>
+            <param name="lists"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.StringUtils.FixedOrcalXMLString(System.String)">
+            <summary>
+            将已转义的转义字符还原
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.StringUtils.JoinFilterString(System.String,System.String,System.String)">
+            <summary>
+            把两个过滤条件拼接到一起；  
+            </summary>
+            <param name="str1">过滤条件一</param>
+            <param name="str2">过滤条件二</param>
+            <param name="separator">默认以“AND”为逻辑连接符</param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.StringUtils.EqualsIgnoreCase(System.String,System.String)">
+            <summary>
+            比较2个字符串，不区分大小写
+            </summary>
+            <param name="str1"></param>
+            <param name="str2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.StringUtils.Fmt(System.String,System.Object[])">
+            <summary>
+            格式化字符串
+            </summary>
+            <param name="str1"></param>
+            <param name="paras"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.StringUtils.MdlFormId(System.String)">
+            <summary>
+            获取模型文件名里面包含的formid； 
+            比如  ：Sec_User.Mdl.Html 或者 Sec_User.Mdl.10000.Html 或者 Sec_User.Mdl.10000.1.Html，
+                    则 返回 Sec_User
+            </summary>
+            <param name="mdlFileName">模型文件名</param> 
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.PathUtils.GetStartupPath">
+            <summary>
+            获取程序启动路径
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.PathUtils.GetMetaFilePath">
+            <summary>
+            元数据文件路径
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.PathUtils.GetPhysicalPath(System.String)">
+            <summary>
+            获取指定相对路径所对应的物理目录
+            </summary>
+            <param name="directory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.PathUtils.GetWebFilePath(System.String,System.String)">
+            <summary>
+            获取站点指定文件的全路径
+            </summary>
+            <param name="relativePath"></param>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.PathUtils.SearchWebFiles(System.String,System.String,System.Boolean)">
+            <summary>
+            搜索指定路径下的指定格式的文件
+            </summary>
+            <param name="relativePath"></param>
+            <param name="filePattern"></param>
+            <param name="isSearchSubDir"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.RegistryHelper">
+            <summary>
+            注册表访问帮助器
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.SerializatonUtil.SerializeToXml``1(``0)">
+            <summary>
+            对象实例序列化为XML
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.SerializatonUtil.DeserializeFromXml``1(System.String)">
+            <summary>
+            将XML序列化为对象实例
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.Watcher.DirectoryWatcher">
+            <summary>
+            目录监控器
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Watcher.DirectoryWatcher.Dispose">
+            <summary>
+            销毁监控器
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Watcher.DirectoryWatcher.Directory(System.String)">
+            <summary>
+            监控目录
+            </summary>
+            <param name="dir"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Watcher.DirectoryWatcher.Filter(System.String)">
+            <summary>
+            监控文件过滤器
+            </summary>
+            <param name="filter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Watcher.DirectoryWatcher.BufferSize(System.Int32)">
+            <summary>
+            缓存大小
+            </summary>
+            <param name="buffer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Watcher.DirectoryWatcher.Start">
+            <summary>
+            开启监控
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Watcher.DirectoryWatcher.OnEnumFile(System.Action{JieNor.Framework.Watcher.FileMonitorEventArgs})">
+            <summary>
+            枚举指定目录下的指定文件并做回调处理
+            </summary>
+            <param name="action">枚举回调</param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.Watcher.FileMonitorEventArgs">
+            <summary>
+            文件监控事件
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Watcher.FileMonitorEventArgs.ActionId">
+            <summary>
+            指令动作
+            </summary>
+        </member>
+    </members>
+</doc>

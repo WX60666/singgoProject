@@ -1,0 +1,1723 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JieNor.Framework.DataTransferObject</name>
+    </assembly>
+    <members>
+        <member name="T:JieNor.Framework.DataTransferObject.BizCtrlPlatform.CurrentBillData">
+            <summary>
+            当前操作的单据的数据信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.BizCtrlPlatform.CurrentBillData.FormId">
+            <summary>
+            业务对象标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.BizCtrlPlatform.CurrentBillData.Id">
+            <summary>
+            单据内码
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.BizCtrlPlatform.CurrentBillData.BillNo">
+            <summary>
+            单据编号
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.BizCtrlPlatform.CurrentBillData.CtrlItems">
+            <summary>
+            控制字段、控制维度字段的值：key --  字段标识 ，value --- 字段值
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlBill">
+            <summary>
+            被控制的单据信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlBill.FormId">
+            <summary>
+            业务对象formid
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlBill.CtrlField">
+            <summary>
+            控制字段：比如控制 出库数量、 报销金额 等等
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlBill.CtrlItems">
+            <summary>
+            控制维度：按哪些维度进行控制
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlItemSource">
+            <summary>
+            控制维度的取数来源
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlItemSource.FieldKey">
+            <summary>
+            来源于单据上的字段
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlItemSource.ConstValue">
+            <summary>
+            固定值
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlResult">
+            <summary>
+            控制结果
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlResult.BillData">
+            <summary>
+            当前单据信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlResult.CtrlPolicyResult">
+            <summary>
+            各个控制策略的控制结果信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlResult.Success">
+            <summary>
+            是否全部通过，true ：通过，符合控制规则
+                      false：不通过，违反控制要求
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlPolicyResult">
+            <summary>
+            控制策略的控制结果
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlPolicyResult.CtrlPolicy">
+            <summary>
+            控制策略信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlPolicyResult.CtrlDetails">
+            <summary>
+            控制校验结果明细
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlPolicyResult.Success">
+            <summary>
+            是否全部通过，true ：通过（只是提醒的，算通过），符合控制规则
+                      false：有需要录入密码或严格控制的
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlResultMessage">
+            <summary>
+            控制结果明细
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlResultMessage.Success">
+            <summary>
+            是否通过，true ：通过，符合控制规则
+                      false：不通过，违反控制要求
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlResultMessage.CtrlResult">
+            <summary>
+            校验结果:提醒，需要录入密码、严格控制
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlResultMessage.Messages">
+            <summary>
+            检查结果的提示信息
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlCompareValue">
+            <summary>
+            单据的取数来源
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlCompareValue.Operator">
+            <summary>
+            操作符，只支持两种：+，-
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlCompareValue.FormId">
+            <summary>
+            业务对象标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlCompareValue.CtrlField">
+            <summary>
+            控制字段的取值来源字段
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlCompareValue.CtrlItemsSource">
+            <summary>
+            维度取数来源， key ：维度，value ：对应取数来源
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlCompareValue.Filter">
+            <summary>
+            取数条件：只取满足该条件的数据
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlPointIntensity">
+            <summary>
+            控制时点的控制强度
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlPoint">
+            <summary>
+            操作时点，控制时点：如新增、删除、保存、提交、审核、反审核、撤消提交、打印、导出等等
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlPoint.New">
+            <summary>
+            新增
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlPoint.Save">
+            <summary>
+            保存
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlPoint.Submit">
+            <summary>
+            提交
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlPoint.UnSubmit">
+            <summary>
+            撤消提交
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlPoint.Audit">
+            <summary>
+            审核
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlPoint.UnAudit">
+            <summary>
+            反审核
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlPoint.Delete">
+            <summary>
+            删除
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlPoint.Push">
+            <summary>
+            下推
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlPoint.Print">
+            <summary>
+            打印
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlPoint.Export">
+            <summary>
+            导出
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlIntensity">
+            <summary>
+            控制强度:提醒、密码控制、严格控制
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlIntensity.Notice">
+            <summary>
+            提醒
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlIntensity.Psw">
+            <summary>
+            密码控制
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlIntensity.Ctrl">
+            <summary>
+            严格控制
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlType">
+            <summary>
+            控制方式
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlWarpType">
+            <summary>
+            偏差控制方式:按百分比%、按额度
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlWarpType.Percent">
+            <summary>
+            按百分比
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlWarpType.Limit">
+            <summary>
+            按额度
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlItem">
+            <summary>
+            控制维度
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlItem.ItemKey">
+            <summary>
+            控制维度标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlItem.ItemCaption">
+            <summary>
+            控制维度名称
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlItem.RefFormId">
+            <summary>
+            如果该维度是基础资料，则记录对应的基础资料模型formid
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlItem.RefFieldKey">
+            <summary>
+            如果该维度是基础资料，则记录对应的基础资料的取数字段
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlPolicy">
+            <summary>
+            控制策略信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlPolicy.CtrlBill">
+            <summary>
+            控制单据：在这个单据上进行控制校验
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlPolicy.PreFilter">
+            <summary>
+            前置条件：满足条件后方启用控制校验
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlPolicy.CtrlPoint">
+            <summary>
+            控制时点
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlPolicy.CtrlWarpType">
+            <summary>
+            偏差控制方式
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlPolicy.CtrlWarpValue">
+            <summary>
+            允许的偏差值
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlPolicy.CtrlByTotal">
+            <summary>
+            是否按汇总进行控制，true：数据按汇总后的值进行控制
+                               false：按维度分组进行控制
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlPolicy.LeftValues">
+            <summary>
+            表达式左边取数来源
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.BizCtrlPlatform.BizCtrlPolicy.RightValues">
+            <summary>
+            表达式右边取数来源
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.Const.CacheKey.BizObjectList">
+            <summary>
+            业务对象列表
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataTransferObject.HtmlElementVisibleScene">
+            <summary>
+            元素可见性枚举
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.HtmlElementVisibleScene.None">
+            <summary>
+            所有场景不可见
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.HtmlElementVisibleScene.List">
+            <summary>
+            列表可见
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.HtmlElementVisibleScene.List_Lookup">
+            <summary>
+            选单可见
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.HtmlElementVisibleScene.Filter">
+            <summary>
+            过滤界面的过滤字段列表中可见
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.HtmlElementVisibleScene.Sort">
+            <summary>
+            过滤界面的排序可见
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.HtmlElementVisibleScene.Group">
+            <summary>
+            过滤界面的分组可见
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.HtmlElementVisibleScene.All">
+            <summary>
+            所有场景可见
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataTransferObject.HtmlElementType">
+            <summary>
+            html模型字段类型
+            </summary> 
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.HtmlElementType.HtmlForm_MinValue">
+            <summary>
+            业务领域类型：起始值
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.HtmlElementType.HtmlForm_MaxValue">
+            <summary>
+            业务领域类型：截止值
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.HtmlElementType.HtmlForm_DynamicForm">
+            <summary>
+            动态页面
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.HtmlElementType.HtmlForm_BillForm">
+            <summary>
+            单据页面
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.HtmlElementType.HtmlForm_ListForm">
+            <summary>
+            列表页面
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.HtmlElementType.HtmlEntity_MinValue">
+            <summary>
+            实体类型范围：起始值
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.HtmlElementType.HtmlEntity_MaxValue">
+            <summary>
+            实体类型范围：截止值
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.HtmlElementType.HtmlEntity_HeadEntity">
+            <summary>
+            单据头
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.HtmlElementType.HtmlEntity_EntryEntity">
+            <summary>
+            单据体
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.HtmlElementType.HtmlEntity_SubEntryEntity">
+            <summary>
+            子单据体
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.HtmlElementType.HtmlEntity_TreeEntryEntity">
+            <summary>
+            树形单据体
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.HtmlElementType.HtmlField_MinValue">
+            <summary>
+            字段类型范围起始值
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.HtmlElementType.HtmlField_MaxValue">
+            <summary>
+            字段类型范围终点值
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.HtmlElementType.HtmlField_TextField">
+            <summary>
+            文本字段
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.HtmlElementType.HtmlField_IntegerField">
+            <summary>
+            整数字段
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.HtmlElementType.HtmlField_DecimalField">
+            <summary>
+            小数字段
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.HtmlElementType.HtmlField_QtyField">
+            <summary>
+            数量字段
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.HtmlElementType.HtmlField_PriceField">
+            <summary>
+            单价字段
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.HtmlElementType.HtmlField_AmountField">
+            <summary>
+            金额字段
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.HtmlElementType.HtmlField_BaseDataField">
+            <summary>
+            基础资料
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.HtmlElementType.HtmlField_BasePropertyField">
+            <summary>
+            基础资料属性字段
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.HtmlElementType.HtmlField_BillNoField">
+            <summary>
+            单据编号
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.HtmlElementType.HtmlField_UnitIdField">
+            <summary>
+            计量单位
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.HtmlElementType.HtmlField_FileField">
+            <summary>
+            文件选择字段
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.HtmlElementType.HtmlField_ImageField">
+            <summary>
+            图片字段
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.HtmlElementType.HtmlField_DateField">
+            <summary>
+            日期(年月日)字段
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.HtmlElementType.HtmlField_DateTimeField">
+            <summary>
+            长日期（年月日时分秒）字段
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.HtmlElementType.HtmlField_RadiogroupField">
+            <summary>
+            单选按钮组
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.HtmlElementType.HtmlField_RadioField">
+            <summary>
+            单选按钮
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.HtmlElementType.HtmlField_CheckBoxField">
+            <summary>
+            复选框字段
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.HtmlElementType.HtmlField_ComboField">
+            <summary>
+            下拉列表字段
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.HtmlElementType.HtmlField_CreaterField">
+            <summary>
+            创建人字段
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.HtmlElementType.HtmlField_CreateDateField">
+            <summary>
+            创建日期字段
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.HtmlElementType.HtmlField_ModifierField">
+            <summary>
+            最近修改人字段
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.HtmlElementType.HtmlField_ModifyDateField">
+            <summary>
+            最近修改日期字段
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.HtmlElementType.HtmlField_BillStatusField">
+            <summary>
+            单据状态字段
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.HtmlElementType.HtmlField_BillTypeField">
+            <summary>
+            单据类型字段
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.HtmlElementType.HtmlField_UserField">
+            <summary>
+            用户字段
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.HtmlElementType.HtmlField_MulComboField">
+            <summary>
+            多选下拉列表字段
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.HtmlElementType.HtmlField_MultiLangTextField">
+            <summary>
+            多语言文本字段
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.HtmlElementType.HtmlField_JsonField">
+            <summary>
+            Json字段
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.HtmlElementType.HtmlField_PrintCount">
+            <summary>
+            打印次数字段
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.HtmlElementType.HtmlField_AttchCount">
+            <summary>
+            附件数 字段
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.HtmlElementType.HtmlField_NotesCount">
+            <summary>
+            批注数 字段
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataTransferObject.CommonBillDTO">
+            <summary>
+            单据操作对象
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.CommonBillDTO.Id">
+            <summary>
+            表单内码
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.CommonBillDTO.BillData">
+            <summary>
+            表单数据包（数组）
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataTransferObject.CommonFormDTO">
+            <summary>
+            动态表单操作对象
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.CommonFormDTO.BillData">
+            <summary>
+            表单数据包（数组）
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataTransferObject.CommonListDTO">
+            <summary>
+            列表操作请求
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.CommonListDTO.WhereString">
+            <summary>
+            列表过滤条件
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.CommonListDTO.OrderByString">
+            <summary>
+            列表排序条件
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.CommonListDTO.SelectFields">
+            <summary>
+            列表查询字段
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.CommonListDTO.IdList">
+            <summary>
+            操作关联数据主键
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.CommonListDTO.PageIndex">
+            <summary>
+            当前页码
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.CommonListDTO.PageCount">
+            <summary>
+            每页条数
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataTransferObject.CommonListDTOResponse">
+            <summary>
+            列表操作返回结果
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataTransferObject.DynamicAmqpDTO">
+            <summary>
+            支持api或前端执行指定操作时以异步执行，执行完后推送指定消息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.DynamicAmqpDTO.RequestMessage">
+            <summary>
+            消息体
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataTransferObject.DynamicAmqpDTOResponse">
+            <summary>
+            动态处理完的消息返回对象
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.DynamicAmqpDTOResponse.ResponseMessage">
+            <summary>
+            消息具体处理后的返回对象
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataTransferObject.DynamicDTOResponse">
+            <summary>
+            页面操作返回结果
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.DynamicDTOResponse.PageId">
+            <summary>
+            页面标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.DynamicDTOResponse.FormCaption">
+            <summary>
+            表单名称
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.DynamicDTOResponse.ResponseStatus">
+            <summary>
+            请求回传对象
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.DynamicDTOResponse.OperationResult">
+            <summary>
+            操作返回结果
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataTransferObject.DynamicDTOWrapper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.DataTransferObject.DynamicDTOWrapper.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.DynamicDTOWrapper.FormId">
+            <summary>
+            表单标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.DynamicDTOWrapper.Option">
+            <summary>
+            操作选项参数
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.DynamicDTOWrapper.PageId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.DynamicDTOWrapper.OperationNo">
+            <summary>
+            操作标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.DynamicDTOWrapper.QueryStringParam">
+            <summary>
+            动态参数
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.DynamicDTOWrapper.SimpleData">
+            <summary>
+            简单数据传递
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.DynamicDTOWrapper.SelectedRows">
+            <summary>
+            当前操作作用的数据
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.DynamicDTOWrapper.ExecInMq">
+            <summary>
+            消息队列里执行
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.DynamicDTOWrapper.SessionId">
+            <summary>
+            当前请求关联的sessionId
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.DynamicDTOWrapper.RouterPath">
+            <summary>
+            数据包路由信息
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataTransferObject.FileUploadDTO">
+            <summary>
+            上传文件
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.FileUploadDTO.RequestStream">
+            <summary>
+            http请求流
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.FileUploadDTO.FileName">
+            <summary>
+            上传文件名
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataTransferObject.FileUploadDTOResponse">
+            <summary>
+            文件上传返回对象
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.FileUploadDTOResponse.FileId">
+            <summary>
+            文件标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.FileUploadDTOResponse.FileUrl">
+            <summary>
+            资源路径
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataTransferObject.Poco.ConvertSelectedRow">
+            <summary>
+            下推选中行信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Poco.ConvertSelectedRow.PkValue">
+            <summary>
+            单据头主键
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Poco.ConvertSelectedRow.BillNo">
+            <summary>
+            单据编号或编码
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.DataTransferObject.Poco.SelRowUtil.ToConvertSelectedRows(System.Collections.Generic.IEnumerable{JieNor.Framework.DataTransferObject.Poco.SelectedRow})">
+            <summary>
+            将普通选中行对象转换成单据转换的选中行对象。
+            </summary>
+            <param name="selRows"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.DataTransferObject.Poco.TargetSEP">
+            <summary>
+            目标服务终结点信息
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.DataTransferObject.Poco.TargetSEP.#ctor(System.String)">
+            <summary>
+            构建目标服务地址
+            </summary>
+            <param name="localAlias"></param>
+        </member>
+        <member name="M:JieNor.Framework.DataTransferObject.Poco.TargetSEP.#ctor(System.String,System.String)">
+            <summary>
+            构造目标服务地址
+            </summary>
+            <param name="companyId"></param>
+            <param name="productId"></param>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Poco.TargetSEP.ProductId">
+            <summary>
+            服务标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Poco.TargetSEP.CompanyId">
+            <summary>
+            企业标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Poco.TargetSEP.LocalAlias">
+            <summary>
+            本地服务别名
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.DataTransferObject.Poco.TargetSEP.ToString">
+            <summary>
+            目标地址唯一标识
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.DataTransferObject.Poco.SourceSEP">
+            <summary>
+            服务调用者信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Poco.SourceSEP.CompanyId">
+            <summary>
+            企业标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Poco.SourceSEP.ProductId">
+            <summary>
+            产品标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Poco.SourceSEP.UserId">
+            <summary>
+            用户标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Poco.SourceSEP.UserName">
+            <summary>
+            用户名称
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Poco.SourceSEP.Headers">
+            <summary>
+            请求头信息
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataTransferObject.Poco.IOperationResult">
+            <summary>
+            操作结果接口
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Poco.IOperationResult.SrvData">
+            <summary>
+            服务处理返回值：业务数据
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Poco.IOperationResult.SimpleData">
+            <summary>
+            简单返回值对象
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Poco.IOperationResult.OptionData">
+            <summary>
+            选项参数包
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Poco.IOperationResult.IsSuccess">
+            <summary>
+            是否成功
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Poco.IOperationResult.IsShowMessage">
+            <summary>
+            是否需要显示消息结果
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Poco.IOperationResult.SimpleMessage">
+            <summary>
+            简单交互信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Poco.IOperationResult.ComplexMessage">
+            <summary>
+            复杂消息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Poco.IOperationResult.RedirectTo">
+            <summary>
+            请求跳转地址
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Poco.IOperationResult.CustomMessageFormId">
+            <summary>
+            自定义消息处理窗口标识
+            </summary>
+            <remarks>
+            
+            </remarks>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Poco.IOperationResult.CustomMessageFormParams">
+            <summary>
+            自定义消息处理的相关参数
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Poco.IOperationResult.HtmlActions">
+            <summary>
+            前端操作指令
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataTransferObject.Poco.IComplexMessage">
+            <summary>
+            复杂消息接口
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Poco.IComplexMessage.SuccessMessages">
+            <summary>
+            成功提示消息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Poco.IComplexMessage.ErrorMessages">
+            <summary>
+            错误消息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Poco.IComplexMessage.WarningMessages">
+            <summary>
+            警告消息
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.DataTransferObject.Poco.IComplexMessage.FormatMessage">
+            <summary>
+            支持消息格式化
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.DataTransferObject.Poco.HtmlComplexMessage">
+            <summary>
+            符合web页面展示的消息
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.DataTransferObject.Poco.HtmlComplexMessage.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Poco.HtmlComplexMessage.SuccessMessages">
+            <summary>
+            成功消息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Poco.HtmlComplexMessage.ErrorMessages">
+            <summary>
+            错误消息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Poco.HtmlComplexMessage.WarningMessages">
+            <summary>
+            警告消息
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.DataTransferObject.Poco.HtmlComplexMessage.FormatMessage">
+            <summary>
+            格式化消息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.DataTransferObject.Poco.OperationResult">
+            <summary>
+            操作结果对象实现
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.DataTransferObject.Poco.OperationResult.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Poco.OperationResult.ComplexMessage">
+            <summary>
+            复杂消息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Poco.OperationResult.CustomMessageFormId">
+            <summary>
+            自定义显示表单
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Poco.OperationResult.RedirectTo">
+            <summary>
+            允许插件通知上层进行请求跳转
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Poco.OperationResult.HtmlActions">
+            <summary>
+            前端交互指令表示
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Poco.OperationResult.SrvData">
+            <summary>
+            服务处理返回值
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Poco.OperationResult.SimpleData">
+            <summary>
+            简单返回结果数据
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Poco.OperationResult.OptionData">
+            <summary>
+            操作选项
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Poco.OperationResult.IsShowMessage">
+            <summary>
+            是否显示消息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Poco.OperationResult.IsSuccess">
+            <summary>
+            操作是否成功：部分成功也算成功
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Poco.OperationResult.SimpleMessage">
+            <summary>
+            简单消息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Poco.OperationResult.CustomMessageFormParams">
+            <summary>
+            自定义消息处理页面的参数
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Poco.SelectedRow.PkValue">
+            <summary>
+            单据头主键
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Poco.SelectedRow.BillNo">
+            <summary>
+            单据编号或编码
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Poco.SelectedRow.EntryPkValue">
+            <summary>
+            实体主键
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Poco.SelectedRow.EntityKey">
+            <summary>
+            实体标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Poco.SelectedRow.FieldValues">
+            <summary>
+            其它字段值
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataTransferObject.Report.ColumnHeadObject">
+            <summary>
+            报表、列表的列标题模型对象：树形结构，以便支持多表头
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.DataTransferObject.Report.ColumnHeadObject.#ctor">
+            <summary>
+            构造函数
+            </summary> 
+        </member>
+        <member name="M:JieNor.Framework.DataTransferObject.Report.ColumnHeadObject.#ctor(System.String)">
+            <summary>
+            构造函数 
+              <param name="caption">字段标题</param>
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.DataTransferObject.Report.ColumnHeadObject.#ctor(JieNor.Framework.DataTransferObject.Report.ColumnObject)">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.ColumnHeadObject.Level">
+            <summary>
+            行号：0表示 根目录
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.ColumnHeadObject.Caption">
+            <summary>
+            列标题
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.ColumnHeadObject.ColInfo">
+            <summary>
+            字段信息（只有末级有这个信息）
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.ColumnHeadObject.SubHeads">
+            <summary>
+            字段过滤支持的比较符号种类
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataTransferObject.Report.FieldOperatorObject">
+            <summary>
+            字段比较符
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.FieldOperatorObject.IsIncludeValue">
+            <summary>
+            是否比较符包含了值，比如 为空 ，不为空，等于零，不等于零，今天，本周，本月
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.FieldOperatorObject.Symbol">
+            <summary>
+            操作符号 
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.FieldOperatorObject.IsCustom">
+            <summary>
+            是否自定义
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.FieldOperatorObject.Caption">
+            <summary>
+            操作符号名称
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataTransferObject.Report.FilterSchemeObject">
+            <summary>
+            过滤方案对象
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.FilterSchemeObject.Id">
+            <summary>
+            过滤方案内码
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.FilterSchemeObject.Name">
+            <summary>
+            过滤方案名称
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.FilterSchemeObject.BillFormId">
+            <summary>
+            对应的业务对象模型id：列表 -- 列表的formid ，报表--报表模型id
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.FilterSchemeObject.CustomerFilter">
+            <summary>
+            基本过滤条件（个性化的过滤条件）
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.FilterSchemeObject.FilterData">
+            <summary>
+            过滤字段信息(高级过滤条件)
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.DataTransferObject.Report.FilterSchemeObject.AddFilter(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            添加过滤字段
+            </summary>
+            <param name="para"></param> 
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.DataTransferObject.Report.FilterSchemeObject.AddFilter(System.String,System.String,System.String)">
+            <summary>
+            添加过滤字段
+            </summary>
+            <param name="key"></param>
+            <param name="operateNo">比较符号，如 = ； like ；in  </param>
+            <param name="value">比较值</param>
+            <returns></returns>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.FilterSchemeObject.ColVisible">
+            <summary>
+            字段显示属性
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.DataTransferObject.Report.FilterSchemeObject.AddColVisible(JieNor.Framework.DataTransferObject.Report.QueryColVisible)">
+            <summary>
+            添加显示字段
+            </summary>
+            <param name="para"></param> 
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.DataTransferObject.Report.FilterSchemeObject.AddColVisible(System.String,JieNor.Framework.DataTransferObject.Report.QueryColVisibleEnum)">
+            <summary>
+            添加显示字段
+            </summary>
+            <param name="key"></param> 
+            <returns></returns>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.FilterSchemeObject.OrderBy">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.DataTransferObject.Report.FilterSchemeObject.AddOrderBy(System.String,System.Boolean)">
+            <summary>
+            添加排序字段
+            </summary>
+            <param name="key"></param>
+            <param name="asc">是否升序</param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.DataTransferObject.Report.FilterRowObject">
+            <summary>
+            过滤条件对象
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.DataTransferObject.Report.FilterRowObject.#ctor(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:JieNor.Framework.DataTransferObject.Report.FilterRowObject.#ctor(System.String,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+            <param name="operateNo"></param>
+            <param name="value"></param>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.FilterRowObject.LeftBracket">
+            <summary>
+            左括号
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.FilterRowObject.Id">
+            <summary>
+            字段标志
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.FilterRowObject.Operator">
+            <summary>
+            比较符
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.FilterRowObject.Value">
+            <summary>
+            比较值
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.FilterRowObject.RightBracket">
+            <summary>
+            右括号
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.FilterRowObject.Logic">
+            <summary>
+            比较逻辑： And 、Or
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.FilterRowObject.RowIndex">
+            <summary>
+            行号 
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataTransferObject.Report.ListDesc">
+            <summary>
+            列表描述信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.ListDesc.Rows">
+            <summary>
+            总纪录数(不分页的时候的记录数)
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.ListDesc.CurrentRows">
+            <summary>
+            本次查询返回的记录数（注意不一定等于每页显示行数）
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.ListDesc.PageCount">
+            <summary>
+            每页条数
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.ListDesc.Pages">
+            <summary>
+            总页数
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.ListDesc.Bills">
+            <summary>
+            单据数
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataTransferObject.Report.QueryDataInfo">
+            <summary>
+            数据查询信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.QueryDataInfo.DataTitle">
+            <summary>
+            数据的标题：报表数据 -- 设置为报表名称，列表数据--设置为列表名称
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.QueryDataInfo.FilterTitle">
+            <summary>
+            过滤条件信息：一般来说，报表查询时，在报表查询出来的列表上方，显示一些相应的过滤条件信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.QueryDataInfo.Options">
+            <summary>
+            相关一些选项信息，如字段信息及其他相关系统选项、打印选项等等
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.QueryDataInfo.ColHeads">
+            <summary>
+            列标题（树形结构）
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.QueryDataInfo.Datas">
+            <summary>
+            本次返回的数据信息(web端数据包或普通win客户端的绑定数据包)
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.QueryDataInfo.OfficeDatas">
+            <summary>
+            本次返回的数据信息（office数据，如excel表格的绑定数据包）
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataTransferObject.Report.QueryColVisible">
+            <summary>
+            过滤界面：显示/隐藏页签的字段显示信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.QueryColVisible.Id">
+            <summary>
+            字段标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.QueryColVisible.Visible">
+            <summary>
+            显示
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.QueryColVisible.UnVisible">
+            <summary>
+            不显示
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.QueryColVisible.Hidden">
+            <summary>
+            隐藏
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataTransferObject.Report.QueryColOrderBy">
+            <summary>
+            过滤界面：排序页签的排序字段信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.QueryColOrderBy.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.QueryColOrderBy.Asc">
+            <summary>
+            升序
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.QueryColOrderBy.Desc">
+            <summary>
+            降序
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.QueryColOrderBy.OrderBy">
+            <summary>
+            排序方式： asc，desc
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataTransferObject.Report.QueryColTypeEnum">
+            <summary>
+            报表字段类型
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.Report.QueryColTypeEnum.Text">
+            <summary>
+            文本
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.Report.QueryColTypeEnum.Number">
+            <summary>
+            数值
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.Report.QueryColTypeEnum.Date">
+            <summary>
+            日期
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.Report.QueryColTypeEnum.Amount">
+            <summary>
+            金额
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.Report.QueryColTypeEnum.Qty">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.Report.QueryColTypeEnum.Png">
+            <summary>
+            图片
+            </summary> 
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.Report.QueryColTypeEnum.Link">
+            <summary>
+            链接
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataTransferObject.Report.QueryColVisibleEnum">
+            <summary>
+            报表字段显示类型
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.Report.QueryColVisibleEnum.Visible">
+            <summary>
+            显示
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.Report.QueryColVisibleEnum.Hide">
+            <summary>
+            隐藏（有数据、有这个列，但是隐藏，多用于id字段，用于联查之类的字段）
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.DataTransferObject.Report.QueryColVisibleEnum.UnVisible">
+            <summary>
+            不显示（压根不加载这个字段）
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.HtmlEntryInfo.Id">
+            <summary>
+            标识
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataTransferObject.Report.ColumnObject">
+            <summary>
+            报表、列表的列模型对象
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.DataTransferObject.Report.ColumnObject.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.DataTransferObject.Report.ColumnObject.#ctor(System.String,System.String,System.Int32)">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.ColumnObject.Operators">
+            <summary>
+            字段过滤支持的比较符号种类
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.ColumnObject.EntityKey">
+            <summary>
+            字段所属实体
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.ColumnObject.Id">
+            <summary>
+            字段标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.ColumnObject.DBFieldName">
+            <summary>
+            返回的数据表字段标识（或者数据包里面该字段的标识）
+            这个跟 Id有所区别，比如 Id= FDeptId.FName,而 DBFieldName= FDeptId_FName 
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.ColumnObject.ElementType">
+            <summary>
+            字段类别：参照 HtmlElementType 的定义
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.ColumnObject.VisibleScene">
+            <summary>
+            可见性；标注字段在列表、过滤、排序、显示隐藏列上是否可见；
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.ColumnObject.Visible">
+            <summary>
+            列表是否可见
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.ColumnObject.AllowFilter">
+            <summary>
+            是否允许参与过滤（高级过滤页签是否可见）
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.ColumnObject.AllowGroup">
+            <summary>
+            允许分组
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.ColumnObject.AllowSort">
+            <summary>
+            允许排序
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.ColumnObject.ListShowType">
+            <summary>
+            列表字段的显示方式：显示、不显示、隐藏
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.ColumnObject.AggregateStyle">
+            <summary>
+            聚合类型
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.ColumnObject.ListTabIndex">
+            <summary>
+            顺序
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.ColumnObject.Width">
+            <summary>
+            列宽度
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.ColumnObject.Align">
+            <summary>
+            对齐方式
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.ColumnObject.RefFormId">
+            <summary>
+            对应基础资料formid
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.ColumnObject.RefFieldKey">
+            <summary>
+            对应基础资料字段
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.ColumnObject.RefDisplayFieldKey">
+            <summary>
+            对应要显示的基础资料字段,多个用逗号或分号隔开
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.ColumnObject.RefFilterString">
+            <summary>
+            对应基础资料过滤条件，如枚举项的枚举类型： Fcategory='审核状态'
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.HtmlFormInfo.Id">
+            <summary>
+            标识
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataTransferObject.Report.OfficeTemplateInfo">
+            <summary>
+            Office模板信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.OfficeTemplateInfo.FTmplType">
+            <summary>
+            模板类型：print--打印模板；report--报表模板 query--报表查询；list--列表查询
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.OfficeTemplateInfo.FFileType">
+            <summary>
+            模板文件类型：xls、xlsx、doc、docx
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.OfficeTemplateInfo.FOption">
+            <summary>
+            选项信息：如套打的相关选项信息，报表的字段信息等等
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.OfficeTemplateInfo.FQuerySrv">
+            <summary>
+            取数服务接口（操作码）
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.OfficeTemplateInfo.IsExcel">
+            <summary>
+            是否Excel模板
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.OfficeTemplateInfo.IsWord">
+            <summary>
+            是否word模板
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.OfficeTemplateInfo.IsReport">
+            <summary>
+            是否报表模板
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.OfficeTemplateInfo.IsPrint">
+            <summary>
+            是否打印模板
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.OfficeTemplateInfo.IsRptQuery">
+            <summary>
+            是否报表查询
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.Report.OfficeTemplateInfo.IsListQuery">
+            <summary>
+            是否列表查询
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataTransferObject.ServiceTraceDTO">
+            <summary>
+            跟踪当前站点的运行情况
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.ServiceTraceDTO.SignId">
+            <summary>
+            查询身份
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataTransferObject.ServiceTraceDTOResponse">
+            <summary>
+            当前站点运行情况对象
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.ServiceTraceDTOResponse.SessionCount">
+            <summary>
+            在线用户数
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.ServiceTraceDTOResponse.UserCount">
+            <summary>
+            累积用户数
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.ServiceTraceDTOResponse.RpcCount">
+            <summary>
+            接口累积调用次数
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.ServiceTraceDTOResponse.ExceptionCount">
+            <summary>
+            站点运营异常数
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataTransferObject.UserDTO.ActivateUserDTO">
+            <summary>
+            用户激活实体
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.UserDTO.ActivateUserDTO.UserName">
+            <summary>
+            待激活的用户名
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.UserDTO.ActivateUserDTO.ActiveCode">
+            <summary>
+            激活码
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.DataTransferObject.UserDTO.UpdateUserDetailDTO">
+            <summary>
+            用户激活实体
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.UserDTO.UpdateUserDetailDTO.DisplayName">
+            <summary>
+            待激活的用户名
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.UserDTO.UpdateUserDetailDTO.MobilePhone">
+            <summary>
+            手机
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.DataTransferObject.UserDTO.UpdateUserDetailDTO.ActiveCode">
+            <summary>
+            激活码
+            </summary>
+        </member>
+    </members>
+</doc>

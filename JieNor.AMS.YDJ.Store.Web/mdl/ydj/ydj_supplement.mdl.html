@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body id="ydj_supplement" basemodel="bd_basetmpl" el="1" cn="增补单">
+    <div id="FBillHead" el="51" pk="fid" tn="t_ydj_supplement" pn="FBillHead" cn="增补单"> 
+
+        <!--基本信息-->
+        <input type="text" id="fbillno" el="106" ek="FBillHead" fn="fbillno" pn="fbillno" refid="bd_dept" ts=" " visible="-1" cn="单据编号" />
+        <input type="date" id="forderdate" el="112" ek="FBillHead" fn="forderdate" pn="forderdate" ts=" " cn="单据日期" visible="-1" />
+        <input type="text" id="fsourceorder" el="112" ek="FBillHead" fn="fsourceorder" pn="fsourceorder" ts=" " cn="源单订单" visible="-1" />
+        <input type="text" id="fcustomerid" el="106" ek="FBillHead" fn="fcustomerid" pn="fcustomerid" refid="bd_dept" ts=" " visible="-1" cn="客户" />
+        <input type="text" id="fbranchid" el="106" ek="FBillHead" fn="fbranchid" pn="fbranchid" refid="bd_dept" ts=" " visible="-1" cn="门店" />
+        <input type="text" id="fuserid" el="106" ek="FBillHead" fn="fuserid" pn="fuserid" refid="bd_dept" ts=" " visible="-1" cn="负责人" />
+        <input type="text" id="fdescription" el="106" ek="FBillHead" fn="fdescription" pn="fdescription" refid="bd_dept" ts=" " visible="-1" cn="备注" />
+        
+        <!--财务信息-->
+        <input type="text" id="fmjamount" el="106" ek="FBillHead" fn="fmjamount" pn="fmjamount" refid="bd_dept" ts=" " visible="-1" cn="金额" />
+        <input type="text" id="fysamount_h" el="106" ek="FBillHead" fn="fysamount_h" pn="fysamount_h" refid="bd_dept" ts=" " visible="-1" cn="已收金额" />
+        <input type="text" id="fwsamount_h" el="106" ek="FBillHead" fn="fwsamount_h" pn="fwsamount_h" refid="bd_dept" ts=" " visible="-1" cn="未收金额" />
+        <input type="text" id="ftkamount_h" el="106" ek="FBillHead" fn="ftkamount_h" pn="ftkamount_h" refid="bd_dept" ts=" " visible="-1" cn="退款金额" />
+
+    	<!--客户信息-->
+        <input type="text" id="fconsignee" el="106" ek="FBillHead" fn="fconsignee" pn="fconsignee" refid="bd_dept" ts=" " visible="-1" cn="收货人" />
+        <select id="fthreelinkage" el="100" ek="fbillhead" fn="fthreelinkage" pn="fthreelinkage" cn="省市区三级联动" visible="-1">
+        <input el="100" ek="fbillhead" visible="-1" id="faddress" fn="faddress" pn="faddress" cn="收货地址" />
+        <input el="100" ek="fbillhead" visible="-1" id="fphone" fn="fphone" pn="fphone" cn="联系电话" />
+        <select el="122" ek="fbillhead" visible="-1" id="fbrand" fn="fbrand" pn="fbrand" cn="品牌" cg="品牌" refid="bd_enum" dfld="fenumitem"></select>
+
+        <!--增补原因-->
+        <input el="106" ek="fbillhead" visible="-1" id="fsupplement" fn="fsupplement" pn="fsupplement" cn="增补原因" refid="ydj_customer" />
+        <select el="122" ek="fbillhead" visible="-1" id="fdutyid" fn="fdutyid" pn="fdutyid" cn="责任方" cg="责任方" refid="bd_enum" dfld="fenumitem"></select>
+    	
+    	
+    	<!--其他信息-->
+    	<input type="text" id="ffounder" el="111" ek="FBillHead" fn="ffounder" pn="ffounder" cn="创建人" visible="-1" />
+    	<input type="text" id="fcreatedate" el="111" ek="FBillHead" fn="fcreatedate" pn="fcreatedate" cn="创建日期" visible="-1" />
+        <input type="text" id="fexamine" el="112" ek="FBillHead" fn="fexamine" pn="fexamine" cn="审核人" visible="-1" />
+        <input type="text" id="fexaminedate" el="113" ek="FBillHead" fn="fexaminedate" pn="fexaminedate" cn="审核日期" visible="-1" />
+    	<input type="text" id="fcancel" el="114" ek="FBillHead" fn="fcancel" pn="fcancel" cn="作废人" visible="-1" />
+    	<input type="text" id="fcanceldate" el="115" ek="FBillHead" fn="fcanceldate" pn="fcanceldate" cn="作废日期" visible="-1" />
+        <input type="text" id="fstatus" el="116" ek="FBillHead" fn="fstatus" pn="fstatus" cn="数据状态" visible="-1" />
+        
+        
+    	<table id="FProductEntity" el="52" pk="FEntryId" tn="t_ydj_SupplementSupEntry" pn="FProductEntity" cn="商品明细">
+            <tr>
+                <th id="fproductname" el="106" ek="FProductEntity" fn="fproductname" pn="fproductname" ts=" " visible="-1" cn="产品名称"></th>
+                <th id="funitid" el="100" ek="FProductEntity" fn="funitid" pn="funitid" ts=" " visible="-1" cn="单位"></th>
+                <th id="fqty" el="100" ek="FProductEntity" fn="fqty" pn="fqty" ts=" " visible="-1" cn="数量"></th>
+                <th id="farea" el="100" ek="FProductEntity" fn="farea" pn="farea" ts=" " visible="-1" cn="面积"></th>
+                <th id="fgift" el="100" ek="FProductEntity" fn="fgift" pn="fgift" ts=" " visible="-1" cn="赠品"></th>
+                <th id="fprice" el="100" ek="FProductEntity" fn="fprice" pn="fprice" ts=" " visible="-1" cn="单价"></th>
+                <th id="famount" el="100" ek="FProductEntity" fn="famount" pn="fgfamountft" ts=" " visible="-1" cn="金额"></th>
+                <th id="fitemnote" el="100" ek="FProductEntity" fn="fitemnote" pn="fitemnote" ts=" " visible="-1" cn="备注"></th>
+            </tr>
+        </table>
+        
+        
+	
+</body>
+</html>
+

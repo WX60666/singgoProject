@@ -1,0 +1,28 @@
+﻿<!--本模板是根据服务端需求提炼而成，客户端页面只需要遵循下述节点的一些属性描述规范即可，
+    至于节点布局，样式等没有要求（也就是xpath没要求），可由客户端页面实际需求自由发挥，
+    但需要服务端保存的节点需遵守下述规范：基本就是增加几个自定义属性（id,fn,tn）
+    -->
+<html lang="en">
+<head>
+</head>
+<body id="ydj_cash" basemodel="bd_basetmpl" el=1 cn="收银单">
+    <div id="fbillhead" el="51" pk="fid" tn="T_Ydj_Cash" pn="fbillhead" cn="收银单">
+        <input el="100" type="text" id="fname" ek="FBillHead" fn="fname" ts="" cn="客户名称" visible="-1" />
+        <input el="101" type="text" id="fmemberrank" ek="FBillHead" fn="fmemberrank" ts="" cn="会员等级" visible="-1" />
+        <input el="108" type="Text" id="fnumber" ek="FBillHead" fn="fnumber" ts="" visible="-1" cn="流水号" />
+        <input el="113" type="datetime" id="fdate" ek="FBillHead" fn="fdate" ts="" cn="日期" visible="-1" />
+        <select el="117" id="fusage" ek="FBillHead" fn="fusage" ts="" refid="" cg="用途" visible="-1" cn="用途">
+            <option value="0">货款</option>
+            <option value="1">储值/定金</option>
+        </select>
+        <div el="114" id="fszlx" ek="FBillHead" fn="fszlx" ts="" cn="收支类型" visible="FRadioGroup"></div>
+        <input el="105" type="text" id="fsum" ek="FBillHead" fn="fsum" ts="" visible="-1" cn="总额" />
+        <input el="105" type="text" id="fmoney" ek="FBillHead" fn="fmoney" ts="" visible="-1" cn="金额" />
+        <input el="105" type="text" id="Fstored" ek="FBillHead" fn="Fstored" ts="" visible="-1" cn="储值支付" />
+        <input el="105" type="text" id="Fintegration" ek="FBillHead" fn="Fintegration" ts="" visible="-1" cn="积分使用" />
+        <input el="100" type="text" id="fdescription" ek="FBillHead" fn="fdescription" ts="" cn="备注" visible="-1" />
+        
+    </div>
+
+</body>
+</html>

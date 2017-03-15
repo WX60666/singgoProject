@@ -1,0 +1,447 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JieNor.Framework.SuperOrm.Drivers</name>
+    </assembly>
+    <members>
+        <member name="M:PerfmonUtil.StartMonitor">
+            <summary>
+            开始监控
+            </summary>
+        </member>
+        <member name="M:PerfmonUtil.EndMonitor">
+            <summary>
+            结束监控
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.SuperOrm.Drivers.AccessDbDriver">
+            <summary>
+            为Access数据库编写的ORM驱动程序
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.SuperOrm.Drivers.AccessDbDriver.ExecuteReader(JieNor.Framework.SuperOrm.Drivers.SelectCallback,System.Collections.Generic.IEnumerable{JieNor.Framework.SuperOrm.Metadata.Database.DbMetadataTable},JieNor.Framework.SuperOrm.Metadata.Database.DbMetadataTable,System.Collections.Generic.IList{System.Text.StringBuilder},JieNor.Framework.SuperOrm.Drivers.ReadWhere,JieNor.Framework.SuperOrm.OperateOption)">
+            <summary>
+            指定指定SQL语句列表并处理读取回调
+            </summary>
+            <param name="callback">要进行读取处理的回调</param>
+            <param name="tablesSchema">要读取的所有表的Schema</param>
+            <param name="rootTable">根表对象的Schema</param>
+            <param name="selectSqls">所有表的Select语句</param>
+            <param name="where">条件对象</param>
+            <param name="option">此操作的选项</param>
+        </member>
+        <member name="M:JieNor.Framework.SuperOrm.Drivers.AccessDbDriver.UpdateMetadata(JieNor.Framework.SuperOrm.Metadata.Database.DbMetadataDatabase,JieNor.Framework.SuperOrm.OperateOption)">
+            <summary>
+            按照指定参数的定义，更新当前数据库的表结构
+            </summary>
+            <param name="dbMetadata">指定的数据库结构，注意，已经屏蔽了TableGroup的概念</param>
+            <param name="option">此操作的选项</param>
+        </member>
+        <member name="M:JieNor.Framework.SuperOrm.Drivers.AccessDbDriver.BeginTransaction(System.Data.IDbTransaction)">
+            <summary>
+            启动事务
+            </summary>
+            <param name="dbTransaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.SuperOrm.Drivers.DbHelper.ExecuteReader(JieNor.Framework.UserContext,System.String)">
+            <summary>
+            流方式读SQL查询结果。
+            </summary>
+            <param name="ctx">上下文</param>
+            <param name="strSQL">SQL语句</param>
+            <returns>返回DataReader</returns>
+            
+        </member>
+        <member name="M:JieNor.Framework.SuperOrm.Drivers.DbHelper.ExecuteReader(JieNor.Framework.UserContext,System.String,System.Data.CommandType)">
+            <summary>
+            返回DataReader，指定命令类型
+            </summary>
+            <param name="ctx">上下文</param>
+            <param name="strSQL">SQL语句，如果为存储过程那么对应为存储过程名称</param>
+            <param name="cmdtype">命令类型：Text||StoredProcedure</param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.SuperOrm.Drivers.DbHelper.ExecuteReader(JieNor.Framework.UserContext,System.String,JieNor.Framework.SqlParam)">
+            <summary>
+            返回DataReader，一个参数
+            </summary>
+            <param name="ctx">上下文</param>
+            <param name="strSQL">参数化SQL语句</param>
+            <param name="param">参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.SuperOrm.Drivers.DbHelper.ExecuteReader(JieNor.Framework.UserContext,System.String,JieNor.Framework.SqlParam,System.Data.CommandType)">
+            <summary>
+            返回DataReader，一个参数
+            </summary>
+            <param name="ctx">上下文</param>
+            <param name="strSQL">参数化SQL语句</param>
+            <param name="param">参数</param>
+            <param name="cmdtype">命令类型：Text||StoredProcedure</param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.SuperOrm.Drivers.DbHelper.ExecuteReader(JieNor.Framework.UserContext,System.String,System.Collections.Generic.List{JieNor.Framework.SqlParam})">
+            <summary>
+            返回DataReader，多个参数
+            </summary>
+            <param name="ctx">上下文</param>
+            <param name="strSQL">参数化SQL语句</param>
+            <param name="paramList">参数对象列表</param> <seealso cref="T:JieNor.Framework.SqlParam"/>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.SuperOrm.Drivers.DbHelper.ExecuteReader(JieNor.Framework.UserContext,System.String,System.Collections.Generic.IEnumerable{JieNor.Framework.SqlParam},System.Data.CommandType)">
+            <summary>
+            返回DataReader，多个参数
+            </summary>
+            <param name="ctx">上下文</param>
+            <param name="strSQL">参数化SQL语句</param>
+            <param name="paramList">参数对象列表</param><seealso cref="T:JieNor.Framework.SqlParam"/>
+            <param name="cmdtype">命令类型：Text||StoredProcedure</param>
+            <returns></returns>
+            <example>示例显示如何使用ExecuteReader获取数据
+            <code>
+            <![CDATA[
+            string sql = string.Format("SELECT FKEY, FUSERID, FPARAMETERS FROM {0} WHERE FID = @FId", BOSTableConst.UserParamter);
+            List<SqlParam> paramList = new List<SqlParam>();
+            paramList.Add(new SqlParam("@FId", DbType.String, sid));
+            using (IDataReader dr = DBUtils.ExecuteReader(ctx, sql, paramList))
+            {
+                if (dr.Read())
+                {
+                    key = dr.GetString("FKEY");
+                    userId = dr.GetString("FUSERID");
+                    parameter = dr.GetString("FPARAMETERS");
+                }
+            }
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="M:JieNor.Framework.SuperOrm.Drivers.DbHelper.Execute(JieNor.Framework.UserContext,System.String)">
+            <summary>
+            执行SQL语句
+            </summary>
+            <param name="ctx">上下文对象</param>
+            <param name="strSQL">要执行的SQL语句</param>
+            <returns>影响的行数</returns>
+            <remarks>
+            Execute方法用于不需要返回数据的执行语句，如DDL、UPDATE、DELETE语句。返回值为影响的行数。
+            Execute方法每次仅执行一条语句，对SQLServer支持多条语句一起执行，因此多条语句拼在一起执行没有问题，但Oracle下执行会报错。
+            如果需要执行多条语句，请调用批量执行方法：ExecuteBatch。
+            如果要执行SELECT语句，建议使用ExecuteReader方法。
+            </remarks>
+            <example>
+            <code>
+            Execute(ctx, " CREATE TABLE T_TEMP(FID INT NOT NULL, FNAME VARCHAR(10) NULL ) ");
+            </code>
+            </example>
+        </member>
+        <member name="M:JieNor.Framework.SuperOrm.Drivers.DbHelper.Execute(JieNor.Framework.UserContext,System.String,JieNor.Framework.SqlParam)">
+            <summary>
+            执行带查询参数的SQL语句
+            </summary>
+            <param name="ctx">上下文对象</param>
+            <param name="strSQL">要执行的SQL语句</param>
+            <param name="param">SQL语句的参数</param>
+            <returns>影响的行数</returns>
+        </member>
+        <member name="M:JieNor.Framework.SuperOrm.Drivers.DbHelper.Execute(JieNor.Framework.UserContext,System.String,System.Collections.Generic.IEnumerable{JieNor.Framework.SqlParam})">
+            <summary>
+            
+            </summary>
+            <param name="ctx"></param>
+            <param name="strSQL"></param>
+            <param name="paramList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.SuperOrm.Drivers.DbHelper.ExecuteWithTime(JieNor.Framework.UserContext,System.String,System.Collections.Generic.IEnumerable{JieNor.Framework.SqlParam},System.Int32)">
+            <summary>
+            执行指定sql语句，并引入超时机制（非特殊的大事务功能不要定制这个参数）
+            </summary>
+            <param name="ctx"></param>
+            <param name="strSQL"></param>
+            <param name="paramList"></param>
+            <param name="commandTimeout"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.SuperOrm.Drivers.DbHelper.ExecuteBatch(JieNor.Framework.UserContext,System.Collections.Generic.List{JieNor.Framework.DbAccess.Database.SqlObject})">
+            <summary>
+            批量执行SQL语句
+            </summary>
+            <param name="ctx">上下文</param>
+            <param name="lstSqlObj">需要执行SQL语句的对象集合</param>
+            <returns>最后一条语句影响的行数</returns>
+            <example>
+            示例展示使用ExecuteBatch批量执行sql语句方法。
+            <code>
+            <![CDATA[
+            List<SqlObject> listSql = new List<SqlObject>();
+            foreach (FieldValue val in fieldValues)
+            {
+                string sql = string.Format("UPDATE T_DEMO set {0} = {1} where FID = @FID ", val.FieldName, val.Value);
+                
+                SqlObject sqlObj = new SqlObject(sql, new Param("@FID", System.Data.DbType.Int32, id));
+                listSql.Add(sql);
+            }
+            DBUtils.ExecuteBatch(UserContext, listSql);
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="M:JieNor.Framework.SuperOrm.Drivers.DbHelper.ExecuteBatch(JieNor.Framework.UserContext,System.Collections.Generic.List{System.String},System.Int32)">
+            <summary>
+            不带参数的批量执行
+            </summary>
+            <remarks>
+            批量运行SQL，适用于没有参数的多个SQL语句。要注意该方法的使用场景，应尽量使用参数化方法以减少执行计划分析时间。
+            </remarks>
+            <param name="ctx"></param>
+            <param name="sqlArray">语句集合</param>
+            <param name="batchSize">批大小</param>
+            <returns>最后一条语句影响的行数</returns>
+            <example>
+            <code>
+            foreach (string tablName in tableNames)
+            {
+                batchSql.Add(string.Format(" delete from {0} t where exists (select 1 from T_Task where FID = t.FTaskId) ", tablName));
+            }
+            DBUtils.ExecuteBatch(this.UserContext, batchSql, 50);
+            </code>
+            </example>
+        </member>
+        <member name="T:JieNor.Framework.SuperOrm.Drivers.OLEDbDriver">
+            <summary>
+            使用KSql实现的驱动
+            </summary>    
+        </member>
+        <member name="M:JieNor.Framework.SuperOrm.Drivers.OLEDbDriver.#ctor(JieNor.Framework.UserContext)">
+            <summary>
+            
+            </summary>
+            <param name="uc"></param>
+        </member>
+        <member name="M:JieNor.Framework.SuperOrm.Drivers.OLEDbDriver.ExecuteReader(JieNor.Framework.SuperOrm.Drivers.SelectCallback,System.Collections.Generic.IEnumerable{JieNor.Framework.SuperOrm.Metadata.Database.DbMetadataTable},JieNor.Framework.SuperOrm.Metadata.Database.DbMetadataTable,System.Collections.Generic.IList{System.Text.StringBuilder},JieNor.Framework.SuperOrm.Drivers.ReadWhere,JieNor.Framework.SuperOrm.OperateOption)">
+            <summary>
+            执行数据库读取行为
+            </summary>
+            <param name="callback"></param>
+            <param name="tablesSchema"></param>
+            <param name="rootTable"></param>
+            <param name="selectSqls"></param>
+            <param name="where"></param>
+            <param name="option"></param>
+        </member>
+        <member name="M:JieNor.Framework.SuperOrm.Drivers.OLEDbDriver.UpdateMetadata(JieNor.Framework.SuperOrm.Metadata.Database.DbMetadataDatabase,JieNor.Framework.SuperOrm.OperateOption)">
+            <summary>
+            根据实体结构创建数据库结构
+            </summary>
+            <param name="dbMetadata"></param>
+            <param name="option"></param>
+        </member>
+        <member name="M:JieNor.Framework.SuperOrm.Drivers.OLEDbDriver.UpdateDbTableSchema(JieNor.Framework.UserContext,JieNor.Framework.SuperOrm.Metadata.Database.DbMetadataTable,System.String)">
+            <summary>
+            更新表结构
+            </summary>
+            <param name="ctx"></param>
+            <param name="dbTable"></param>
+            <param name="forceRecreate"></param>
+        </member>
+        <member name="M:JieNor.Framework.SuperOrm.Drivers.OLEDbDriver.UpdateDbTablePK(JieNor.Framework.UserContext,JieNor.Framework.SuperOrm.Metadata.Database.DbMetadataTable)">
+            <summary>
+            创建表主键
+            </summary>
+            <param name="ctx"></param>
+            <param name="dbTable"></param>
+        </member>
+        <member name="M:JieNor.Framework.SuperOrm.Drivers.OLEDbDriver.UpdateDbTableIndex(JieNor.Framework.UserContext,JieNor.Framework.SuperOrm.Metadata.Database.DbMetadataTable)">
+            <summary>
+            创建表索引
+            1、有FBillNo字段的，自动在该字段创建索引
+            2、有FNumber字段的，自动在该字段创建索引
+            3、对子表，自动在该表的主表id字段上创建索引(外键字段加索引)
+            </summary>
+            <param name="ctx"></param>
+            <param name="dbTable"></param>
+        </member>
+        <member name="M:JieNor.Framework.SuperOrm.Drivers.OLEDbDriver.GetIndexName(System.String,System.String)">
+            <summary>
+            获取索引名称
+            </summary>
+            <param name="tableName"></param>
+            <param name="fix"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.SuperOrm.Drivers.OLEDbDriver.GetPKName(System.String)">
+            <summary>
+            获取主键名称
+            </summary>
+            <param name="tableName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.SuperOrm.Drivers.OLEDbDriver.BeginTransaction(System.Data.IDbTransaction)">
+            <summary>
+            启动事务
+            </summary>
+            <param name="dbTransaction"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.SuperOrm.Drivers.Serialization.DcJsonConverter">
+            <summary>
+            动态对象序列化转换器
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.SuperOrm.Drivers.Serialization.DcJsonConverter.#ctor(JieNor.Framework.SuperOrm.Metadata.DataEntity.IDataEntityType)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="dataEntityType"></param>
+        </member>
+        <member name="M:JieNor.Framework.SuperOrm.Drivers.Serialization.DcJsonConverter.CanConvert(System.Type)">
+            <summary>
+            判断指定类型是否可序列化
+            </summary>
+            <param name="objectType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.SuperOrm.Drivers.Serialization.DcJsonConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Object,Newtonsoft.Json.JsonSerializer)">
+            <summary>
+            动态对象反序列化
+            </summary>
+            <param name="reader"></param>
+            <param name="objectType"></param>
+            <param name="existingValue"></param>
+            <param name="serializer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.SuperOrm.Drivers.Serialization.DcJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter,System.Object,Newtonsoft.Json.JsonSerializer)">
+            <summary>
+            序列化过程
+            </summary>
+            <param name="writer"></param>
+            <param name="value"></param>
+            <param name="serializer"></param>
+        </member>
+        <member name="T:JieNor.Framework.SuperOrm.Drivers.Serialization.DynJsonSerializer">
+            <summary>
+            实现动态对象的精简json序列化器
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.SuperOrm.Drivers.Serialization.DynJsonSerializer.ToDynamicJson(JieNor.Framework.SuperOrm.Metadata.DataEntity.IDataEntityType,JieNor.Framework.SuperOrm.DataEntity.IDataEntityBase)">
+            <summary>
+            将指定结构的动态对象进行序列化
+            </summary>
+            <param name="targetType"></param>
+            <param name="dynObj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.SuperOrm.Drivers.Serialization.DynJsonSerializer.ToDynamicJson(JieNor.Framework.SuperOrm.DataEntity.IDataEntityBase)">
+            <summary>
+            将指定动态对象进行序列化
+            </summary>
+            <param name="dynObj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.SuperOrm.Drivers.Serialization.DynJsonSerializer.ToDynamicJson(JieNor.Framework.SuperOrm.Metadata.DataEntity.IDataEntityType,System.Collections.Generic.IEnumerable{JieNor.Framework.SuperOrm.DataEntity.IDataEntityBase})">
+            <summary>
+            将实体对象集合进行序列化
+            </summary>
+            <param name="targetType"></param>
+            <param name="dynObjList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.SuperOrm.Drivers.Serialization.DynJsonSerializer.FromDynamicJson``1(JieNor.Framework.SuperOrm.Metadata.DataEntity.IDataEntityType,System.String)">
+            <summary>
+            从指定字符串中反序列化对象至动态对象
+            </summary>
+            <param name="targetType"></param>
+            <param name="dynObjString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.SuperOrm.Drivers.Serialization.DynJsonSerializer.Sync``1(JieNor.Framework.SuperOrm.Metadata.DataEntity.IDataEntityType,System.Collections.Generic.IEnumerable{``0},System.Object,System.Func{System.String,JieNor.Framework.SuperOrm.Metadata.DataEntity.IDataEntityProperty},System.Func{System.Collections.Generic.IEnumerable{``0},System.Object,System.String,System.String})">
+            <summary>
+            同步json对象里的指定属性值至orm对象中
+            </summary>
+            <param name="dt"></param>
+            <typeparam name="TSrc"></typeparam>
+            <param name="sourceData"></param>
+            <param name="targetData"></param>
+            <param name="findProperty"></param>
+            <param name="findPkId"></param>
+        </member>
+        <member name="M:JieNor.Framework.SuperOrm.Drivers.Serialization.DynJsonSerializer.ToDynamicJson(JieNor.Framework.SuperOrm.DataEntity.DynamicDataEntity)">
+            <summary>
+            序列化动态实体
+            </summary>
+            <param name="dcDataEntity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.SuperOrm.Drivers.Serialization.DynJsonSerializer.FromDynamicJson(System.String)">
+            <summary>
+            反序列化动态实体
+            </summary>
+            <param name="json"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.SuperOrm.Drivers.SqlCeDriver">
+            <summary>
+            为 SQL Server CE编写的驱动
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.SuperOrm.Drivers.SqlCeDriver.ExecuteReader(JieNor.Framework.SuperOrm.Drivers.SelectCallback,System.Collections.Generic.IEnumerable{JieNor.Framework.SuperOrm.Metadata.Database.DbMetadataTable},JieNor.Framework.SuperOrm.Metadata.Database.DbMetadataTable,System.Collections.Generic.IList{System.Text.StringBuilder},JieNor.Framework.SuperOrm.Drivers.ReadWhere,JieNor.Framework.SuperOrm.OperateOption)">
+            <summary>
+            指定指定SQL语句列表并处理读取回调
+            </summary>
+            <param name="callback">要进行读取处理的回调</param>
+            <param name="tablesSchema">要读取的所有表的Schema</param>
+            <param name="rootTable">根表对象的Schema</param>
+            <param name="selectSqls">所有表的Select语句</param>
+            <param name="where">条件对象</param>
+            <param name="option">此操作的选项</param>
+        </member>
+        <member name="M:JieNor.Framework.SuperOrm.Drivers.SqlCeDriver.UpdateMetadata(JieNor.Framework.SuperOrm.Metadata.Database.DbMetadataDatabase,JieNor.Framework.SuperOrm.OperateOption)">
+            <summary>
+            按照指定参数的定义，更新当前数据库的表结构
+            </summary>
+            <param name="dbMetadata">指定的数据库结构，注意，已经屏蔽了TableGroup的概念</param>
+            <param name="option">此操作的选项</param>
+        </member>
+        <member name="M:JieNor.Framework.SuperOrm.Drivers.SqlCeDriver.BeginTransaction(System.Data.IDbTransaction)">
+            <summary>
+            启动事务
+            </summary>
+            <param name="dbTransaction"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.SuperOrm.Drivers.SqlServerDbDriver">
+            <summary>
+            为SQL Server编写的驱动程序
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.SuperOrm.Drivers.SqlServerDbDriver.ExecuteReader(JieNor.Framework.SuperOrm.Drivers.SelectCallback,System.Collections.Generic.IEnumerable{JieNor.Framework.SuperOrm.Metadata.Database.DbMetadataTable},JieNor.Framework.SuperOrm.Metadata.Database.DbMetadataTable,System.Collections.Generic.IList{System.Text.StringBuilder},JieNor.Framework.SuperOrm.Drivers.ReadWhere,JieNor.Framework.SuperOrm.OperateOption)">
+            <summary>
+            指定指定SQL语句列表并处理读取回调
+            </summary>
+            <param name="callback">要进行读取处理的回调</param>
+            <param name="tablesSchema">要读取的所有表的Schema</param>
+            <param name="rootTable">根表对象的Schema</param>
+            <param name="selectSqls">所有表的Select语句</param>
+            <param name="where">条件对象</param>
+            <param name="option">此操作的选项</param>
+        </member>
+        <member name="M:JieNor.Framework.SuperOrm.Drivers.SqlServerDbDriver.BeginTransaction(System.Data.IDbTransaction)">
+            <summary>
+            启动事务
+            </summary>
+            <param name="dbTransaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.SuperOrm.Drivers.SqlServerDbDriver.UpdateMetadata(JieNor.Framework.SuperOrm.Metadata.Database.DbMetadataDatabase,JieNor.Framework.SuperOrm.OperateOption)">
+            <summary>
+            按照指定参数的定义，更新当前数据库的表结构
+            </summary>
+            <param name="dbMetadata">指定的数据库结构，注意，已经屏蔽了TableGroup的概念</param>
+            <param name="option">此操作的选项</param>
+        </member>
+    </members>
+</doc>

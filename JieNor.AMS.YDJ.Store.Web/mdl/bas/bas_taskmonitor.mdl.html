@@ -1,0 +1,23 @@
+﻿<!--本模板是根据服务端需求提炼而成，客户端页面只需要遵循下述节点的一些属性描述规范即可，
+    至于节点布局，样式等没有要求（也就是xpath没要求），可由客户端页面实际需求自由发挥，
+    但需要服务端保存的节点需遵守下述规范：基本就是增加几个自定义属性（id,fn,tn）
+    -->
+<html lang="en">
+<head>
+</head>
+<body id="bas_taskmonitor" el=1 cn="计划任务性能日志">
+    <div id="fbillhead" el="51"  pk="FId" tn="t_bas_taskmonitor"  pn="fbillhead" cn="基本信息">
+        
+        <input type="text" id="FTaskid" el="118" ek="fbillhead" refId="bas_task" dfld="FName" fn="FTaskid" pn="FTaskid" cn="任务" visible="-1" />
+
+        <input type="number" id="FCpu" el="102" ek="FBillHead" fn="FCpu" pn="FCpu" cn="Cpu" />    
+         
+        <input type="number" id="FMemory" el="102" ek="FBillHead" fn="FMemory" pn="FMemory" cn="Memory" /> 
+       
+         <input type="datetime" id="FCreateDate" el="121" ek="fbillhead" fn="FCreateDate" pn="FCreateDate" cn="创建时间" visible="-1" />
+        
+
+</div>
+
+</body>
+</html>

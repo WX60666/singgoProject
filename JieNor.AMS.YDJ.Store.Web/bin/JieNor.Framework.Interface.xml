@@ -1,0 +1,2057 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JieNor.Framework.Interface</name>
+    </assembly>
+    <members>
+        <member name="M:PerfmonUtil.StartMonitor">
+            <summary>
+            开始监控
+            </summary>
+        </member>
+        <member name="M:PerfmonUtil.EndMonitor">
+            <summary>
+            结束监控
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.Interface.AbstractConvertServicePlugIn">
+            <summary>
+            单据转换插件服务基类
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.AbstractConvertServicePlugIn.UserContext">
+            <summary>
+            用户上下文
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Interface.AbstractConvertServicePlugIn.InitializeService(JieNor.Framework.MetaCore.FormOp.ConvertService.PlugIn.InitializeServiceEventArgs)">
+            <summary>
+            单据转换服务初始化接口
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:JieNor.Framework.Interface.AbstractConvertServicePlugIn.BeforeGetSourceBillData(JieNor.Framework.MetaCore.FormOp.ConvertService.PlugIn.BeforeGetSourceBillDataEventArgs)">
+            <summary>
+            获取源单数据前接口，提供取消并自定义数据源
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:JieNor.Framework.Interface.AbstractConvertServicePlugIn.OnPrepareQueryBuilderParameter(JieNor.Framework.MetaCore.FormOp.ConvertService.PlugIn.OnPrepareQueryBuilderParameterEventArgs)">
+            <summary>
+            获取源单数据查询对象接口，允许部分定义源单数据来源
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:JieNor.Framework.Interface.AbstractConvertServicePlugIn.AfterGetSourceBillData(JieNor.Framework.MetaCore.FormOp.ConvertService.PlugIn.AfterGetSourceBillDataEventArgs)">
+            <summary>
+            获取源单数据后接口，允许自定义部分来源数据
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:JieNor.Framework.Interface.AbstractConvertServicePlugIn.OnSplitBillData(JieNor.Framework.MetaCore.FormOp.ConvertService.PlugIn.OnSplitBillDataEventArgs)">
+            <summary>
+            对来源数据分单接口
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:JieNor.Framework.Interface.AbstractConvertServicePlugIn.OnGroupBillEntryData(JieNor.Framework.MetaCore.FormOp.ConvertService.PlugIn.OnGroupBillEntryDataEventArgs)">
+            <summary>
+            对来源数据分组汇总接口
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:JieNor.Framework.Interface.AbstractConvertServicePlugIn.AfterGroupSourceData(JieNor.Framework.MetaCore.FormOp.ConvertService.PlugIn.AfterGroupSourceDataEventArgs)">
+            <summary>
+            对来源数据分组后接口
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:JieNor.Framework.Interface.AbstractConvertServicePlugIn.BeforeCreateTargetBillData(JieNor.Framework.MetaCore.FormOp.ConvertService.PlugIn.BeforeCreateTargetBillDataEventArgs)">
+            <summary>
+            创建目标单之前事件
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:JieNor.Framework.Interface.AbstractConvertServicePlugIn.OnConvertComplete(JieNor.Framework.MetaCore.FormOp.ConvertService.PlugIn.OnConvertCompleteEventArgs)">
+            <summary>
+            单据转换执行完成后接口（目标单数据包将会生成）
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="T:JieNor.Framework.Interface.AbstractOperationService">
+            <summary>
+            标准操作服务抽象基类
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.AbstractOperationService.OperationContext">
+            <summary>
+            标准操作上下文
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.AbstractOperationService.UserCtx">
+            <summary>
+            当前登录信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.AbstractOperationService.Container">
+            <summary>
+             
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.AbstractOperationService.UserId">
+            <summary>
+            当前登录的用户id
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.AbstractOperationService.PlugInProxy">
+            <summary>
+            插件代理
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.AbstractOperationService.Cache">
+            <summary>
+            系统缓存服务
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.AbstractOperationService.CacheOrm">
+            <summary>
+            orm数据缓存
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.AbstractOperationService.Gateway">
+            <summary>
+            服务网关
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.AbstractOperationService.DataManager">
+            <summary>
+            orm数据读写引擎
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.AbstractOperationService.MetaModelService">
+            <summary>
+            模型服务引擎
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.AbstractOperationService.DBService">
+            <summary>
+            数据库服务引擎
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.AbstractOperationService.NeedSaveDataEntities">
+            <summary>
+            需要保存的数据包
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Interface.AbstractOperationService.Execute">
+            <summary>
+            操作执行过程
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Interface.AbstractOperationService.PrepareValidationRules">
+            <summary>
+            添加校验器
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:JieNor.Framework.Interface.AbstractOperationService.PermItem">
+            <summary>
+            操作关联的权限项
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.AbstractOperationService.OperationName">
+            <summary>
+            操作名称
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Interface.AbstractOperationService.DoExecute(JieNor.Framework.SuperOrm.DataEntity.DynamicObject[]@)">
+            <summary>
+            实际操作服务执行过程
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Interface.AbstractOperationService.BeforeExecute(JieNor.Framework.SuperOrm.DataEntity.DynamicObject[]@)">
+            <summary>
+            执行操作前的相关处理
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Interface.AbstractOperationService.AfterExecute(JieNor.Framework.SuperOrm.DataEntity.DynamicObject[]@)">
+            <summary>
+            执行操作后的相关动作（如  更新缓存？？？）
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Interface.AbstractOperationService.SaveDataEntities">
+            <summary>
+            当前操作中需要保存的数据包
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Interface.AbstractOperationService.Initialize(System.Object[])">
+            <summary>
+            初始化服务操作
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:JieNor.Framework.Interface.AbstractOperationService.CheckPermission">
+            <summary>
+            权限检测
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Interface.AbstractOperationService.GetQueryOrSimpleParam``1(System.String,``0)">
+            <summary>
+            从当前上下文里获取url参数或简单数据参数
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <param name="def"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.Interface.AbstractOperationServicePlugIn">
+            <summary>
+            操作服务插件抽象类
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.AbstractOperationServicePlugIn.QueryStringParam">
+            <summary>
+            动态参数对象
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.AbstractOperationServicePlugIn.SimpleData">
+            <summary>
+            简单数据对象
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.AbstractOperationServicePlugIn.Gateway">
+            <summary>
+            网关服务
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.AbstractOperationServicePlugIn.HtmlForm">
+            <summary>
+            业务对象业务模型
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.AbstractOperationServicePlugIn.Context">
+            <summary>
+            上下文
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.AbstractOperationServicePlugIn.Container">
+            <summary>
+            当前IoC服务容器
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.AbstractOperationServicePlugIn.Option">
+            <summary>
+            其它控制参数
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.AbstractOperationServicePlugIn.Result">
+            <summary>
+            操作结果信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.AbstractOperationServicePlugIn.Logger">
+            <summary>
+            日志服务
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.AbstractOperationServicePlugIn.CacheClient">
+            <summary>
+            缓存服务
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.AbstractOperationServicePlugIn.CacheOrm">
+            <summary>
+            orm数据缓存
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.AbstractOperationServicePlugIn.DataManager">
+            <summary>
+            orm数据读写引擎
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.AbstractOperationServicePlugIn.MetaModelService">
+            <summary>
+            模型服务引擎
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.AbstractOperationServicePlugIn.DBService">
+            <summary>
+            数据库服务引擎
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.AbstractOperationServicePlugIn.__operCtx">
+            <summary>
+            当前操作上下文
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.AbstractOperationServicePlugIn.PageSession">
+            <summary>
+            当前页面数据共享区
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.AbstractOperationServicePlugIn.ParentPageSession">
+            <summary>
+            父级页面共享区
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Interface.AbstractOperationServicePlugIn.BeforeExecuteOperationTransaction(JieNor.Framework.MetaCore.FormOp.FormService.PlugIn.BeforeExecuteOperationTransaction)">
+            <summary>
+            执行操作事务前事件，通知插件对要处理的数据进行排序等预处理
+            </summary>
+            <param name="e">e.SelectedRows 准备要处理的扩展实体 e.DataEntitys 处理后的实体</param>
+        </member>
+        <member name="M:JieNor.Framework.Interface.AbstractOperationServicePlugIn.AfterExecuteOperationTransaction(JieNor.Framework.MetaCore.FormOp.FormService.PlugIn.AfterExecuteOperationTransaction)">
+            <summary>
+            执行操作事务后事件,通知插件对象执行其它事务无关的业务逻辑
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:JieNor.Framework.Interface.AbstractOperationServicePlugIn.BeginOperationTransaction(JieNor.Framework.MetaCore.FormOp.FormService.PlugIn.BeginOperationTransactionArgs)">
+            <summary>
+            调用操作事物前触发
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:JieNor.Framework.Interface.AbstractOperationServicePlugIn.EndOperationTransaction(JieNor.Framework.MetaCore.FormOp.FormService.PlugIn.EndOperationTransactionArgs)">
+            <summary>
+            调用操作事物后触发
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:JieNor.Framework.Interface.AbstractOperationServicePlugIn.InitializeOperationContext(JieNor.Framework.MetaCore.FormOp.OperationContext)">
+            <summary>
+            初始化插件上下文
+            </summary>
+            <param name="operCtx"></param>
+        </member>
+        <member name="M:JieNor.Framework.Interface.AbstractOperationServicePlugIn.InitializeServicePlugIn(JieNor.Framework.MetaCore.FormOp.OperationContext)">
+            <summary>
+            初始化服务插件事件
+            </summary>
+            <param name="operCtx"></param>
+        </member>
+        <member name="M:JieNor.Framework.Interface.AbstractOperationServicePlugIn.OnCheckPermssion(JieNor.Framework.MetaCore.FormOp.FormService.PlugIn.OnCheckPermssionArgs)">
+            <summary>
+            权限检测
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:JieNor.Framework.Interface.AbstractOperationServicePlugIn.PrepareValidationRules(JieNor.Framework.MetaCore.FormOp.FormService.PlugIn.PrepareValidationRulesEventArgs)">
+            <summary>
+            处理校验规则
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:JieNor.Framework.Interface.AbstractOperationServicePlugIn.GetQueryOrSimpleParam``1(System.String,``0)">
+            <summary>
+            从当前上下文里获取url参数或简单数据参数
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <param name="def"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.Interface.Cache.ICacheManager">
+            <summary>
+            缓存管理器
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Interface.Cache.ICacheManager.Get``1(System.String)">
+            <summary>
+            获取指定标识的缓存数据
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.Cache.ICacheManager.GetAll``1(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="allKeys"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.Cache.ICacheManager.GetAllByKeyPattern``1(System.String,JieNor.Framework.Enu_SearchType)">
+            <summary>
+            获取缓存键符合指定样式的所有缓存数据
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="keyPattern"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.Cache.ICacheManager.Set``1(System.String,``0)">
+            <summary>
+            设置指定标识的缓存数据
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.Cache.ICacheManager.Set``1(System.String,``0,System.Nullable{System.TimeSpan})">
+            <summary>
+            设置指定标识的缓存数据，同时设置其有效期
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <param name="value"></param>
+            <param name="expiryIn"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.Cache.ICacheManager.Set``1(System.String,``0,System.Nullable{System.DateTime})">
+            <summary>
+            设置指定标识的缓存数据，同时设置其有效期
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <param name="value"></param>
+            <param name="expiryAt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.Cache.ICacheManager.SetAll``1(System.Collections.Generic.IDictionary{System.String,``0})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="dctValues"></param>
+        </member>
+        <member name="M:JieNor.Framework.Interface.Cache.ICacheManager.Remove(System.String)">
+            <summary>
+            清空指定标识的缓存
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.Cache.ICacheManager.RemoveAllByKeyPattern(System.String,JieNor.Framework.Enu_SearchType)">
+            <summary>
+            移除符合指定样式的所有key
+            </summary>
+            <param name="keyPattern"></param>
+            <param name="type"></param>
+        </member>
+        <member name="M:JieNor.Framework.Interface.Cache.ICacheManager.RemoveAll">
+            <summary>
+            清空缓存
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Interface.Cache.ICacheManager.Increment(System.String,System.UInt32)">
+            <summary>
+            计数接口
+            </summary>
+            <param name="key"></param>
+            <param name="amount"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.Interface.DynamicDTOWrapperExtension">
+            <summary>
+            动态dto扩展方法
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Interface.DynamicDTOWrapperExtension.PopulateTo``2(``1,System.String)">
+            <summary>
+            将请求对的转换成服务上下文
+            </summary>
+            <typeparam name="TOperCtx"></typeparam>
+            <typeparam name="TReqDto"></typeparam>
+            <param name="reqDto"></param>
+            <param name="reqId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.DynamicDTOWrapperExtension.PopulateTo``2(``1,``0,System.Boolean)">
+            <summary>
+            将请求上下文信息传递给操作上下文
+            </summary>
+            <typeparam name="TOperCtx"></typeparam>
+            <typeparam name="TReqDto"></typeparam>
+            <param name="reqDto"></param>
+            <param name="existContext"></param>
+            <param name="bFromIoC"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IBizExpressionEvaluator.Initialize">
+            <summary>
+            初始化
+            </summary> 
+        </member>
+        <member name="M:JieNor.Framework.Interface.IBizExpressionEvaluator.Eval(JieNor.Framework.Interface.IBizExpression,JieNor.Framework.Interface.IBizExpressionContext)">
+            <summary>
+            计算一条表达式，并返回计算的结果
+            <para>
+            注意：此表达式必须是带有返回值得单条表达式项，否则会抛出异常
+            </para>
+            </summary>
+            <param name="expression">待执行的表达式</param>
+            <param name="context">表达式执行所需的上下文</param>
+            <returns>表达式计算结果</returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IBizExpressionEvaluator.CheckGrammer(JieNor.Framework.Interface.IBizExpression,System.String@)">
+            <summary>
+            验证表达式语法
+            </summary>
+            <param name="expression">待验证的表达式</param>
+            <param name="errorMessages">错误信息</param>
+            <returns>验证结果</returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IBizExpressionEvaluator.CheckGrammer(JieNor.Framework.Interface.IBizExpression)">
+            <summary>
+            验证表达式语法，和少民讨论增加该接口
+            </summary>
+            <param name="expression">待验证的表达式</param>
+            <returns>null:语法校验通过;no null:有语法错误</returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IBizExpressionEvaluator.GetNameExpression(JieNor.Framework.Interface.IBizExpression)">
+            <summary>
+            获取某个表达式中，出现的名称成员的结果。
+            </summary>
+            <param name="expression">要检查的表达式对象。</param>
+            <returns>返回所有的名称成员，注意，返回的成员不能保证完全是字段，外界需要自行去除。</returns>
+        </member>
+        <member name="T:JieNor.Framework.Interface.TryGetValueHandler">
+            <summary>
+            对一个对象进行 GetValue 操作的委托定义。
+            </summary>
+            <param name="key">要获取的字段、属性、函数或变量的键值。</param>
+            <param name="value">如果获取成功，返回其值。</param>
+            <returns>如果在此对象中存在此字段、属性、函数或变量，返回true，否则返回false.</returns>
+        </member>
+        <member name="T:JieNor.Framework.Interface.TrySetValueHandler">
+            <summary>
+            对一个对象进行 SetValue 操作的委托定义。
+            </summary>
+            <param name="key">要设置的字段、属性、函数或变量的键值。</param>
+            <param name="newValue">此字段、属性或变量新的值。</param>
+            <returns>如果成功设置返回true，否则false</returns>
+        </member>
+        <member name="P:JieNor.Framework.Interface.IBizExpressionContext.BizData">
+            <summary>
+            业务对象数据
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.IBizExpressionContext.VariableDictionary">
+            <summary>
+            返回变量字典。
+            ExpressionContext创建过于频繁，这里延迟构建
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.IBizExpressionContext.VariableNames">
+            <summary>
+            获取所有变量名称的集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IBizExpressionContext.AddVariable(System.String,System.Object)">
+            <summary>
+            变量赋值
+            <para> 
+            </para>
+            </summary>
+            <param name="key">变量名称</param>
+            <param name="value">变量值</param>
+            <returns>
+            出于Fluent编程考虑而加入的快速接口，例如：
+            <para>ctx.AddVariable("name", "john").AddVariable("age", "21")</para>
+            </returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IBizExpressionContext.AddVariable(System.String)">
+            <summary>
+            变量赋值
+            <para> 
+            </para>
+            </summary>
+            <param name="key">变量名称</param>
+            <returns>为Fluent编程而加入的快速接口</returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IBizExpressionContext.TrySetValue(System.String,System.Object)">
+            <summary>
+            尝试进行赋值操作。将检测是否能够进行字段和变量赋值
+            </summary>
+            <param name="key">要赋值的键</param>
+            <param name="newValue">新的值</param>
+            <returns>是否赋值成功。</returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IBizExpressionContext.TryGetValue(System.String,System.Object@)">
+            <summary>
+            获取给定变量名或字段的值，将尝试从字段和变量中。
+            </summary>
+            <param name="key">变量名</param>
+            <param name="value">如果获取成功，返回其值，否则为null</param>
+            <returns>是否成功</returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IBizExpressionContext.BindGetField(JieNor.Framework.Interface.TryGetValueHandler)">
+            <summary>
+            设置表达式中字段的取值方法。
+            <para> 
+            </para>
+            </summary>
+            <param name="handler">取值方法体的委托</param>
+        </member>
+        <member name="P:JieNor.Framework.Interface.IBizExpression.Title">
+            <summary>
+            获取或者设置表达式的标题，可为空。
+            用来给此表达式一个简短的业务描述
+            </summary> 
+        </member>
+        <member name="P:JieNor.Framework.Interface.IBizExpression.ExpressionText">
+            <summary>
+            获取或者设置表达式的真正表达式文本。类似于：
+            [BillNo.Amount] > 200
+            </summary> 
+        </member>
+        <member name="P:JieNor.Framework.Interface.IBizExpression.DisplayText">
+            <summary>
+            获取表达式的显示文本。类似于：
+            [单据头.金额] > 200
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.IBizExpression.CodeKind">
+            <summary>
+            表达式的代码类型。默认为自动检测
+            </summary> 
+        </member>
+        <member name="P:JieNor.Framework.Interface.IBizExpression.CompiledCode">
+            <summary>
+            在编译后会调用此方法缓存编译结果。
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IBizExpression.MapField(System.String,System.String)">
+            <summary>
+            设置字段映射。用来将表达式中的字段翻译为显示文本或者真正的目标脚本
+            <para>
+            此方法支持Fluent编程，亦即你可以写出如下的代码：
+            exp.MapField("name", "名称").MapField("age", "年龄")等等
+            </para>
+            </summary>
+            <param name="fieldName">字段名</param>
+            <param name="displayText">字段的显示名称</param>
+            <returns>基于Fluent编程的快速接口</returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IBizExpression.LookupVariables">
+            <summary>
+            查找出当前表达式包含的字段的集合。
+            <para>
+            【小提示】如果仅仅希望对一个单表达式做查找字段的动作。
+            您也可以通过BOSExpression的静态方法：LookupVariables
+            来达到同样的效果。
+            </para>
+            </summary>
+            <returns>字段集合</returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IBizExpression.LookupVariables(System.String)">
+            <summary>
+            查找出给定的表达式包含的字段的集合
+            </summary>
+            <param name="exp">待查找的表达式</param>
+            <returns>字段集合</returns>
+        </member>
+        <member name="T:JieNor.Framework.Interface.IFlowControlService">
+            <summary>
+            单据流程控制接口
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IFlowControlService.Verification(JieNor.Framework.MetaCore.FormOp.FlowControlContext)">
+            <summary>
+            单据流程控制校验
+            </summary>
+            <param name="ctx"></param> 
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.Interface.IConvertService">
+            <summary>
+            单据转换接口定义
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IConvertService.Push(JieNor.Framework.UserContext,JieNor.Framework.MetaCore.FormOp.ConvertService.BillConvertContext)">
+            <summary>
+            单据转换--下推操作
+            </summary>
+            <param name="ctx"></param>
+            <param name="convertArgs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IConvertService.ValidAndThrowError(JieNor.Framework.UserContext,JieNor.Framework.MetaCore.FormMeta.ConvertElement.ConvertRule)">
+            <summary>
+            检验单据转换规则并报错
+            </summary>
+            <param name="ctx"></param>
+            <param name="rule"></param>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IConvertService.IsPush(JieNor.Framework.UserContext,JieNor.Framework.MetaCore.FormOp.ConvertService.BillConvertContext)">
+            <summary>
+            判断指定数据是否有下游关联数据存在
+            </summary>
+            <param name="ctx"></param>
+            <param name="convertArgs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IConvertService.SaveConvertData(JieNor.Framework.UserContext,JieNor.Framework.MetaCore.FormOp.ConvertService.ConvertResult)">
+            <summary>
+            保存单据转换数据
+            </summary>
+            <param name="ctx"></param>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.Interface.IConvertServicePlugIn">
+            <summary>
+            单据转换插件接口定义
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IConvertServicePlugIn.InitializeService(JieNor.Framework.MetaCore.FormOp.ConvertService.PlugIn.InitializeServiceEventArgs)">
+            <summary>
+            单据转换服务初始化接口
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IConvertServicePlugIn.BeforeGetSourceBillData(JieNor.Framework.MetaCore.FormOp.ConvertService.PlugIn.BeforeGetSourceBillDataEventArgs)">
+            <summary>
+            获取源单数据前接口，提供取消并自定义数据源
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IConvertServicePlugIn.OnPrepareQueryBuilderParameter(JieNor.Framework.MetaCore.FormOp.ConvertService.PlugIn.OnPrepareQueryBuilderParameterEventArgs)">
+            <summary>
+            获取源单数据查询对象接口，允许部分定义源单数据来源
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IConvertServicePlugIn.AfterGetSourceBillData(JieNor.Framework.MetaCore.FormOp.ConvertService.PlugIn.AfterGetSourceBillDataEventArgs)">
+            <summary>
+            获取源单数据后接口，允许自定义部分来源数据
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IConvertServicePlugIn.OnSplitBillData(JieNor.Framework.MetaCore.FormOp.ConvertService.PlugIn.OnSplitBillDataEventArgs)">
+            <summary>
+            对来源数据分组前接口
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IConvertServicePlugIn.AfterGroupSourceData(JieNor.Framework.MetaCore.FormOp.ConvertService.PlugIn.AfterGroupSourceDataEventArgs)">
+            <summary>
+            对来源数据分组后接口
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IConvertServicePlugIn.BeforeCreateTargetBillData(JieNor.Framework.MetaCore.FormOp.ConvertService.PlugIn.BeforeCreateTargetBillDataEventArgs)">
+            <summary>
+            创建目标单之前事件
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IConvertServicePlugIn.OnConvertComplete(JieNor.Framework.MetaCore.FormOp.ConvertService.PlugIn.OnConvertCompleteEventArgs)">
+            <summary>
+            单据转换执行完成后接口（目标单数据包将会生成）
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="T:JieNor.Framework.Interface.IDataEntityPkService">
+            <summary>
+            数据实体的主键处理服务
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IDataEntityPkService.AutoSetPrimaryKey(JieNor.Framework.UserContext,System.Object,JieNor.Framework.SuperOrm.Metadata.DataEntity.IDataEntityType)">
+            <summary>
+            自动设置实体数据主键
+            </summary>
+            <param name="ctx"></param>
+            <param name="obj"></param>
+            <param name="entityType"></param>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IDataEntityPkService.AutoSetPrimaryKey(JieNor.Framework.UserContext,System.Collections.Generic.IEnumerable{System.Object},JieNor.Framework.SuperOrm.Metadata.DataEntity.IDataEntityType)">
+            <summary>
+            自动设置实体数据主键
+            </summary>
+            <param name="ctx"></param>
+            <param name="obj"></param>
+            <param name="entityType"></param>
+        </member>
+        <member name="T:JieNor.Framework.Interface.IQueryDataService">
+            <summary>
+            数据查询服务：多用于报表查询，列表查询等场景
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.Interface.IDefaultValueCalculator">
+            <summary>
+            默认值计算器
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.Interface.ILogService">
+            <summary>
+            封装日志服务
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Interface.ILogService.SwitchRealtimeLog(System.Boolean)">
+            <summary>
+            是否开启实时日志
+            </summary>
+            <param name="isOn"></param>
+        </member>
+        <member name="T:JieNor.Framework.Interface.IDynamicRegisterController">
+            <summary>
+            动态注册控制器
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IDynamicRegisterController.GetControllerAssembly">
+            <summary>
+            获取控制器所属程序集
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.Interface.IRealtimeMessagePiple">
+            <summary>
+            即时消息管道接口
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IRealtimeMessagePiple.SendMessage(JieNor.Framework.UserContext,JieNor.Framework.Interface.IRealtimeMessage)">
+            <summary>
+            发送广播消息
+            </summary>
+            <param name="ctx"></param>
+            <param name="message"></param>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IRealtimeMessagePiple.SendMessage(JieNor.Framework.UserContext,System.Collections.Generic.List{System.String},JieNor.Framework.Interface.IRealtimeMessage)">
+            <summary>
+            发送消息给指定人
+            </summary>
+            <param name="ctx"></param>
+            <param name="lstUserIds"></param>
+            <param name="message"></param>
+        </member>
+        <member name="T:JieNor.Framework.Interface.IRealtimeMessage">
+            <summary>
+            实时消息接口
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.IRealtimeMessage.TypeId">
+            <summary>
+            消息类型
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.IRealtimeMessage.message">
+            <summary>
+            消息内容
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.Interface.ISignalRMessage">
+            <summary>
+            SignalR消息接口
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.ISignalRMessage.HubName">
+            <summary>
+            SignalR管道名称
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.ISignalRMessage.Method">
+            <summary>
+            SignalR客户端方法名
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.Interface.BaseRealtimeMessage">
+            <summary>
+            实时消息基类对象
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Interface.BaseRealtimeMessage.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.BaseRealtimeMessage.message">
+            <summary>
+            消息内容
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.BaseRealtimeMessage.date">
+            <summary>
+            消息日期
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.BaseRealtimeMessage.TypeId">
+            <summary>
+            消息类型标识
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.Interface.BizFlowRealtimeMessage">
+            <summary>
+            业务流程实时消息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.BizFlowRealtimeMessage.TypeId">
+            <summary>
+            消息类型
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.Interface.SysLogRealtimeMessage">
+            <summary>
+            系统日志实时消息对象
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.SysLogRealtimeMessage.TypeId">
+            <summary>
+            消息类型
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.Interface.SysNofifyRealtimeMessage">
+            <summary>
+            系统通知消息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.SysNofifyRealtimeMessage.TypeId">
+            <summary>
+            消息类型
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.Interface.IRealtimeWorkService">
+            <summary>
+            实时移动办公服务
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IRealtimeWorkService.GetLinkObjects(JieNor.Framework.UserContext)">
+            <summary>
+            获取当前系统所有业务联系对象
+            </summary>
+            <param name="ctx"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.Interface.LinkObject">
+            <summary>
+            联系对象
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.LinkObject.TypeId">
+            <summary>
+            联系对象类型
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.LinkObject.Id">
+            <summary>
+            联系对象标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.LinkObject.Name">
+            <summary>
+            联系对象名称
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.LinkObject.DisplayName">
+            <summary>
+            联系对象显示名
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.Interface.UserLinkObject">
+            <summary>
+            联系对象：用户
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.Interface.CustomerLinkObject">
+            <summary>
+            联系对象：客户
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.Interface.SupplierLinkObject">
+            <summary>
+            联系对象：供应商
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.Interface.ISqlStringParser">
+            <summary>
+            sql字符解析器
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Interface.ISqlStringParser.GetRealSqlFilter(JieNor.Framework.UserContext,JieNor.Framework.MetaCore.FormMeta.HtmlForm,System.String)">
+            <summary>
+            结合模型获取真正的sql过滤条件
+            </summary>
+            <param name="ctx"></param>
+            <param name="hForm"></param>
+            <param name="strFilter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.ISqlStringParser.GetRealSqlOrderBy(JieNor.Framework.UserContext,JieNor.Framework.MetaCore.FormMeta.HtmlForm,System.String)">
+            <summary>
+            获取真实的排序字符串
+            </summary>
+            <param name="ctx"></param>
+            <param name="hForm"></param>
+            <param name="orderby"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.Interface.IUiDataConverter">
+            <summary>
+            UI数据格式转换器
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IUiDataConverter.CreateUIDataObject(JieNor.Framework.UserContext,JieNor.Framework.MetaCore.FormMeta.HtmlForm,JieNor.Framework.SuperOrm.DataEntity.DynamicObject)">
+            <summary>
+            创建个UI数据对象
+            </summary>
+            <param name="ctx"></param>
+            <param name="htmlForm"></param>
+            <param name="dataEntity"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.Interface.ISystemProfile">
+            <summary>
+            系统参数接口
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Interface.ISystemProfile.GetProfile(JieNor.Framework.UserContext,System.String)">
+            <summary>
+            获取指定类别的所有系统参数
+            </summary>
+            <param name="ctx"></param>
+            <param name="category"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.ISystemProfile.GetProfile(JieNor.Framework.UserContext,System.String,System.String)">
+            <summary>
+            获取具体的某个标识的系统参数
+            </summary>
+            <param name="ctx"></param>
+            <param name="category"></param>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.ISystemProfile.GetAllProfiles(JieNor.Framework.UserContext)">
+            <summary>
+            获取所有参数内容
+            </summary>
+            <param name="ctx"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.ISystemProfile.CreateOrUpdateProfile(JieNor.Framework.UserContext,System.String,System.String,System.String,System.String)">
+            <summary>
+            创建或更新一个系统参数
+            </summary>
+            <param name="ctx"></param>
+            <param name="category"></param>
+            <param name="key"></param>
+            <param name="value"></param>
+            <param name="desc"></param>
+        </member>
+        <member name="T:JieNor.Framework.Interface.Realtime.ILinkUserProvider">
+            <summary>
+            系统用户提供者接口
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Interface.Realtime.ILinkUserProvider.GetLinkObjects(JieNor.Framework.UserContext)">
+            <summary>
+            获取当前系统所有系统用户联系对象
+            </summary>
+            <param name="ctx"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.Interface.Realtime.IMsgRepoService">
+            <summary>
+            系统消息服务总线
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Interface.Realtime.IMsgRepoService.GetUnreadMessages(JieNor.Framework.UserContext,System.String)">
+            <summary>
+            获取指定用户未阅读消息，默认取当前用户
+            </summary>
+            <param name="ctx"></param>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.Realtime.IMsgRepoService.SaveMessage(JieNor.Framework.UserContext,System.Collections.Generic.IEnumerable{JieNor.Framework.Interface.IRealtimeMessage})">
+            <summary>
+            保存消息
+            </summary>
+            <param name="ctx"></param>
+            <param name="messages"></param>
+        </member>
+        <member name="M:JieNor.Framework.Interface.Realtime.IMsgRepoService.SetMessageStatus(JieNor.Framework.UserContext,System.Collections.Generic.IEnumerable{JieNor.Framework.Interface.IRealtimeMessage},System.Int32,System.Boolean)">
+            <summary>
+            批量设置消息为已读标记
+            </summary>
+            <param name="ctx"></param>
+            <param name="messages"></param>
+            <param name="messageStatus">消息状态，请参考<see cref="T:JieNor.Framework.Enums.IMEnums.Enu_MessageStatus">消息状态枚举定义</see>/></param>
+            <param name="isAppend">是否追加状态，否则重置状态</param>
+        </member>
+        <member name="M:JieNor.Framework.Interface.Realtime.IMsgRepoService.GetMessage(JieNor.Framework.UserContext,System.String)">
+            <summary>
+            获取当前用户指定状态的消息
+            </summary>
+            <param name="ctx"></param>
+            <param name="filter">过滤条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.Realtime.IMsgRepoService.GetMessageBySender(JieNor.Framework.UserContext,System.String,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>
+            根据指定发送者获取消息
+            </summary>
+            <param name="ctx"></param>
+            <param name="sender"></param>
+            <param name="fromDate"></param>
+            <param name="toDate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.Realtime.IMsgRepoService.GetMessageByReceiver(JieNor.Framework.UserContext,System.String,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>
+            根据指定接收者获取消息
+            </summary>
+            <param name="ctx"></param>
+            <param name="receiver"></param>
+            <param name="fromDate"></param>
+            <param name="toDate"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.Interface.IBillNoService">
+            <summary>
+            单据编号、基础资料编码的生成接口
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IBillNoService.SetBillNo(JieNor.Framework.MetaCore.FormOp.OperationContext,System.String,System.Collections.Generic.IEnumerable{JieNor.Framework.SuperOrm.DataEntity.DynamicObject})">
+            <summary>
+            构建单据编号 （基础资料编码）
+            1、从编码配置表获取编码的表达式
+            2、构建单据编号
+            3、设置单据编号
+            需注意：
+            A、没有设置编码表达式的，默认设置为 'No.' + Seq(10)
+            B、单据上的编码字段不为空的，不再重新编码（要重新编码，请先清空编码字段）
+            </summary>
+            <param name="ctx"></param>
+            <param name="formId"></param>
+            <param name="billDatas"></param>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IBillNoService.SetBillNo(JieNor.Framework.MetaCore.FormOp.OperationContext,System.String,JieNor.Framework.SuperOrm.DataEntity.DynamicObject,System.String)">
+            <summary>
+            构建单据编号 （基础资料编码），单据编号由 常量（可选） + 单据上字段值（可多选） + 流水号 组成
+            </summary>
+            <param name="formId">业务对象</param>
+            <param name="billData">业务对象实例，如单据数据</param>
+            <param name="express">获取编码的表达式：如 'cgrk' + FDate + Seq(4)，需要注意的是流水号放最后</param>
+            <returns>编码表达式 'cgrk' + FDate + Seq(4) ，
+            则返回格式如 cgrk201606070001、cgrk201606070002 的编码</returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IBillNoService.SetBillNo(JieNor.Framework.MetaCore.FormOp.OperationContext,System.String,System.Collections.Generic.IEnumerable{JieNor.Framework.SuperOrm.DataEntity.DynamicObject},System.String)">
+            <summary>
+            构建单据编号 （基础资料编码），单据编号由 常量（可选） + 单据上字段值（可多选） + 流水号 组成
+            </summary>
+            <param name="formId">业务对象</param>
+            <param name="billData">业务对象实例，如单据数据</param>
+            <param name="express">获取编码的表达式：如 'cgrk' + FDate + Seq(4)，需要注意的是流水号放最后</param>
+            <returns>编码表达式 'cgrk' + FDate + Seq(4) ，
+            则返回格式如 cgrk201606070001、cgrk201606070002 的编码</returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IBillNoService.GetBillNo(JieNor.Framework.MetaCore.FormOp.OperationContext,System.String,JieNor.Framework.SuperOrm.DataEntity.DynamicObject,System.String)">
+            <summary>
+            构建单据编号 （基础资料编码），单据编号由 常量（可选） + 单据上字段值（可多选） + 流水号 组成
+            </summary>
+            <param name="formId">业务对象</param>
+            <param name="billData">业务对象实例，如单据数据</param>
+            <param name="express">获取编码的表达式：如 'cgrk' + FDate + Seq(4)，需要注意的是流水号放最后</param>
+            <returns>编码表达式 'cgrk' + FDate + Seq(4) ，
+            则返回格式如 cgrk201606070001、cgrk201606070002 的编码</returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IBillNoService.GetBillNo(JieNor.Framework.MetaCore.FormOp.OperationContext,System.String,System.Collections.Generic.IEnumerable{JieNor.Framework.SuperOrm.DataEntity.DynamicObject},System.String)">
+            <summary>
+            构建单据编号 （基础资料编码），单据编号由 常量（可选） + 单据上字段值（可多选） + 流水号 组成
+            </summary>
+            <param name="formId">业务对象</param>
+            <param name="billData">业务对象实例，如单据数据</param>
+            <param name="express">获取编码的表达式：如 'cgrk' + FDate + Seq(4)，需要注意的是流水号放最后</param>
+            <returns>编码表达式 'cgrk' + FDate + Seq(4) ，
+            则返回格式如 cgrk201606070001、cgrk201606070002 的编码</returns>
+        </member>
+        <member name="T:JieNor.Framework.Interface.IWarmUpService">
+            <summary>
+            热身服务，应用场景如：预加载系统相关模型模板文件
+            1、在站点启动时会自动异步执行
+            2、注意这时候还未登录，无上下文信息 
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.Interface.IDBService">
+            <summary>
+            数据读取
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IDBService.ExecuteReader(JieNor.Framework.UserContext,System.String)">
+            <summary>
+            返回一个数据读取器对象
+            </summary>
+            <param name="ctx"></param>
+            <param name="strSQL"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IDBService.ExecuteReader(JieNor.Framework.UserContext,System.String,System.Data.CommandType)">
+            <summary>
+            返回一个数据读取器对象
+            </summary>
+            <param name="ctx"></param>
+            <param name="strSQL"></param>
+            <param name="cmdtype"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IDBService.ExecuteReader(JieNor.Framework.UserContext,System.String,JieNor.Framework.SqlParam)">
+            <summary>
+            返回一个数据读取器对象
+            </summary>
+            <param name="ctx"></param>
+            <param name="strSQL"></param>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IDBService.ExecuteReader(JieNor.Framework.UserContext,System.String,JieNor.Framework.SqlParam,System.Data.CommandType)">
+            <summary>
+            返回一个数据读取器对象
+            </summary>
+            <param name="ctx"></param>
+            <param name="strSQL"></param>
+            <param name="param"></param>
+            <param name="cmdtype"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IDBService.ExecuteReader(JieNor.Framework.UserContext,System.String,System.Collections.Generic.List{JieNor.Framework.SqlParam})">
+            <summary>
+            返回一个数据读取器对象
+            </summary>
+            <param name="ctx"></param>
+            <param name="strSQL"></param>
+            <param name="paramList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IDBService.ExecuteReader(JieNor.Framework.UserContext,System.String,System.Collections.Generic.IEnumerable{JieNor.Framework.SqlParam},System.Data.CommandType)">
+            <summary>
+            返回一个数据读取器对象
+            </summary>
+            <param name="ctx"></param>
+            <param name="strSQL"></param>
+            <param name="paramList"></param>
+            <param name="cmdtype"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IDBService.ExecuteReader(JieNor.Framework.UserContext,System.String,System.Collections.Generic.IEnumerable{JieNor.Framework.SqlParam},System.Data.CommandType,System.Data.CommandBehavior)">
+            <summary>
+            返回一个数据读取器对象
+            </summary>
+            <param name="ctx"></param>
+            <param name="strSQL"></param>
+            <param name="paramList"></param>
+            <param name="cmdtype"></param>
+            <param name="cmdBehavior"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IDBService.ExecuteDataTable(JieNor.Framework.UserContext,System.String)">
+            <summary>
+            返回一个数据表实体
+            </summary>
+            <param name="ctx"></param>
+            <param name="strSQL"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IDBService.ExecuteDataSet(JieNor.Framework.UserContext,System.String)">
+            <summary>
+            返回一个数据集实体
+            </summary>
+            <param name="ctx"></param>
+            <param name="strSQL"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IDBService.ExecuteDynamicObject(JieNor.Framework.UserContext,System.String,System.Collections.Generic.IEnumerable{JieNor.Framework.SqlParam})">
+            <summary>
+            返回一批动态实体
+            </summary>
+            <param name="ctx"></param>
+            <param name="strSql"></param>
+            <param name="paramList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IDBService.ExecuteDynamicObject(JieNor.Framework.UserContext,JieNor.Framework.SuperOrm.Metadata.DataEntity.DynamicObjectType,System.String,System.Collections.Generic.IEnumerable{JieNor.Framework.SqlParam})">
+            <summary>
+            返回指定结构的一批实体对象
+            </summary>
+            <param name="ctx"></param>
+            <param name="dt"></param>
+            <param name="strSql"></param>
+            <param name="paramList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IDBService.CreateTempTableWithDataList(JieNor.Framework.UserContext,System.Collections.Generic.IEnumerable{System.Object})">
+            <summary>
+            将数组值创建进一个临时表里,成功返回表名，表的列名默认为FID
+            </summary>
+            <param name="ctx"></param>
+            <param name="fIds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IDBService.CreateTempTableWithSelectedRows(JieNor.Framework.UserContext,System.Collections.Generic.IEnumerable{JieNor.Framework.DataTransferObject.Poco.SelectedRow})">
+            <summary>
+            使用一组数据创建临时表，成功返回表名，表的列名默认为FID,FENTRYID,FENTITYKEY
+            </summary>
+            <param name="ctx"></param>
+            <param name="lstSelectedRows"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.Interface.IFilterSchemeService">
+            <summary>
+            过滤方案服务
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IFilterSchemeService.LoadFilterScheme(JieNor.Framework.UserContext,System.String)">
+            <summary>
+            加载表单关联的列表过滤方案
+            </summary>
+            <param name="ctx"></param>
+            <param name="formId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IFilterSchemeService.SaveFilterScheme(JieNor.Framework.UserContext,System.String,JieNor.Framework.DataTransferObject.Report.FilterSchemeObject)">
+            <summary>
+            保存列表某个过滤方案
+            </summary>
+            <param name="ctx"></param>
+            <param name="formId"></param>
+            <param name="scheme"></param>
+        </member>
+        <member name="T:JieNor.Framework.Interface.IHttpServiceInvoker">
+            <summary>
+            网际服务调用
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IHttpServiceInvoker.Invoke``1(JieNor.Framework.UserContext,JieNor.Framework.DataTransferObject.Poco.TargetSEP,``0)">
+            <summary>
+            向特定目标发起网际请求
+            </summary>
+            <typeparam name="TReq"></typeparam>
+            <param name="ctx"></param>
+            <param name="target"></param>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IHttpServiceInvoker.Invoke``1(JieNor.Framework.UserContext,``0)">
+            <summary>
+            调用本机或网关服务，配置网关时，优先由网关处理
+            </summary>
+            <typeparam name="TReq"></typeparam>
+            <param name="ctx"></param>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IHttpServiceInvoker.InvokeLocal``1(JieNor.Framework.UserContext,``0)">
+            <summary>
+            本机调用跨业务对象操作
+            </summary>
+            <typeparam name="TReq"></typeparam>
+            <param name="ctx"></param>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IHttpServiceInvoker.InvokeBillOperation(JieNor.Framework.UserContext,System.String,System.Collections.Generic.IEnumerable{JieNor.Framework.SuperOrm.DataEntity.DynamicObject},System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            本机调用跨业务对象的表单操作
+            </summary>
+            <param name="ctx"></param>
+            <param name="formId"></param>
+            <param name="dataEntities"></param>
+            <param name="operationNo"></param>
+            <param name="option"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IHttpServiceInvoker.InvokeListOperation(JieNor.Framework.UserContext,System.String,System.Collections.Generic.IEnumerable{JieNor.Framework.DataTransferObject.Poco.SelectedRow},System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            本机调用跨业务对象的列表操作
+            </summary>
+            <param name="ctx"></param>
+            <param name="formId"></param>
+            <param name="lstSelRows"></param>
+            <param name="operationNo"></param>
+            <param name="option"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IHttpServiceInvoker.InvokeDynamicOperation(JieNor.Framework.UserContext,System.String,System.Collections.Generic.IEnumerable{JieNor.Framework.SuperOrm.DataEntity.DynamicObject},System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            本机调用跨业务对象的动态表单操作
+            </summary>
+            <param name="ctx"></param>
+            <param name="formId"></param>
+            <param name="dataEntities"></param>
+            <param name="operationNo"></param>
+            <param name="option"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.Interface.SSRequestExtensions">
+            <summary>
+            请求对象扩展方法
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Interface.SSRequestExtensions.IsMicroServiceRequest(ServiceStack.Web.IRequest)">
+            <summary>
+            判断当前请求是不是微服务请求
+            </summary>
+            <param name="req"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.SSRequestExtensions.GetMicroServiceTarget(ServiceStack.Web.IRequest)">
+            <summary>
+            获取微服务目标对象
+            </summary>
+            <param name="req"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.SSRequestExtensions.SetMicroServiceTarget(ServiceStack.Web.IRequest,JieNor.Framework.DataTransferObject.Poco.TargetSEP)">
+            <summary>
+            设置微服务位置
+            </summary>
+            <param name="req"></param>
+            <param name="target"></param>
+        </member>
+        <member name="M:JieNor.Framework.Interface.SSRequestExtensions.SetMicroServiceTarget(ServiceStack.Web.IRequest,System.String)">
+            <summary>
+            设置微服务位置
+            </summary>
+            <param name="req"></param>
+            <param name="serviceLocation"></param>
+        </member>
+        <member name="M:JieNor.Framework.Interface.SSRequestExtensions.IsFromServiceGateway(ServiceStack.Web.IRequest)">
+            <summary>
+            判断当前请求是否来自于网关
+            </summary>
+            <param name="req"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.SSRequestExtensions.SetGatewayRequest(ServiceStack.Web.IRequest,System.String)">
+            <summary>
+            设置为网关发出的请求
+            </summary>
+            <param name="req"></param>
+            <param name="routeby"></param>
+        </member>
+        <member name="M:JieNor.Framework.Interface.SSRequestExtensions.ClearMicroServiceTarget(ServiceStack.Web.IRequest)">
+            <summary>
+            清除微服务标记
+            </summary>
+            <param name="req"></param>
+        </member>
+        <member name="M:JieNor.Framework.Interface.SSRequestExtensions.IsAjaxRequest(ServiceStack.Web.IRequest)">
+            <summary>
+            判断一下当前请求是不是ajax请求
+            </summary>
+            <param name="req"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.Interface.IMetaModelService">
+            <summary>
+            表单模型服务
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IMetaModelService.LoadFormModel(JieNor.Framework.UserContext,System.String)">
+            <summary>
+            加载表单模型
+            </summary>
+            <param name="ctx"></param>
+            <param name="formId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IMetaModelService.LoadConvertModel(JieNor.Framework.UserContext,System.String,System.String)">
+            <summary>
+            获取单据转换模型（包含所有规则）
+            </summary>
+            <param name="ctx"></param>
+            <param name="sourceFormId"></param>
+            <param name="targetFormId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IMetaModelService.LoadConvertRule(JieNor.Framework.UserContext,System.String)">
+            <summary>
+            获取单据转换规则模型
+            </summary>
+            <param name="ctx"></param>
+            <param name="ruleId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IMetaModelService.GetListMenu(JieNor.Framework.UserContext,System.String)">
+            <summary>
+            获取列表菜单
+            </summary>
+            <param name="ctx"></param>
+            <param name="formId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IMetaModelService.GetBillMenu(JieNor.Framework.UserContext,System.String)">
+            <summary>
+            获取表单菜单
+            </summary>
+            <param name="ctx"></param>
+            <param name="formId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.Interface.INetworkCtrlService">
+            <summary>
+            操作冲突检查控制的相关服务
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Interface.INetworkCtrlService.BeginNetCtrl(JieNor.Framework.MetaCore.FormOp.OperationContext,JieNor.Framework.DataEntity.NetworkCtrl.NetworkCtrlObject,JieNor.Framework.DataEntity.NetworkCtrl.NetWorkRunTimeParam)">
+            <summary>
+            开启操作冲突监控
+            </summary>
+            <param name="ctx"></param>
+            <param name="networkCtrlObj"></param>
+            <param name="para"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.INetworkCtrlService.BatchBeginNetCtrl(JieNor.Framework.MetaCore.FormOp.OperationContext,JieNor.Framework.DataEntity.NetworkCtrl.NetworkCtrlObject,System.Collections.Generic.List{JieNor.Framework.DataEntity.NetworkCtrl.NetWorkRunTimeParam},System.Boolean)">
+            <summary>
+            批量开启操作冲突监控（有一条失败就返回）
+            </summary>
+            <param name="ctx"></param>
+            <param name="networkCtrlObj"></param>
+            <param name="billParamList"></param>
+            <param name="isSingleFail">有一条失败就返回</param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.INetworkCtrlService.CommitNetCtrl(JieNor.Framework.MetaCore.FormOp.OperationContext,JieNor.Framework.DataEntity.NetworkCtrl.NetworkCtrlResult)">
+            <summary>
+            释放操作冲突监控
+            </summary>
+            <param name="ctx"></param>
+            <param name="neworkCtrlResult"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.INetworkCtrlService.BatchCommitNetCtrl(JieNor.Framework.MetaCore.FormOp.OperationContext,System.Collections.Generic.List{JieNor.Framework.DataEntity.NetworkCtrl.NetworkCtrlResult})">
+            <summary>
+            批量释放操作冲突监控
+            </summary>
+            <param name="ctx"></param>
+            <param name="neworkCtrlResults"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.INetworkCtrlService.CommitNetCtrlByUser(JieNor.Framework.MetaCore.FormOp.OperationContext)">
+            <summary>
+            按当前用户，批量释放操作冲突监控（主要用于注销登录时，批量释放当前用户的操作冲突监控）
+            </summary>
+            <param name="ctx"></param>
+        </member>
+        <member name="T:JieNor.Framework.Interface.IOperationService">
+            <summary>
+            操作服务接口
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.IOperationService.OperationContext">
+            <summary>
+            操作上下文
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IOperationService.Execute">
+            <summary>
+            执行操作
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IOperationService.Initialize(System.Object[])">
+            <summary>
+            操作上下文初始化
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.Interface.IOperationServicePlugIn">
+            <summary>
+            操作服务插件
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.IOperationServicePlugIn.HtmlForm">
+            <summary>
+            业务对象业务模型
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.IOperationServicePlugIn.Context">
+            <summary>
+            上下文
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IOperationServicePlugIn.BeforeExecuteOperationTransaction(JieNor.Framework.MetaCore.FormOp.FormService.PlugIn.BeforeExecuteOperationTransaction)">
+            <summary>
+            执行操作事务前事件，通知插件对要处理的数据进行排序等预处理
+            </summary>
+            <param name="e">e.SelectedRows 准备要处理的扩展实体 e.DataEntitys 处理后的实体</param>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IOperationServicePlugIn.AfterExecuteOperationTransaction(JieNor.Framework.MetaCore.FormOp.FormService.PlugIn.AfterExecuteOperationTransaction)">
+            <summary>
+            执行操作事务后事件,通知插件对象执行其它事务无关的业务逻辑
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IOperationServicePlugIn.BeginOperationTransaction(JieNor.Framework.MetaCore.FormOp.FormService.PlugIn.BeginOperationTransactionArgs)">
+            <summary>
+            调用操作事物前触发
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IOperationServicePlugIn.EndOperationTransaction(JieNor.Framework.MetaCore.FormOp.FormService.PlugIn.EndOperationTransactionArgs)">
+            <summary>
+            调用操作事物后触发
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IOperationServicePlugIn.InitializeOperationContext(JieNor.Framework.MetaCore.FormOp.OperationContext)">
+            <summary>
+            初始化插件操作上下文
+            </summary>
+            <param name="operCtx"></param>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IOperationServicePlugIn.OnCheckPermssion(JieNor.Framework.MetaCore.FormOp.FormService.PlugIn.OnCheckPermssionArgs)">
+            <summary>
+            检测权限事件
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="T:JieNor.Framework.Interface.ISequenceService">
+            <summary>
+            序列服务
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Interface.ISequenceService.GetSequence``1">
+            <summary>
+            获取单个序列
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.ISequenceService.GetSequence``1(System.Int32)">
+            <summary>
+            获取序列
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="count"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.Interface.IServiceInterceptor">
+            <summary>
+            服务拦截器接口
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IServiceInterceptor.Execute(ServiceStack.Web.IRequest,ServiceStack.Web.IResponse)">
+            <summary>
+            执行服务
+            </summary>
+            <param name="req"></param>
+            <param name="res"></param>
+        </member>
+        <member name="P:JieNor.Framework.Interface.IServiceInterceptor.Order">
+            <summary>
+            顺序
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.Interface.ISmtpService">
+            <summary>
+            邮件服务接口定义
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Interface.ISmtpService.To(System.String)">
+            <summary>
+            邮箱地址，多个用；或，分隔开
+            </summary>
+            <param name="mailAddresses"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.ISmtpService.Cc(System.String)">
+            <summary>
+            邮箱地址，多个用；或，分隔开
+            </summary>
+            <param name="mailAddresses"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.ISmtpService.Bcc(System.String)">
+            <summary>
+            邮箱地址，多个用；或，分隔开
+            </summary>
+            <param name="mailAddresses"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.Interface.ISupportAutoDispose">
+            <summary>
+            自动销毁对象接口定义
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.ISupportAutoDispose.LastActiveTime">
+            <summary>
+            最后访问时间
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.ISupportAutoDispose.ExpiryIn">
+            <summary>
+            过期时间：必须>http过期时间
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.ISupportAutoDispose.Id">
+            <summary>
+            对象标识
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.Interface.IGlobalObjectManager`1">
+            <summary>
+            全局对象管理器
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IGlobalObjectManager`1.ApplyGlobalObject(System.String,System.String,System.Boolean,System.Func{`0})">
+            <summary>
+            申请一个全局对象，并增加有效期管理，过期释放
+            </summary>
+            <param name="objectId"></param>
+            <param name="tag"></param>
+            <param name="bAutoCreateWhenNotExists"></param>
+            <param name="newInstance"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IGlobalObjectManager`1.TryFindGlobalObject(System.Predicate{`0},`0@)">
+            <summary>
+            查找一个全局对象
+            </summary>
+            <param name="predicate"></param>
+            <param name="dispObj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IGlobalObjectManager`1.DisposeGlobalObject(System.String,System.String,`0@)">
+            <summary>
+            人工摧毁某个全局对象
+            </summary>
+            <param name="objectId"></param>
+            <param name="tag"></param>
+            <param name="dispObject"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.IGlobalObjectManager`1.DisposeGlobalObject(System.Predicate{`0})">
+            <summary>
+            人工摧毁某个全局对象
+            </summary>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.Interface.OperationContextExtension">
+            <summary>
+            扩展方法
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Interface.OperationContextExtension.ShowForm(JieNor.Framework.UserContext,JieNor.Framework.MetaCore.FormMeta.HtmlForm,System.String,System.String,JieNor.Framework.Enu_DomainType,JieNor.Framework.Enu_OpenStyle,System.String,System.String,System.Object)">
+            <summary>
+            显示指定表单
+            </summary>
+            <param name="userCtx"></param>
+            <param name="activeForm"></param>
+            <param name="pkId"></param>
+            <param name="parentPageId"></param>
+            <param name="domainType"></param>
+            <param name="openStyle"></param>
+            <param name="strFormCaption"></param>
+            <param name="containerid"></param>
+            <param name="opData"></param>
+        </member>
+        <member name="M:JieNor.Framework.Interface.OperationContextExtension.ShowSpecialForm(JieNor.Framework.UserContext,JieNor.Framework.MetaCore.FormMeta.HtmlForm,JieNor.Framework.SuperOrm.DataEntity.DynamicObject,System.Boolean,System.String)">
+            <summary>
+            使用指定数据包显示指定表单
+            </summary>
+            <param name="userCtx"></param>
+            <param name="activeForm"></param>
+            <param name="dataEntity"></param>
+            <param name="isApplyDefValue"></param>
+            <param name="parentPageId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.OperationContextExtension.LockAllFields(JieNor.Framework.MetaCore.FormOp.OperationContext,System.String[])">
+            <summary>
+            锁定所有字段
+            </summary>
+            <param name="operCtx"></param>
+            <param name="exceptFields"></param>
+        </member>
+        <member name="M:JieNor.Framework.Interface.OperationContextExtension.SetEnabled(JieNor.Framework.MetaCore.FormOp.OperationContext,System.String,System.Boolean)">
+            <summary>
+            设置某人元素的可用性
+            </summary>
+            <param name="operCtx"></param>
+            <param name="id"></param>
+            <param name="enabled"></param>
+        </member>
+        <member name="M:JieNor.Framework.Interface.OperationContextExtension.SetVisible(JieNor.Framework.MetaCore.FormOp.OperationContext,System.String,System.Boolean)">
+            <summary>
+            设置某个元素的可见性
+            </summary>
+            <param name="operCtx"></param>
+            <param name="id"></param>
+            <param name="visible"></param>
+        </member>
+        <member name="M:JieNor.Framework.Interface.OperationContextExtension.GetFormControlFile(System.Object,System.String,JieNor.Framework.Enu_DomainType)">
+            <summary>
+            获取指定表单模型的控制文件
+            </summary>
+            <param name="operCtx"></param>
+            <param name="formId"></param>
+            <param name="domainType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.OperationContextExtension.InitOperationUIItemStates(JieNor.Framework.MetaCore.FormOp.OperationContext)">
+            <summary>
+            初始化各操作相关的元素状态信息
+            </summary>
+            <param name="operCtx"></param>
+        </member>
+        <member name="T:JieNor.Framework.Interface.PlugInProxy`1">
+            <summary>
+            通用插件代理
+            </summary>
+            <typeparam name="TPlugIn"></typeparam>
+        </member>
+        <member name="M:JieNor.Framework.Interface.PlugInProxy`1.#ctor(JieNor.Framework.UserContext,System.String,System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="ctx"></param>
+            <param name="formId"></param>
+            <param name="operationNo"></param>
+        </member>
+        <member name="T:JieNor.Framework.Interface.Profile.IUserProfile">
+            <summary>
+            用户配置信息服务接口
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Interface.Profile.IUserProfile.SaveUserProfile(JieNor.Framework.UserContext,System.String,JieNor.Framework.MetaCore.FormModel.FormUserProfile,System.Boolean)">
+            <summary>
+            保存用户配置文件
+            </summary>
+            <param name="ctx"></param>
+            <param name="formId"></param>
+            <param name="profileData"></param>
+            <param name="isActiveProfile"></param>
+        </member>
+        <member name="M:JieNor.Framework.Interface.Profile.IUserProfile.LoadUserProfile(JieNor.Framework.UserContext,System.String,System.String,System.String)">
+            <summary>
+            加载用户配置文件
+            </summary>
+            <param name="ctx"></param>
+            <param name="formId"></param>
+            <param name="profileId"></param>
+            <param name="category"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.Interface.Session.HtmlServerPage">
+            <summary>
+            服务端页面对象
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Interface.Session.HtmlServerPage.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.Session.HtmlServerPage.ExpiryIn">
+            <summary>
+            过期时间
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.Session.HtmlServerPage.Id">
+            <summary>
+            标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.Session.HtmlServerPage.LastActiveTime">
+            <summary>
+            最后激活时间
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.Session.HtmlServerPage.PageId">
+            <summary>
+            子级页面实例标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.Session.HtmlServerPage.ParentPageId">
+            <summary>
+            父级页面实例标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.Session.HtmlServerPage.FormId">
+            <summary>
+            页面标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.Session.HtmlServerPage.SessionId">
+            <summary>
+            增加session标识，方便批量释放页面实例
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.Session.HtmlServerPage.DomainType">
+            <summary>
+            领域类别标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.Session.HtmlServerPage.OpenStyle">
+            <summary>
+            打开模式
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Interface.Session.HtmlServerPage.Dispose">
+            <summary>
+            资源释放
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.Interface.Session.HtmlServerPageExtensions">
+            <summary>
+            服务端页面模型扩展方法 
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Interface.Session.HtmlServerPageExtensions.GetPageSession(JieNor.Framework.Interface.Session.HtmlServerPage)">
+            <summary>
+            取得当前页面的session对象
+            </summary>
+            <param name="htmlPage"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.Session.HtmlServerPageExtensions.GetParentPageSession(JieNor.Framework.Interface.Session.HtmlServerPage)">
+            <summary>
+            取得父级页面的session对象
+            </summary>
+            <param name="htmlPage"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.Session.HtmlServerPageExtensions.DisposePageSession(JieNor.Framework.Interface.Session.HtmlServerPage)">
+            <summary>
+            销毁页面session
+            </summary>
+            <param name="htmlPage"></param>
+        </member>
+        <member name="T:JieNor.Framework.Interface.Session.IPageManager">
+            <summary>
+            页面管理器
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Interface.Session.IPageManager.GetPage(System.String)">
+            <summary>
+            获取服务端页面模型
+            </summary>
+            <param name="pageId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.Session.IPageManager.AddOrUpdatePage(JieNor.Framework.Interface.Session.HtmlServerPage)">
+            <summary>
+            新增或更新一个页面对象
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.Session.IPageManager.Dispose(System.String)">
+            <summary>
+            销毁页面对象
+            </summary>
+            <param name="pageId"></param>
+        </member>
+        <member name="M:JieNor.Framework.Interface.Session.IPageManager.DisposeAllBySession">
+            <summary>
+            销毁当前session的所有页面对象
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.Interface.Session.PageSharedStorage">
+            <summary>
+            页面会话级存储对象
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Interface.Session.PageSharedStorage.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.Session.PageSharedStorage.ExpiryIn">
+            <summary>
+            当前对象有效期
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.Session.PageSharedStorage.Id">
+            <summary>
+            必须以页面id作为标识
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.Interface.Session.PageSharedStorage.LastActiveTime">
+            <summary>
+            最后使用时间
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Interface.Session.PageSharedStorage.Dispose">
+            <summary>
+            资源释放
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.Interface.OperationContextExtentions">
+            <summary>
+            操作上下文扩展方法 
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Interface.OperationContextExtentions.GetPageSession(JieNor.Framework.MetaCore.FormOp.OperationContext)">
+            <summary>
+            获取页面数据共享区
+            </summary>
+            <param name="operCtx"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.OperationContextExtentions.GetParentPageSession(JieNor.Framework.MetaCore.FormOp.OperationContext)">
+            <summary>
+            获取父页面数据共享区
+            </summary>
+            <param name="operCtx"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.OperationContextExtentions.DisposePageSession(JieNor.Framework.MetaCore.FormOp.OperationContext)">
+            <summary>
+            销毁全局缓存对象
+            </summary>
+            <param name="operCtx"></param>
+        </member>
+        <member name="T:JieNor.Framework.Interface.UsrMgr.IPermissionService">
+            <summary>
+            权限服务接口
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Interface.UsrMgr.IPermissionService.HasPermission(JieNor.Framework.UserContext,System.String,System.String,System.String,System.String)">
+            <summary>
+            返回当前用户是否具有某表单某操作的权限
+            </summary>
+            <param name="ctx"></param>
+            <param name="formId"></param>
+            <param name="operationNo"></param>
+            <param name="permId"></param>
+            <param name="moduleId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.Interface.UsrMgr.IPermissionService.CheckPermission(JieNor.Framework.UserContext,System.String,System.String,System.String,System.String)">
+            <summary>
+            判断当前用户是否具有某表单某操作的权限，无权时会直接报错
+            </summary>
+            <param name="ctx"></param>
+            <param name="formId"></param>
+            <param name="operationNo"></param>
+            <param name="permId"></param>
+            <param name="moduleId"></param>
+        </member>
+        <member name="T:JieNor.Framework.Interface.UsrMgr.IUserService">
+            <summary>
+            用户服务
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.Interface.UsrMgr.IUserService.UpdateUserSessionDisplayName(JieNor.Framework.UserContext,System.String)">
+            <summary>
+            更新用户显示名称
+            </summary>
+            <param name="ctx"></param>
+            <param name="userDispName"></param>
+        </member>
+        <member name="M:JieNor.Framework.Interface.UsrMgr.IUserService.CheckPassword(JieNor.Framework.UserContext,System.String,System.String)">
+            <summary>
+            确认指定密码是否与当前会话信息匹配
+            </summary>
+            <param name="ctx"></param>
+            <param name="password"></param>
+            <param name="tipMsg"></param>
+        </member>
+        <member name="M:JieNor.Framework.Interface.UsrMgr.IUserService.ComputePasswordHash(JieNor.Framework.UserContext,System.String,System.String@,System.String@)">
+            <summary>
+            计算指定密码的密文信息
+            </summary>
+            <param name="ctx"></param>
+            <param name="password"></param>
+            <param name="pwdHash"></param>
+            <param name="salt"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

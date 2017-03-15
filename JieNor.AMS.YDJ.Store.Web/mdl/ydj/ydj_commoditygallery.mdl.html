@@ -1,0 +1,19 @@
+﻿<!--本模板是根据服务端需求提炼而成，客户端页面只需要遵循下述节点的一些属性描述规范即可，
+    至于节点布局，样式等没有要求（也就是xpath没要求），可由客户端页面实际需求自由发挥，
+    但需要服务端保存的节点需遵守下述规范：基本就是增加几个自定义属性（id,fn,tn）
+    -->
+<html lang="en">
+<head>
+</head>
+<body id="ydj_commoditygallery" basemodel="bd_basetmpl" el=1 cn="商品图库">
+    <div id="fbillhead" el="51" pk="fid" tn="T_Ydj_Commoditygallery" pn="fbillhead" cn="商品图库">
+        <input type="text" id="fnumber" el="108" ek="fbillhead" fn="fnumber" pn="fnumber" cn="商品编码" desc="商品编码" /> 
+    	<input type="text" id="fname" el="108" ek="fbillhead" fn="fname" pn="fname" cn="商品名称" desc="商品名称" /> 
+    	<input type="text" id="fnorms" el="108" ek="fbillhead" fn="fnorms" pn="fnorms" cn="规格" desc="规格" /> 
+    	<input type="text" id="fmaterial" el="108" ek="fbillhead" fn="fmaterial" pn="fmaterial" cn="材质" desc="材质" /> 
+    	<input type="text" id="fcolor" el="108" ek="fbillhead" fn="fcolor" pn="fcolor" cn="颜色" desc="颜色" /> 
+
+    </div>
+
+</body>
+</html>

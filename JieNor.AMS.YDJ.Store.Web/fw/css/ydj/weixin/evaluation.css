@@ -1,0 +1,45 @@
+.page {
+	font-family: "微软雅黑";
+}
+
+.star_cell {
+	width: 100%;
+	height: 3rem;
+	line-height: 3rem;
+	text-align: center;
+}
+
+.star_cell img {
+	vertical-align: middle;
+}
+
+.attitude {
+	margin-top: 0.2rem;
+	text-align: center;
+	font-size: 18px;
+}
+
+.single_tag {
+	padding: 5px;
+}
+
+.tag_group a {
+	margin-left: 15px;
+	padding-left: 8px;
+	padding-right: 8px;
+}
+
+.comments_suggests {
+	font-size: 14px;
+	margin: 0;
+	margin-bottom: 1.5rem;
+}
+
+.c_s_aera {
+	font-family: "微软雅黑";
+}
+
+.submit_btn {
+	margin-bottom: 1.5rem;
+	width: 90%;
+}

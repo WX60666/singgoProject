@@ -1,0 +1,306 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JieNor.Framework.BizExpression</name>
+    </assembly>
+    <members>
+        <member name="T:JieNor.Framework.BizExpression.BuiltInFunctions">
+            <summary>
+            Ironpython 内置函数
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.BizExpression.CompiledExpression">
+            <summary>
+            编译后的表达式结构
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.BizExpression.DynamicTextParser">
+            <summary>
+            动态文本的定义和解析。
+            主要用于如邮件模板之类的应用场景
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.BizExpression.DynamicTextParser.op_Implicit(System.String)~JieNor.Framework.BizExpression.DynamicTextParser">
+            <summary>
+            允许将string隐式转换为DynamicText
+            </summary>
+            <param name="text">待转换的字符串</param>
+        </member>
+        <member name="T:JieNor.Framework.BizExpression.BizExpressionFactory">
+            <summary>
+            表达式解析器构造工厂
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.BizExpression.BizExpressionFactory.Eval(JieNor.Framework.Interface.IBizExpression,JieNor.Framework.Interface.IBizExpressionContext)">
+            <summary>
+            基于给定的上下文计算表达式的值。
+            <remarks>将使用默认的解析器去解析</remarks>
+            </summary>
+            <param name="exp">表达式文本</param>
+            <param name="ctx">表达式上下文</param>
+            <returns>计算结果</returns>
+        </member>
+        <member name="M:JieNor.Framework.BizExpression.BizExpressionFactory.Eval``1(JieNor.Framework.Interface.IBizExpression,JieNor.Framework.Interface.IBizExpressionContext)">
+            <summary>
+            基于给定的上下文计算表达式的值。
+            <remarks>将使用默认的解析器去解析</remarks>
+            </summary> 
+            <typeparam name="T">返回值的类型</typeparam>
+            <param name="exp">表达式文本</param>
+            <param name="ctx">表达式上下文</param>
+            <returns>计算结果</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:JieNor.Framework.BizExpression.BizExpressionFactory.CreateInstance" -->
+        <member name="P:JieNor.Framework.BizExpression.BizExpressionFactory.DefaultEvaluator">
+            <summary>
+            表达式解析器单例
+            </summary>
+        </member>
+        <member name="T:JieNor.Framework.BizExpression.PyExpressionEvaluator">
+            <summary>
+            基于IronPython脚本引擎的表达式解析器实现
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.BizExpression.PyExpressionEvaluator.DefaultEvaluator">
+            <summary>
+            表达式解析器单例
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.BizExpression.PyExpressionEvaluator.GetNameExpression(JieNor.Framework.Interface.IBizExpression)">
+            <summary>
+            获取某个表达式中，出现的名称成员的结果。
+            </summary>
+            <param name="expression">要检查的表达式对象。</param>
+            <returns>返回所有的名称成员，注意，返回的成员不能保证完全是字段，外界需要自行去除。</returns>
+        </member>
+        <member name="M:JieNor.Framework.BizExpression.SysVariables.GetLongDate(System.Object[])">
+            <summary>
+            获取长日期系统时间
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.BizExpression.SysVariables.GetShortDate(System.Object[])">
+            <summary>
+            获取短 日期系统时间
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.BizExpression.SysVariables.GetMaxDate(System.Object[])">
+            <summary>
+            获取最大日期时间
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.BizExpression.SysVariables.GetMinDate(System.Object[])">
+            <summary>
+            获取最小日期时间
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.BizExpression.SysVariables.GetUser(System.Object[])">
+            <summary>
+            获取当前用户
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.BizExpression.SysVariables.GetNullValue(System.Object[])">
+            <summary>
+            空变量
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JieNor.Framework.BizExpression.BizExpressionContext">
+            <summary>
+            表达式执行所需上下文
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.BizExpression.BizExpressionContext.Context">
+            <summary>
+            上下文信息
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.BizExpression.BizExpressionContext._sys">
+            <summary>
+            系统常量
+            </summary>
+        </member>
+        <member name="F:JieNor.Framework.BizExpression.BizExpressionContext._variableDictionary">
+            <summary>
+            表达式变量信息
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.BizExpression.BizExpressionContext.VariableDictionary">
+            <summary>
+            返回变量字典。
+            ExpressionContext创建过于频繁，这里延迟构建
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.BizExpression.BizExpressionContext.VariableNames">
+            <summary>
+            获取所有变量名称的集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.BizExpression.BizExpressionContext.AddVariable(System.String,System.Object)">
+            <summary>
+            变量赋值
+            <para> 
+            </para>
+            </summary>
+            <param name="key">变量名称</param>
+            <param name="value">变量值</param>
+            <returns>
+            出于Fluent编程考虑而加入的快速接口，例如：
+            <para>ctx.AddVariable("name", "john").AddVariable("age", "21")</para>
+            </returns>
+        </member>
+        <member name="M:JieNor.Framework.BizExpression.BizExpressionContext.AddVariable(System.String)">
+            <summary>
+            变量赋值
+            <para> 
+            </para>
+            </summary>
+            <param name="key">变量名称</param>
+            <returns>为Fluent编程而加入的快速接口</returns>
+        </member>
+        <member name="M:JieNor.Framework.BizExpression.BizExpressionContext.TrySetValue(System.String,System.Object)">
+            <summary>
+            尝试进行赋值操作。将检测是否能够进行字段和变量赋值
+            </summary>
+            <param name="key">要赋值的键</param>
+            <param name="newValue">新的值</param>
+            <returns>是否赋值成功。</returns>
+        </member>
+        <member name="M:JieNor.Framework.BizExpression.BizExpressionContext.TryGetValue(System.String,System.Object@)">
+            <summary>
+            获取给定变量名或字段的值，将尝试从字段和变量中。
+            </summary>
+            <param name="key">变量名</param>
+            <param name="value">如果获取成功，返回其值，否则为null</param>
+            <returns>是否成功</returns>
+        </member>
+        <member name="M:JieNor.Framework.BizExpression.BizExpressionContext.BindGetField(JieNor.Framework.Interface.TryGetValueHandler)">
+            <summary>
+            设置表达式中字段的取值方法。
+            <para> 
+            </para>
+            </summary>
+            <param name="handler">取值方法体的委托</param>
+        </member>
+        <member name="M:JieNor.Framework.BizExpression.BizExpression.op_Implicit(System.String)~JieNor.Framework.BizExpression.BizExpression">
+            <summary>
+            允许将string隐式转换为Expression
+            </summary>
+            <param name="expression">待转换的字符串</param>
+        </member>
+        <member name="M:JieNor.Framework.BizExpression.BizExpression.#ctor">
+            <summary>
+            构造一个BOS表达式对象
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.BizExpression.BizExpression.#ctor(System.String,JieNor.Framework.Enums.ExpressionKind,System.Collections.Generic.IDictionary{System.String,System.String},System.Boolean)">
+            <summary>
+            根据给定的表达式和字段映射表来构造一个BOS表达式对象
+            </summary>
+            <param name="expressionText">表达式</param>
+            <param name="kind">指定表达式的代码类型</param>
+            <param name="fieldMap">字段映射表</param>
+            <param name="exprTextHadChecked">表达式已经校验过，无须重复校验</param>
+        </member>
+        <member name="F:JieNor.Framework.BizExpression.BizExpression._exprTextHadChecked">
+            <summary>
+            表达式已经检查过，可以直接使用：通过此选项，避免循环中计算公式时，重复检查表达式，提升性能
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.BizExpression.BizExpression.Title">
+            <summary>
+            获取或者设置表达式的标题，可为空。
+            用来给此表达式一个简短的业务描述
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.BizExpression.BizExpression.CodeKind">
+            <summary>
+            表达式的代码类型。默认为自动检测
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.BizExpression.BizExpression.ExpressionText">
+            <summary>
+            获取或者设置表达式的真正表达式文本。类似于：
+            [BillNo.Amount] > 200
+            </summary>
+        </member>
+        <member name="P:JieNor.Framework.BizExpression.BizExpression.DisplayText">
+            <summary>
+            获取表达式的显示文本。类似于：
+            [单据头.金额] > 200
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.BizExpression.BizExpression.MapField(System.String,System.String)">
+            <summary>
+            设置字段映射。用来将表达式中的字段翻译为显示文本或者真正的目标脚本
+            <para>
+            此方法支持Fluent编程，亦即你可以写出如下的代码：
+            exp.MapField("name", "名称").MapField("age", "年龄")等等
+            </para>
+            </summary>
+            <param name="fieldName">字段名</param>
+            <param name="displayText">字段的显示名称</param>
+            <returns>基于Fluent编程的快速接口</returns>
+        </member>
+        <member name="M:JieNor.Framework.BizExpression.BizExpression.LookupVariables">
+            <summary>
+            查找出当前表达式包含的字段的集合。
+            <para>
+            【小提示】如果仅仅希望对一个单表达式做查找字段的动作。
+            您也可以通过BOSExpression的静态方法：LookupVariables
+            来达到同样的效果。
+            </para>
+            </summary>
+            <returns>字段集合</returns>
+        </member>
+        <member name="M:JieNor.Framework.BizExpression.BizExpression.LookupVariables(System.String)">
+            <summary>
+            查找出给定的表达式包含的字段的集合
+            </summary>
+            <param name="exp">待查找的表达式</param>
+            <returns>字段集合</returns>
+        </member>
+        <member name="M:JieNor.Framework.BizExpression.BizExpression.ProceedCompatiblity(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="expression"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JieNor.Framework.BizExpression.BizExpression.ProceedEqualCompatiblity(System.String@)">
+            <summary>
+            当代码为表达式类型时，可以将=替换为==
+            </summary>
+            <param name="expression">待分析的表达式</param>
+            <returns>处理后的表达式</returns>
+        </member>
+        <member name="M:JieNor.Framework.BizExpression.BizExpression.ProceedAtVariableCompatiblity(System.String@)">
+            <summary>
+            将代码中的@符号替换为系统变量
+            </summary>
+            <param name="expression">待分析的表达式</param>
+            <returns>处理后的表达式</returns>
+        </member>
+        <member name="P:JieNor.Framework.BizExpression.BizExpression.CompiledCode">
+            <summary>
+            在编译后会调用此方法缓存编译结果。
+            </summary>
+        </member>
+        <member name="M:JieNor.Framework.BizExpression.BizExpression.GetHashCode">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

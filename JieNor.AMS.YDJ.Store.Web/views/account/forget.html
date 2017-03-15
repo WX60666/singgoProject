@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <title>易家居 - 重置密码</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="/fw/min/css/jquery.yi.min.css">
+    <link rel="stylesheet" href="/fw/min/css/jquery.yi.layout.min.css">
+    <link rel="stylesheet" href="/fw/css/login_register.css" />
+</head>
+<body class="login">
+    <!-- logo -->
+    <div class="logo">
+        <a href="/views/index.html">易家居</a>
+    </div>
+    <!-- 主体部分 -->
+    <div class="content">
+        <!-- 找回密码表单 -->
+        <form class="forget-form">
+            <h3>忘记密码 ?</h3>
+            <div class="alert alert-danger display-hide">
+                <button class="close" data-close="alert"></button>
+                <span></span>
+            </div>
+            <p>输入您的电子邮件地址重新设置您的密码。</p>
+            <div class="form-group">
+                <!-- ie8 ie9 不支持 html5 占位符，所以我们只显示字段标题 -->
+                <label class="control-label visible-ie8 visible-ie9">电子邮箱</label>
+                <div class="input-icon">
+                    <i class="fa fa-envelope"></i>
+                    <input class="form-control placeholder-no-fix" type="text"
+                           autocomplete="off" placeholder="电子邮箱" id="txtEmail" name="email" />
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="button" id="back-btn" class="btn">
+                    <i class="m-icon-swapleft"></i> 登录
+                </button>
+                <button type="submit" class="btn yellow-casablanca pull-right">
+                    提交 <i class="m-icon-swapright m-icon-white"></i>
+                </button>
+            </div>
+        </form>
+    </div>
+    <!-- 版权信息 -->
+    <div class="copyright">
+        Copyright &copy; 2010 - 2016 东莞市杰诺软件科技有限公司
+    </div>
+    <!-- JavaScript（将 JavaScript 放在页面底部，可以降低页面加载时间）-->
+    <!-- 核心插件 -->
+    <!--[if lt IE 9]>
+    <script src="/fw/include/other/respond.min.js"></script>
+    <script src="/fw/include/other/excanvas.min.js"></script>
+    <![endif]-->
+    <script src="/fw/min/js/jquery.yi.min.js"></script>
+    <script src="/fw/js/account/forget.js"></script>
+</body>
+</html>

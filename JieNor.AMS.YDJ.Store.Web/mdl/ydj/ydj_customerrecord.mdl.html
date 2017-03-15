@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body id="ydj_customerrecord" basemodel="bd_basetmpl" el="1" cn="客流记录">
+    <div id="FBillHead" el="51" pk="fid" tn="t_ydj_customerrecord" pn="FBillHead" cn="客流记录-详情"> 
+
+    	<input type="datetime" id="fdate" el="119" ek="FBillHead" fn="fdate" pn="fdate" cn="进货日期" visible="-1" />
+        <select el="117" ek="fbillhead" visible="-1" id="fprovince" fn="fprovince" pn="fprovince" cn="省" cg="省" refid="bd_enum" dfld="fenumitem"></select>
+        <select el="117" ek="fbillhead" visible="-1" id="fcity" fn="fcity" pn="fcity" cn="市" cg="市" refid="bd_enum" dfld="fenumitem"></select>
+        <select el="117" ek="fbillhead" visible="-1" id="fregion" fn="fregion" pn="fregion" cn="区" cg="区" refid="bd_enum" dfld="fenumitem"></select>
+        <input type="text" id="faddress" el="100" ek="FBillHead" fn="faddress" pn="faddress" cn="详细地址" visible="-1" />
+        <input type="text" id="fshop" el="106" ek="FBillHead" fn="fshop" refid="ydj_dept" cn="所属门店" visible="-1" />
+        <input type="text" id="fhousetype" el="117" ek="FBillHead" fn="fhousetype" pn="fhousetype" refId="bd_enum" dfld="fenumitem" cg="户型" cn="户型" visible="-1" />
+    	<input type="text" id="farea" el="117" ek="FBillHead" fn="farea" pn="farea" refId="bd_enum" dfld="fenumitem" cg="空间" cn="空间" visible="-1" />
+        <input type="text" id="fsource" el="117" ek="FBillHead" fn="fsource" pn="fsource" refId="bd_enum" dfld="fenumitem" cg="客户来源" cn="客户来源" visible="-1" />
+        <input type="text" id="fbudget" el="117" ek="FBillHead" fn="fbudget" pn="fbudget" refId="bd_enum" dfld="fenumitem" cg="预算" cn="预算" visible="-1" />
+    	<input type="text" id="fnote" el="100" ek="FBillHead" fn="fnote" pn="fnote" cn="备注" visible="-1" />
+        <input type="text" id="fappellation" el="100" ek="FBillHead" fn="fappellation" pn="fappellation" cn="客户称谓" visible="-1" />
+        <input type="text" id="fcustomername" el="100" ek="FBillHead" fn="fcustomername" pn="fcustomername" cn="客户名称" visible="-1" />
+    	<input type="text" id="fcellphone" el="109" ek="FBillHead" fn="fcellphone" pn="fcellphone" cn="电话" visible="-1" />
+    	<input type="text" id="fincharge" el="124" ek="FBillHead" fn="fincharge" pn="fincharge" refid="sec_user" cn="负责人" visible="-1" />
+    	<input type="text" id="fassiter" el="124" ek="FBillHead" fn="fassiter" pn="fassiter" refid="sec_user" cn="辅助带单人" visible="-1" />
+        <input type="text" id="fstyle" el="117" ek="FBillHead" fn="fstyle" pn="fstyle" refId="bd_enum" dfld="fenumitem" cg="风格偏好" cn="风格偏好" visible="-1" />
+        <input type="text" id="fcolor" el="106" ek="FBillHead" fn="fcolor" pn="fcolor" refid="ydj_color" cn="颜色" visible="-1" />
+    	<input type="text" id="fmaterial" el="106" ek="FBillHead" fn="fmaterial" pn="fmaterial" cn="材质" refid="ydj_material" visible="-1" />
+    	<input type="text" id="fcustomerId" el="106" ek="FBillHead" fn="fcustomerId" pn="fcustomerId" refid="ydj_customer" cn="关联客户" visible="-1" />
+        <!--<input type="image" id="fimage" el="111" ek="FBillHead" fn="fimage" ts="" cn="图像" visible="-1" />-->
+        <input id="fstatus" el="122" ek="FBillHead" fn="fstatus" refId="bd_enum" dfld="fenumitem" ts="" cg="数据状态" visible="-1" cn="数据状态" />
+            
+
+    </div>
+
+</body>
+</html>
+

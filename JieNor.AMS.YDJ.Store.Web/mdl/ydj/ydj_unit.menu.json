@@ -1,0 +1,53 @@
+﻿﻿﻿﻿{
+  "base": "/mdl/bill.menu.json",
+  "common": [
+    {
+      "id": "tbNew",
+      "visible": "false"
+    }
+  ],
+  "listmenu": [
+    {
+      "id": "tbForbid",
+      "caption": "禁用",
+      "visible": "true",
+      "disabled": "false",
+      "style": "menu",
+      "order": 55,
+      "parent": "",
+      "opcode": "forbid"
+    },
+    {
+      "id": "tbUnForbid",
+      "caption": "反禁用",
+      "visible": "true",
+      "disabled": "false",
+      "style": "menu",
+      "order": 56,
+      "parent": "",
+      "opcode": "unforbid"
+    }
+  ],
+  "billmenu": [
+	{
+	    "id": "tbForbid",
+	    "caption": "禁用",
+	    "visible": "true",
+	    "disabled": "false",
+	    "style": "menu",
+	    "order": 55,
+	    "parent": "",
+	    "opcode": "forbid"
+	  },
+	  {
+	    "id": "tbUnForbid",
+	    "caption": "反禁用",
+	    "visible": "true",
+	    "disabled": "false",
+	    "style": "menu",
+	    "order": 56,
+	    "parent": "",
+	    "opcode": "unforbid"
+	  }
+  ]
+}
